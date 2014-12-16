@@ -19,7 +19,7 @@ To run the app, follow these steps.
   ```shell
   npm install -g gulp
   ```
-4. Ensure that [jspm](http://jspm.io/) is installed. If you need to install it, use the following commnand:
+4. Ensure that [jspm](http://jspm.io/) is installed. If you need to install it, use the following command:
 
   ```shell
   npm install -g jspm
