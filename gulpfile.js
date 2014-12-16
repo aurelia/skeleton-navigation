@@ -12,8 +12,8 @@ var fs = require('fs');
 var connect = require('gulp-connect');
 
 var path = {
-  source:'lib/**/*.js',
-  html:'lib/**/*.html',
+  source:'src/**/*.js',
+  html:'src/**/*.html',
   output:'dist/',
   doc:'./doc'
 };
