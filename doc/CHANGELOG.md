@@ -1,3 +1,11 @@
+### 0.4.2 (2014-12-18)
+
+
+#### Bug Fixes
+
+* **package:** update bootstrapper to latest version ([e1d00037](http://github.com/aurelia/skeleton-navigation/commit/e1d000377c782b1bfc9c8fce0d247afb0b8702d1))
+
+
 ### 0.4.1 (2014-12-18)
 
 
