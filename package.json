@@ -39,7 +39,7 @@
   },
   "jspm": {
     "dependencies": {
-      "aurelia-bootstrapper": "^0.4.2",
+      "aurelia-bootstrapper": "^0.4.3",
       "aurelia-http-client": "^0.3.1",
       "bootstrap": "^3.3.1",
       "font-awesome": "^4.2.0"
