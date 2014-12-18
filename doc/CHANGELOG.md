@@ -1,3 +1,11 @@
+### 0.4.1 (2014-12-18)
+
+
+#### Bug Fixes
+
+* **package:** update dependencies to latest versions ([275a693d](http://github.com/aurelia/skeleton-navigation/commit/275a693dcbbeec189847f97881b40d25e3b693d4))
+
+
 ## 0.4.0 (2014-12-17)
 
 
