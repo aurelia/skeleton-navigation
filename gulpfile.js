@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var runSequence = require('run-sequence');
-var clean = require('gulp-clean');
+var del = require('del');
+var vinylPaths = require('vinyl-paths');
 var to5 = require('gulp-6to5');
 var jshint = require('gulp-jshint');
 var stylish = require('jshint-stylish');
@@ -38,8 +39,8 @@ var compilerOptions = {
 var jshintConfig = {esnext:true};
 
 gulp.task('clean', function() {
-  return gulp.src([path.output], {read: false})
-    .pipe(clean());
+ return gulp.src([path.output])
+    .pipe(vinylPaths(del));
 });
 
 gulp.task('build-amd', function () {
