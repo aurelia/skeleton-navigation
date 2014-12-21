@@ -91,6 +91,13 @@ System.config({
       "aurelia-task-queue": "github:aurelia/task-queue@0.1.1",
       "es6-shim": "github:paulmillr/es6-shim@0.21.1"
     },
+    "github:jspm/nodelibs@0.0.7": {
+      "Base64": "npm:Base64@0.2.1",
+      "base64-js": "npm:base64-js@0.0.7",
+      "ieee754": "npm:ieee754@1.1.4",
+      "inherits": "npm:inherits@2.0.1",
+      "json": "github:systemjs/plugin-json@0.1.0"
+    },
     "github:twbs/bootstrap@3.3.1": {
       "css": "github:systemjs/plugin-css@0.1.0",
       "jquery": "github:components/jquery@2.1.1"
