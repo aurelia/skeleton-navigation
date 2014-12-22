@@ -9,8 +9,10 @@ var yuidoc = require("gulp-yuidoc");
 var changelog = require('conventional-changelog');
 var assign = Object.assign || require('object.assign');
 var fs = require('fs');
-var connect = require('gulp-connect');
 var bump = require('gulp-bump');
+var browserSync = require('browser-sync');
+var changed = require('gulp-changed');
+var plumber = require('gulp-plumber');
 
 var path = {
   source:'src/**/*.js',
@@ -45,13 +47,18 @@ gulp.task('clean', function() {
 
 gulp.task('build-amd', function () {
   return gulp.src(path.source)
+    .pipe(plumber())
+    .pipe(changed(path.output, {extension: '.js'}))
     .pipe(to5(assign({}, compilerOptions, {modules:'amd'})))
-    .pipe(gulp.dest(path.output));
+    .pipe(gulp.dest(path.output))
+    .pipe(browserSync.reload({ stream: true }));
 });
 
 gulp.task('build-html', function () {
   return gulp.src(path.html)
-    .pipe(gulp.dest(path.output));
+    .pipe(changed(path.output, {extension: '.html'}))
+    .pipe(gulp.dest(path.output))
+    .pipe(browserSync.reload({ stream: true }));
 });
 
 gulp.task('lint', function() {
@@ -92,19 +99,24 @@ gulp.task('build', function(callback) {
   );
 });
 
-gulp.task('watch', ['build'], function() {
+gulp.task('serve', ['build'], function(done) {
+  browserSync({
+    open: false,
+    port: 9000,
+    server: {
+      baseDir: ['.'],
+      middleware: function (req, res, next) {
+        res.setHeader('Access-Control-Allow-Origin', '*');
+        next();
+      }
+    }
+  }, done);
+});
+
+gulp.task('watch', ['serve'], function() {
   var watcher = gulp.watch([path.source, path.html], ['build']);
   watcher.on('change', function(event) {
     console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
-  });
-});
-
-gulp.task('serve', function(){
-  connect.server({
-    root: [__dirname],
-    port: 9000,
-    livereload: false,
-    open: false
   });
 });
 
