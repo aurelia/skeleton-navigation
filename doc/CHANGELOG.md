@@ -1,3 +1,17 @@
+## 0.5.0 (2014-12-22)
+
+
+#### Bug Fixes
+
+* **config:** update the jspm config ([9ceaa0c2](http://github.com/aurelia/skeleton-navigation/commit/9ceaa0c2af5374461d183993036984cf048261d8))
+* **package:** update dependencies to latest versions ([b5cff606](http://github.com/aurelia/skeleton-navigation/commit/b5cff606059dff0ad47e78cc6ba4325d646015a5))
+
+
+#### Features
+
+* **build:** add browser sync ([fe2d2fa7](http://github.com/aurelia/skeleton-navigation/commit/fe2d2fa7c10a4748cab6c86e326465e6a8327ef4))
+
+
 ### 0.4.2 (2014-12-18)
 
 
