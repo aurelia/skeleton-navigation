@@ -13,6 +13,7 @@ var bump = require('gulp-bump');
 var browserSync = require('browser-sync');
 var changed = require('gulp-changed');
 var plumber = require('gulp-plumber');
+var tools = require('aurelia-tools');
 
 var path = {
   source:'src/**/*.js',
@@ -67,10 +68,14 @@ gulp.task('lint', function() {
     .pipe(jshint.reporter(stylish));
 });
 
-gulp.task('doc', function(){
+gulp.task('doc-generate', function(){
   return gulp.src(path.source)
     .pipe(yuidoc.parser(null, 'api.json'))
     .pipe(gulp.dest(path.doc));
+});
+
+gulp.task('doc', ['doc-generate'], function(){
+  tools.transformAPIModel(path.doc);
 });
 
 gulp.task('bump-version', function(){
@@ -97,6 +102,10 @@ gulp.task('build', function(callback) {
     ['build-amd', 'build-html'],
     callback
   );
+});
+
+gulp.task('update-own-deps', function(){
+  tools.updateOwnDependenciesFromLocalRepositories();
 });
 
 gulp.task('serve', ['build'], function(done) {
