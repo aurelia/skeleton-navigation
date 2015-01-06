@@ -33,10 +33,19 @@ var compilerOptions = {
   sourceFileName: '',
   sourceRoot: '',
   moduleRoot: '',
-  amdModuleIds: false,
+  moduleIds: false,
   runtime: false,
-  comments: false,
-  experimental: false
+  experimental: false,
+  format: {
+    comments: false,
+    compact: false,
+    indent: {
+      parentheses: true,
+      adjustMultilineComment: true,
+      style: "  ",
+      base: 0
+    }
+  }
 };
 
 var jshintConfig = {esnext:true};
@@ -46,11 +55,11 @@ gulp.task('clean', function() {
     .pipe(vinylPaths(del));
 });
 
-gulp.task('build-amd', function () {
+gulp.task('build-system', function () {
   return gulp.src(path.source)
     .pipe(plumber())
     .pipe(changed(path.output, {extension: '.js'}))
-    .pipe(to5(assign({}, compilerOptions, {modules:'amd'})))
+    .pipe(to5(assign({}, compilerOptions, {modules:'system'})))
     .pipe(gulp.dest(path.output))
     .pipe(browserSync.reload({ stream: true }));
 });
@@ -99,7 +108,7 @@ gulp.task('changelog', function(callback) {
 gulp.task('build', function(callback) {
   return runSequence(
     'clean',
-    ['build-amd', 'build-html'],
+    ['build-system', 'build-html'],
     callback
   );
 });
