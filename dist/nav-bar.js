@@ -1,16 +1,19 @@
-define(["exports", "aurelia-framework"], function (exports, _aureliaFramework) {
+System.register(["aurelia-framework"], function (_export) {
   "use strict";
 
-  var Property = _aureliaFramework.Property;
-  var NavBar = (function () {
-    var NavBar = function NavBar() {};
+  var Property, NavBar;
+  return {
+    setters: [function (_aureliaFramework) {
+      Property = _aureliaFramework.Property;
+    }],
+    execute: function () {
+      NavBar = function NavBar() {};
 
-    NavBar.annotations = function () {
-      return [new Property("router")];
-    };
+      NavBar.annotations = function () {
+        return [new Property("router")];
+      };
 
-    return NavBar;
-  })();
-
-  exports.NavBar = NavBar;
+      _export("NavBar", NavBar);
+    }
+  };
 });

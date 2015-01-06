@@ -1,32 +1,35 @@
-define(["exports"], function (exports) {
+System.register([], function (_export) {
   "use strict";
 
-  var _classProps = function (child, staticProps, instanceProps) {
-    if (staticProps) Object.defineProperties(child, staticProps);
-    if (instanceProps) Object.defineProperties(child.prototype, instanceProps);
-  };
+  var _prototypeProperties, Welcome;
+  return {
+    setters: [],
+    execute: function () {
+      _prototypeProperties = function (child, staticProps, instanceProps) {
+        if (staticProps) Object.defineProperties(child, staticProps);
+        if (instanceProps) Object.defineProperties(child.prototype, instanceProps);
+      };
 
-  var Welcome = (function () {
-    var Welcome = function Welcome() {
-      this.heading = "Welcome to the Aurelia Navigation App!";
-      this.firstName = "John";
-      this.lastName = "Doe";
-    };
+      Welcome = function Welcome() {
+        this.heading = "Welcome to the Aurelia Navigation App!";
+        this.firstName = "John";
+        this.lastName = "Doe";
+      };
 
-    Welcome.prototype.welcome = function () {
-      alert("Welcome, " + this.fullName + "!");
-    };
+      Welcome.prototype.welcome = function () {
+        alert("Welcome, " + this.fullName + "!");
+      };
 
-    _classProps(Welcome, null, {
-      fullName: {
-        get: function () {
-          return "" + this.firstName + " " + this.lastName;
+      _prototypeProperties(Welcome, null, {
+        fullName: {
+          get: function () {
+            return "" + this.firstName + " " + this.lastName;
+          },
+          enumerable: true
         }
-      }
-    });
+      });
 
-    return Welcome;
-  })();
-
-  exports.Welcome = Welcome;
+      _export("Welcome", Welcome);
+    }
+  };
 });

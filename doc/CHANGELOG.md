@@ -1,3 +1,11 @@
+## 0.6.0 (2015-01-06)
+
+
+#### Features
+
+* **build:** update compiler and switch to register module format ([921d6ab8](http://github.com/aurelia/skeleton-navigation/commit/921d6ab8a523fce6a410f7333650eef9dc5e8abc))
+
+
 ## 0.5.0 (2014-12-22)
 
 
