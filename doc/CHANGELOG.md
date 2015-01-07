@@ -1,3 +1,11 @@
+### 0.7.2 (2015-01-07)
+
+
+#### Bug Fixes
+
+* **welcome:** typo in the last name label ([05e72aaa](http://github.com/aurelia/skeleton-navigation/commit/05e72aaaee2a8c58943f7b9e85eb59307a85f35d))
+
+
 ### 0.7.1 (2015-01-07)
 
 * updates to the readme to help clarify issues around authentication and usage on windows
