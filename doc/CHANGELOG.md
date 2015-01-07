@@ -1,3 +1,7 @@
+### 0.7.1 (2015-01-07)
+
+* updates to the readme to help clarify issues around authentication and usage on windows
+
 ## 0.7.0 (2015-01-07)
 
 
