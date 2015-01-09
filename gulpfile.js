@@ -18,6 +18,7 @@ var tools = require('aurelia-tools');
 var path = {
   source:'src/**/*.js',
   html:'src/**/*.html',
+  style:'styles/**/*.css',
   output:'dist/',
   doc:'./doc'
 };
@@ -132,7 +133,7 @@ gulp.task('serve', ['build'], function(done) {
 });
 
 gulp.task('watch', ['serve'], function() {
-  var watcher = gulp.watch([path.source, path.html], ['build']);
+  var watcher = gulp.watch([path.source, path.html, path.style], ['build']);
   watcher.on('change', function(event) {
     console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
   });
