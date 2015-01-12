@@ -10,25 +10,33 @@ System.register([], function (_export) {
         if (instanceProps) Object.defineProperties(child.prototype, instanceProps);
       };
 
-      Welcome = function Welcome() {
-        this.heading = "Welcome to the Aurelia Navigation App!";
-        this.firstName = "John";
-        this.lastName = "Doe";
-      };
-
-      Welcome.prototype.welcome = function () {
-        alert("Welcome, " + this.fullName + "!");
-      };
-
-      _prototypeProperties(Welcome, null, {
-        fullName: {
-          get: function () {
-            return "" + this.firstName + " " + this.lastName;
-          },
-          enumerable: true
+      Welcome = (function () {
+        function Welcome() {
+          this.heading = "Welcome to the Aurelia Navigation App!";
+          this.firstName = "John";
+          this.lastName = "Doe";
         }
-      });
 
+        _prototypeProperties(Welcome, null, {
+          fullName: {
+            get: function () {
+              return "" + this.firstName + " " + this.lastName;
+            },
+            enumerable: true,
+            configurable: true
+          },
+          welcome: {
+            value: function () {
+              alert("Welcome, " + this.fullName + "!");
+            },
+            writable: true,
+            enumerable: true,
+            configurable: true
+          }
+        });
+
+        return Welcome;
+      })();
       _export("Welcome", Welcome);
     }
   };

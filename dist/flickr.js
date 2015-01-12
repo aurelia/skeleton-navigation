@@ -1,34 +1,58 @@
 System.register(["aurelia-http-client"], function (_export) {
   "use strict";
 
-  var HttpClient, url, Flickr;
+  var HttpClient, _prototypeProperties, url, Flickr;
   return {
     setters: [function (_aureliaHttpClient) {
       HttpClient = _aureliaHttpClient.HttpClient;
     }],
     execute: function () {
+      _prototypeProperties = function (child, staticProps, instanceProps) {
+        if (staticProps) Object.defineProperties(child, staticProps);
+        if (instanceProps) Object.defineProperties(child.prototype, instanceProps);
+      };
+
       url = "http://api.flickr.com/services/feeds/photos_public.gne?tags=rainier&tagmode=any&format=json";
-      Flickr = function Flickr(http) {
-        this.heading = "Flickr";
-        this.images = [];
-        this.http = http;
-      };
+      Flickr = (function () {
+        function Flickr(http) {
+          this.heading = "Flickr";
+          this.images = [];
+          this.http = http;
+        }
 
-      Flickr.inject = function () {
-        return [HttpClient];
-      };
-
-      Flickr.prototype.activate = function () {
-        var _this = this;
-        return this.http.jsonp(url).then(function (response) {
-          _this.images = response.content.items;
+        _prototypeProperties(Flickr, {
+          inject: {
+            value: function () {
+              return [HttpClient];
+            },
+            writable: true,
+            enumerable: true,
+            configurable: true
+          }
+        }, {
+          activate: {
+            value: function () {
+              var _this = this;
+              return this.http.jsonp(url).then(function (response) {
+                _this.images = response.content.items;
+              });
+            },
+            writable: true,
+            enumerable: true,
+            configurable: true
+          },
+          canDeactivate: {
+            value: function () {
+              return confirm("Are you sure you want to leave?");
+            },
+            writable: true,
+            enumerable: true,
+            configurable: true
+          }
         });
-      };
 
-      Flickr.prototype.canDeactivate = function () {
-        return confirm("Are you sure you want to leave?");
-      };
-
+        return Flickr;
+      })();
       _export("Flickr", Flickr);
     }
   };

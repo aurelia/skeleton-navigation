@@ -1,3 +1,16 @@
+## 0.8.0 (2015-01-12)
+
+
+#### Bug Fixes
+
+* **package:** update Aurelia dependencies ([44083541](http://github.com/aurelia/skeleton-navigation/commit/440835418d78b5d99278ec4f2fbc04beb79ff98f))
+
+
+#### Features
+
+* **build:** update watch task to include style files ([ddf6c789](http://github.com/aurelia/skeleton-navigation/commit/ddf6c789c84ac267bdf4865f19a3339d7ee66253))
+
+
 ### 0.7.2 (2015-01-07)
 
 
