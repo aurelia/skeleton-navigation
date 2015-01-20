@@ -1,7 +1,7 @@
 import {Property} from 'aurelia-framework';
 
 export class NavBar {
-  static annotations(){
+  static metadata(){
     return [new Property('router')];
   }
 }
