@@ -61,15 +61,13 @@ gulp.task('build-system', function () {
     .pipe(plumber())
     .pipe(changed(path.output, {extension: '.js'}))
     .pipe(to5(assign({}, compilerOptions, {modules:'system'})))
-    .pipe(gulp.dest(path.output))
-    .pipe(browserSync.reload({ stream: true }));
+    .pipe(gulp.dest(path.output));
 });
 
 gulp.task('build-html', function () {
   return gulp.src(path.html)
     .pipe(changed(path.output, {extension: '.html'}))
-    .pipe(gulp.dest(path.output))
-    .pipe(browserSync.reload({ stream: true }));
+    .pipe(gulp.dest(path.output));
 });
 
 gulp.task('lint', function() {
@@ -132,11 +130,14 @@ gulp.task('serve', ['build'], function(done) {
   }, done);
 });
 
+function reportChange(event){
+  console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
+}
+
 gulp.task('watch', ['serve'], function() {
-  var watcher = gulp.watch([path.source, path.html, path.style], ['build']);
-  watcher.on('change', function(event) {
-    console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
-  });
+  gulp.watch(path.source, ['build-system', browserSync.reload]).on('change', reportChange);
+  gulp.watch(path.html, ['build-html', browserSync.reload]).on('change', reportChange);
+  gulp.watch(path.style, [browserSync.reload]).on('change', reportChange);
 });
 
 gulp.task('prepare-release', function(callback){
