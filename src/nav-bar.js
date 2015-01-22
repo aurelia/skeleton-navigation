@@ -1,7 +1,5 @@
-import {Property} from 'aurelia-framework';
+import {Behavior} from 'aurelia-framework';
 
 export class NavBar {
-  static metadata(){
-    return [new Property('router')];
-  }
+  static metadata(){ return Behavior.withProperty('router'); }
 }

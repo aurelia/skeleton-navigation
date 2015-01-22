@@ -22,7 +22,7 @@ System.config({
       "aurelia-framework": "github:aurelia/framework@0.7.0",
       "aurelia-history": "github:aurelia/history@0.2.1",
       "aurelia-history-browser": "github:aurelia/history-browser@0.2.1",
-      "aurelia-loader-systemjs": "github:aurelia/loader-systemjs@0.3.2",
+      "aurelia-loader-default": "github:aurelia/loader-default@0.3.2",
       "aurelia-logging-console": "github:aurelia/logging-console@0.2.1",
       "aurelia-router": "github:aurelia/router@0.4.2",
       "aurelia-templating": "github:aurelia/templating@0.7.0",
@@ -51,7 +51,7 @@ System.config({
       "aurelia-path": "github:aurelia/path@0.4.0",
       "core-js": "npm:core-js@0.4.4"
     },
-    "github:aurelia/loader-systemjs@0.3.2": {
+    "github:aurelia/loader-default@0.3.2": {
       "aurelia-loader": "github:aurelia/loader@0.3.1",
       "aurelia-metadata": "github:aurelia/metadata@0.2.4",
       "aurelia-path": "github:aurelia/path@0.4.0"
