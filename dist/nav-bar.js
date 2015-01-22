@@ -1,10 +1,10 @@
 System.register(["aurelia-framework"], function (_export) {
   "use strict";
 
-  var Property, _prototypeProperties, NavBar;
+  var Behavior, _prototypeProperties, NavBar;
   return {
     setters: [function (_aureliaFramework) {
-      Property = _aureliaFramework.Property;
+      Behavior = _aureliaFramework.Behavior;
     }],
     execute: function () {
       _prototypeProperties = function (child, staticProps, instanceProps) {
@@ -16,9 +16,9 @@ System.register(["aurelia-framework"], function (_export) {
         function NavBar() {}
 
         _prototypeProperties(NavBar, {
-          annotations: {
-            value: function () {
-              return [new Property("router")];
+          metadata: {
+            value: function metadata() {
+              return Behavior.withProperty("router");
             },
             writable: true,
             enumerable: true,

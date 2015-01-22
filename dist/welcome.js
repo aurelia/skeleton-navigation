@@ -26,7 +26,7 @@ System.register([], function (_export) {
             configurable: true
           },
           welcome: {
-            value: function () {
+            value: function welcome() {
               alert("Welcome, " + this.fullName + "!");
             },
             writable: true,

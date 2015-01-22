@@ -22,7 +22,7 @@ System.register(["aurelia-http-client"], function (_export) {
 
         _prototypeProperties(Flickr, {
           inject: {
-            value: function () {
+            value: function inject() {
               return [HttpClient];
             },
             writable: true,
@@ -31,7 +31,7 @@ System.register(["aurelia-http-client"], function (_export) {
           }
         }, {
           activate: {
-            value: function () {
+            value: function activate() {
               var _this = this;
               return this.http.jsonp(url).then(function (response) {
                 _this.images = response.content.items;
@@ -42,7 +42,7 @@ System.register(["aurelia-http-client"], function (_export) {
             configurable: true
           },
           canDeactivate: {
-            value: function () {
+            value: function canDeactivate() {
               return confirm("Are you sure you want to leave?");
             },
             writable: true,

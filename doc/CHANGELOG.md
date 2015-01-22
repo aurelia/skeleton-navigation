@@ -1,3 +1,21 @@
+## 0.9.0 (2015-01-22)
+
+
+#### Bug Fixes
+
+* **all:**
+  * update dependencies and links to latest ([8863e7b7](http://github.com/aurelia/skeleton-navigation/commit/8863e7b7d07e87430b0f495cd25923e401698bc9))
+  * update to latest version of metadata and view import ([2467e6c8](http://github.com/aurelia/skeleton-navigation/commit/2467e6c8361fc848b45ab6d92b180edf4d4bcdb5))
+* **build:** improve watch functionality ([8496a78d](http://github.com/aurelia/skeleton-navigation/commit/8496a78def478bd2c53217c9e70db1d272a935ea))
+* **package:** update dependencies ([2957e94d](http://github.com/aurelia/skeleton-navigation/commit/2957e94d84988207c2553395e8e0a1c943a65a16))
+
+
+#### Features
+
+* **all:** update to new fluent metadata ([18382913](http://github.com/aurelia/skeleton-navigation/commit/183829132bce3f754377bf2d720a288b71ef4b64))
+* **index:** add splash screen ([88e3e6f9](http://github.com/aurelia/skeleton-navigation/commit/88e3e6f956575c18fb37e72cd51e7bfac33f6941))
+
+
 ## 0.8.0 (2015-01-12)
 
 

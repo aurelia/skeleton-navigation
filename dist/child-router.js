@@ -23,7 +23,7 @@ System.register(["aurelia-router"], function (_export) {
 
         _prototypeProperties(Welcome, {
           inject: {
-            value: function () {
+            value: function inject() {
               return [Router];
             },
             writable: true,
