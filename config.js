@@ -26,7 +26,7 @@ System.config({
       "aurelia-logging-console": "github:aurelia/logging-console@0.2.2",
       "aurelia-router": "github:aurelia/router@0.5.0",
       "aurelia-templating": "github:aurelia/templating@0.8.1",
-      "aurelia-templating-binding": "github:aurelia/templating-binding@0.8.0",
+      "aurelia-templating-binding": "github:aurelia/templating-binding@0.8.1",
       "aurelia-templating-resources": "github:aurelia/templating-resources@0.8.1",
       "aurelia-templating-router": "github:aurelia/templating-router@0.9.0"
     },
@@ -68,7 +68,7 @@ System.config({
       "aurelia-route-recognizer": "github:aurelia/route-recognizer@0.2.2",
       "core-js": "npm:core-js@0.4.6"
     },
-    "github:aurelia/templating-binding@0.8.0": {
+    "github:aurelia/templating-binding@0.8.1": {
       "aurelia-binding": "github:aurelia/binding@0.3.1",
       "aurelia-templating": "github:aurelia/templating@0.8.1"
     },
