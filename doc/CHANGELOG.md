@@ -1,3 +1,20 @@
+### 0.9.1 (2015-01-24)
+
+
+#### Bug Fixes
+
+* **package:**
+  * update dependencies ([d05fb6c9](http://github.com/aurelia/skeleton-navigation/commit/d05fb6c9a4148e85165e8b8594b3de9e344e85d6))
+  * update dependencies ([da130f4f](http://github.com/aurelia/skeleton-navigation/commit/da130f4f2919c8330f455e1b9f175d693aacf43c))
+  * update dependencies ([ab85bc86](http://github.com/aurelia/skeleton-navigation/commit/ab85bc865cb1607f13cb7d5b3a55f37903e61785))
+
+
+#### Features
+
+* **package:** update dependencies ([86b1dd90](http://github.com/aurelia/skeleton-navigation/commit/86b1dd908206abfdca2a8f89cc246f54e761bdbd))
+* **welcome:** add sample local value converter ([9a2c2aa6](http://github.com/aurelia/skeleton-navigation/commit/9a2c2aa6f7fa9f5a5666aa0c19163bf49cbcc5fc))
+
+
 ## 0.9.0 (2015-01-22)
 
 

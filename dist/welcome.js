@@ -1,7 +1,7 @@
 System.register([], function (_export) {
   "use strict";
 
-  var _prototypeProperties, Welcome;
+  var _prototypeProperties, Welcome, UpperValueConverter;
   return {
     setters: [],
     execute: function () {
@@ -38,6 +38,24 @@ System.register([], function (_export) {
         return Welcome;
       })();
       _export("Welcome", Welcome);
+
+      UpperValueConverter = (function () {
+        function UpperValueConverter() {}
+
+        _prototypeProperties(UpperValueConverter, null, {
+          toView: {
+            value: function toView(value) {
+              return value && value.toUpperCase();
+            },
+            writable: true,
+            enumerable: true,
+            configurable: true
+          }
+        });
+
+        return UpperValueConverter;
+      })();
+      _export("UpperValueConverter", UpperValueConverter);
     }
   };
 });
