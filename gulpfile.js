@@ -116,6 +116,10 @@ gulp.task('update-own-deps', function(){
   tools.updateOwnDependenciesFromLocalRepositories();
 });
 
+gulp.task('build-dev-env', function () {
+  tools.buildDevEnv();
+});
+
 gulp.task('serve', ['build'], function(done) {
   browserSync({
     open: false,
