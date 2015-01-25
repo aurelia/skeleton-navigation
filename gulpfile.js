@@ -137,7 +137,7 @@ function reportChange(event){
 gulp.task('watch', ['serve'], function() {
   gulp.watch(path.source, ['build-system', browserSync.reload]).on('change', reportChange);
   gulp.watch(path.html, ['build-html', browserSync.reload]).on('change', reportChange);
-  gulp.watch(path.style, [browserSync.reload]).on('change', reportChange);
+  gulp.watch(path.style, browserSync.reload).on('change', reportChange);
 });
 
 gulp.task('prepare-release', function(callback){
