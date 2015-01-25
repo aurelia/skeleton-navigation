@@ -1,3 +1,11 @@
+### 0.9.2 (2015-01-25)
+
+
+#### Bug Fixes
+
+* **gulpfile:** bug in browser sync for style content ([342a2612](http://github.com/aurelia/skeleton-navigation/commit/342a26121cf5988d73847ed02d022d13e325d5f2))
+
+
 ### 0.9.1 (2015-01-24)
 
 
