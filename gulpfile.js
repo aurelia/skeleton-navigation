@@ -14,13 +14,17 @@ var browserSync = require('browser-sync');
 var changed = require('gulp-changed');
 var plumber = require('gulp-plumber');
 var tools = require('aurelia-tools');
+var protractor = require("gulp-protractor").protractor;
+var webdriver_update = require('gulp-protractor').webdriver_update;
 
 var path = {
   source:'src/**/*.js',
   html:'src/**/*.html',
   style:'styles/**/*.css',
   output:'dist/',
-  doc:'./doc'
+  doc:'./doc',
+  e2eSpecsSrc: 'test/e2e/src/*.js',
+  e2eSpecsDist: 'test/e2e/dist/'
 };
 
 var compilerOptions = {
@@ -110,6 +114,24 @@ gulp.task('build', function(callback) {
     ['build-system', 'build-html'],
     callback
   );
+});
+
+gulp.task('webdriver_update', webdriver_update);
+
+gulp.task('build-e2e', function () {
+  return gulp.src(path.e2eSpecsSrc)
+    .pipe(plumber())
+    .pipe(to5())
+    .pipe(gulp.dest(path.e2eSpecsDist));
+});
+
+gulp.task('e2e', ['webdriver_update', 'build-e2e'], function(cb) {
+  return gulp.src(path.e2eSpecsDist + "/*.js")
+  .pipe(protractor({
+      configFile: "protractor.conf.js",
+      args: ['--baseUrl', 'http://127.0.0.1:9000']
+  }))
+  .on('error', function(e) { throw e; });
 });
 
 gulp.task('update-own-deps', function(){

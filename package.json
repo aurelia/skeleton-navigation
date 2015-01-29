@@ -39,7 +39,8 @@
     "karma-jspm": "^1.0.1",
     "object.assign": "^1.0.3",
     "run-sequence": "^1.0.2",
-    "vinyl-paths": "^1.0.0"
+    "vinyl-paths": "^1.0.0",
+    "gulp-protractor": "^0.0.12"
   },
   "jspm": {
     "dependencies": {

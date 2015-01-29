@@ -58,7 +58,25 @@ To run the unit tests, first ensure that you have followed the steps above in or
   ```shell
   karma start
   ```
-  
+
+## Running The E2E Tests
+Integration tests are performed with [Protractor](http://angular.github.io/protractor/#/).
+
+1. Place your E2E-Tests into the folder ```test/e2e/src```
+2. Install the necessary webdriver
+
+  ```shell
+  gulp webdriver_update
+  ```
+
+3. Configure the path to the webdriver by opening the file ```protractor.conf.js``` and adjusting the ```seleniumServerJar``` property. Typically its only needed to adjust the version number.
+
+4. Run the E2E-Tests
+
+  ```shell
+  gulp e2e
+  ```
+
 ## Contributing
 
 We'd love for you to contribute to our source code and to make this project even better than it is today! If this interests you, please begin by reading [our contributing guidelines](https://github.com/DurandalProject/about/blob/master/CONTRIBUTING.md). The contributing document will provide you with all the information you need to get started. Once you have read that, you will need to also [sign our CLA](http://goo.gl/forms/dI8QDDSyKR) before we can accepts a Pull Request from you. More information on the process is including in the [contributor's guide](https://github.com/DurandalProject/about/blob/master/CONTRIBUTING.md).
