@@ -1,4 +1,4 @@
-import {App} from '../src/app';
+import {Welcome} from '../../src/child-router';
 
 class RouterStub {
   configure(handler) {
@@ -9,16 +9,16 @@ class RouterStub {
   }
 }
 
-describe('the App module', () => {
+describe('the Child Router module', () => {
   var sut;
-  beforeEach(() => { sut = new App(new RouterStub()); });
+  beforeEach(() => { sut = new Welcome(new RouterStub()); });
 
   it('contains a router property', () => {
     expect(sut.router).toBeDefined(); 
   });
   
-  it('configures the router title', () => {
-    expect(sut.router.title).toEqual('Aurelia');
+  it('configures the heading', () => {
+    expect(sut.heading).toEqual('Child Router');
   });
 
   it('should have a welcome route', () => {
