@@ -4,11 +4,11 @@ var url = 'http://api.flickr.com/services/feeds/photos_public.gne?tags=rainier&t
 
 export class Flickr{
   static inject() { return [HttpClient]; }
-	constructor(http){
-		this.heading = 'Flickr';
-		this.images = [];
+  constructor(http){
+    this.heading = 'Flickr';
+    this.images = [];
     this.http = http;
-	}
+  }
 
   activate(){
     return this.http.jsonp(url).then(response => {
