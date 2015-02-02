@@ -45,6 +45,7 @@
   "jspm": {
     "dependencies": {
       "aurelia-bootstrapper": "^0.9.1",
+      "aurelia-dependency-injection": "^0.4.1",
       "aurelia-framework": "^0.8.4",
       "aurelia-http-client": "^0.4.3",
       "aurelia-router": "^0.5.1",

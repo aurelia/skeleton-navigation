@@ -10,6 +10,7 @@ System.config({
 System.config({
   "map": {
     "aurelia-bootstrapper": "github:aurelia/bootstrapper@0.9.3",
+    "aurelia-dependency-injection": "github:aurelia/dependency-injection@0.4.1",
     "aurelia-framework": "github:aurelia/framework@0.8.5",
     "aurelia-http-client": "github:aurelia/http-client@0.4.3",
     "aurelia-router": "github:aurelia/router@0.5.3",
