@@ -1,3 +1,18 @@
+### 0.9.4 (2015-02-03)
+
+
+#### Bug Fixes
+
+* **index:** per systemjs recommendation, remove error binding ([e30cefac](http://github.com/aurelia/skeleton-navigation/commit/e30cefac419f88911a4c18085ffd59d05047e254))
+* **package:** add missing depdency ([c3718827](http://github.com/aurelia/skeleton-navigation/commit/c37188278816f1c540e8b038a8dfed60dfeb0d9c))
+
+
+#### Features
+
+* **gulpfile:** adds protractor configuration and gulpfile tasks for E2E-Testing ([821f4868](http://github.com/aurelia/skeleton-navigation/commit/821f4868a5d4b4ba62cc12cece943cd55ed3142f))
+* **tools:** Added build-dev-env task to skeleton-navigation ([4c145095](http://github.com/aurelia/skeleton-navigation/commit/4c1450956cf1e8804ddd660beeba77546e14287f))
+
+
 ### 0.9.3 (2015-01-25)
 
 

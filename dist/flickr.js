@@ -7,13 +7,10 @@ System.register(["aurelia-http-client"], function (_export) {
       HttpClient = _aureliaHttpClient.HttpClient;
     }],
     execute: function () {
-      _prototypeProperties = function (child, staticProps, instanceProps) {
-        if (staticProps) Object.defineProperties(child, staticProps);
-        if (instanceProps) Object.defineProperties(child.prototype, instanceProps);
-      };
+      _prototypeProperties = function (child, staticProps, instanceProps) { if (staticProps) Object.defineProperties(child, staticProps); if (instanceProps) Object.defineProperties(child.prototype, instanceProps); };
 
       url = "http://api.flickr.com/services/feeds/photos_public.gne?tags=rainier&tagmode=any&format=json";
-      Flickr = (function () {
+      Flickr = _export("Flickr", (function () {
         function Flickr(http) {
           this.heading = "Flickr";
           this.images = [];
@@ -26,7 +23,6 @@ System.register(["aurelia-http-client"], function (_export) {
               return [HttpClient];
             },
             writable: true,
-            enumerable: true,
             configurable: true
           }
         }, {
@@ -38,7 +34,6 @@ System.register(["aurelia-http-client"], function (_export) {
               });
             },
             writable: true,
-            enumerable: true,
             configurable: true
           },
           canDeactivate: {
@@ -46,14 +41,12 @@ System.register(["aurelia-http-client"], function (_export) {
               return confirm("Are you sure you want to leave?");
             },
             writable: true,
-            enumerable: true,
             configurable: true
           }
         });
 
         return Flickr;
-      })();
-      _export("Flickr", Flickr);
+      })());
     }
   };
 });

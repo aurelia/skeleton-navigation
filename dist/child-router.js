@@ -7,12 +7,9 @@ System.register(["aurelia-router"], function (_export) {
       Router = _aureliaRouter.Router;
     }],
     execute: function () {
-      _prototypeProperties = function (child, staticProps, instanceProps) {
-        if (staticProps) Object.defineProperties(child, staticProps);
-        if (instanceProps) Object.defineProperties(child.prototype, instanceProps);
-      };
+      _prototypeProperties = function (child, staticProps, instanceProps) { if (staticProps) Object.defineProperties(child, staticProps); if (instanceProps) Object.defineProperties(child.prototype, instanceProps); };
 
-      Welcome = (function () {
+      Welcome = _export("Welcome", (function () {
         function Welcome(router) {
           this.heading = "Child Router";
           this.router = router;
@@ -27,14 +24,12 @@ System.register(["aurelia-router"], function (_export) {
               return [Router];
             },
             writable: true,
-            enumerable: true,
             configurable: true
           }
         });
 
         return Welcome;
-      })();
-      _export("Welcome", Welcome);
+      })());
     }
   };
 });
