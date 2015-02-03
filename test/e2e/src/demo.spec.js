@@ -39,7 +39,7 @@ describe('aurelia skeleton app', function() {
     expect(po_welcome.openAlertDialog()).toBe(true);
   });
 
-  iit('should navigate to flickr page', () => {
+  it('should navigate to flickr page', () => {
     po_skeleton.navigateTo('#/flickr');
     expect(po_skeleton.getCurrentPageTitle()).toBe('Flickr | Aurelia');
   });
