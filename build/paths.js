@@ -1,12 +1,11 @@
 var path = require('path');
 
 module.exports = {
-    source: '../src/**/*.js',
-    html: '../src/**/*.html',
-    style: '../styles/**/*.css',
-    e2eSpecsSrc: '../test/e2e/src/*.js',
-
-    output: path.resolve('../dist/'),
-    doc: path.resolve('../doc'),
-    e2eSpecsDist: path.resolve('../test/e2e/dist/')
+  source:'src/**/*.js',
+  html:'src/**/*.html',
+  style:'styles/**/*.css',
+  output:'dist/',
+  doc:'./doc',
+  e2eSpecsSrc: 'test/e2e/src/*.js',
+  e2eSpecsDist: 'test/e2e/dist/'
 };
