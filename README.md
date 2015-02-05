@@ -28,7 +28,7 @@ To run the app, follow these steps.
 5. Install the client-side dependencies with jspm:
 
   ```shell
-  jspm install
+  jspm install -y
   ```
   >**Note:** Windows users, if you experience an error of "unknown command unzip" you can solve this problem by doing `npm install -g unzip` and then re-running `jspm install`.
 6. To run the app, execute the following command:
