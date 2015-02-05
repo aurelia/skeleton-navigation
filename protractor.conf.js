@@ -8,6 +8,23 @@ exports.config = {
   },
   onPrepare: function() {
     browser.ignoreSynchronization = true;
+
+    by.addLocator('valueBind', function (bindingModel, opt_parentElement) {
+      var using = opt_parentElement || document;
+      var matches = using.querySelectorAll('*[value\\.bind="' + bindingModel +'"]');
+      var result = undefined;
+
+      if (matches.length === 0) {
+        result = null;
+      } else if (matches.length === 1) {
+        result = matches[0];
+      } else {
+        result = matches;
+      }
+
+      return result;
+    });
+
   },
 
   //seleniumAddress: 'http://0.0.0.0:4444',
