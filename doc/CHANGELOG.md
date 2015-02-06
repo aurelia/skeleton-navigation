@@ -1,3 +1,20 @@
+### 0.9.5 (2015-02-06)
+
+
+#### Bug Fixes
+
+* **build:**
+  * include root attribute on path for source maps ([e3fc2d5a](http://github.com/aurelia/skeleton-navigation/commit/e3fc2d5a26f354c2afbd2c1e1e45b96fe5d92657), closes [#26](http://github.com/aurelia/skeleton-navigation/issues/26))
+  * add source maps; remove sourceFileName from compiler options ([1733c4ad](http://github.com/aurelia/skeleton-navigation/commit/1733c4ad032747ecb868b420a5d6f23e9dab12ae))
+* **package:** update dependencies ([025154f3](http://github.com/aurelia/skeleton-navigation/commit/025154f3c9fc9d99b6ca00bfd94d9ffc8249df5c))
+* **test:** removing single it execution ([31866dc3](http://github.com/aurelia/skeleton-navigation/commit/31866dc3038fe2c1b51531620a13b88c8e3ff766))
+
+
+#### Features
+
+* **e2e:** add protractor locator and e2e PO test ([2509836e](http://github.com/aurelia/skeleton-navigation/commit/2509836e8406745e55c8d3d897f8a2b7f1bb1c56))
+
+
 ### 0.9.4 (2015-02-03)
 
 
