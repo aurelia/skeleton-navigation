@@ -29,17 +29,18 @@ describe("aurelia skeleton app", function () {
   it("should automatically write down the fullname", function () {
     po_welcome.setFirstname("Rob");
     po_welcome.setLastname("Eisenberg");
+
+    // For now there is a timing issue with the binding.
+    // Until resolved we will use a short sleep to overcome the issue.
+    browser.sleep(200);
     expect(po_welcome.getFullname()).toBe("ROB EISENBERG");
   });
 
   it("should show alert message when clicking submit button", function () {
     expect(po_welcome.openAlertDialog()).toBe(true);
-
-    // close it again otherwhise your testing browser starts to hang
-    /*po_welcome.closeAlert();*/
   });
 
-  iit("should navigate to flickr page", function () {
+  it("should navigate to flickr page", function () {
     po_skeleton.navigateTo("#/flickr");
     expect(po_skeleton.getCurrentPageTitle()).toBe("Flickr | Aurelia");
   });

@@ -29,7 +29,8 @@ export class PageObject_Welcome {
       this.pressSubmitButton();
 
       return browser.switchTo().alert().then(
-        function(alert) { alert.dismiss(); return true; },
+        // use alert.accept instead of alert.dismiss which results in a browser crash
+        function(alert) { alert.accept(); return true; },
         function() { return false; }
       );
     });

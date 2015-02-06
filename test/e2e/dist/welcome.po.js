@@ -51,18 +51,15 @@ var PageObject_Welcome = exports.PageObject_Welcome = (function () {
         return browser.wait(function () {
           _this.pressSubmitButton();
 
-          return browser.switchTo().alert().then(function (alert) {
-            alert.dismiss();return true;
+          return browser.switchTo().alert().then(
+          // use alert.accept instead of alert.dismiss which results in a browser crash
+          function (alert) {
+            alert.accept();return true;
           }, function () {
             return false;
           });
         });
       },
-      writable: true,
-      configurable: true
-    },
-    closeAlert: {
-      value: function closeAlert() {},
       writable: true,
       configurable: true
     }

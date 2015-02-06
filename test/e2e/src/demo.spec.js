@@ -32,10 +32,14 @@ describe('aurelia skeleton app', function() {
   it('should automatically write down the fullname', () => {
     po_welcome.setFirstname('Rob');
     po_welcome.setLastname('Eisenberg');
+
+    // For now there is a timing issue with the binding.
+    // Until resolved we will use a short sleep to overcome the issue.
+    browser.sleep(200);
     expect(po_welcome.getFullname()).toBe('ROB EISENBERG');
   });
 
-  xit('should show alert message when clicking submit button', () => {
+  it('should show alert message when clicking submit button', () => {
     expect(po_welcome.openAlertDialog()).toBe(true);
   });
 
