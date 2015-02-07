@@ -11,7 +11,9 @@ gulp.task('update-own-deps', function(){
 });
 
 // quickly pulls in all of the aurelia
-// github repos, then runs `npm install`
+// github repos, placing them up one directory
+// from where the command is executed,
+// then runs `npm install`
 // and `gulp build` for each repo
 gulp.task('build-dev-env', function () {
   tools.buildDevEnv();
