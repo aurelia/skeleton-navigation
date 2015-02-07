@@ -20,7 +20,7 @@ gulp.task('build-e2e', function () {
     .pipe(gulp.dest(paths.e2eSpecsDist));
 });
 
-// runs build-e2e task then
+// runs build-e2e task
 // then runs end to end tasks
 // using Protractor: http://angular.github.io/protractor/
 gulp.task('e2e', ['webdriver_update', 'build-e2e'], function(cb) {
