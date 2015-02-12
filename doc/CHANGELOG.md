@@ -1,3 +1,11 @@
+## 0.10.0 (2015-02-12)
+
+
+#### Bug Fixes
+
+* **index:** properly load bootstrap ([c1735fdb](http://github.com/aurelia/skeleton-navigation/commit/c1735fdbd064e69567b90358dfcc5eff0fdeab37))
+
+
 ### 0.9.5 (2015-02-06)
 
 
