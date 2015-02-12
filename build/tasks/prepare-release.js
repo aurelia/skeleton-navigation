@@ -4,12 +4,13 @@ var paths = require('../paths');
 var changelog = require('conventional-changelog');
 var fs = require('fs');
 var bump = require('gulp-bump');
+var args = require('../args');
 
 // utilizes the bump plugin to bump the
 // semver for the repo
 gulp.task('bump-version', function(){
   return gulp.src(['./package.json'])
-    .pipe(bump({type:'patch'})) //major|minor|patch|prerelease
+    .pipe(bump({type:args.bump })) //major|minor|patch|prerelease
     .pipe(gulp.dest('./'));
 });
 
