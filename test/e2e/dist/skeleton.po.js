@@ -2,8 +2,12 @@
 
 var _prototypeProperties = function (child, staticProps, instanceProps) { if (staticProps) Object.defineProperties(child, staticProps); if (instanceProps) Object.defineProperties(child.prototype, instanceProps); };
 
+var _classCallCheck = function (instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } };
+
 var PageObject_Skeleton = exports.PageObject_Skeleton = (function () {
-  function PageObject_Skeleton() {}
+  function PageObject_Skeleton() {
+    _classCallCheck(this, PageObject_Skeleton);
+  }
 
   _prototypeProperties(PageObject_Skeleton, null, {
     getCurrentPageTitle: {
@@ -15,13 +19,8 @@ var PageObject_Skeleton = exports.PageObject_Skeleton = (function () {
     },
     navigateTo: {
       value: function navigateTo(href) {
-        var deferred = protractor.promise.defer();
-        element(by.css("a[href=\"" + href + "\"]")).click().then(function () {
-          browser.sleep(2000);
-          deferred.fulfill(true);
-        });
-
-        return deferred.promise;
+        element(by.css("a[href=\"" + href + "\"]")).click();
+        return browser.waitForHttpDone();
       },
       writable: true,
       configurable: true
@@ -30,4 +29,6 @@ var PageObject_Skeleton = exports.PageObject_Skeleton = (function () {
 
   return PageObject_Skeleton;
 })();
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});

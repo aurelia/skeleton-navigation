@@ -12,7 +12,7 @@ System.config({
     "aurelia-bootstrapper": "github:aurelia/bootstrapper@0.9.3",
     "aurelia-dependency-injection": "github:aurelia/dependency-injection@0.4.2",
     "aurelia-framework": "github:aurelia/framework@0.8.6",
-    "aurelia-http-client": "github:aurelia/http-client@0.5.0",
+    "aurelia-http-client": "github:aurelia/http-client@0.5.2",
     "aurelia-router": "github:aurelia/router@0.5.5",
     "bootstrap": "github:twbs/bootstrap@3.3.2",
     "font-awesome": "npm:font-awesome@4.3.0",
@@ -51,7 +51,7 @@ System.config({
       "aurelia-history": "github:aurelia/history@0.2.2",
       "core-js": "npm:core-js@0.4.10"
     },
-    "github:aurelia/http-client@0.5.0": {
+    "github:aurelia/http-client@0.5.2": {
       "aurelia-path": "github:aurelia/path@0.4.3",
       "core-js": "npm:core-js@0.4.10"
     },

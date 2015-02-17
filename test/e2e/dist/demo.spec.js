@@ -11,11 +11,7 @@ describe("aurelia skeleton app", function () {
     po_skeleton = new PageObject_Skeleton();
     po_welcome = new PageObject_Welcome();
 
-    browser.get("http://localhost:9000");
-
-    browser.executeAsyncScript("var cb = arguments[arguments.length - 1];" + "document.addEventListener(\"aurelia-composed\", function (e) {" + "  cb(\"Aurelia App composed\")" + "}, false);").then(function (result) {
-      console.log(result);
-    });
+    browser.loadAndWaitForAureliaPage("http://localhost:9000");
   });
 
   it("should load the page and display the initial page title", function () {
@@ -40,7 +36,7 @@ describe("aurelia skeleton app", function () {
     expect(po_welcome.openAlertDialog()).toBe(true);
   });
 
-  it("should navigate to flickr page", function () {
+  iit("should navigate to flickr page", function () {
     po_skeleton.navigateTo("#/flickr");
     expect(po_skeleton.getCurrentPageTitle()).toBe("Flickr | Aurelia");
   });

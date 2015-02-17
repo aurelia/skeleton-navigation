@@ -2,8 +2,12 @@
 
 var _prototypeProperties = function (child, staticProps, instanceProps) { if (staticProps) Object.defineProperties(child, staticProps); if (instanceProps) Object.defineProperties(child.prototype, instanceProps); };
 
+var _classCallCheck = function (instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } };
+
 var PageObject_Welcome = exports.PageObject_Welcome = (function () {
-  function PageObject_Welcome() {}
+  function PageObject_Welcome() {
+    _classCallCheck(this, PageObject_Welcome);
+  }
 
   _prototypeProperties(PageObject_Welcome, null, {
     getGreeting: {
@@ -63,4 +67,6 @@ var PageObject_Welcome = exports.PageObject_Welcome = (function () {
 
   return PageObject_Welcome;
 })();
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
