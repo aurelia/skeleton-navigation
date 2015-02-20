@@ -80,7 +80,8 @@ System.config({
       "aurelia-binding": "github:aurelia/binding@0.3.4",
       "aurelia-dependency-injection": "github:aurelia/dependency-injection@0.4.2",
       "aurelia-templating": "github:aurelia/templating@0.8.11",
-      "core-js": "npm:core-js@0.4.10"
+      "core-js": "npm:core-js@0.4.10",
+      "aurelia-logging": "github:aurelia/logging@0.2.2"
     },
     "github:aurelia/templating-router@0.9.2": {
       "aurelia-dependency-injection": "github:aurelia/dependency-injection@0.4.2",
@@ -243,4 +244,3 @@ System.config({
     }
   }
 });
-

@@ -1,6 +1,6 @@
 import {Router} from 'aurelia-router';
 
-export class Welcome{
+export class ChildRouter{
   static inject() { return [Router]; }
   constructor(router){
     this.heading = 'Child Router';
