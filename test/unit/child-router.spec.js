@@ -1,4 +1,4 @@
-import {Welcome} from '../../src/child-router';
+import {ChildRouter} from '../../src/child-router';
 
 class RouterStub {
   configure(handler) {
@@ -11,12 +11,12 @@ class RouterStub {
 
 describe('the Child Router module', () => {
   var sut;
-  beforeEach(() => { sut = new Welcome(new RouterStub()); });
+  beforeEach(() => { sut = new ChildRouter(new RouterStub()); });
 
   it('contains a router property', () => {
-    expect(sut.router).toBeDefined(); 
+    expect(sut.router).toBeDefined();
   });
-  
+
   it('configures the heading', () => {
     expect(sut.heading).toEqual('Child Router');
   });
