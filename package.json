@@ -47,11 +47,11 @@
   },
   "jspm": {
     "dependencies": {
-      "aurelia-bootstrapper": "github:aurelia/bootstrapper@^0.9.1",
-      "aurelia-dependency-injection": "github:aurelia/dependency-injection@^0.4.1",
-      "aurelia-framework": "github:aurelia/framework@^0.8.4",
-      "aurelia-http-client": "github:aurelia/http-client@^0.5.1",
-      "aurelia-router": "github:aurelia/router@^0.5.1",
+      "aurelia-bootstrapper": "github:aurelia/bootstrapper@^0.9.4",
+      "aurelia-dependency-injection": "github:aurelia/dependency-injection@^0.4.4",
+      "aurelia-framework": "github:aurelia/framework@^0.8.7",
+      "aurelia-http-client": "github:aurelia/http-client@^0.5.4",
+      "aurelia-router": "github:aurelia/router@^0.5.7",
       "bootstrap": "github:twbs/bootstrap@^3.3.1",
       "font-awesome": "npm:font-awesome@^4.3.0"
     }
