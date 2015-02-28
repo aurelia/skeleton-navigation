@@ -2,10 +2,10 @@ var gulp = require('gulp');
 var runSequence = require('run-sequence');
 var changed = require('gulp-changed');
 var plumber = require('gulp-plumber');
-var to5 = require('gulp-6to5');
+var to5 = require('gulp-babel');
 var sourcemaps = require('gulp-sourcemaps');
 var paths = require('../paths');
-var compilerOptions = require('../6to5-options');
+var compilerOptions = require('../babel-options');
 var assign = Object.assign || require('object.assign');
 
 // transpiles changed es6 files to SystemJS format
