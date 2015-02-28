@@ -1,8 +1,8 @@
 "use strict";
 
 var PageObject_Welcome = require("./welcome.po.js").PageObject_Welcome;
-var PageObject_Skeleton = require("./skeleton.po.js").PageObject_Skeleton;
 
+var PageObject_Skeleton = require("./skeleton.po.js").PageObject_Skeleton;
 
 describe("aurelia skeleton app", function () {
   var po_welcome, po_skeleton;

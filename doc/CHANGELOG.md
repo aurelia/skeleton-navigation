@@ -1,3 +1,20 @@
+### 0.10.1 (2015-02-28)
+
+
+#### Bug Fixes
+
+* **child-router:** correct class name ([93f9bfc9](http://github.com/aurelia/skeleton-navigation/commit/93f9bfc9076a7e950d667d50c9ac75e9efb3e1f5))
+* **e2e:**
+  * remove iit in dist ([dd644b1f](http://github.com/aurelia/skeleton-navigation/commit/dd644b1f926fca5c0a59cf1a662fb246456aa9ae))
+  * remove iit ([340fc90d](http://github.com/aurelia/skeleton-navigation/commit/340fc90d3a558e6a5f1aed83f7d2c1080447bc33))
+* **package:** update dependencies ([42b6ebbd](http://github.com/aurelia/skeleton-navigation/commit/42b6ebbd571f61d82ef7334b518dba4259559f2a))
+
+
+#### Features
+
+* **e2e:** add protractor plugin, add waitMethods ([d24c5a0d](http://github.com/aurelia/skeleton-navigation/commit/d24c5a0d606c6da1c30cf54a56ca5d3e086749cb))
+
+
 ## 0.10.0 (2015-02-12)
 
 
