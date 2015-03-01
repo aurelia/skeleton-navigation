@@ -1,3 +1,11 @@
+### 0.10.2 (2015-02-28)
+
+
+#### Bug Fixes
+
+* **package:** update dependencies ([3a8cfc33](http://github.com/aurelia/skeleton-navigation/commit/3a8cfc33cb41e29d4199a94b43198cf62a3a1ceb))
+
+
 ### 0.10.1 (2015-02-28)
 
 
