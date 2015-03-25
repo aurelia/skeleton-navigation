@@ -1,3 +1,11 @@
+## 0.11.0 (2015-03-25)
+
+
+#### Bug Fixes
+
+* **all:** update to latest framework versions ([86378200](http://github.com/aurelia/skeleton-navigation/commit/8637820009f7bf4f4b2a08b2abaf2fae9bb2811d))
+
+
 ### 0.10.2 (2015-02-28)
 
 
