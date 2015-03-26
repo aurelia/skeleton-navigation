@@ -15,6 +15,7 @@ describe('the Child Router module', () => {
 
   it('contains a router property', () => {
     expect(sut.router).toBeDefined();
+    console.log(sut.router.routes);
   });
 
   it('configures the heading', () => {
@@ -22,14 +23,14 @@ describe('the Child Router module', () => {
   });
 
   it('should have a welcome route', () => {
-    expect(sut.router.routes).toContain({ route: ['','welcome'],  moduleId: 'welcome', nav: true, title:'Welcome' });
+    expect(sut.router.routes).toContain({ route: ['','welcome'],  moduleId: './welcome', nav: true, title:'Welcome' });
   });
 
   it('should have a flickr route', () => {
-     expect(sut.router.routes).toContain({ route: 'flickr', moduleId: 'flickr', nav: true });
+     expect(sut.router.routes).toContain({ route: 'flickr', moduleId: './flickr', nav: true });
   });
 
   it('should have a child router route', () => {
-    expect(sut.router.routes).toContain({ route: 'child-router', moduleId: 'child-router', nav: true, title:'Child Router' });
+    expect(sut.router.routes).toContain({ route: 'child-router', moduleId: './child-router', nav: true, title:'Child Router' });
   });
 });
