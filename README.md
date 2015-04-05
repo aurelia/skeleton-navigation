@@ -78,7 +78,13 @@ Integration tests are performed with [Protractor](http://angular.github.io/protr
 
 3. Configure the path to the webdriver by opening the file ```protractor.conf.js``` and adjusting the ```seleniumServerJar``` property. Typically its only needed to adjust the version number.
 
-4. Run the E2E-Tests
+4. Make sure your app runs and is accessible
+
+  ```shell
+  gulp watch
+  ```
+  
+5. In another console run the E2E-Tests
 
   ```shell
   gulp e2e
