@@ -1,5 +1,4 @@
-import {Behavior} from 'aurelia-framework';
+import {bindableProperty} from 'aurelia-framework';
 
-export class NavBar {
-  static metadata(){ return Behavior.withProperty('router'); }
-}
+@bindableProperty('router')
+export class NavBar {}
