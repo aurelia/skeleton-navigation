@@ -3,8 +3,9 @@ import {Router} from 'aurelia-router';
 
 @inject(Router)
 export class ChildRouter{
+  heading = 'Child Router';
+
   constructor(router){
-    this.heading = 'Child Router';
     this.router = router;
     router.configure(config => {
       config.map([

@@ -39,7 +39,8 @@ module.exports = function(config) {
         modules: 'system',
         moduleIds: false,
         optional: [
-          "es7.decorators"
+          "es7.decorators",
+          "es7.classProperties"
         ]
       }
     },

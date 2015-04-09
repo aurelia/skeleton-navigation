@@ -1,3 +1,18 @@
+## 0.12.0 (2015-04-09)
+
+
+#### Bug Fixes
+
+* **readme:** More info about E2E workflow ([f9b360ee](http://github.com/aurelia/skeleton-navigation/commit/f9b360ee3211b896b5b9970520bcd37dc79c2918))
+* **test:** workaround for issue with jspm karma plugin ([7bf90b7e](http://github.com/aurelia/skeleton-navigation/commit/7bf90b7ef78b4375760e94c394a8f2ec0870e43e))
+* **tests:** Update routes in unit tests ([fb2c02b6](http://github.com/aurelia/skeleton-navigation/commit/fb2c02b6e3dd5ba219b307bedd5be9b999c21116))
+
+
+#### Features
+
+* **all:** new decorators and behavior model implemented ([e5445795](http://github.com/aurelia/skeleton-navigation/commit/e54457951a17b3f29d47555a299f9aaa06e59349))
+
+
 ## 0.11.0 (2015-03-25)
 
 

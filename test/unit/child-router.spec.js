@@ -15,7 +15,6 @@ describe('the Child Router module', () => {
 
   it('contains a router property', () => {
     expect(sut.router).toBeDefined();
-    console.log(sut.router.routes);
   });
 
   it('configures the heading', () => {

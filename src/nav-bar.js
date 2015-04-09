@@ -1,4 +1,5 @@
-import {bindableProperty} from 'aurelia-framework';
+import {bindable} from 'aurelia-framework';
 
-@bindableProperty('router')
-export class NavBar {}
+export class NavBar {
+  @bindable router = null;
+}
