@@ -1,15 +1,9 @@
-import {inject, computedFrom} from 'aurelia-framework';
-import {CssAnimator} from 'aurelia-animator-css';
+import {computedFrom} from 'aurelia-framework';
 
-@inject(CssAnimator)
 export class Welcome{
   heading = 'Welcome to the Aurelia Navigation App!';
   firstName = 'John';
   lastName = 'Doe';
-
-  constructor(animator) {
-    this.animator = animator;
-  }
 
   //Getters can't be observed with Object.observe, so they must be dirty checked.
   //However, if you tell Aurelia the dependencies, it no longer needs to dirty check the property.
@@ -20,12 +14,7 @@ export class Welcome{
   }
 
   welcome(){
-    if(this.firstName === '') {
-      this.animator.addClass(this.elFirstName, 'input-error');
-    } else {
-      this.animator.removeClass(this.elFirstName, 'input-error');
-      alert(`Welcome, ${this.fullName}!`);
-    }
+    alert(`Welcome, ${this.fullName}!`);
   }
 }
 

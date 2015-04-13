@@ -57,14 +57,6 @@ section.au-enter-active {
   animation: bounce 1s;
 }
 
-#fn.input-error {
-  border: 1px solid darkred;
-}
-#fn.input-error-add {
-  -webkit-animation: shake 1s;
-  animation: shake 1s;
-}
-
 
 /* animation definitions */
 @-webkit-keyframes fadeInRight {
@@ -147,51 +139,5 @@ section.au-enter-active {
     -webkit-transform: translate3d(0, -4px, 0);
     -ms-transform: translate3d(0, -4px, 0);
     transform: translate3d(0, -4px, 0)
-  }
-}
-
-@-webkit-keyframes shake {
-  0%, 100% {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0)
-  }
-  10%,
-  30%,
-  50%,
-  70%,
-  90% {
-    -webkit-transform: translate3d(-10px, 0, 0);
-    transform: translate3d(-10px, 0, 0)
-  }
-  20%,
-  40%,
-  60%,
-  80% {
-    -webkit-transform: translate3d(10px, 0, 0);
-    transform: translate3d(10px, 0, 0)
-  }
-}
-@keyframes shake {
-  0%, 100% {
-    -webkit-transform: translate3d(0, 0, 0);
-    -ms-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0)
-  }
-  10%,
-  30%,
-  50%,
-  70%,
-  90% {
-    -webkit-transform: translate3d(-10px, 0, 0);
-    -ms-transform: translate3d(-10px, 0, 0);
-    transform: translate3d(-10px, 0, 0)
-  }
-  20%,
-  40%,
-  60%,
-  80% {
-    -webkit-transform: translate3d(10px, 0, 0);
-    -ms-transform: translate3d(10px, 0, 0);
-    transform: translate3d(10px, 0, 0)
   }
 }
