@@ -47,13 +47,14 @@
   },
   "jspm": {
     "dependencies": {
+      "aurelia-animator-css": "master",
       "aurelia-bootstrapper": "github:aurelia/bootstrapper@^0.11.0",
       "aurelia-dependency-injection": "github:aurelia/dependency-injection@^0.6.0",
       "aurelia-framework": "github:aurelia/framework@^0.10.0",
       "aurelia-http-client": "github:aurelia/http-client@^0.7.0",
       "aurelia-router": "github:aurelia/router@^0.7.0",
       "bootstrap": "github:twbs/bootstrap@^3.3.4",
-      "css": "github:systemjs/plugin-css@^0.1.9",
+      "css": "^0.1.9",
       "font-awesome": "npm:font-awesome@^4.3.0"
     }
   }
