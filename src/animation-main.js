@@ -4,5 +4,5 @@ export function configure(aurelia) {
     .developmentLogging()
     .plugin('aurelia-animator-css');
 
-  aurelia.start().then(a => a.setRoot('app', document.body));
+  aurelia.start().then(a => a.setRoot());
 }
