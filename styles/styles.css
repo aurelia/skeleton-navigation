@@ -57,6 +57,11 @@ section.au-enter-active {
   animation: bounce 1s;
 }
 
+.flickr-img > a > img {
+  width: 260px;
+  height: 180px;
+}
+
 
 /* animation definitions */
 @-webkit-keyframes fadeInRight {
