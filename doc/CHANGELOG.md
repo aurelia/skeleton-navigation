@@ -1,3 +1,22 @@
+## 0.13.0 (2015-05-01)
+
+
+#### Bug Fixes
+
+* **all:** update to latest router usage ([1bb373f7](http://github.com/aurelia/skeleton-navigation/commit/1bb373f73e224f084ac8b3bc330aeffb5d9bf5f0))
+* **anim:** Remove welcome class animation ([a68fc9d4](http://github.com/aurelia/skeleton-navigation/commit/a68fc9d41f866aacccb1cc1b567b18af58141d1b))
+* **build:** use relative path for source maps. resolve  #66 ([aaf3cc9a](http://github.com/aurelia/skeleton-navigation/commit/aaf3cc9a67f86275a94666ab328f2ca74a7f7c52))
+* **flickr:** remove inline styles ([612e0ea6](http://github.com/aurelia/skeleton-navigation/commit/612e0ea67e4bf13685644ff5055f5e36ffc7ad07))
+* **index:** add the viewport meta tag to ensure proper rendering and touch zooming ([0ecf0b9e](http://github.com/aurelia/skeleton-navigation/commit/0ecf0b9ea97245492bd9224dfb8cc9b940f254d1))
+* **navbar:** automatically collapse the navigation menu on click ([28f3c6fa](http://github.com/aurelia/skeleton-navigation/commit/28f3c6faf1fa3d1533f6470b273bacea7ed76eb7))
+* **package:** update dependencies ([dfe57813](http://github.com/aurelia/skeleton-navigation/commit/dfe57813459d012c05affa6c09acb568854c07e3))
+
+
+#### Features
+
+* **anim:** Add animation example ([675d15a1](http://github.com/aurelia/skeleton-navigation/commit/675d15a153c399f524070e7cb468caae3230febe))
+
+
 ## 0.12.0 (2015-04-09)
 
 
