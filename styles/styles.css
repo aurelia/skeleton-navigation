@@ -52,7 +52,18 @@ section.au-enter-active {
 }
 
 /* animate flickr image entry */
+div.au-stagger {
+  /* 200ms will be applied between each successive enter operation */
+  -webkit-animation-delay:100ms;
+  animation-delay:100ms;
+}
+
+.flickr-img.au-enter {
+  opacity: 0!important;
+}
+
 .flickr-img.au-enter-active {
+  opacity: 1!important;
   -webkit-animation: bounce 1s;
   animation: bounce 1s;
 }
