@@ -10,8 +10,14 @@ class RouterStub {
 }
 
 describe('the App module', () => {
-  var sut;
-  beforeEach(() => { sut = new App(new RouterStub()); });
+  var sut
+    , mockedRouter;
+
+  beforeEach(() => {
+    mockedRouter = new RouterStub();
+    sut = new App(mockedRouter);
+    sut.configureRouter(mockedRouter, mockedRouter);
+  });
 
   it('contains a router property', () => {
     expect(sut.router).toBeDefined();
