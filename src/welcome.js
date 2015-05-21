@@ -14,7 +14,7 @@ export class Welcome{
     return `${this.firstName} ${this.lastName}`;
   }
 
-  welcome(){
+  submit(){
     this.previousValue = this.fullName;
     alert(`Welcome, ${this.fullName}!`);
   }
