@@ -56,6 +56,9 @@ System.config({
       "aurelia-metadata": "github:aurelia/metadata@0.5.0",
       "core-js": "npm:core-js@0.9.13"
     },
+    "github:aurelia/event-aggregator@0.4.0": {
+      "aurelia-logging": "github:aurelia/logging@0.4.0"
+    },
     "github:aurelia/framework@0.11.0": {
       "aurelia-binding": "github:aurelia/binding@0.6.1",
       "aurelia-dependency-injection": "github:aurelia/dependency-injection@0.7.1",
@@ -273,4 +276,3 @@ System.config({
     }
   }
 });
-
