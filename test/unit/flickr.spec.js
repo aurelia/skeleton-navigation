@@ -25,12 +25,4 @@ describe('the Flickr module', () => {
       done();
     });
   });
-
-  it('calls confirm on canDeactivate', () => {
-    var sut = new Flickr(),
-        global = jasmine.getGlobal();
-    spyOn(global, "confirm");
-    sut.canDeactivate();
-    expect(global.confirm).toHaveBeenCalled();
-  });
 });
