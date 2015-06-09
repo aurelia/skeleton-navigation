@@ -1,3 +1,27 @@
+## 0.14.0 (2015-06-09)
+
+
+#### Bug Fixes
+
+* **all:** update route config to match changes in router ([5f272a41](http://github.com/aurelia/skeleton-navigation/commit/5f272a41e8df271f4b2437472bbc0673cd2ef62d))
+* **config:**
+  * add mappings that reflect the EA deps for pre-release testing ([d7cebc67](http://github.com/aurelia/skeleton-navigation/commit/d7cebc67c0b8af43570993d4ab127d97641962c1))
+  * revert path config after tool change ([a1c4524b](http://github.com/aurelia/skeleton-navigation/commit/a1c4524b9f84178b70787da4d8642ed8573a0491))
+* **karma:**
+  * Fixed tests to adhere to new flickr route ([caf4838c](http://github.com/aurelia/skeleton-navigation/commit/caf4838cb44885826e6eaf7455332581f8ad8cb1))
+  * properly set jspm paths for karma ([75584889](http://github.com/aurelia/skeleton-navigation/commit/7558488953b860336a6b4ab3a1c8a2fb7501c122))
+* **package:** update deps to latest versions ([4fa8356c](http://github.com/aurelia/skeleton-navigation/commit/4fa8356c689d3be8086ab6063dda7af3cfbdca3f))
+* **styles:** change the image animation ([009f4e28](http://github.com/aurelia/skeleton-navigation/commit/009f4e2875cb1c8aea50269577ab28906b6d58bf))
+* **tests:** Fix unit tests for new release ([89b75782](http://github.com/aurelia/skeleton-navigation/commit/89b75782eb1a28771475c49b29be157e4eda8e63))
+* **welcome:** rename the welcome method to submit ([5e4894f3](http://github.com/aurelia/skeleton-navigation/commit/5e4894f354306f1da0e525a214a6edb3563aecba))
+
+
+#### Features
+
+* **anim:** adds staggering animations ([5324e133](http://github.com/aurelia/skeleton-navigation/commit/5324e133e8ccfc64655d8362b8830ce32a56470d))
+* **flickr:** move canDeactivate prompt into Welcome ([834b83a8](http://github.com/aurelia/skeleton-navigation/commit/834b83a85f2e36d978482b0ce8c61f45f68841bc))
+
+
 ## 0.13.0 (2015-05-01)
 
 

@@ -1,6 +1,6 @@
 {
   "name": "aurelia-skeleton-navigation",
-  "version": "0.13.0",
+  "version": "0.14.0",
   "description": "A starter kit for building a standard navigation-style app with Aurelia.",
   "keywords": [
     "aurelia",
@@ -48,12 +48,12 @@
   },
   "jspm": {
     "dependencies": {
-      "aurelia-animator-css": "github:aurelia/animator-css@^0.2.0",
-      "aurelia-bootstrapper": "github:aurelia/bootstrapper@^0.12.0",
-      "aurelia-dependency-injection": "github:aurelia/dependency-injection@^0.7.1",
-      "aurelia-framework": "github:aurelia/framework@^0.11.0",
-      "aurelia-http-client": "github:aurelia/http-client@^0.8.1",
-      "aurelia-router": "github:aurelia/router@^0.8.1",
+      "aurelia-animator-css": "github:aurelia/animator-css@^0.3.0",
+      "aurelia-bootstrapper": "github:aurelia/bootstrapper@^0.13.0",
+      "aurelia-dependency-injection": "github:aurelia/dependency-injection@^0.8.1",
+      "aurelia-framework": "github:aurelia/framework@^0.12.0",
+      "aurelia-http-client": "github:aurelia/http-client@^0.9.1",
+      "aurelia-router": "github:aurelia/router@^0.9.0",
       "bootstrap": "github:twbs/bootstrap@^3.3.4",
       "css": "github:systemjs/plugin-css@^0.1.11",
       "font-awesome": "npm:font-awesome@^4.3.0"
