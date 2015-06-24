@@ -28,14 +28,14 @@ describe('the App module', () => {
   });
 
   it('should have a welcome route', () => {
-    expect(sut.router.routes).toContain({ route: ['','welcome'],  moduleId: './welcome', nav: true, title:'Welcome' });
+    expect(sut.router.routes).toContain({ route: ['','welcome'], name: 'welcome',  moduleId: './welcome', nav: true, title:'Welcome' });
   });
 
   it('should have a flickr route', () => {
-     expect(sut.router.routes).toContain({ route: 'flickr', moduleId: './flickr', nav: true, title:'Flickr' });
+     expect(sut.router.routes).toContain({ route: 'flickr', name: 'flickr', moduleId: './flickr', nav: true, title:'Flickr' });
   });
 
   it('should have a child router route', () => {
-    expect(sut.router.routes).toContain({ route: 'child-router', moduleId: './child-router', nav: true, title:'Child Router' });
+    expect(sut.router.routes).toContain({ route: 'child-router', name: 'child-router', moduleId: './child-router', nav: true, title:'Child Router' });
   });
 });
