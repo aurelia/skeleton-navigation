@@ -33,6 +33,19 @@ body {
     overflow-y: auto;
 }
 
+@media print
+{
+  .page-host {
+    position: absolute;
+    left: 10px;
+    right: 0;
+    top: 50px;
+    bottom: 0;
+    overflow-y: inherit;
+    overflow-x: inherit;
+  }
+}
+
 section {
     margin: 0 20px;
 }
