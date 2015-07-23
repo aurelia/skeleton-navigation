@@ -55,7 +55,7 @@
       "aurelia-http-client": "github:aurelia/http-client@^0.10.0",
       "aurelia-router": "github:aurelia/router@^0.10.0",
       "bootstrap": "github:twbs/bootstrap@^3.3.4",
-      "core-js": "npm:core-js@^0.9.18",
+      "core-js": "npm:core-js@^0.9.4",
       "css": "github:systemjs/plugin-css@^0.1.11",
       "font-awesome": "npm:font-awesome@^4.3.0"
     },
