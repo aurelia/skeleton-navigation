@@ -64,24 +64,19 @@ section.au-enter-active {
   animation: fadeInRight 1s;
 }
 
-/* animate flickr image entry */
 div.au-stagger {
   /* 50ms will be applied between each successive enter operation */
   -webkit-animation-delay:50ms;
   animation-delay:50ms;
 }
 
-.flickr-img.au-enter {
+.card-container.au-enter {
   opacity: 0!important;
 }
 
-.flickr-img.au-enter-active {
+.card-container.au-enter-active {
   -webkit-animation: fadeIn 2s;
   animation: fadeIn 2s;
-}
-
-.src-image {
-  display: none;
 }
 
 .card {
@@ -94,6 +89,7 @@ div.au-stagger {
   background-color: #337ab7;
   color: rgb(136, 172, 217);
   margin-bottom: 32px;
+  box-shadow: 0 0 5px rgba(0,0,0,.5);
 }
 
 .card .content {
@@ -114,10 +110,9 @@ div.au-stagger {
   width: 100%;
   height: 70px;
   border-bottom: 1px #FFF solid;
-  /* This positions the canvas under the text */
-  z-index: 1;
-  border-radius: 8px 8px 0 0;
+  border-radius: 6px 6px 0 0;
 }
+
 .card .avatar {
   position: relative;
   margin-top: 15px;
