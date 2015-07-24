@@ -22,10 +22,10 @@ System.config({
     "aurelia-bootstrapper": "github:aurelia/bootstrapper@0.14.0",
     "aurelia-dependency-injection": "github:aurelia/dependency-injection@0.9.0",
     "aurelia-event-aggregator": "github:aurelia/event-aggregator@0.6.1",
+    "aurelia-fetch-client": "github:aurelia/fetch-client@0.1.0",
     "aurelia-framework": "github:aurelia/framework@0.13.3",
     "aurelia-history": "github:aurelia/history@0.6.0",
     "aurelia-history-browser": "github:aurelia/history-browser@0.6.1",
-    "aurelia-http-client": "github:aurelia/http-client@0.10.0",
     "aurelia-loader": "github:aurelia/loader@0.8.2",
     "aurelia-loader-default": "github:aurelia/loader-default@0.9.0",
     "aurelia-logging": "github:aurelia/logging@0.6.1",
@@ -43,6 +43,7 @@ System.config({
     "bootstrap": "github:twbs/bootstrap@3.3.5",
     "core-js": "npm:core-js@0.9.18",
     "css": "github:systemjs/plugin-css@0.1.13",
+    "fetch": "github:github/fetch@0.9.0",
     "font-awesome": "npm:font-awesome@4.3.0",
     "github:aurelia/animator-css@0.13.0": {
       "aurelia-templating": "github:aurelia/templating@0.13.11"
@@ -88,10 +89,6 @@ System.config({
     },
     "github:aurelia/history-browser@0.6.1": {
       "aurelia-history": "github:aurelia/history@0.6.0",
-      "core-js": "npm:core-js@0.9.18"
-    },
-    "github:aurelia/http-client@0.10.0": {
-      "aurelia-path": "github:aurelia/path@0.8.0",
       "core-js": "npm:core-js@0.9.18"
     },
     "github:aurelia/loader-default@0.9.0": {

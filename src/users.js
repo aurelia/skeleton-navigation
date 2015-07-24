@@ -1,17 +1,26 @@
 import {inject} from 'aurelia-framework';
-import {HttpClient} from 'aurelia-http-client';
+import {HttpClient} from 'aurelia-fetch-client';
 
 @inject(HttpClient)
 export class Users{
   heading = 'Github Users';
   users = [];
-  url = 'https://api.github.com/users';
 
   constructor(http){
+    http.configure(config => {
+      config
+        .useStandardConfiguration()
+        .withBaseUrl('https://api.github.com/');
+    });
+
     this.http = http;
   }
 
   activate(){
-    return this.http.get(this.url).then(response => this.users = response.content);
+    return this.http.fetch('users')
+      .then(response => response.json())
+      .then(users => {
+        this.users = users;
+      });
   }
 }
