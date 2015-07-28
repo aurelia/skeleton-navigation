@@ -19,8 +19,6 @@ export class Users{
   activate(){
     return this.http.fetch('users')
       .then(response => response.json())
-      .then(users => {
-        this.users = users;
-      });
+      .then(users => this.users = users);
   }
 }
