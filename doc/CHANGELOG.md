@@ -1,3 +1,20 @@
+## 0.16.0 (2015-08-05)
+
+
+#### Bug Fixes
+
+* **all:** update source to work with jspm beta ([53f5cf1a](http://github.com/aurelia/skeleton-navigation/commit/53f5cf1ad0d07d8a1f1087e17a93ecb8718fca62))
+* **css:** fix print styles ([dfcf28a8](http://github.com/aurelia/skeleton-navigation/commit/dfcf28a84e07a7ee62635513d836cfa8b3523a87))
+* **index:** update font awesome reference ([686b337c](http://github.com/aurelia/skeleton-navigation/commit/686b337c188855bc4fc255872f09528beed20a10))
+* **styles:** correct some class names ([eeed0111](http://github.com/aurelia/skeleton-navigation/commit/eeed01119b85ea000528eaff89c93d55ca5102e4))
+* **users:** move the fetch polyfil load to users so the main.js isn't required ([53a3e2be](http://github.com/aurelia/skeleton-navigation/commit/53a3e2be259a68dad77d1e7976abd5efaaf82869))
+
+
+#### Features
+
+* **all:** switch over to github users in place of flickr ([6fd31066](http://github.com/aurelia/skeleton-navigation/commit/6fd310664a4056f6984915b35ba245c0cf3c0b82))
+
+
 ### 0.15.1 (2015-07-02)
 
 
