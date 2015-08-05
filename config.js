@@ -9,7 +9,7 @@ System.config({
     ]
   },
   "paths": {
-    "*": "dist/*.js",
+    "*": "dist/*",
     "github:*": "jspm_packages/github/*",
     "npm:*": "jspm_packages/npm/*"
   }
@@ -183,4 +183,3 @@ System.config({
     }
   }
 });
-
