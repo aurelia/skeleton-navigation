@@ -27,7 +27,7 @@ System.config({
     "aurelia-history": "github:aurelia/history@0.6.1",
     "aurelia-history-browser": "github:aurelia/history-browser@0.6.2",
     "aurelia-loader": "github:aurelia/loader@0.8.3",
-    "aurelia-loader-default": "github:aurelia/loader-default@0.9.2",
+    "aurelia-loader-default": "github:aurelia/loader-default@0.9.3",
     "aurelia-logging": "github:aurelia/logging@0.6.2",
     "aurelia-metadata": "github:aurelia/metadata@0.7.2",
     "aurelia-path": "github:aurelia/path@0.8.1",
@@ -61,7 +61,7 @@ System.config({
       "aurelia-framework": "github:aurelia/framework@0.14.0",
       "aurelia-history": "github:aurelia/history@0.6.1",
       "aurelia-history-browser": "github:aurelia/history-browser@0.6.2",
-      "aurelia-loader-default": "github:aurelia/loader-default@0.9.2",
+      "aurelia-loader-default": "github:aurelia/loader-default@0.9.3",
       "aurelia-logging-console": "github:aurelia/logging-console@0.6.1",
       "aurelia-router": "github:aurelia/router@0.10.4",
       "aurelia-templating": "github:aurelia/templating@0.13.16",
@@ -107,7 +107,7 @@ System.config({
       "aurelia-history": "github:aurelia/history@0.6.1",
       "core-js": "npm:core-js@0.9.18"
     },
-    "github:aurelia/loader-default@0.9.2": {
+    "github:aurelia/loader-default@0.9.3": {
       "aurelia-loader": "github:aurelia/loader@0.8.3",
       "aurelia-metadata": "github:aurelia/metadata@0.7.2"
     },
@@ -183,3 +183,4 @@ System.config({
     }
   }
 });
+
