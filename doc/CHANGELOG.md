@@ -1,3 +1,11 @@
+### 0.16.1 (2015-08-05)
+
+
+#### Bug Fixes
+
+* **config:** correct start path by removing the js extension ([d2149e4e](http://github.com/aurelia/skeleton-navigation/commit/d2149e4e0acf8f3ce3013b6c4ca5f97a88138948))
+
+
 ## 0.16.0 (2015-08-05)
 
 
