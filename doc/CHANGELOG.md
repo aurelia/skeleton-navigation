@@ -1,3 +1,11 @@
+### 0.16.2 (2015-08-05)
+
+
+#### Bug Fixes
+
+* **package:** remove old framework version ([a2bec337](http://github.com/aurelia/skeleton-navigation/commit/a2bec3373bee7a65f642ba358e178e5cc7270805))
+
+
 ### 0.16.1 (2015-08-05)
 
 
