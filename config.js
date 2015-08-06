@@ -1,4 +1,5 @@
 System.config({
+  "defaultJSExtensions": true,
   "transpiler": "babel",
   "babelOptions": {
     "optional": [
@@ -8,9 +9,9 @@ System.config({
     ]
   },
   "paths": {
-    "*": "dist/*.js",
-    "github:*": "jspm_packages/github/*.js",
-    "npm:*": "jspm_packages/npm/*.js"
+    "*": "dist/*",
+    "github:*": "jspm_packages/github/*",
+    "npm:*": "jspm_packages/npm/*"
   }
 });
 
