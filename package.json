@@ -54,7 +54,7 @@
       "aurelia-dependency-injection": "github:aurelia/dependency-injection@^0.9.1",
       "aurelia-event-aggregator": "github:aurelia/event-aggregator@^0.6.2",
       "aurelia-fetch-client": "github:aurelia/fetch-client@^0.1.1",
-      "aurelia-framework": "github:aurelia/framework@^0.13.4",
+      "aurelia-framework": "github:aurelia/framework@^0.14.0",
       "aurelia-history": "github:aurelia/history@^0.6.1",
       "aurelia-history-browser": "github:aurelia/history-browser@^0.6.2",
       "aurelia-loader": "github:aurelia/loader@^0.8.3",
