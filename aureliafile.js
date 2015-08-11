@@ -1,6 +1,6 @@
 var cli = require('aurelia-cli');
 
-cli.command('bundle', {
+var config = {
   js: {
     "dist/app-bundle": {
       modules: [
@@ -24,8 +24,15 @@ cli.command('bundle', {
     "dist/app-bundle": {
       pattern: 'dist/*.html',
       options: {
-        inject: true
+        inject: {
+          indexFile: 'index.html',
+          destFile: 'dest_index.html'
+        }
       }
     }
   }
-});
+};
+
+cli.command('bundle', config);
+cli.command('unbundle', config);
+
