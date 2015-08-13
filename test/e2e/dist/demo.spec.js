@@ -11,7 +11,7 @@ describe('aurelia skeleton app', function () {
     po_skeleton = new _skeletonPoJs.PageObject_Skeleton();
     po_welcome = new _welcomePoJs.PageObject_Welcome();
 
-    browser.loadAndWaitForAureliaPage('http://localhost:9000');
+    browser.loadAndWaitForAureliaPage("http://localhost:9000");
   });
 
   it('should load the page and display the initial page title', function () {
