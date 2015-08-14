@@ -1,3 +1,19 @@
+## 0.17.0 (2015-08-14)
+
+
+#### Bug Fixes
+
+* **config.js:** revert original config.js ([6077faf2](http://github.com/aurelia/skeleton-navigation/commit/6077faf23ef8db448be62c1dd535776eec604dd9))
+* **e2e:** switch from flickr to users navigation test ([6f4f195a](http://github.com/aurelia/skeleton-navigation/commit/6f4f195a972aa8b31a0a819f3ed31a68163e6d1b))
+* **test:** fix broken unit test ([3cbc4a0a](http://github.com/aurelia/skeleton-navigation/commit/3cbc4a0ae5992cb6fc7f8fdf3a353b51d38f6822))
+
+
+#### Features
+
+* **bundle config:** package path ([69d36cee](http://github.com/aurelia/skeleton-navigation/commit/69d36cee3b90be4746c5a1edf92ce32119278bea))
+* **bundling:** add bundle configuration with aurelia-cli ([77d52d0a](http://github.com/aurelia/skeleton-navigation/commit/77d52d0a97d3a1a25190f82fe7f465ddf68ffd26))
+
+
 ### 0.16.2 (2015-08-05)
 
 
