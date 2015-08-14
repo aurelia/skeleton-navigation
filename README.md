@@ -46,6 +46,19 @@ To run the app, follow these steps.
 ```html
 <script src="jspm_packages/github/webcomponents/webcomponentsjs@0.5.2/HTMLImports.js"></script>
 ```
+## Bundling
+Bundling is performed by [Aurelia CLI](http://github.com/aurelia/cli). If you don't have the cli installed, use the following command:
+
+  ```shell
+   npm install -g aurelia-cli
+  ```
+
+You can create bundles for both javascript modules and Aurelia views/templates with this command:
+
+  ```shell
+  aurelia bundle
+  ```  
+> Note that, we have an `aureliafile.js` placed in the root of the project. CLI uses this file for various configuration that includes bundling. To learn more about other configuration options please visit [CLI Documentation](https://github.com/aurelia/cli/blob/master/README.md)
 
 ## Running The Unit Tests
 
