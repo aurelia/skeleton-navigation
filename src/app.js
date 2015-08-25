@@ -1,6 +1,3 @@
-import 'bootstrap';
-import 'bootstrap/css/bootstrap.css!';
-
 export class App {
   configureRouter(config, router){
     config.title = 'Aurelia';
