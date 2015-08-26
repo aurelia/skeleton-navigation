@@ -1,3 +1,6 @@
+//Note: This file is provided as an aid to help you get up and running with
+//Electron for desktop apps. See the readme file for more information.
+
 'use strict';
 
 var app = require('app');
