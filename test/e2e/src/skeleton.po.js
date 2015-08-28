@@ -10,6 +10,6 @@ export class PageObject_Skeleton {
 
   navigateTo(href) {
     element(by.css('a[href="' + href + '"]')).click();
-    return browser.waitForHttpDone();
+    return browser.waitForRouterComplete();
   }
 }

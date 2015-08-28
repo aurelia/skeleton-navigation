@@ -30,12 +30,13 @@ function loadAndWaitForAureliaPage(pageUrl) {
   });
 }
 
-function waitForHttpDone() {
+function waitForRouterComplete() {
   return browser.executeAsyncScript(
     'var cb = arguments[arguments.length - 1];' +
-    'document.addEventListener("aurelia-http-client-requests-drained", function (e) {' +
+    'document.querySelector("[aurelia-app]")' +
+    '.aurelia.subscribeOnce("router:navigation:complete", function() {' +
     '  cb(true)' +
-    '}, false);'
+    '});'
   ).then(function(result){
       return result;
   });
@@ -52,8 +53,8 @@ exports.setup = function(config) {
   // attach a new way to browser.get a page and wait for Aurelia to complete loading
   browser.loadAndWaitForAureliaPage = loadAndWaitForAureliaPage;
 
-  // wait for all http requests to finish
-  browser.waitForHttpDone = waitForHttpDone;
+  // wait for router navigations to complete
+  browser.waitForRouterComplete = waitForRouterComplete;
 };
 
 exports.teardown = function(config) {};
