@@ -38,7 +38,6 @@ System.config({
     "aurelia-templating-binding": "github:aurelia/templating-binding@0.14.0",
     "aurelia-templating-resources": "github:aurelia/templating-resources@0.14.0",
     "aurelia-templating-router": "github:aurelia/templating-router@0.15.0",
-    "aurelia/fetch-client": "github:aurelia/fetch-client@0.1.1",
     "babel": "npm:babel-core@5.8.21",
     "babel-runtime": "npm:babel-runtime@5.8.20",
     "bootstrap": "github:twbs/bootstrap@3.3.5",
@@ -80,9 +79,6 @@ System.config({
     "github:aurelia/event-aggregator@0.7.0": {
       "aurelia-logging": "github:aurelia/logging@0.6.4"
     },
-    "github:aurelia/fetch-client@0.1.1": {
-      "core-js": "npm:core-js@0.9.18"
-    },
     "github:aurelia/fetch-client@0.1.2": {
       "core-js": "npm:core-js@0.9.18"
     },
@@ -103,14 +99,14 @@ System.config({
     },
     "github:aurelia/loader-default@0.9.5": {
       "aurelia-loader": "github:aurelia/loader@0.8.7",
-      "aurelia-metadata": "github:aurelia/metadata@0.7.3",
-      "webcomponentsjs": "github:webcomponents/webcomponentsjs@0.6.3"
+      "aurelia-metadata": "github:aurelia/metadata@0.7.3"
     },
     "github:aurelia/loader@0.8.7": {
       "aurelia-html-template-element": "github:aurelia/html-template-element@0.2.0",
       "aurelia-metadata": "github:aurelia/metadata@0.7.3",
       "aurelia-path": "github:aurelia/path@0.8.1",
-      "core-js": "npm:core-js@0.9.18"
+      "core-js": "npm:core-js@0.9.18",
+      "webcomponentsjs": "github:webcomponents/webcomponentsjs@0.6.3"
     },
     "github:aurelia/logging-console@0.6.2": {
       "aurelia-logging": "github:aurelia/logging@0.6.4"
@@ -303,3 +299,4 @@ System.config({
     }
   }
 });
+
