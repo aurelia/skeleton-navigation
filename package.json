@@ -18,6 +18,10 @@
     "type": "git",
     "url": "http://github.com/aurelia/skeleton-navigation"
   },
+  "scripts": {
+    "test": "gulp test",
+    "e2e": "gulp serve e2e"
+  },
   "devDependencies": {
     "aurelia-cli": "^0.3.1",
     "aurelia-tools": "^0.1.3",
