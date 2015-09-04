@@ -13,7 +13,7 @@
   },
   "license": "MIT",
   "author": "Rob Eisenberg <rob@bluespire.com> (http://robeisenberg.com/)",
-  "main": "dist/commonjs/index.js",
+  "main": "dist/main.js",
   "repository": {
     "type": "git",
     "url": "http://github.com/aurelia/skeleton-navigation"
