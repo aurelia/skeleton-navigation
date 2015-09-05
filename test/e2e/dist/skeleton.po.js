@@ -22,7 +22,7 @@ var PageObject_Skeleton = (function () {
     key: 'navigateTo',
     value: function navigateTo(href) {
       element(by.css('a[href="' + href + '"]')).click();
-      return browser.waitForHttpDone();
+      return browser.waitForRouterComplete();
     }
   }]);
 
