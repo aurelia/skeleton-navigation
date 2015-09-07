@@ -76,7 +76,7 @@
       "aurelia-templating-resources": "github:aurelia/templating-resources@^0.15.0",
       "aurelia-templating-router": "github:aurelia/templating-router@^0.16.0",
       "bootstrap": "github:twbs/bootstrap@^3.3.4",
-      "core-js": "npm:core-js@^0.9.17",
+      "core-js": "npm:core-js@^0.9.4",
       "fetch": "github:github/fetch@^0.9.0",
       "font-awesome": "npm:font-awesome@^4.3.0"
     },
