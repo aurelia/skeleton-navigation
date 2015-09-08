@@ -6,7 +6,7 @@ var tools = require('aurelia-tools');
 
 // updates dependencies in this folder
 // from folders in the parent directory
-gulp.task('update-own-deps', function(){
+gulp.task('update-own-deps', function() {
   tools.updateOwnDependenciesFromLocalRepositories();
 });
 
