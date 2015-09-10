@@ -38,7 +38,6 @@ System.config({
     "aurelia-templating-binding": "github:aurelia/templating-binding@0.15.0",
     "aurelia-templating-resources": "github:aurelia/templating-resources@0.15.1",
     "aurelia-templating-router": "github:aurelia/templating-router@0.16.1",
-    "aurelia/fetch-client": "github:aurelia/fetch-client@0.1.1",
     "babel": "npm:babel-core@5.8.23",
     "babel-runtime": "npm:babel-runtime@5.8.20",
     "bootstrap": "github:twbs/bootstrap@3.3.5",
@@ -76,9 +75,6 @@ System.config({
     },
     "github:aurelia/event-aggregator@0.8.0": {
       "aurelia-logging": "github:aurelia/logging@0.7.0"
-    },
-    "github:aurelia/fetch-client@0.1.1": {
-      "core-js": "npm:core-js@0.9.18"
     },
     "github:aurelia/fetch-client@0.2.0": {
       "core-js": "npm:core-js@0.9.18"
