@@ -24,7 +24,6 @@ System.config({
     "aurelia-framework": "github:aurelia/framework@0.16.0",
     "aurelia-history": "github:aurelia/history@0.7.0",
     "aurelia-history-browser": "github:aurelia/history-browser@0.8.0",
-    "aurelia-html-import-template-loader": "github:aurelia/html-import-template-loader@0.2.0",
     "aurelia-loader": "github:aurelia/loader@0.9.0",
     "aurelia-loader-default": "github:aurelia/loader-default@0.10.0",
     "aurelia-logging": "github:aurelia/logging@0.7.0",
@@ -97,10 +96,6 @@ System.config({
     "github:aurelia/history-browser@0.8.0": {
       "aurelia-history": "github:aurelia/history@0.7.0",
       "core-js": "npm:core-js@0.9.18"
-    },
-    "github:aurelia/html-import-template-loader@0.2.0": {
-      "aurelia-loader": "github:aurelia/loader@0.9.0",
-      "webcomponentsjs": "github:webcomponents/webcomponentsjs@0.7.12"
     },
     "github:aurelia/loader-default@0.10.0": {
       "aurelia-loader": "github:aurelia/loader@0.9.0",

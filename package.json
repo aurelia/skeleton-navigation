@@ -76,7 +76,6 @@
       "aurelia-templating-binding": "github:aurelia/templating-binding@^0.15.0",
       "aurelia-templating-resources": "github:aurelia/templating-resources@^0.15.0",
       "aurelia-templating-router": "github:aurelia/templating-router@^0.16.0",
-      "aurelia/html-import-template-loader": "github:aurelia/html-import-template-loader@^0.2.0",
       "bootstrap": "github:twbs/bootstrap@^3.3.4",
       "core-js": "npm:core-js@^0.9.4",
       "fetch": "github:github/fetch@^0.9.0",
@@ -91,9 +90,6 @@
     "overrides": {
       "npm:core-js@0.9.18": {
         "main": "client/shim.min"
-      },
-      "github:aurelia/html-import-template-loader@0.2.0": {
-        "main": "aurelia-html-import-template-loader"
       }
     }
   }
