@@ -64,18 +64,17 @@ To run the app under [Electron](http://electron.atom.io), follow these steps.
 
 
 ## Bundling
-Bundling is performed by [Aurelia CLI](http://github.com/aurelia/cli). If you don't have the cli installed, use the following command:
+Bundling is performed by [Aurelia Bundler](http://github.com/aurelia/bundler). A gulp task is already configured for that. Use the following command to bundle the app:
 
   ```shell
-   npm install -g aurelia-cli
+    gulp bundle
   ```
 
-You can create bundles for both javascript modules and Aurelia views/templates with this command:
+You can also unbundle using the command bellow:
 
   ```shell
-  aurelia bundle
+  gulp unbundle
   ```
-> Note that, we have an `aureliafile.js` placed in the root of the project. CLI uses this file for various configuration that includes bundling. To learn more about other configuration options please visit [CLI Documentation](https://github.com/aurelia/cli/blob/master/README.md)
 
 ## Running The Unit Tests
 

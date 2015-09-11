@@ -23,7 +23,7 @@
     "e2e": "gulp serve e2e"
   },
   "devDependencies": {
-    "aurelia-cli": "^0.3.1",
+    "aurelia-bundler": "^0.1.6",
     "aurelia-tools": "^0.1.3",
     "browser-sync": "^1.8.1",
     "conventional-changelog": "0.0.11",
@@ -63,6 +63,7 @@
       "aurelia-framework": "github:aurelia/framework@^0.16.0",
       "aurelia-history": "github:aurelia/history@^0.7.0",
       "aurelia-history-browser": "github:aurelia/history-browser@^0.8.0",
+      "aurelia-html-import-template-loader": "github:aurelia/html-import-template-loader@^0.2.1",
       "aurelia-loader": "github:aurelia/loader@^0.9.0",
       "aurelia-loader-default": "github:aurelia/loader-default@^0.10.0",
       "aurelia-logging": "github:aurelia/logging@^0.7.0",
@@ -78,7 +79,8 @@
       "bootstrap": "github:twbs/bootstrap@^3.3.4",
       "core-js": "npm:core-js@^0.9.4",
       "fetch": "github:github/fetch@^0.9.0",
-      "font-awesome": "npm:font-awesome@^4.3.0"
+      "font-awesome": "npm:font-awesome@^4.3.0",
+      "text": "github:systemjs/plugin-text@^0.0.2"
     },
     "devDependencies": {
       "babel": "npm:babel-core@^5.6.4",
