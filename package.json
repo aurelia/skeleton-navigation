@@ -78,7 +78,8 @@
       "bootstrap": "github:twbs/bootstrap@^3.3.4",
       "core-js": "npm:core-js@^0.9.4",
       "fetch": "github:github/fetch@^0.9.0",
-      "font-awesome": "npm:font-awesome@^4.3.0"
+      "font-awesome": "npm:font-awesome@^4.3.0",
+      "text": "github:systemjs/plugin-text@^0.0.2"
     },
     "devDependencies": {
       "babel": "npm:babel-core@^5.6.4",
