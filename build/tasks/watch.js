@@ -3,7 +3,7 @@ var paths = require('../paths');
 var browserSync = require('browser-sync');
 
 // outputs changes to files to the console
-function reportChange(event){
+function reportChange(event) {
   console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
 }
 

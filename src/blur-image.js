@@ -6,10 +6,10 @@ export class BlurImageCustomAttribute {
     this.element = element;
   }
 
-  valueChanged(newImage){
-    if(newImage.complete){
+  valueChanged(newImage) {
+    if(newImage.complete) {
       drawBlur(this.element, newImage);
-    } else{
+    } else {
       newImage.onload = () => drawBlur(this.element, newImage);
     }
   }

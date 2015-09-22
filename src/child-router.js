@@ -1,7 +1,7 @@
-export class ChildRouter{
+export class ChildRouter {
   heading = 'Child Router';
 
-  configureRouter(config, router){
+  configureRouter(config, router) {
     config.map([
       { route: ['','welcome'],  name: 'welcome',       moduleId: 'welcome',       nav: true, title:'Welcome' },
       { route: 'users',         name: 'users',         moduleId: 'users',         nav: true, title:'Github Users' },
