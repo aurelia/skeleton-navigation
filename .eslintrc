@@ -1,0 +1,6 @@
+{
+  "extends": "./node_modules/aurelia-tools/.eslintrc",
+  "rules": {
+    "no-alert": 0,
+  }
+}

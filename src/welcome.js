@@ -11,11 +11,11 @@ export class Welcome {
   //To optimize by declaring the properties that this getter is computed from, uncomment the line below
   //as well as the corrresponding import above.
   //@computedFrom('firstName', 'lastName')
-  get fullName(){
+  get fullName() {
     return `${this.firstName} ${this.lastName}`;
   }
 
-  submit(){
+  submit() {
     this.previousValue = this.fullName;
     alert(`Welcome, ${this.fullName}!`);
   }
@@ -28,7 +28,7 @@ export class Welcome {
 }
 
 export class UpperValueConverter {
-  toView(value){
+  toView(value) {
     return value && value.toUpperCase();
   }
 }
