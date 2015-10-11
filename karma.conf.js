@@ -16,7 +16,9 @@ module.exports = function(config) {
       // Edit this to your needs
       loadFiles: ['src/**/*.js', 'test/unit/**/*.js'],
       paths: {
-        '*': '*.js'
+        '*': '*.js',
+        'github:*': 'jspm_packages/github/*.js',
+        'npm:*': 'jspm_packages/npm/*.js'
       }
     },
 
@@ -39,7 +41,6 @@ module.exports = function(config) {
     'babelPreprocessor': {
       options: {
         sourceMap: 'inline',
-        modules: 'system',
         moduleIds: false,
         optional: [
           "es7.decorators",
