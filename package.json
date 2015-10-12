@@ -11,7 +11,7 @@
   "bugs": {
     "url": "https://github.com/aurelia/skeleton-navigation/issues"
   },
-  "license": "MIT",
+  "license": "CC0-1.0",
   "author": "Rob Eisenberg <rob@bluespire.com> (http://robeisenberg.com/)",
   "main": "dist/main.js",
   "repository": {
