@@ -5,3 +5,4 @@ bower_components
 .DS_STORE
 /dist
 build/reports
+coverage
