@@ -15,6 +15,6 @@ gulp.task('update-own-deps', function() {
 // from where the command is executed,
 // then runs `npm install`
 // and `gulp build` for each repo
-gulp.task('build-dev-env', function () {
+gulp.task('build-dev-env', function() {
   tools.buildDevEnv();
 });
