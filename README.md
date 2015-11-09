@@ -90,6 +90,10 @@ You can also unbundle using the command bellow:
   ```shell
   gulp unbundle
   ```
+#### Configuration
+The configuration is done by ```bundles.json``` file.
+##### Optional
+Under ```options``` of ```dist/aurelia``` add ```rev: true``` to add bundle file revision/version.
 
 ## Running The Unit Tests
 
@@ -136,3 +140,14 @@ Integration tests are performed with [Protractor](http://angular.github.io/protr
   ```shell
   gulp e2e
   ```
+  
+## Exporting bundled production version
+A gulp task is already configured for that. Use the following command to export the app:
+
+  ```shell
+    gulp export
+  ```
+The app will be exported into ```export``` directory preserving the directory structure.
+#### Configuration
+The configuration is done by ```bundles.json``` file.
+In addition, ```export.json``` file is available for including individual files.
