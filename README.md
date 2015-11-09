@@ -64,8 +64,18 @@ To run the app under [Electron](http://electron.atom.io), follow these steps.
 2. To start the app, execute the following command:
 
   ```shell
-  electron .
+  electron index.js
   ```
+>**Note:** If you use electron every time or are packaging and so-forth, Then change this line in package.json from
+`"main": "dist/main.js",` to `"main": "index.js",`
+Build the app (this will give you a dist directory)
+```shell
+gulp build
+```
+To start the app, execute the following command:
+```shell
+   electron .
+```
 
 
 ## Bundling
