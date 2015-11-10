@@ -1,3 +1,13 @@
+## 0.20.0 (2015-11-10)
+
+
+#### Bug Fixes
+
+* **bundle:** shoreten the long module name in bundle config ([922c4861](http://github.com/aurelia/skeleton-navigation/commit/922c486112172dbc39a816e1f390ef81adeb9aaf))
+* **config.js:** correct babel options ([762c0dcc](http://github.com/aurelia/skeleton-navigation/commit/762c0dccdd21538e8a03d7bb1c4741b73301d511), closes [#189](http://github.com/aurelia/skeleton-navigation/issues/189))
+* **package:** declare jspm as a dependency ([53602beb](http://github.com/aurelia/skeleton-navigation/commit/53602beb882056ae921f84af55169a03e75baa03))
+
+
 ## 0.19.0 (2015-10-13)
 
 
