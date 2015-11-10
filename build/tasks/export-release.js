@@ -3,8 +3,8 @@ var runSequence = require('run-sequence');
 var del = require('del');
 var vinylPaths = require('vinyl-paths');
 var paths = require('../paths');
-var bundles = require('../../bundles.json');
-var resources = require('../../export.json');
+var bundles = require('../bundles.json');
+var resources = require('../export.json');
 
 // deletes all files in the output path
 gulp.task('clean-export', function() {
@@ -38,4 +38,3 @@ gulp.task('export', function(callback) {
     callback
   );
 });
-
