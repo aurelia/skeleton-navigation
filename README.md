@@ -46,12 +46,6 @@ To run the app, follow these steps.
 
 > The Skeleton App uses [BrowserSync](http://www.browsersync.io/) for automated page refreshes on code/markup changes concurrently accross multiple browsers. If you prefer to disable the mirroring feature set the [ghostMode option](http://www.browsersync.io/docs/options/#option-ghostMode) to false
 
-> Note: At present there is a bug in the HTMLImports polyfill which only occurs on IE. We have submitted a pull request to the team with the fix. In the mean time, if you want to test on IE, you can work around the issue by explicitly adding a script tag before you load system.js. The script tag should look something like this (be sure to confirm the version number):
-
-```html
-<script src="jspm_packages/github/webcomponents/webcomponentsjs@0.5.2/HTMLImports.js"></script>
-```
-
 ## Running The App under Electron
 
 To run the app under [Electron](http://electron.atom.io), follow these steps.
@@ -140,7 +134,7 @@ Integration tests are performed with [Protractor](http://angular.github.io/protr
   ```shell
   gulp e2e
   ```
-  
+
 ## Exporting bundled production version
 A gulp task is already configured for that. Use the following command to export the app:
 
