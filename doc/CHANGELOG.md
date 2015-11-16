@@ -1,3 +1,11 @@
+### 1.0.0-beta.1 (2015-11-16)
+
+
+#### Bug Fixes
+
+* **eslintrc:** remove dangling comma ([c05c7894](http://github.com/aurelia/skeleton-navigation/commit/c05c78945e596b6d08c9d186efbcffeef9b18ad2), closes [#205](http://github.com/aurelia/skeleton-navigation/issues/205))
+
+
 ## 0.20.0 (2015-11-10)
 
 
@@ -608,4 +616,3 @@
 
 * **package:** update dependencies to latest versions ([77986163](http://github.com/aurelia/skeleton-navigation/commit/779861632b7e48152ce7bed9d0316e90fda2482d))
 * **package:** update dependencies to latest versions ([4f1661dc](http://github.com/aurelia/skeleton-navigation/commit/4f1661dceafe93c8c117133bd07b9edb243b913e))
-
