@@ -1,3 +1,11 @@
+## 1.0.0-beta.1.0.1 (2015-11-17)
+
+
+#### Features
+
+* **notify:** notify when build fails ([f8584189](http://github.com/aurelia/skeleton-navigation/commit/f858418944341fab609765eee36e88219486d17c))
+
+
 ### 1.0.0-beta.1 (2015-11-16)
 
 
