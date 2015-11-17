@@ -1,20 +1,22 @@
 System.config({
-  defaultJSExtensions: true,
-  transpiler: "babel",
-  babelOptions: {
+  "defaultJSExtensions": true,
+  "transpiler": "babel",
+  "babelOptions": {
     "optional": [
       "es7.decorators",
       "es7.classProperties"
     ]
   },
-  paths: {
+  "paths": {
     "*": "dist/*",
     "github:*": "jspm_packages/github/*",
     "npm:*": "jspm_packages/npm/*"
-  },
+  }
+});
 
-  map: {
-    "aurelia-animator-css": "npm:aurelia-animator-css@1.0.0-beta.1",
+System.config({
+  "map": {
+    "aurelia-animator-css": "npm:aurelia-animator-css@1.0.0-beta.1.0.1",
     "aurelia-bootstrapper": "npm:aurelia-bootstrapper@1.0.0-beta.1",
     "aurelia-fetch-client": "npm:aurelia-fetch-client@1.0.0-beta.1",
     "aurelia-framework": "npm:aurelia-framework@1.0.0-beta.1",
@@ -50,7 +52,7 @@ System.config({
     "npm:assert@1.3.0": {
       "util": "npm:util@0.10.3"
     },
-    "npm:aurelia-animator-css@1.0.0-beta.1": {
+    "npm:aurelia-animator-css@1.0.0-beta.1.0.1": {
       "aurelia-metadata": "npm:aurelia-metadata@1.0.0-beta.1",
       "aurelia-pal": "npm:aurelia-pal@1.0.0-beta.1",
       "aurelia-templating": "npm:aurelia-templating@1.0.0-beta.1"
