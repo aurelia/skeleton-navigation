@@ -121,7 +121,7 @@ Integration tests are performed with [Protractor](http://angular.github.io/protr
   gulp webdriver_update
   ```
 
-3. Configure the path to the webdriver by opening the file ```protractor.conf.js``` and adjusting the ```seleniumServerJar``` property. Typically its only needed to adjust the version number.
+3. Configure the path to the webdriver by opening the file ```protractor.conf.js``` and adjusting the ```seleniumServerJar``` property. Typically it's only needed to adjust the version number.
 
 4. Make sure your app runs and is accessible
 
