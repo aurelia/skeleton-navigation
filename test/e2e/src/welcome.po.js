@@ -1,4 +1,4 @@
-export class PageObject_Welcome {
+export class PageObjectWelcome {
 
   constructor() {
 

@@ -4,7 +4,7 @@ var Karma = require('karma').Server;
 /**
  * Run test once and exit
  */
-gulp.task('test', function (done) {
+gulp.task('test', function(done) {
   new Karma({
     configFile: __dirname + '/../../karma.conf.js',
     singleRun: true
@@ -14,7 +14,7 @@ gulp.task('test', function (done) {
 /**
  * Watch for file changes and re-run tests on each change
  */
-gulp.task('tdd', function (done) {
+gulp.task('tdd', function(done) {
   new Karma({
     configFile: __dirname + '/../../karma.conf.js'
   }, done).start();

@@ -1,7 +1,7 @@
 {
-	"compilerOptions":{
-		"target": "ES6",
-		"module": "system",
-		"experimentalDecorators": true
-	}
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "system",
+    "experimentalDecorators": true
+  }
 }

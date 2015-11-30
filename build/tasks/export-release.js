@@ -25,7 +25,7 @@ function getExportList() {
 }
 
 gulp.task('export-copy', function() {
-  return gulp.src(getExportList(), {base: "."})
+  return gulp.src(getExportList(), {base: '.'})
     .pipe(gulp.dest(paths.exportSrv));
 });
 

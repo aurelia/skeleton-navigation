@@ -1,8 +1,9 @@
 /* Aurelia Protractor Plugin */
+/* eslint-disable no-var, no-console */
 function addValueBindLocator() {
-  by.addLocator('valueBind', function (bindingModel, opt_parentElement) {
-    var using = opt_parentElement || document;
-    var matches = using.querySelectorAll('*[value\\.bind="' + bindingModel +'"]');
+  by.addLocator('valueBind', function(bindingModel, optParentElement) {
+    var using = optParentElement || document;
+    var matches = using.querySelectorAll('*[value\\.bind="' + bindingModel + '"]');
     var result;
 
     if (matches.length === 0) {
@@ -24,9 +25,9 @@ function loadAndWaitForAureliaPage(pageUrl) {
     'document.addEventListener("aurelia-composed", function (e) {' +
     '  cb("Aurelia App composed")' +
     '}, false);'
-  ).then(function(result){
-      console.log(result);
-      return result;
+  ).then(function(result) {
+    console.log(result);
+    return result;
   });
 }
 
@@ -37,8 +38,8 @@ function waitForRouterComplete() {
     '.aurelia.subscribeOnce("router:navigation:complete", function() {' +
     '  cb(true)' +
     '});'
-  ).then(function(result){
-      return result;
+  ).then(function(result) {
+    return result;
   });
 }
 

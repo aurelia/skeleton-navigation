@@ -1,7 +1,8 @@
+/* eslint-disable no-var, no-shadow, dot-notation */
+
 var babel = require('babel');
 
-module.exports = function (wallaby) {
-
+module.exports = function(wallaby) {
   return {
     files: [
 
@@ -20,8 +21,8 @@ module.exports = function (wallaby) {
       '**/*.js': wallaby.compilers.babel({
         babel: babel,
         optional: [
-          "es7.decorators",
-          "es7.classProperties"
+          'es7.decorators',
+          'es7.classProperties'
         ]
       })
     },
@@ -30,7 +31,11 @@ module.exports = function (wallaby) {
       app.use('/jspm_packages', express.static(require('path').join(__dirname, 'jspm_packages')));
     },
 
-    bootstrap: function (wallaby) {
+    bootstrap: function(wallaby) {
+      var promises = [];
+      var i = 0;
+      var len = wallaby.tests.length;
+
       wallaby.delayStart();
 
       System.config({
@@ -38,13 +43,11 @@ module.exports = function (wallaby) {
           '*': '*.js'
         }
       });
-
-      var promises = [];
-      for (var i = 0, len = wallaby.tests.length; i < len; i++) {
+      for (; i < len; i++) {
         promises.push(System['import'](wallaby.tests[i].replace(/\.js$/, '')));
       }
 
-      Promise.all(promises).then(function () {
+      Promise.all(promises).then(function() {
         wallaby.start();
       });
     },
