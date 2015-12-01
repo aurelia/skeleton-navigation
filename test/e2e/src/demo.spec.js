@@ -1,41 +1,41 @@
-import {PageObject_Welcome} from './welcome.po.js';
-import {PageObject_Skeleton} from './skeleton.po.js';
+import {PageObjectWelcome} from './welcome.po.js';
+import {PageObjectSkeleton} from './skeleton.po.js';
 
 describe('aurelia skeleton app', function() {
-  var po_welcome,
-      po_skeleton;
+  let poWelcome;
+  let poSkeleton;
 
-  beforeEach( () => {
-    po_skeleton = new PageObject_Skeleton();
-    po_welcome = new PageObject_Welcome();
+  beforeEach(() => {
+    poSkeleton = new PageObjectSkeleton();
+    poWelcome = new PageObjectWelcome();
 
-    browser.loadAndWaitForAureliaPage("http://localhost:9000");
+    browser.loadAndWaitForAureliaPage('http://localhost:9000');
   });
 
   it('should load the page and display the initial page title', () => {
-    expect(po_skeleton.getCurrentPageTitle()).toBe('Welcome | Aurelia');
+    expect(poSkeleton.getCurrentPageTitle()).toBe('Welcome | Aurelia');
   });
 
   it('should display greeting', () => {
-    expect(po_welcome.getGreeting()).toBe('Welcome to the Aurelia Navigation App!');
+    expect(poWelcome.getGreeting()).toBe('Welcome to the Aurelia Navigation App!');
   });
 
   it('should automatically write down the fullname', () => {
-    po_welcome.setFirstname('Rob');
-    po_welcome.setLastname('Eisenberg');
+    poWelcome.setFirstname('Rob');
+    poWelcome.setLastname('Eisenberg');
 
     // For now there is a timing issue with the binding.
     // Until resolved we will use a short sleep to overcome the issue.
     browser.sleep(200);
-    expect(po_welcome.getFullname()).toBe('ROB EISENBERG');
+    expect(poWelcome.getFullname()).toBe('ROB EISENBERG');
   });
 
   it('should show alert message when clicking submit button', () => {
-    expect(po_welcome.openAlertDialog()).toBe(true);
+    expect(poWelcome.openAlertDialog()).toBe(true);
   });
 
   it('should navigate to users page', () => {
-    po_skeleton.navigateTo('#/users');
-    expect(po_skeleton.getCurrentPageTitle()).toBe('Github Users | Aurelia');
+    poSkeleton.navigateTo('#/users');
+    expect(poSkeleton.getCurrentPageTitle()).toBe('Github Users | Aurelia');
   });
 });
