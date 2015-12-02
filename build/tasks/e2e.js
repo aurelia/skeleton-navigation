@@ -3,11 +3,13 @@ var paths = require('../paths');
 var to5 = require('gulp-babel');
 var plumber = require('gulp-plumber');
 var webdriverUpdate = require('gulp-protractor').webdriver_update;
+var webdriverStandalone = require("gulp-protractor").webdriver_standalone;
 var protractor = require('gulp-protractor').protractor;
 
 // for full documentation of gulp-protractor,
 // please check https://github.com/mllrsohn/gulp-protractor
 gulp.task('webdriver_update', webdriverUpdate);
+gulp.task('webdriver_standalone', ['webdriver_update'], webdriverStandalone);
 
 // transpiles files in
 // /test/e2e/src/ from es6 to es5
@@ -22,7 +24,7 @@ gulp.task('build-e2e', function() {
 // runs build-e2e task
 // then runs end to end tasks
 // using Protractor: http://angular.github.io/protractor/
-gulp.task('e2e', ['webdriver_update', 'build-e2e'], function(cb) {
+gulp.task('e2e', ['build-e2e'], function(cb) {
   return gulp.src(paths.e2eSpecsDist + '/*.js')
     .pipe(protractor({
       configFile: 'protractor.conf.js',

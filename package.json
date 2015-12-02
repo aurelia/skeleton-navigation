@@ -20,7 +20,7 @@
   },
   "scripts": {
     "test": "gulp test",
-    "e2e": "gulp serve e2e"
+    "e2e": "gulp serve webdriver_standalone e2e"
   },
   "devDependencies": {
     "aurelia-bundler": "^0.1.8",
@@ -37,7 +37,7 @@
     "gulp-eslint": "^1.0.0",
     "gulp-notify": "^2.2.0",
     "gulp-plumber": "^1.0.1",
-    "gulp-protractor": "^0.0.12",
+    "gulp-protractor": "1.0.0",
     "gulp-sourcemaps": "^1.3.0",
     "gulp-yuidoc": "^0.1.2",
     "isparta": "^3.1.0",
