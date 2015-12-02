@@ -20,7 +20,7 @@
   },
   "scripts": {
     "test": "gulp test",
-    "e2e": "gulp serve webdriver_standalone e2e"
+    "e2e": "gulp serve webdriver-standalone e2e"
   },
   "devDependencies": {
     "aurelia-bundler": "^0.1.8",
