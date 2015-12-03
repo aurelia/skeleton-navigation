@@ -1,3 +1,16 @@
+## 1.0.0-beta.1.0.2 (2015-12-03)
+
+
+#### Bug Fixes
+
+* **build:** do not reload after CSS injection ([00bab07a](http://github.com/aurelia/skeleton-navigation/commit/00bab07a8256556e96886ad586b14ae73990512b))
+
+
+#### Features
+
+* **build:** add CSS injecting ([fb620e72](http://github.com/aurelia/skeleton-navigation/commit/fb620e72e5dd532f7a0d7133c3c35e64be0d5b5f))
+
+
 ## 1.0.0-beta.1.0.1 (2015-11-17)
 
 
