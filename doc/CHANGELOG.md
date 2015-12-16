@@ -1,3 +1,12 @@
+### 1.0.0-beta.1.0.3 (2015-12-16)
+
+
+#### Bug Fixes
+
+* **build:** remove the faulty doc task ([e5119bf4](http://github.com/aurelia/skeleton-navigation/commit/e5119bf4f772033a73dfbd34a9a426a15e358fd3))
+* **main:** add notes on swap order ([c051b2cb](http://github.com/aurelia/skeleton-navigation/commit/c051b2cb93f2e8d24b4c224af40f56cba6949955))
+
+
 ## 1.0.0-beta.1.0.2 (2015-12-03)
 
 
