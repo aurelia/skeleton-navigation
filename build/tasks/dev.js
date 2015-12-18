@@ -18,3 +18,10 @@ gulp.task('update-own-deps', function() {
 gulp.task('build-dev-env', function() {
   tools.buildDevEnv();
 });
+
+// quickly pulls in all of the aurelia
+// github repos, placing them up one directory
+// from where the command is executed
+gulp.task('pull-dev-env', function() {
+  tools.pullDevEnv();
+});
