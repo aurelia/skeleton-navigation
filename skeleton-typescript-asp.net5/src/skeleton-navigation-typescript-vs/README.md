@@ -41,7 +41,7 @@ To run the app, follow these steps.
   gulp build
   ```
 
->**Note:** This skeleton is wrapped in an ASP.NET 5 project.  If you are using VSCode on any platform you can install ASP.NET on Windows, OSX, or Linux but the instructions to do so are found [on the Microsoft](https://code.visualstudio.com/Docs/runtimes/ASPnet5) page.  This assumes you are running form command line but Visual Studio users should be familiar with how to build and run the project in the IDE.
+>**Note:** This skeleton is wrapped in an ASP.NET 5 project.  If you are using VSCode on any platform you can install ASP.NET on Windows, OSX, or Linux but the instructions to do so are found [on the Microsoft](https://code.visualstudio.com/Docs/runtimes/ASPnet5) page.  This assumes you are running from command line but Visual Studio users should be familiar with how to build and run the project in the IDE.
 
 7. To run the app, execute the following command:
 
