@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var tools = require('aurelia-tools');
+var args = require('../args');
 
 // source code for the tasks called in this file
 // is located at: https://github.com/aurelia/tools/blob/master/src/dev.js
@@ -7,7 +8,7 @@ var tools = require('aurelia-tools');
 // updates dependencies in this folder
 // from folders in the parent directory
 gulp.task('update-own-deps', function() {
-  tools.updateOwnDependenciesFromLocalRepositories();
+  tools.updateOwnDependenciesFromLocalRepositories(args.depth);
 });
 
 // quickly pulls in all of the aurelia

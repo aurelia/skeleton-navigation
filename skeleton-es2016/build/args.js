@@ -9,5 +9,6 @@ if (validBumpTypes.indexOf(bump) === -1) {
 }
 
 module.exports = {
-  bump: bump
+  bump: bump,
+  depth: parseInt(argv.depth || '0')
 };
