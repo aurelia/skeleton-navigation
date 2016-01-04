@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc;
 
-namespace skeleton_navigation_typescript_vs.Controllers
+namespace skeleton_navigation_es2016_vs.Controllers
 {
     public class HomeController : Controller
     {
