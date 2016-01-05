@@ -23,6 +23,9 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [],
+    proxies: {
+        '/base/jspm_packages/': '/base/wwwroot/jspm_packages/'
+    },
 
     // list of files to exclude
     exclude: [],
