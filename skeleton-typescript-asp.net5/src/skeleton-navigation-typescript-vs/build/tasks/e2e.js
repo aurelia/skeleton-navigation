@@ -6,6 +6,7 @@ var webdriverStandalone = require("gulp-protractor").webdriver_standalone;
 var protractor = require('gulp-protractor').protractor;
 var typescript = require('gulp-typescript');
 var tsc = require('typescript');
+var del = require('del');
 
 var tsProject = typescript.createProject('./tsconfig.json', {
   typescript: tsc,
@@ -17,10 +18,14 @@ var tsProject = typescript.createProject('./tsconfig.json', {
 gulp.task('webdriver-update', webdriverUpdate);
 gulp.task('webdriver-standalone', ['webdriver-update'], webdriverStandalone);
 
+gulp.task('clean-e2e', function() {
+  return del(paths.e2eSpecsDist + '*');
+});
+
 // transpiles files in
 // /test/e2e/src/ from es6 to es5
 // then copies them to test/e2e/dist/
-gulp.task('build-e2e', function() {
+gulp.task('build-e2e', ['clean-e2e'], function() {
   return gulp.src(paths.dtsSrc.concat(paths.e2eSpecsSrc))
     .pipe(typescript(tsProject))
     .pipe(gulp.dest(paths.e2eSpecsDist));
