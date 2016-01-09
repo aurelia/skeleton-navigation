@@ -1,3 +1,20 @@
+### 1.0.0-beta.1.0.5 (2016-01-08)
+
+
+#### Bug Fixes
+
+* **build:** add build tasks back in ([46b8c482](http://github.com/aurelia/skeleton-navigation/commit/46b8c482b482d60cf817647fde2aed77a4c6ab5d))
+* **bundling:** update bundle config ([c524ed06](http://github.com/aurelia/skeleton-navigation/commit/c524ed069002850c16602d7643110ebd0ef249a1))
+
+
+#### Features
+
+* **asp.net5:** add asp.net5 skeleton ([30221c68](http://github.com/aurelia/skeleton-navigation/commit/30221c680b64db90b0112404c38ddeb3ae09e57c))
+* **build:**
+  * improve update own deps to work with deeper forder structure ([484c2d4d](http://github.com/aurelia/skeleton-navigation/commit/484c2d4d597fc8beb323f25b186ab3cd1fcc3b56))
+  * add pull-dev-env task ([48eaf16b](http://github.com/aurelia/skeleton-navigation/commit/48eaf16bd31a2021c0971112a90b2f0786039b2b))
+
+
 ### 1.0.0-beta.1.0.4 (2015-12-22)
 
 * update dependencies

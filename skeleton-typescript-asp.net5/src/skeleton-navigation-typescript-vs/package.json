@@ -1,6 +1,6 @@
 {
-  "name": "aurelia-skeleton-navigation-typescript",
-  "version": "0.0.1",
+  "name": "aurelia-skeleton-navigation-typescript-aspnet5",
+  "version": "1.0.0-beta.1.0.5",
   "devDependencies": {
     "aurelia-bundler": "^0.1.8",
     "aurelia-tools": "^0.1.3",
