@@ -7,7 +7,7 @@ var protractor = require('gulp-protractor').protractor;
 var typescript = require('gulp-typescript');
 var tsc = require('typescript');
 
-var tsProject = typescript.createProject('./tsconfig.json', { 
+var tsProject = typescript.createProject('./tsconfig.json', {
   typescript: tsc,
   module: 'commonjs'
 });
@@ -30,7 +30,7 @@ gulp.task('build-e2e', function() {
 // then runs end to end tasks
 // using Protractor: http://angular.github.io/protractor/
 gulp.task('e2e', ['build-e2e'], function(cb) {
-  return gulp.src(paths.e2eSpecsDist + '/*.js')
+  return gulp.src(paths.e2eSpecsDist + '**/*.js')
     .pipe(protractor({
       configFile: 'protractor.conf.js',
       args: ['--baseUrl', 'http://127.0.0.1:9000']
