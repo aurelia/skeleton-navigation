@@ -2,7 +2,7 @@
   "bundles": {
     "dist/app-build": {
       "includes": [
-        "[*]",
+        "[*.js]",
         "*.html!text",
         "*.css!text"
       ],
@@ -29,7 +29,8 @@
       ],
       "options": {
         "inject": true,
-        "minify": true
+        "minify": true,
+        "rev": true
       }
     }
   }
