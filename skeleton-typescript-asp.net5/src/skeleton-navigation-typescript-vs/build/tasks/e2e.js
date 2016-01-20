@@ -35,7 +35,7 @@ gulp.task('build-e2e', ['clean-e2e'], function() {
 // then runs end to end tasks
 // using Protractor: http://angular.github.io/protractor/
 gulp.task('e2e', ['build-e2e'], function(cb) {
-  return gulp.src(paths.e2eSpecsDist + '/*.js')
+  return gulp.src(paths.e2eSpecsDist + '**/*.js')
     .pipe(protractor({
       configFile: 'protractor.conf.js',
       args: ['--baseUrl', 'http://localhost:9000']

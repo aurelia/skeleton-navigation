@@ -8,7 +8,7 @@ exports.config = {
   },
 
   //seleniumAddress: 'http://0.0.0.0:4444',
-  specs: ['test/e2e/dist/*.js'],
+  specs: ['test/e2e/dist/**/*.js'],
 
   plugins: [{
     path: 'aurelia.protractor.js'
