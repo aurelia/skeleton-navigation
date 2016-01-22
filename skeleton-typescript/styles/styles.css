@@ -70,7 +70,7 @@ div.au-stagger {
 }
 
 .card-container.au-enter {
-  opacity: 0 !important;
+  opacity: 0;
 }
 
 .card-container.au-enter-active {
