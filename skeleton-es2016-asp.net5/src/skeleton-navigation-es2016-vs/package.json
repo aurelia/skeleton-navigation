@@ -22,7 +22,7 @@
     "e2e": "gulp serve e2e"
   },
   "devDependencies": {
-    "aurelia-bundler": "^0.1.8",
+    "aurelia-bundler": "^0.3.0",
     "aurelia-tools": "^0.1.3",
     "babel": "^5.8.23",
     "babel-core": "^6.3.17",
