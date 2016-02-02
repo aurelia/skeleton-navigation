@@ -6,7 +6,6 @@
     "sourceMap": true,
     "target": "es5",
     "module": "amd",
-    "moduleResolution": "classic",
     "declaration": false,
     "noImplicitAny": false,
     "noResolve": true,

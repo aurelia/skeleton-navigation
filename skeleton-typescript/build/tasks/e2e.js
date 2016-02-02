@@ -4,14 +4,9 @@ var plumber = require('gulp-plumber');
 var webdriverUpdate = require('gulp-protractor').webdriver_update;
 var webdriverStandalone = require("gulp-protractor").webdriver_standalone;
 var protractor = require('gulp-protractor').protractor;
-var typescript = require('gulp-typescript');
-var tsc = require('typescript');
+var typescript = require('gulp-tsb');
+var assign = Object.assign || require('object.assign');
 var del = require('del');
-
-var tsProject = typescript.createProject('./tsconfig.json', {
-  typescript: tsc,
-  module: 'commonjs'
-});
 
 // for full documentation of gulp-protractor,
 // please check https://github.com/mllrsohn/gulp-protractor
@@ -25,9 +20,13 @@ gulp.task('clean-e2e', function() {
 // transpiles files in
 // /test/e2e/src/ from es6 to es5
 // then copies them to test/e2e/dist/
+var typescriptCompiler = typescriptCompiler || null;
 gulp.task('build-e2e', ['clean-e2e'], function() {
+  if(!typescriptCompiler) {
+    typescriptCompiler = typescript.create(assign(require('../../tsconfig.json').compilerOptions, {module: 'commonjs'}));
+  }
   return gulp.src(paths.dtsSrc.concat(paths.e2eSpecsSrc))
-    .pipe(typescript(tsProject))
+    .pipe(typescriptCompiler())
     .pipe(gulp.dest(paths.e2eSpecsDist));
 });
 
