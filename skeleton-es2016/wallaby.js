@@ -1,7 +1,5 @@
 /* eslint-disable no-var, no-shadow, dot-notation */
 
-var babel = require('babel');
-
 module.exports = function(wallaby) {
   return {
     files: [
@@ -19,7 +17,6 @@ module.exports = function(wallaby) {
 
     compilers: {
       '**/*.js': wallaby.compilers.babel({
-        babel: babel,
         optional: [
           'es7.decorators',
           'es7.classProperties'
@@ -49,7 +46,7 @@ module.exports = function(wallaby) {
 
       Promise.all(promises).then(function() {
         wallaby.start();
-      });
+      }).catch(function (e) { setTimeout(function (){ throw e; }, 0); });
     },
 
     debug: false

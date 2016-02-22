@@ -6,8 +6,8 @@ module.exports = function(wallaby) {
   return {
     files: [
 
-      {pattern: 'jspm_packages/system.js', instrument: false},
-      {pattern: 'config.js', instrument: false},
+      {pattern: 'wwwroot/jspm_packages/system.js', instrument: false},
+      {pattern: 'wwwroot/config.js', instrument: false},
 
       {pattern: 'src/**/*.js', load: false}
 
@@ -28,7 +28,8 @@ module.exports = function(wallaby) {
     },
 
     middleware: (app, express) => {
-      app.use('/jspm_packages', express.static(require('path').join(__dirname, 'jspm_packages')));
+      app.use('/wwwroot/jspm_packages', express.static(require('path').join(__dirname, 'wwwroot', 'jspm_packages')));
+      app.use('/jspm_packages', express.static(require('path').join(__dirname, 'wwwroot', 'jspm_packages')));
     },
 
     bootstrap: function(wallaby) {
@@ -40,7 +41,7 @@ module.exports = function(wallaby) {
 
       System.config({
         paths: {
-          '*': '*.js'
+          '*': '*'
         }
       });
       for (; i < len; i++) {
@@ -49,7 +50,7 @@ module.exports = function(wallaby) {
 
       Promise.all(promises).then(function() {
         wallaby.start();
-      });
+      }).catch(function (e) { setTimeout(function (){ throw e; }, 0); });
     },
 
     debug: false
