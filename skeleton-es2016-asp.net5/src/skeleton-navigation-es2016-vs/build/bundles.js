@@ -1,4 +1,4 @@
-{
+module.exports = {
   "bundles": {
     "dist/app-build": {
       "includes": [
@@ -34,4 +34,4 @@
       }
     }
   }
-}
+};
