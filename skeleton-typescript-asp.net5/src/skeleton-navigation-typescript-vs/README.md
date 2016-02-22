@@ -69,7 +69,7 @@ You can also unbundle using the command bellow:
   ```
 #### Configuration
 
-The configuration is done by ```bundles.json``` file.
+The configuration is done by ```bundles.js``` file.
 
 ##### Optional
 Under ```options``` of ```dist/aurelia``` add ```rev: true``` to add bundle file revision/version.
@@ -128,5 +128,5 @@ A gulp task is already configured for that. Use the following command to export 
   ```
 The app will be exported into ```export``` directory preserving the directory structure.
 #### Configuration
-The configuration is done by ```bundles.json``` file.
-In addition, ```export.json``` file is available for including individual files.
+The configuration is done by ```bundles.js``` file.
+In addition, ```export.js``` file is available for including individual files.
