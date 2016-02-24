@@ -1,9 +1,10 @@
+// Compiled using typings@0.6.8
+// Source: https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/24e12a7af994afa2226af70fbfae0adc78736a9e/angular-protractor/angular-protractor.d.ts
 // Type definitions for Angular Protractor 1.5.0
 // Project: https://github.com/angular/protractor
 // Definitions by: Bill Armstrong <https://github.com/BillArmstrong>
 // Definitions: https://github.com/borisyankov/DefinitelyTyped
 
-/// <reference path="../selenium-webdriver/selenium-webdriver.d.ts" />
 
 declare module protractor {
     //region Wrapped webdriver Items
