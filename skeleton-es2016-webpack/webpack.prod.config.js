@@ -1,3 +1,5 @@
+/*eslint-disable no-var*/
+
 var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var AureliaWebpackPlugin = require('aurelia-webpack-plugin');

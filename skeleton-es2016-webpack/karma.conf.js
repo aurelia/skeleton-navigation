@@ -1,3 +1,5 @@
+/*eslint-disable no-var*/
+
 var webpackConfig = require('./webpack.config.js');
 webpackConfig.entry = {};
 
@@ -33,16 +35,6 @@ module.exports = function(config) {
     preprocessors: {
       'build/bundle.js': ['webpack'],
       'test/**/*.js': ['webpack']
-    },
-    'babelPreprocessor': {
-      options: {
-        sourceMap: 'inline',
-        moduleIds: false,
-        optional: [
-          'es7.decorators',
-          'es7.classProperties'
-        ]
-      }
     },
 
     // test results reporter to use
