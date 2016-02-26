@@ -7,7 +7,7 @@
     "dev": "webpack-dev-server --config webpack.config.js --hot --inline --progress --devtool eval",
     "build": "webpack --config webpack.config.js --progress --profile",
     "prod": "webpack -p --config webpack.prod.config.js --progress --devtool source-map",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "karma start"
   },
   "repository": {
     "type": "git",
@@ -52,6 +52,12 @@
     "eslint": "^1.10.3",
     "file-loader": "^0.8.5",
     "html-webpack-plugin": "^2.9.0",
+    "jasmine-core": "^2.4.1",
+    "karma": "^0.13.21",
+    "karma-babel-preprocessor": "^5.2.2",
+    "karma-chrome-launcher": "^0.2.2",
+    "karma-jasmine": "^0.3.7",
+    "karma-webpack": "^1.7.0",
     "raw-loader": "^0.5.1",
     "style-loader": "^0.13.0",
     "url-loader": "^0.5.7",
