@@ -1,4 +1,3 @@
-import './setup';
 import {Users} from 'src/users';
 import {HttpClient} from 'aurelia-fetch-client';
 
