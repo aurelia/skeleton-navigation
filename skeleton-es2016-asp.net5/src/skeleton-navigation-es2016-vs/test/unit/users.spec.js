@@ -1,3 +1,4 @@
+import './setup';
 import {Users} from '../../src/users';
 
 class HttpStub {
