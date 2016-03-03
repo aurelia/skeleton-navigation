@@ -1,3 +1,4 @@
+import './setup';
 import {App} from '../../src/app';
 
 class RouterStub {

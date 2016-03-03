@@ -1,3 +1,11 @@
+### 1.0.0-beta.1.1.5
+
+* improve test setup
+
+### 1.0.0-beta.1.1.4
+
+* update deps
+
 ### 1.0.0-beta.1.0.5 (2016-01-08)
 
 
