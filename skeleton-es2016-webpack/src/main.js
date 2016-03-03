@@ -1,15 +1,13 @@
-import 'aurelia-bootstrapper';
-import 'aurelia-loader-webpack';
+import {bootstrap} from 'aurelia-bootstrapper-webpack';
 
-require('../node_modules/bootstrap/dist/css/bootstrap.css');
-require('../node_modules/font-awesome/css/font-awesome.css');
-require('../styles/styles.css');
+import '../node_modules/bootstrap/dist/css/bootstrap.css';
+import '../node_modules/font-awesome/css/font-awesome.css';
+import '../styles/styles.css';
 
-
-export function configure(aurelia) {
+bootstrap(function(aurelia) {
   aurelia.use
     .standardConfiguration()
     .developmentLogging();
 
-  aurelia.start().then(() => aurelia.setRoot());
-}
+  aurelia.start().then(() => aurelia.setRoot('app', document.body));
+});
