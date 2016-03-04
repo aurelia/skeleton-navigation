@@ -14,7 +14,7 @@ Power and simplicity. [Webpack](https://webpack.github.io/) is an incredibly pow
 Go check it out if you haven't seen any of its capabilities yet.
 
 Combined with NPM for all package management and script execution, the goal was to make the build and deployment
-environment for Aurelia apps as simple as possible. No Gulp tasks, no SystemJS and no JSPM. Just a webpack, a
+environment for Aurelia apps as simple as possible. No Gulp tasks, no SystemJS and no JSPM. Just webpack, a
 single config file per environment and a few npm scripts.
 
 ## Getting started
