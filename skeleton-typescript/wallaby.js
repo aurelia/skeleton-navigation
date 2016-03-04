@@ -6,7 +6,8 @@ module.exports = function (wallaby) {
       {pattern: 'jspm_packages/system.js', instrument: false},
       {pattern: 'config.js', instrument: false},
 
-      {pattern: 'src/**/*.ts', load: false}
+      {pattern: 'src/**/*.ts', load: false},
+      {pattern: 'test/unit/setup.ts', load: false}
     ],
 
     tests: [
