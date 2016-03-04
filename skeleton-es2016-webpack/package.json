@@ -26,7 +26,7 @@
   },
   "homepage": "https://github.com/aurelia/skeleton-navigation#readme",
   "dependencies": {
-    "aurelia-bootstrapper-webpack": "github:martijnboland/bootstrapper-webpack",
+    "aurelia-bootstrapper-webpack": "^0.1.0",
     "aurelia-event-aggregator": "^1.0.0-beta.1.1.1",
     "aurelia-fetch-client": "^1.0.0-beta.1.1.0",
     "aurelia-framework": "^1.0.0-beta.1.1.3",
