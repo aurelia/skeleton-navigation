@@ -9,7 +9,8 @@ module.exports = function(wallaby) {
       {pattern: 'wwwroot/jspm_packages/system.js', instrument: false},
       {pattern: 'wwwroot/config.js', instrument: false},
 
-      {pattern: 'src/**/*.js', load: false}
+      {pattern: 'src/**/*.js', load: false},
+      {pattern: 'test/unit/setup.js', load: false}
 
     ],
 
