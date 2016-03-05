@@ -21,6 +21,7 @@ module.exports = {
         "aurelia-router",
         "aurelia-animator-css",
         "aurelia-templating-binding",
+        "aurelia-polyfills",
         "aurelia-templating-resources",
         "aurelia-templating-router",
         "aurelia-loader-default",

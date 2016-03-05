@@ -10,7 +10,7 @@ module.exports = {
     "styles/styles.css",
     "jspm_packages/npm/font-awesome@4.5.0/css/font-awesome.min.css",
     "jspm_packages/npm/font-awesome@4.5.0/fonts/*",
-    "jspm_packages/github/github/fetch@0.10.1.js",
-    "jspm_packages/github/github/fetch@0.10.1/fetch.js"
+    "jspm_packages/github/github/fetch@0.11.0.js",
+    "jspm_packages/github/github/fetch@0.11.0/fetch.js"
   ]
 };
