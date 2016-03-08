@@ -3,7 +3,7 @@ var paths = require('../paths');
 var to5 = require('gulp-babel');
 var plumber = require('gulp-plumber');
 var webdriverUpdate = require('gulp-protractor').webdriver_update;
-var webdriverStandalone = require("gulp-protractor").webdriver_standalone;
+var webdriverStandalone = require('gulp-protractor').webdriver_standalone;
 var protractor = require('gulp-protractor').protractor;
 var del = require('del');
 
