@@ -82,7 +82,13 @@ Bundling is performed by [Aurelia Bundler](http://github.com/aurelia/bundler). A
 You can also unbundle using the command bellow:
 
   ```shell
-  gulp unbundle
+    gulp unbundle
+  ```
+
+To start the bundled app, execute the following command:
+
+  ```shell
+    gulp serve-bundle
   ```
 #### Configuration
 The configuration is done by ```bundles.js``` file.
