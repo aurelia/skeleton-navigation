@@ -34,7 +34,9 @@ module.exports = function (wallaby) {
       }
 
       System.import('test/unit/setup')
-        .then(Promise.all(promises))
+        .then(function () {
+          return Promise.all(promises);
+        })
         .then(function () {
           wallaby.start();
         }).catch(function (e) {setTimeout(function () { throw e; }, 0); });
