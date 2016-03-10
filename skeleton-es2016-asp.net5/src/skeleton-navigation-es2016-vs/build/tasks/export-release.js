@@ -15,13 +15,15 @@ gulp.task('clean-export', function() {
 function getBundles() {
   var bl = [];
   for (b in bundles.bundles) {
-    bl.push(b + '.js');
+  	bl.push(paths.exportSourceRoot + b + '.js');
   }
   return bl;
 }
 
 function getExportList() {
-  return resources.list.concat(getBundles());
+  return resources.list.map(function (item) {
+    return paths.exportSourceRoot + item;
+  }).concat(getBundles());
 }
 
 gulp.task('export-copy', function() {
