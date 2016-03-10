@@ -14,7 +14,7 @@ gulp.task('clean-export', function() {
 
 function getBundles() {
   var bl = [];
-  for (b in bundles.bundles) {
+  for (var b in bundles.bundles) {
   	bl.push(paths.exportSourceRoot + b + '.js');
   }
   return bl;
