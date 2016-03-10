@@ -45,9 +45,13 @@ module.exports = function(wallaby) {
         promises.push(System['import'](wallaby.tests[i].replace(/\.js$/, '')));
       }
 
-      Promise.all(promises).then(function() {
-        wallaby.start();
-      }).catch(function (e) { setTimeout(function (){ throw e; }, 0); });
+      System.import('test/unit/setup')
+        .then(function () {
+          return Promise.all(promises);
+        })
+        .then(function() {
+          wallaby.start();
+        }).catch(function (e) { setTimeout(function (){ throw e; }, 0); });
     },
 
     debug: false
