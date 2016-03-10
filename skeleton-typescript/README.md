@@ -88,6 +88,12 @@ You can also unbundle using the command bellow:
   ```shell
   gulp unbundle
   ```
+
+To start the bundled app, execute the following command:
+
+  ```shell
+    gulp serve-bundle
+  ```
 #### Configuration
 
 The configuration is done by ```bundles.js``` file.

@@ -8,7 +8,9 @@ module.exports = {
       ],
       "options": {
         "inject": true,
-        "minify": true
+        "minify": true,
+        "depCache": true,
+        "rev": false
       }
     },
     "dist/aurelia": {
@@ -19,6 +21,7 @@ module.exports = {
         "aurelia-router",
         "aurelia-animator-css",
         "aurelia-templating-binding",
+        "aurelia-polyfills",
         "aurelia-templating-resources",
         "aurelia-templating-router",
         "aurelia-loader-default",
@@ -30,7 +33,8 @@ module.exports = {
       "options": {
         "inject": true,
         "minify": true,
-        "rev": true
+        "depCache": false,
+        "rev": false
       }
     }
   }
