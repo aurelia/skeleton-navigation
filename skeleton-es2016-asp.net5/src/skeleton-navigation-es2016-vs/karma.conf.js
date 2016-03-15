@@ -41,10 +41,11 @@ module.exports = function(config) {
     'babelPreprocessor': {
       options: {
         sourceMap: 'inline',
-        moduleIds: false,
-        optional: [
-          'es7.decorators',
-          'es7.classProperties'
+        presets: [ 'es2015-loose', 'stage-1'],
+        plugins: [
+          'syntax-flow',
+          'transform-decorators-legacy',
+          'transform-flow-strip-types'
         ]
       }
     },
