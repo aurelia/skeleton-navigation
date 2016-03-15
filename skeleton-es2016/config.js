@@ -142,6 +142,7 @@ System.config({
       "aurelia-templating": "npm:aurelia-templating@1.0.0-beta.1.1.4"
     },
     "npm:aurelia-templating-resources@1.0.0-beta.1.1.3": {
+      "aurelia-metadata": "npm:aurelia-metadata@1.0.0-beta.1.1.6",
       "aurelia-binding": "npm:aurelia-binding@1.0.0-beta.1.2.2",
       "aurelia-dependency-injection": "npm:aurelia-dependency-injection@1.0.0-beta.1.1.5",
       "aurelia-loader": "npm:aurelia-loader@1.0.0-beta.1.1.1",
