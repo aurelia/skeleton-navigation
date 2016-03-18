@@ -3,6 +3,12 @@
     "target": "es5",
     "module": "commonjs",
     "emitDecoratorMetadata": true,
-    "experimentalDecorators": true
-  }
+    "experimentalDecorators": true,
+    "sourceMap": true
+  },
+  "exclude": [
+    "node_modules",
+    "typings/main",
+    "typings/main.d.ts"
+  ]
 }

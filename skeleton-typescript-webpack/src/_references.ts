@@ -1,5 +1,6 @@
-﻿/// <reference path="../node_modules/typescript/lib/lib.d.ts" />
-/// <reference path="../node_modules/core-js/core-js.d.ts" />
+﻿// this only contains references to aurelia
+// the other typings are in the typings folder
+
 /// <reference path="../node_modules/aurelia-framework/dist/aurelia-framework.d.ts" />
 /// <reference path="../node_modules/aurelia-logging/dist/aurelia-logging.d.ts" />
 /// <reference path="../node_modules/aurelia-path/dist/aurelia-path.d.ts" />
