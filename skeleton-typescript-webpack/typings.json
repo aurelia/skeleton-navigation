@@ -1,0 +1,9 @@
+{
+  "name": "aurelia-skeleton-navigation-typescript-webpack",
+  "version": false,
+  "dependencies": {},
+  "ambientDependencies": {
+    "es6-collections": "registry:dt/es6-collections#0.5.1+20160316155526",
+    "es6-promise": "github:DefinitelyTyped/DefinitelyTyped/es6-promise/es6-promise.d.ts#24e12a7af994afa2226af70fbfae0adc78736a9e"
+  }
+}
