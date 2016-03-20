@@ -2,6 +2,7 @@
 
 var path = require('path');
 var AureliaWebpackPlugin = require('aurelia-webpack-plugin');
+var ProvidePlugin = require('webpack/lib/ProvidePlugin');
 
 module.exports = {
   devServer: {
@@ -18,7 +19,10 @@ module.exports = {
     filename: 'bundle.js'
   },
   plugins: [
-    new AureliaWebpackPlugin()
+    new AureliaWebpackPlugin(),
+    new ProvidePlugin({
+      Promise: 'bluebird'
+    })
   ],
   module: {
     loaders: [
