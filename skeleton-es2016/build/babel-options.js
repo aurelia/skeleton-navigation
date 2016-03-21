@@ -19,7 +19,7 @@ exports.base = function() {
       'transform-flow-strip-types'
     ]
   };
-}
+};
 
 exports.commonjs = function() {
   var options = exports.base();
