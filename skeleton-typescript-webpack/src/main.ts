@@ -5,7 +5,7 @@ import '../node_modules/bootstrap/dist/css/bootstrap.css';
 import '../node_modules/font-awesome/css/font-awesome.css';
 import '../styles/styles.css';
 
-bootstrap((aurelia:any) : void => {
+bootstrap((aurelia: Aurelia): void => {
   aurelia.use
     .standardConfiguration()
     .developmentLogging();
