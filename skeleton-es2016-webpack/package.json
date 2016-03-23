@@ -7,7 +7,11 @@
     "dev": "webpack-dev-server --config webpack.config.js --hot --inline --progress --devtool eval",
     "build": "webpack --config webpack.config.js --progress --profile",
     "prod": "webpack -p --config webpack.prod.config.js --progress --devtool source-map",
-    "test": "karma start"
+    "test": "karma start",
+    "webdriver:update": "./node_modules/.bin/webdriver-manager update",
+    "webdriver:start": "./node_modules/.bin/webdriver-manager start",
+    "pree2e": "npm run webdriver:update -- --standalone",
+    "e2e": "./node_modules/.bin/protractor"
   },
   "repository": {
     "type": "git",
@@ -64,7 +68,7 @@
     "karma-chrome-launcher": "^0.2.2",
     "karma-jasmine": "^0.3.7",
     "karma-webpack": "^1.7.0",
-    "protractor": "^3.1.1",
+    "protractor": "^3.2.1",
     "raw-loader": "^0.5.1",
     "style-loader": "^0.13.0",
     "url-loader": "^0.5.7",

@@ -1,4 +1,7 @@
-require('babel-core/register');
+require('babel-core/register')({
+  presets: ['es2015-loose', 'stage-1'],
+  plugins: ['transform-decorators-legacy']
+});
 
 exports.config = {
   baseUrl: 'http://localhost:3000/',
