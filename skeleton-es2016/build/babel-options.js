@@ -11,7 +11,7 @@ exports.base = function() {
     moduleIds: false,
     comments: false,
     compact: false,
-    code:true,
+    code: true,
     presets: [ 'es2015-loose', 'stage-1'],
     plugins: [
       'syntax-flow',
@@ -41,6 +41,6 @@ exports.system = function() {
 
 exports.es2015 = function() {
   var options = exports.base();
-  options.presets = ['stage-1']
+  options.presets = ['stage-1'];
   return options;
 };
