@@ -1,3 +1,4 @@
-﻿// all gulp tasks are located in the ./build/tasks directory
+﻿/// <binding BeforeBuild='build-html, build-css, build-jspm' Clean='clean' />
+// all gulp tasks are located in the ./build/tasks directory
 // gulp configuration is in files in ./build directory
 require('require-dir')('build/tasks');
