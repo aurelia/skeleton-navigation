@@ -8,6 +8,7 @@ var paths = require('../paths');
 var compilerOptions = require('../babel-options');
 var assign = Object.assign || require('object.assign');
 var notify = require('gulp-notify');
+var exec = require('child_process').exec;
 
 // transpiles changed es6 files to SystemJS format
 // the plumber() call prevents 'pipe breaking' caused
@@ -37,6 +38,12 @@ gulp.task('build-css', function() {
     .pipe(gulp.dest(paths.output))
 });
 
+// runs jspm install from within Gulp
+gulp.task('build-jspm', function () {
+    exec('jspm install', function (err, stout, stderr) {
+    });
+});
+
 // this task calls the clean task (located
 // in ./clean.js), then runs the build-system
 // and build-html tasks in parallel
@@ -44,7 +51,7 @@ gulp.task('build-css', function() {
 gulp.task('build', function(callback) {
   return runSequence(
     'clean',
-    ['build-system', 'build-html', 'build-css'],
+    ['build-system', 'build-html', 'build-css', 'build-jspm'],
     callback
   );
 });
