@@ -1,6 +1,6 @@
 {
   "name": "aurelia-skeleton-navigation-webpack",
-  "version": "1.0.0-beta.1.2.0",
+  "version": "1.0.0-beta.1.2.1",
   "description": "A starter kit for building a standard navigation-style app with Aurelia and webpack.",
   "main": "index.js",
   "scripts": {
