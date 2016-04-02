@@ -27,6 +27,7 @@ module.exports = {
   module: {
     loaders: [
       { test: /\.js$/, loader: 'babel', exclude: /node_modules/, query: { presets: ['es2015-loose', 'stage-1'], plugins: ['transform-decorators-legacy'] } },
+      { test: /node_modules.*bootstrap\.js/, loader: 'imports?jQuery=jquery' },
       { test: /\.css?$/, loader: 'style!css' },
       { test: /\.html$/, loader: 'html' },
       { test: /\.(png|gif|jpg)$/, loader: 'url?limit=8192' },

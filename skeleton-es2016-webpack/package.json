@@ -45,7 +45,8 @@
     "bluebird": "^3.3.4",
     "bootstrap": "^3.3.6",
     "font-awesome": "^4.5.0",
-    "isomorphic-fetch": "^2.2.1"
+    "isomorphic-fetch": "^2.2.1",
+    "jquery": "^2.2.2"
   },
   "devDependencies": {
     "aurelia-tools": "^0.1.18",
@@ -62,6 +63,7 @@
     "file-loader": "^0.8.5",
     "html-loader": "^0.4.3",
     "html-webpack-plugin": "^2.9.0",
+    "imports-loader": "^0.6.5",
     "jasmine-core": "^2.4.1",
     "karma": "^0.13.21",
     "karma-babel-preprocessor": "^6.0.1",
