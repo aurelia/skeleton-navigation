@@ -99,11 +99,11 @@ To run the unit tests, first ensure that you have followed the steps above in or
   ```
 2. Install Aurelia libs for test visibility:
 
-```shell
-jspm install aurelia-framework
-jspm install aurelia-http-client
-jspm install aurelia-router
-```
+  ```shell
+  jspm install aurelia-framework
+  jspm install aurelia-http-client
+  jspm install aurelia-router
+  ```
 3. You can now run the tests with this command:
 
   ```shell
