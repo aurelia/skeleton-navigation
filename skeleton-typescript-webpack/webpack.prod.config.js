@@ -29,11 +29,12 @@ module.exports = {
   resolve: {
     root: [
       path.resolve('./')
-    ]
+    ],
+    extensions: ['', '.js', '.ts']
   },
   module: {
     loaders: [
-      { test: /\.ts$/, loader: 'tsloader' },
+      { test: /\.ts$/, loader: 'ts-loader' },
       { test: /\.css?$/, loader: 'style!css' },
       { test: /\.html$/, loader: 'raw' },
       { test: /\.(png|gif|jpg)$/, loader: 'url-loader?limit=8192' },
