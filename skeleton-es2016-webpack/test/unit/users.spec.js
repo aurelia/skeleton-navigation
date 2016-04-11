@@ -1,4 +1,5 @@
 import './setup';
+import Promise from 'bluebird';
 import {Users} from '../../src/users';
 
 class HttpStub {
