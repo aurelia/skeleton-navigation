@@ -4,10 +4,11 @@
 
 Before you start, make sure you have a working [NodeJS](http://nodejs.org/) environment, preferably with NPM 3.
 
-From the project folder, execute the following command:
+From the project folder, execute the following commands:
 
 ```shell
 npm install
+typings install
 ```
 
 This will install all required dependencies, including a local version of webpack that is going to
