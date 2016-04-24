@@ -2,6 +2,8 @@ import './setup';
 import {ChildRouter} from '../../src/child-router';
 
 class RouterStub {
+  routes;
+  
   configure(handler) {
     handler(this);
   }
@@ -12,8 +14,8 @@ class RouterStub {
 }
 
 describe('the Child Router module', () => {
-  var sut;
-  var mockedRouter;
+  let sut;
+  let mockedRouter;
 
   beforeEach(() => {
     mockedRouter = new RouterStub();

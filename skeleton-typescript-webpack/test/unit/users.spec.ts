@@ -1,7 +1,11 @@
+import {HttpClient} from 'aurelia-fetch-client';
 import './setup';
 import {Users} from '../../src/users';
 
-class HttpStub {
+class HttpStub extends HttpClient {
+  url;
+  itemStub;
+  
   fetch(url) {
     var response = this.itemStub;
     this.url = url;
@@ -10,7 +14,8 @@ class HttpStub {
     });
   }
 
-  configure(func) {
+  configure(config) {
+    return this;
   }
 }
 

@@ -25,6 +25,7 @@
     "aurelia-templating-resources": "npm:aurelia-templating-resources/dist/commonjs/aurelia-templating-resources.d.ts",
     "aurelia-templating-router": "npm:aurelia-templating-router/dist/commonjs/aurelia-templating-router.d.ts",
     "es6-collections": "registry:dt/es6-collections#0.5.1+20160316155526",
-    "es6-promise": "github:DefinitelyTyped/DefinitelyTyped/es6-promise/es6-promise.d.ts#24e12a7af994afa2226af70fbfae0adc78736a9e"
+    "es6-promise": "github:DefinitelyTyped/DefinitelyTyped/es6-promise/es6-promise.d.ts#24e12a7af994afa2226af70fbfae0adc78736a9e",
+    "jasmine": "registry:dt/jasmine#2.2.0+20160412134438"
   }
 }

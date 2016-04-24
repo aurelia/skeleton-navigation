@@ -2,6 +2,8 @@ import './setup';
 import {App} from '../../src/app';
 
 class RouterStub {
+  routes;
+  
   configure(handler) {
     handler(this);
   }
@@ -12,8 +14,8 @@ class RouterStub {
 }
 
 describe('the App module', () => {
-  var sut;
-  var mockedRouter;
+  let sut;
+  let mockedRouter;
 
   beforeEach(() => {
     mockedRouter = new RouterStub();
