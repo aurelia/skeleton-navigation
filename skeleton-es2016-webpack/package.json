@@ -45,7 +45,8 @@
     "bluebird": "^3.3.4",
     "bootstrap": "^3.3.6",
     "font-awesome": "^4.5.0",
-    "isomorphic-fetch": "^2.2.1"
+    "isomorphic-fetch": "^2.2.1",
+    "jquery": "^2.2.2"
   },
   "devDependencies": {
     "aurelia-tools": "^0.1.18",

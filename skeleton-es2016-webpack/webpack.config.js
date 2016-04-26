@@ -21,7 +21,8 @@ module.exports = {
   plugins: [
     new AureliaWebpackPlugin(),
     new ProvidePlugin({
-      Promise: 'bluebird'
+      Promise: 'bluebird',
+      jQuery: 'jquery'
     })
   ],
   module: {
