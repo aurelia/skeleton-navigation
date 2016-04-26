@@ -46,7 +46,7 @@
     "bootstrap": "^3.3.6",
     "font-awesome": "^4.5.0",
     "isomorphic-fetch": "^2.2.1",
-    "jquery": "^2.2.2"
+    "jquery": "^2.2.3"
   },
   "devDependencies": {
     "aurelia-tools": "^0.1.18",

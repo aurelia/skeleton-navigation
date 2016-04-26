@@ -2,6 +2,7 @@
 
 var path = require('path');
 var AureliaWebpackPlugin = require('aurelia-webpack-plugin');
+var ProvidePlugin = require('webpack/lib/ProvidePlugin');
 
 module.exports = {
   resolve: {
@@ -21,7 +22,10 @@ module.exports = {
     filename: 'bundle.js'
   },
   plugins: [
-    new AureliaWebpackPlugin()
+    new AureliaWebpackPlugin(),
+    new ProvidePlugin({
+      jQuery: 'jquery'
+    })
   ],
   module: {
     loaders: [

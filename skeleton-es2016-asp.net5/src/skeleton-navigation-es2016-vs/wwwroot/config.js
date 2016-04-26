@@ -24,6 +24,7 @@ System.config({
     "bootstrap": "github:twbs/bootstrap@3.3.6",
     "fetch": "github:github/fetch@0.11.0",
     "font-awesome": "npm:font-awesome@4.5.0",
+    "jquery": "npm:jquery@2.2.3",
     "text": "github:systemjs/plugin-text@0.0.3",
     "github:twbs/bootstrap@3.3.6": {
       "jquery": "github:components/jquery@2.2.1"

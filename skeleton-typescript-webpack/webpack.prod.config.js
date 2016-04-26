@@ -3,6 +3,7 @@
 var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var AureliaWebpackPlugin = require('aurelia-webpack-plugin');
+var ProvidePlugin = require('webpack/lib/ProvidePlugin');
 var pkg = require('./package.json');
 
 var outputFileTemplateSuffix = '-' + pkg.version;
@@ -24,6 +25,9 @@ module.exports = {
       title: 'Aurelia webpack skeleton - ' + pkg.version,
       template: 'index.prod.html',
       filename: 'index.html'
+    }),
+    new ProvidePlugin({
+      jQuery: 'jquery'
     })
   ],
   resolve: {

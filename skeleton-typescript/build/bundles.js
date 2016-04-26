@@ -28,7 +28,8 @@ module.exports = {
         "aurelia-history-browser",
         "aurelia-logging-console",
         "bootstrap",
-        "bootstrap/css/bootstrap.css!text"
+        "bootstrap/css/bootstrap.css!text",
+        "jquery"
       ],
       "options": {
         "inject": true,
