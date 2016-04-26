@@ -46,16 +46,31 @@ npm run prod
 
 The production bundle includes all files that are required for deployment.
 
-
 ## Plugin configuration
 The aurelia-webpack-plugin has its own configuration options that you may need to set.
 Please see https://github.com/aurelia/webpack-plugin for more information.
 
-## Testing
+## Running The Unit Tests
+
 To run the unit tests:
 
 ```shell
 npm run test
 ```
 
-> **Note**: The e2e tests aren't working yet
+## Running The E2E Tests
+Integration tests are performed with [Protractor](http://angular.github.io/protractor/#/).
+
+1. Place your E2E-Tests into the folder ```test/e2e/src```
+
+2. Make sure your app runs and is accessible
+
+  ```shell
+  npm run dev
+  ```
+
+3. In another console run the E2E-Tests
+
+  ```shell
+  npm run e2e
+  ```

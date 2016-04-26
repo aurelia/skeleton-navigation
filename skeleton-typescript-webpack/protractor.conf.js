@@ -1,4 +1,4 @@
-require('babel-core/register');
+require('ts-node/register');
 
 exports.config = {
   baseUrl: 'http://localhost:3000/',
@@ -11,7 +11,7 @@ exports.config = {
   },
 
   //seleniumAddress: 'http://0.0.0.0:4444',
-  specs: ['test/e2e/src/**/*.js'],
+  specs: ['test/e2e/src/**/*.ts'],
 
   plugins: [{
     path: 'aurelia.protractor.js'

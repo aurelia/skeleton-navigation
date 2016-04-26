@@ -1,19 +1,16 @@
-export class PageObjectWelcome {
-
-  constructor() {
-
-  }
-
+export class PageObject_Welcome {
   getGreeting() {
     return element(by.tagName('h2')).getText();
   }
 
   setFirstname(value) {
-    return element(by.valueBind('firstName')).clear().sendKeys(value);
+    let firstName = element(by.valueBind('firstName'));
+    return firstName.clear().then(() => firstName.sendKeys(value));
   }
 
   setLastname(value) {
-    return element(by.valueBind('lastName')).clear().sendKeys(value);
+    let lastName = element(by.valueBind('lastName'));
+    return lastName.clear().then(() => lastName.sendKeys(value));
   }
 
   getFullname() {

@@ -3,6 +3,7 @@
   "version": false,
   "dependencies": {},
   "ambientDependencies": {
+    "angular-protractor": "github:DefinitelyTyped/DefinitelyTyped/angular-protractor/angular-protractor.d.ts#24e12a7af994afa2226af70fbfae0adc78736a9e",
     "aurelia-binding": "npm:aurelia-binding/dist/commonjs/aurelia-binding.d.ts",
     "aurelia-bootstrapper-webpack": "npm:aurelia-bootstrapper-webpack/dist/commonjs/aurelia-bootstrapper-webpack.d.ts",
     "aurelia-dependency-injection": "npm:aurelia-dependency-injection/dist/commonjs/aurelia-dependency-injection.d.ts",
@@ -29,6 +30,7 @@
     "aurelia-templating-router": "npm:aurelia-templating-router/dist/commonjs/aurelia-templating-router.d.ts",
     "es6-collections": "registry:dt/es6-collections#0.5.1+20160316155526",
     "es6-promise": "github:DefinitelyTyped/DefinitelyTyped/es6-promise/es6-promise.d.ts#24e12a7af994afa2226af70fbfae0adc78736a9e",
-    "jasmine": "registry:dt/jasmine#2.2.0+20160412134438"
+    "jasmine": "registry:dt/jasmine#2.2.0+20160412134438",
+    "selenium-webdriver": "github:DefinitelyTyped/DefinitelyTyped/selenium-webdriver/selenium-webdriver.d.ts#24e12a7af994afa2226af70fbfae0adc78736a9e"
   }
 }

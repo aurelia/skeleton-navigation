@@ -10,5 +10,7 @@ bootstrap((aurelia: Aurelia): void => {
     .standardConfiguration()
     .developmentLogging();
 
-  aurelia.start().then(() => aurelia.setRoot('app', document.body));
+  const rootElem = document.body;
+  aurelia.start().then(() => aurelia.setRoot('app', rootElem));
+  rootElem.setAttribute('aurelia-app', '');
 });
