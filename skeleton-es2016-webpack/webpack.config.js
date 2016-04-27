@@ -22,7 +22,9 @@ module.exports = {
     new AureliaWebpackPlugin(),
     new ProvidePlugin({
       Promise: 'bluebird',
-      jQuery: 'jquery'
+      $: 'jquery',
+      jQuery: 'jquery',
+      'window.jQuery': 'jquery' // this doesn't expose jQuery property for window, but expose it to every module
     })
   ],
   module: {

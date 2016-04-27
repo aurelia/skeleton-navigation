@@ -24,7 +24,9 @@ module.exports = {
   plugins: [
     new AureliaWebpackPlugin(),
     new ProvidePlugin({
-      jQuery: 'jquery'
+      $: 'jquery',
+      jQuery: 'jquery',
+      'window.jQuery': 'jquery' // this doesn't expose jQuery property for window, but expose it to every module
     })
   ],
   module: {
