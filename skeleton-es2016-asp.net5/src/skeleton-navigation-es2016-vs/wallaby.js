@@ -1,7 +1,5 @@
 /* eslint-disable no-var, no-shadow, dot-notation */
 
-var babel = require('babel');
-
 module.exports = function(wallaby) {
   return {
     files: [
@@ -20,10 +18,11 @@ module.exports = function(wallaby) {
 
     compilers: {
       '**/*.js': wallaby.compilers.babel({
-        babel: babel,
-        optional: [
-          'es7.decorators',
-          'es7.classProperties'
+        presets: [ 'es2015-loose', 'stage-1'],
+        plugins: [
+          'syntax-flow',
+          'transform-decorators-legacy',
+          'transform-flow-strip-types'
         ]
       })
     },

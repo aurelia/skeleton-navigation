@@ -24,6 +24,7 @@
   "devDependencies": {
     "aurelia-bundler": "^0.3.0",
     "aurelia-tools": "^0.1.3",
+    "babel-core": "^6.7.2",
     "babel-eslint": "^5.0.0",
     "babel-plugin-syntax-flow": "^6.5.0",
     "babel-plugin-transform-decorators-legacy": "^1.3.4",
