@@ -69,6 +69,7 @@
     "ts-node": "^0.7.2",
     "typescript": "^1.8.7",
     "url-loader": "^0.5.7",
+    "wallaby-webpack": "0.0.22",
     "webpack": "^1.12.14",
     "webpack-dev-server": "^1.14.1"
   }
