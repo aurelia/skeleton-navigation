@@ -1,24 +1,29 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "module": "commonjs",
+    "target": "es2015",
+    "module": "es2015",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "sourceMap": true
+    "sourceMap": true,
+    "noEmitHelpers": true
   },
   "filesGlob": [
     "./src/**/*.ts",
-    "./node_modules/aurelia-*/dist/aurelia-*.d.ts",
     "./custom_typings/**/*.d.ts",
     "./test/**/*.ts",
     "./typings/index.d.ts"
   ],
   "exclude": [
-    "node_modules",
-    "typings/main",
-    "typings/main.d.ts"
+    "node_modules"
   ],
   "atom": {
     "rewriteTsconfig": true
+  },
+  "awesomeTypescriptLoaderOptions": {
+    "doTypeCheck": true,
+    "forkChecker": true,
+    "useBabel": true,
+    "useCache": true,
+    "library": "es6"
   }
 }

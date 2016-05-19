@@ -21,9 +21,12 @@ export class Users {
     });
   }
 
-  activate(): Promise<IUser[]> {
-    return this.http.fetch('users')
-      .then<IUser[]>(response => response.json())
-      .then<IUser[]>(users => this.users = users);
+  async activate(): Promise<void> {
+    const response = await this.http.fetch('users');
+    this.users = await response.json() as IUser[];
+
+    // return this.http.fetch('users')
+    //   .then<IUser[]>(response => response.json())
+    //   .then<IUser[]>(users => this.users = users);
   }
 }

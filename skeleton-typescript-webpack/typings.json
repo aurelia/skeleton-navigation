@@ -28,8 +28,6 @@
     "aurelia-templating-binding": "npm:aurelia-templating-binding/dist/aurelia-templating-binding.d.ts",
     "aurelia-templating-resources": "npm:aurelia-templating-resources/dist/aurelia-templating-resources.d.ts",
     "aurelia-templating-router": "npm:aurelia-templating-router/dist/aurelia-templating-router.d.ts",
-    "es6-collections": "registry:dt/es6-collections#0.5.1+20160316155526",
-    "es6-promise": "registry:dt/es6-promise#0.0.0+20160423074304",
     "jasmine": "registry:dt/jasmine#2.2.0+20160505161446",
     "selenium-webdriver": "github:DefinitelyTyped/DefinitelyTyped/selenium-webdriver/selenium-webdriver.d.ts#24e12a7af994afa2226af70fbfae0adc78736a9e"
   }

@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Aurelia</title>
+    <title><%= webpackConfig.metadata.title %></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="<%= webpackConfig.metadata.baseUrl %>">
+    <!-- we'd like to load the basic styles before Aurelia so that the spinner is rendered properly -->
+    <link rel="stylesheet" type="text/css" href="styles/styles.css"> 
   </head>
   <body>
     <div class="splash">
       <div class="message">Aurelia Navigation Skeleton</div>
       <i class="fa fa-spinner fa-spin"></i>
     </div>
-    <script src="bundle.js"></script>
+    <% if (webpackConfig.metadata.ENV === 'development') { %>
+    <!-- Webpack Dev Server reload -->
+    <script src="/webpack-dev-server.js"></script>
+    <% } %>
   </body>
 </html>

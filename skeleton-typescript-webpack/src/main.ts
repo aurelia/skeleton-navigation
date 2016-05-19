@@ -1,11 +1,8 @@
 ﻿import {Aurelia} from 'aurelia-framework';
 import {bootstrap} from 'aurelia-bootstrapper-webpack';
 
-import 'bootstrap';
-
-import '../node_modules/bootstrap/dist/css/bootstrap.css';
-import '../node_modules/font-awesome/css/font-awesome.css';
-import '../styles/styles.css';
+// font-awesome requires some fonts and thus cannot be required from within the View
+import 'font-awesome/css/font-awesome.css';
 
 bootstrap((aurelia: Aurelia): void => {
   aurelia.use

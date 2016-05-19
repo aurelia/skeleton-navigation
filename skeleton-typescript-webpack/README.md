@@ -8,22 +8,15 @@ From the project folder, execute the following commands:
 
 ```shell
 npm install
-typings install
 ```
 
 This will install all required dependencies, including a local version of webpack that is going to
 build and bundle the app. There is no need to install webpack globally.
 
-If the TypeScript references do not work or you get some runtime errors you can try to execute the following command:
-
-```shell
-npm dedupe
-```
-
 To run the app execute the following command:
 
 ```shell
-npm run dev
+npm run server
 ```
 
 This command starts the webpack development server that serves the build bundles.
@@ -32,7 +25,7 @@ will automatically build and reload the app.
 
 ## Bundling
 
-To build a development bundle (output to /build) execute:
+To build a development bundle (output to /dist) execute:
 
 ```shell
 npm run build
@@ -41,7 +34,13 @@ npm run build
 To build an optimized, minified production bundle (output to /dist) execute:
 
 ```shell
-npm run prod
+npm run build:prod
+```
+
+To test either the development or production build execute:
+
+```shell
+npm run server:prod
 ```
 
 The production bundle includes all files that are required for deployment.
@@ -66,7 +65,7 @@ Integration tests are performed with [Protractor](http://angular.github.io/protr
 2. Make sure your app runs and is accessible
 
   ```shell
-  npm run dev
+  npm run server
   ```
 
 3. In another console run the E2E-Tests
