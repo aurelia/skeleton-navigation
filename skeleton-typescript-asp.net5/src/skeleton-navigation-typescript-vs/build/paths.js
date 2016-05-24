@@ -16,7 +16,7 @@ module.exports = {
   e2eSpecsSrc: 'test/e2e/src/**/*.ts',
   e2eSpecsDist: 'test/e2e/dist/',
   dtsSrc: [
-    'typings/browser/**/*.d.ts',
+    'typings/globals/**/*.d.ts',
     'custom_typings/**/*.d.ts',
     './wwwroot/jspm_packages/**/*.d.ts'
   ]
