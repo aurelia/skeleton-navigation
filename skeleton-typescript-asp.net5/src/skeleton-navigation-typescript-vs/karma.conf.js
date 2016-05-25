@@ -25,7 +25,7 @@ module.exports = function(config) {
         transpiler: 'typescript'
       },
       serveFiles: [
-        'src/**/*.ts',
+        'src/**/*.*',
         'wwwroot/jspm_packages/**/*.js'
       ]
     },
