@@ -1,4 +1,4 @@
-# Aurelia with NetCoreApp
+# Aurelia with NetCoreApp using TypeScript
 
 ## Running The App
 
@@ -41,7 +41,7 @@ This assumes you are running from command line but Visual Studio users should be
 in the IDE.
 
 >**Note:** This project requires the installation of the .Net Core SDK 1.0 RC2 as well as the .Net Core VS2015 Tooling Preview 1. 
-They boyh may be found
+They both may be found
 [on the Microsoft](https://www.microsoft.com/net/core#windows) page.
 
 
