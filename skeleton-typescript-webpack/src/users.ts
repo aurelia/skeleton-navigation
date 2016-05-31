@@ -1,6 +1,10 @@
-import {inject} from 'aurelia-framework';
+import {autoinject} from 'aurelia-framework';
 import {HttpClient} from 'aurelia-fetch-client';
-import 'isomorphic-fetch';
+
+/**
+ * Polyfill Fetch client conditionally
+ */
+const ensureFetchPolyfill = !self.fetch ? System.import('isomorphic-fetch') : Promise.resolve();
 
 interface IUser {
   avatar_url: string;
@@ -8,7 +12,7 @@ interface IUser {
   html_url: string;
 }
 
-@inject(HttpClient)
+@autoinject
 export class Users {
   heading: string = 'Github Users';
   users: Array<IUser> = [];
@@ -22,11 +26,8 @@ export class Users {
   }
 
   async activate(): Promise<void> {
+    await ensureFetchPolyfill;
     const response = await this.http.fetch('users');
-    this.users = await response.json() as IUser[];
-
-    // return this.http.fetch('users')
-    //   .then<IUser[]>(response => response.json())
-    //   .then<IUser[]>(users => this.users = users);
+    this.users = await response.json();
   }
 }

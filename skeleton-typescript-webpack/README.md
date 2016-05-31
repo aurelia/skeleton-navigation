@@ -45,7 +45,8 @@ npm run server:prod
 
 The production bundle includes all files that are required for deployment.
 
-## Plugin configuration
+## Resource and bundling configuration
+
 The aurelia-webpack-plugin has its own configuration options that you may need to set.
 Please see https://github.com/aurelia/webpack-plugin for more information.
 

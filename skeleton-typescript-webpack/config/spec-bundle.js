@@ -5,8 +5,8 @@
 
 /*
  * When testing with webpack and ES6, we have to do some extra
- * things get testing to work right. Because we are gonna write test
- * in ES6 to, we have to compile those as well. That's handled in
+ * things get testing to work right. Because we are gonna write tests
+ * in TS, we have to compile those as well. That's handled in
  * karma.conf.js with the karma-webpack plugin. This is the entry
  * file for webpack test. Just like webpack will create a bundle.js
  * file for our client, when we run test, it well compile and bundle them
@@ -16,8 +16,10 @@ Error.stackTraceLimit = Infinity;
 
 // Typescript emit helpers polyfill
 require('ts-helpers');
-// required for await-async:
+// await-async:
 require('regenerator-runtime');
+// PAL
+require('aurelia-pal-browser').initialize();
 
 /*
  * Ok, this is kinda crazy. We can use the the context method on

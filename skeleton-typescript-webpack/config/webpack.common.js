@@ -11,9 +11,54 @@ const helpers = require('./helpers');
  */
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ForkCheckerPlugin = require('awesome-typescript-loader').ForkCheckerPlugin;
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ProvidePlugin = require('webpack/lib/ProvidePlugin');
 const AureliaWebpackPlugin = require('aurelia-webpack-plugin');
-const meta = helpers.generateMeta();
+
+const coreBundles = {
+  bootstrap: [
+    'aurelia-polyfills',
+    'aurelia-pal',
+    'aurelia-pal-browser',
+    'ts-helpers',
+    'regenerator-runtime',
+    'bluebird'
+  ],
+  // that will have root directory remapped from /dist/commonjs to /dist/es2015
+  // they will be included in the 'aurelia' bundle (except for bootstrap packages)
+  aurelia: [
+    'aurelia-bootstrapper-webpack',
+    'aurelia-binding',
+    'aurelia-dependency-injection',
+    'aurelia-event-aggregator',
+    'aurelia-fetch-client',
+    'aurelia-framework',
+    'aurelia-history',
+    'aurelia-history-browser',
+    'aurelia-loader',
+    'aurelia-loader-webpack',
+    'aurelia-logging',
+    'aurelia-logging-console',
+    'aurelia-metadata',
+    'aurelia-pal',
+    'aurelia-pal-browser',
+    'aurelia-path',
+    'aurelia-polyfills',
+    'aurelia-route-recognizer',
+    'aurelia-router',
+    'aurelia-task-queue',
+    'aurelia-templating',
+    'aurelia-templating-binding',
+    'aurelia-templating-router',
+    'aurelia-templating-resources'
+  ],
+  // you may remove certain non-core packages from the 'aurelia' bundle in order to lazy-load them
+  excludeFromAureliaBundle: [
+    'aurelia-fetch-client'
+  ]
+}
+
+const meta = helpers.generateMeta(coreBundles);
 
 /*
  * Webpack Constants
@@ -50,18 +95,21 @@ module.exports = {
    *
    * See: http://webpack.github.io/docs/configuration.html#entry
    */
-  cache: false,
+  cache: true,
   entry: {
-    
-    app: [ './index' ],
+    'app': ['./src/main'],
+    'aurelia-bootstrap': ['./index'].concat(meta.bootstrapPackages),
+    'aurelia': meta.aureliaPackages,
+    // if you wish to have certain packages end up in their own files, you may do so here
+    // e.g. this will put all non-aurelia dependencies into a "vendor" chunk (not recommended): 
+    // 'vendor': meta.vendorPackages.filter(entry => ['isomorphic-fetch'].indexOf(entry) === -1),
     /*
-    // an example of how to separate parts of code into to their own chunks //
-    // remember to also include the new chunk in the CommonsChunkPlugin array below //
+    // an example of how to separate parts of code into static chunks
+    // (only do it if you know what you're doing)
+    // most of the time you'll want to declare dynamic chunks in package.json
+    // if you do it, remember to also include the new chunk in the CommonsChunkPlugin Array below //
     users: [ './src/users', './src/users.html', './src/blur-image' ],
     */
-    vendor: meta.vendorPackages,
-    aurelia: meta.aureliaPackages
-
   },
 
   /*
@@ -142,6 +190,7 @@ module.exports = {
       
       /**
        * Compile Aurelia modules to ES5 while keeping modules in ES6 format
+       * NOTE: Useful only with ES2015 builds (work-in-progress)
        */
       {
         test: /\.js$/,
@@ -199,7 +248,8 @@ module.exports = {
       { test: /\.(png|gif|jpg)$/, loader: 'url', query: { limit: 8192 } },
       { test: /\.woff2(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: 'url', query: { limit: 10000, mimetype: 'application/font-woff2' } },
       { test: /\.woff(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: 'url', query: { limit: 10000, mimetype: 'application/font-woff' } },
-      { test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: 'file' }
+      { test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: 'file' },
+      
     ]
 
   },
@@ -212,24 +262,22 @@ module.exports = {
   plugins: [
 
     new AureliaWebpackPlugin({
-      moduleType: 'es2015',
       root: helpers.root('.'),
-      src: helpers.root('src'),
-      /*
-      // if you wish to include all files belonging to a module, list it here: //
-      includeSubModules: [
-        {moduleId: 'aurelia-dialog'},
-        {moduleId: 'aurelia-validatejs'},
-      ],
-      */
-      /*
-      // if you wish to make additional modules visible or alias them
-      // so that they can be loaded dynamically from within aurelia, list them here:
-      contextMap: {
-        'some-module': 'some-module/index.js'
-      }
-      */
+      src: helpers.root('src')
     }),
+
+    /*
+     * Plugin: CopyWebpackPlugin
+     * Description: Copy files and directories in webpack.
+     *
+     * Copies project static assets.
+     *
+     * See: https://www.npmjs.com/package/copy-webpack-plugin
+     */
+    new CopyWebpackPlugin([{
+      from: 'styles',
+      to: 'styles'
+    }]),
     
     /*
      * Plugin: ForkCheckerPlugin
@@ -258,7 +306,14 @@ module.exports = {
      * See: https://github.com/webpack/docs/wiki/optimization#multi-page-app
      */
     new webpack.optimize.CommonsChunkPlugin({
-      name: ['vendor', 'aurelia' /*, 'users' // see example above */].reverse()
+      name: [
+        // bootstrap has to be defined first!
+        // otherwise polyfills and PAL will not get initialized at the right time
+        'aurelia-bootstrap',
+        'aurelia',
+        /* 'vendor', */
+        /* 'users', // see examples above // */
+      ].reverse()
     }),
 
     /*
@@ -280,26 +335,12 @@ module.exports = {
      */
     new ProvidePlugin({
       'Promise': 'bluebird',
-      'regeneratorRuntime': 'regenerator-runtime',
+      'regeneratorRuntime': 'regenerator-runtime', // required for await-async
       '$': 'jquery',
       'jQuery': 'jquery',
-      'window.jQuery': 'jquery' // this doesn't expose jQuery property for window, but expose it to every module
+      'window.jQuery': 'jquery' // this doesn't expose jQuery property for window, but exposes it to every module
     }),
 
   ],
-
-  /*
-   * Include polyfills or mocks for various node stuff
-   * Description: Node configuration
-   *
-   * See: https://webpack.github.io/docs/configuration.html#node
-   */
-  node: {
-    global: 'window',
-    crypto: 'empty',
-    module: false,
-    clearImmediate: false,
-    setImmediate: false
-  }
 
 };
