@@ -154,7 +154,7 @@
     "ts-babel-node": "^1.0.0",
     "tslint": "^3.10.2",
     "tslint-loader": "^2.1.4",
-    "typescript": "^1.8.10",
+    "typescript": "^1.9.0-dev.20160531-1.0",
     "typings": "^1.0.4",
     "url-loader": "^0.5.7",
     "wallaby-webpack": "0.0.22",

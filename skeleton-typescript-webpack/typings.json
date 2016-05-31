@@ -30,7 +30,6 @@
     "aurelia-templating-binding": "npm:aurelia-templating-binding/dist/aurelia-templating-binding.d.ts",
     "aurelia-templating-resources": "npm:aurelia-templating-resources/dist/aurelia-templating-resources.d.ts",
     "aurelia-templating-router": "npm:aurelia-templating-router/dist/aurelia-templating-router.d.ts",
-    "isomorphic-fetch": "registry:dt/isomorphic-fetch#0.0.0+20160524142046",
     "jasmine": "registry:dt/jasmine#2.2.0+20160505161446",
     "selenium-webdriver": "github:DefinitelyTyped/DefinitelyTyped/selenium-webdriver/selenium-webdriver.d.ts#24e12a7af994afa2226af70fbfae0adc78736a9e"
   }
