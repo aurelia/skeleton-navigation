@@ -11,7 +11,7 @@
     "./node_modules/aurelia-*/dist/aurelia-*.d.ts",
     "./custom_typings/**/*.d.ts",
     "./test/**/*.ts",
-    "./typings/browser.d.ts"
+    "./typings/index.d.ts"
   ],
   "exclude": [
     "node_modules",
