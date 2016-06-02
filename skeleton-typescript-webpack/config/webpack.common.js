@@ -15,6 +15,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ProvidePlugin = require('webpack/lib/ProvidePlugin');
 const AureliaWebpackPlugin = require('aurelia-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const OfflinePlugin = require('offline-plugin');
 
 const coreBundles = {
   bootstrap: [
@@ -358,7 +359,16 @@ module.exports = {
       'jQuery': 'jquery',
       'window.jQuery': 'jquery' // this doesn't expose jQuery property for window, but exposes it to every module
     }),
-
+    
+    /**
+     * Plugin: OfflinePlugin
+     * Description: This plugin is intended to provide offline experience for webpack projects. It uses ServiceWorker and AppCache as a fallback under the hood.
+     * It always better if OfflinePlugin is the last plugin added 
+     * 
+     * See: https://github.com/NekR/offline-plugin
+     */
+    // uncomment this if you want your website to work offline:
+    // new OfflinePlugin(),
   ],
 
 };
