@@ -14,6 +14,7 @@ const ForkCheckerPlugin = require('awesome-typescript-loader').ForkCheckerPlugin
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ProvidePlugin = require('webpack/lib/ProvidePlugin');
 const AureliaWebpackPlugin = require('aurelia-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const coreBundles = {
   bootstrap: [
@@ -189,8 +190,9 @@ module.exports = {
     loaders: [
       
       /**
-       * Compile Aurelia modules to ES5 while keeping modules in ES6 format
+       * Transpile Aurelia modules to ES5 while keeping modules in ES6 format
        * NOTE: Useful only with ES2015 builds (work-in-progress)
+       * NOTE: It would be better if Aurelia had es5 builds with es2015 imports premade
        */
       {
         test: /\.js$/,
@@ -209,7 +211,7 @@ module.exports = {
        */
       {
         test: /\.ts$/,
-        loader: 'awesome-typescript-loader',
+        loader: 'awesome-typescript',
         exclude: [/\.(spec|e2e|d)\.ts$/, /node_modules/, helpers.root('config')]
       },
 
@@ -220,7 +222,7 @@ module.exports = {
        */
       {
         test: /\.json$/,
-        loader: 'json-loader'
+        loader: 'json'
       },
 
       /*
@@ -231,20 +233,21 @@ module.exports = {
        */
       {
         test: /\.css$/,
-        loaders: ['style', 'css']
+        loaders: ExtractTextPlugin.extract('style', 'css')
       },
 
-      /* Raw loader support for *.html
-       * Returns file content as string
+      /* HTML loader support for *.html
+       * Returns file content as string, loads required images.
        *
-       * See: https://github.com/webpack/raw-loader
+       * See: https://github.com/webpack/html-loader
        */
       {
         test: /\.html$/,
-        loader: 'raw-loader',
+        loader: 'html',
         exclude: [helpers.root('index.html')]
       },
 
+      // embed small images and fonts as Data Urls and larger ones as files
       { test: /\.(png|gif|jpg)$/, loader: 'url', query: { limit: 8192 } },
       { test: /\.woff2(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: 'url', query: { limit: 10000, mimetype: 'application/font-woff2' } },
       { test: /\.woff(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: 'url', query: { limit: 10000, mimetype: 'application/font-woff' } },
@@ -271,13 +274,16 @@ module.exports = {
      * Description: Copy files and directories in webpack.
      *
      * Copies project static assets.
+     * Use only if you need to copy static files, like images.
      *
      * See: https://www.npmjs.com/package/copy-webpack-plugin
      */
+    /*
     new CopyWebpackPlugin([{
       from: 'styles',
       to: 'styles'
     }]),
+    */
     
     /*
      * Plugin: ForkCheckerPlugin
@@ -326,8 +332,20 @@ module.exports = {
      */
     new HtmlWebpackPlugin({
       template: 'index.html',
-      chunksSortMode: 'dependency'
+      chunksSortMode: 'dependency',
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true
+      }
     }),
+    
+    /**
+     * Plugin: ExtractTextPlugin
+     * It moves every import "style.css" in entry chunks into a single concatenated css output file. 
+     * So your styles are no longer inlined into the javascript, but separate in a css bundle file (styles.css). 
+     * If your total stylesheet volume is big, it will be faster because the stylesheet bundle is loaded in parallel to the javascript bundle.
+     */
+    new ExtractTextPlugin('styles.css'),
     
     /**
      * Plugin: ProvidePlugin

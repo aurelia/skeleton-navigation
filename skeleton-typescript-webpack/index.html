@@ -4,8 +4,7 @@
     <title><%= webpackConfig.metadata.title %></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <base href="<%= webpackConfig.metadata.baseUrl %>">
-    <!-- we'd like to load the basic styles before Aurelia so that the spinner is rendered properly -->
-    <link rel="stylesheet" type="text/css" href="styles/styles.css"> 
+    <!-- imported CSS are concatenated and added automatically -->
   </head>
   <body>
     <div class="splash">

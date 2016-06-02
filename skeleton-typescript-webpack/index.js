@@ -3,8 +3,11 @@
  * Require any polyfills and global runtimes here.
  */
 
+// we want font-awesome to load as soon as possible to show the fa-spinner
+import './styles/styles.css';
+import 'font-awesome/css/font-awesome.css';
+
 import 'aurelia-polyfills';
-import * as PAL from 'aurelia-pal';
 import {initialize} from 'aurelia-pal-browser';
 import 'ts-helpers';
 
