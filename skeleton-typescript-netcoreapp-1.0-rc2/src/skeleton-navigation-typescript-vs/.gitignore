@@ -180,6 +180,7 @@ ClientBin/
 *.publishsettings
 node_modules/
 wwwroot/dist/
+wwwroot/lib/
 wwwroot/jspm_packages/
 orleans.codegen.cs
 
