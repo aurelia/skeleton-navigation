@@ -86,12 +86,26 @@ npm run electron:setup
 Once the packages are installed, you may either view your app in Electron or build application packages for production:
 
 ```shell
-# useful for developing on Electron + live-reload
+# developing on Electron with live-reload
 npm run electron:start
 
 # creates packages for the current operating system
 npm run electron:package
 
 # creates packages for all operating systems
-npm run electron:package:all 
+npm run electron:package:all
 ```
+
+The entry-file for Electron can be found in `config/electron.entry.development.ts`.
+
+Building or creating the Electron package will create a file `electron.js` in the root directory of the skeleton.
+
+### Loading native packages in Electron
+
+If you have packages that cannot work in the Electron Renderer process (e.g. native packages), or wish to use the package in the renderer process as if it is running under Node, list them under `externals`, in the file `config/webpack.electron.js`.
+
+## Acknowledgments
+
+Parts of code responsible for Webpack configuration were inspired by or copied from @AngularClass' [angular2-webpack-starter](https://github.com/AngularClass/angular2-webpack-starter).
+
+Parts of code responsible for Webpack-Electron configuration and packaging were inspired by or copied from @chentsulin's [electron-react-boilerplate](https://github.com/chentsulin/electron-react-boilerplate).

@@ -8,7 +8,7 @@ const config = {
   output: {
     path: helpers.root('dist'),
     filename: 'bundle.js',
-    // libraryTarget: 'commonjs2'
+    libraryTarget: 'commonjs2'
   },
 
   resolve: {

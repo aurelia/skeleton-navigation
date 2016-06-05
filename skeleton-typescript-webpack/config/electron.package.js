@@ -5,9 +5,6 @@
 /* eslint strict: 0, no-shadow: 0, no-unused-vars: 0, no-console: 0 */
 'use strict';
 
-import electronCfg from './webpack.config.electron';
-import cfg from './webpack.config.electron-renderer.production';
-
 require('babel-polyfill');
 const os = require('os');
 const webpack = require('webpack');
@@ -22,6 +19,30 @@ const appName = argv.name || argv.n || pkg.productName;
 const shouldUseAsar = argv.asar || argv.a || false;
 const shouldBuildAll = argv.all || false;
 
+const getDependencies = require('flat-npm-dependencies');
+const localModules = require('installed-local-npm-modules');
+const _ = require('lodash');
+const path = require('path');
+let electronCfg;
+
+function filter(keep, allLocalModules) {
+  let promises = [];
+  for (let external of keep) {
+    promises.push(getDependencies(path.resolve('node_modules', external)));
+  }
+  return Promise.all(promises)
+    .then(depsOfDeps => 
+      _.uniq(_.flatten(depsOfDeps)).concat(keep))
+    .then(needToKeep => 
+      _.without(allLocalModules, ...needToKeep).map(name => `/node_modules/${name}($|/)`))
+}
+
+localModules().then(allLocalModules => {
+  // NOTE: we have to require it later because it sets ENV which influences visible packages! 
+  electronCfg = require('./webpack.electron').default;
+  return filter(electronCfg.externals, allLocalModules);
+}).then(stuffToFilter => {
+const cfg = require('./webpack.electron-renderer.production').default;
 
 const DEFAULT_OPTS = {
   dir: './',
@@ -42,11 +63,7 @@ const DEFAULT_OPTS = {
     '^/wallaby\.js$',
     '^/typings\.json$',
     '^/tsconfig\..*\.json$',
-  ].concat(devDeps.map(name => `/node_modules/${name}($|/)`))
-  .concat(
-    deps.filter(name => !electronCfg.externals.includes(name))
-      .map(name => `/node_modules/${name}($|/)`)
-  )
+  ].concat(stuffToFilter)
 };
 
 const icon = argv.icon || argv.i;
@@ -143,3 +160,5 @@ function log(plat, arch) {
     console.log(`${plat}-${arch} finished!`);
   };
 }
+
+});
