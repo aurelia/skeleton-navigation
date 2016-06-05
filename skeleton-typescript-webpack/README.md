@@ -74,3 +74,24 @@ Integration tests are performed with [Protractor](http://angular.github.io/protr
   ```shell
   npm run e2e
   ```
+
+## Electron
+
+To add Electron support to the skeleton, first run:
+
+```shell
+npm run electron:setup
+```
+
+Once the packages are installed, you may either view your app in Electron or build application packages for production:
+
+```shell
+# useful for developing on Electron + live-reload
+npm run electron:start
+
+# creates packages for the current operating system
+npm run electron:package
+
+# creates packages for all operating systems
+npm run electron:package:all 
+```
