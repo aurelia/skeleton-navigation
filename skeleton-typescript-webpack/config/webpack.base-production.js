@@ -3,18 +3,14 @@
  * https://github.com/AngularClass/angular2-webpack-starter
  */
 
-const helpers = require('./helpers');
-const webpackMerge = require('webpack-merge'); // used to merge webpack configs
-const commonConfig = require('./webpack.common.js'); // the settings that are common to prod and dev
+import * as helpers from './helpers';
+import base from './webpack.base';
 
 /**
  * Webpack Plugins
  */
-const ProvidePlugin = require('webpack/lib/ProvidePlugin');
 const DefinePlugin = require('webpack/lib/DefinePlugin');
 const DedupePlugin = require('webpack/lib/optimize/DedupePlugin');
-const UglifyJsPlugin = require('webpack/lib/optimize/UglifyJsPlugin');
-const CompressionPlugin = require('compression-webpack-plugin');
 const WebpackMd5Hash = require('webpack-md5-hash');
 
 /**
@@ -23,21 +19,16 @@ const WebpackMd5Hash = require('webpack-md5-hash');
 const ENV = process.env.NODE_ENV = process.env.ENV = 'production';
 const HOST = process.env.HOST || 'localhost';
 const PORT = process.env.PORT || 8080;
-const METADATA = webpackMerge(commonConfig.metadata, {
+const METADATA = {
+  ...base.metadata,
   host: HOST,
   port: PORT,
   ENV: ENV,
   HMR: false
-});
+};
 
-module.exports = webpackMerge(commonConfig, {
-
-  /**
-   * Switch loaders to debug mode.
-   *
-   * See: http://webpack.github.io/docs/configuration.html#debug
-   */
-  debug: false,
+const config = {
+  metadata: METADATA,
 
   /**
    * Developer tool to enhance debugging
@@ -123,6 +114,7 @@ module.exports = webpackMerge(commonConfig, {
      */
     // NOTE: when adding more properties make sure you include them in custom-typings.d.ts
     new DefinePlugin({
+      '__DEV__': false,
       'ENV': JSON.stringify(METADATA.ENV),
       'HMR': METADATA.HMR,
       'process.env': {
@@ -131,55 +123,6 @@ module.exports = webpackMerge(commonConfig, {
         'HMR': METADATA.HMR,
       }
     }),
-
-    /**
-     * Plugin: UglifyJsPlugin
-     * Description: Minimize all JavaScript output of chunks.
-     * Loaders are switched into minimizing mode.
-     *
-     * See: https://webpack.github.io/docs/list-of-plugins.html#uglifyjsplugin
-     */
-    // NOTE: To debug prod builds uncomment //debug lines and comment //prod lines
-    new UglifyJsPlugin({
-      // beautify: true, //debug
-      // mangle: false, //debug
-      // dead_code: false, //debug
-      // unused: false, //debug
-      // deadCode: false, //debug
-      // compress: {
-      //   screw_ie8: true,
-      //   keep_fnames: true,
-      //   drop_debugger: false,
-      //   dead_code: false,
-      //   unused: false
-      // }, // debug
-      // comments: true, //debug
-
-      beautify: false, //prod
-
-      mangle: {
-        screw_ie8 : true,
-        keep_fnames: true
-      }, //prod
-
-      compress: {
-        screw_ie8: true
-      }, //prod
-
-      comments: false //prod
-    }),
-    
-    /**
-     * Plugin: CompressionPlugin
-     * Description: Prepares compressed versions of assets to serve
-     * them with Content-Encoding
-     *
-     * See: https://github.com/webpack/compression-webpack-plugin
-     */
-    new CompressionPlugin({
-      regExp: /\.css$|\.html$|\.js$|\.map$/,
-      threshold: 2 * 1024
-    })
 
   ],
 
@@ -210,6 +153,8 @@ module.exports = webpackMerge(commonConfig, {
     //   [/\[?\(?/, /(?:)/]
     // ],
     // customAttrAssign: [/\)?\]?=/]
-  },
+  }
 
-});
+};
+
+export default config;

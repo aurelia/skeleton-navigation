@@ -6,3 +6,6 @@ build
 /.awcache
 config/tmp
 npm-debug.log
+/electron.js
+/electron.js.map
+/release

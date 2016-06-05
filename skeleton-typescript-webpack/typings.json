@@ -1,11 +1,10 @@
 {
   "name": "aurelia-skeleton-navigation-typescript-webpack",
   "version": false,
-  "dependencies": {
+  "devDependencies": {
     "webpack": "registry:npm/webpack#1.12.9+20160418172948"
   },
   "globalDependencies": {
-    "angular-protractor": "github:DefinitelyTyped/DefinitelyTyped/angular-protractor/angular-protractor.d.ts#24e12a7af994afa2226af70fbfae0adc78736a9e",
     "aurelia-binding": "npm:aurelia-binding/dist/aurelia-binding.d.ts",
     "aurelia-bootstrapper-webpack": "npm:aurelia-bootstrapper-webpack/dist/aurelia-bootstrapper-webpack.d.ts",
     "aurelia-dependency-injection": "npm:aurelia-dependency-injection/dist/aurelia-dependency-injection.d.ts",
@@ -29,7 +28,10 @@
     "aurelia-templating": "npm:aurelia-templating/dist/aurelia-templating.d.ts",
     "aurelia-templating-binding": "npm:aurelia-templating-binding/dist/aurelia-templating-binding.d.ts",
     "aurelia-templating-resources": "npm:aurelia-templating-resources/dist/aurelia-templating-resources.d.ts",
-    "aurelia-templating-router": "npm:aurelia-templating-router/dist/aurelia-templating-router.d.ts",
+    "aurelia-templating-router": "npm:aurelia-templating-router/dist/aurelia-templating-router.d.ts"
+  },
+  "globalDevDependencies": {
+    "angular-protractor": "github:DefinitelyTyped/DefinitelyTyped/angular-protractor/angular-protractor.d.ts#24e12a7af994afa2226af70fbfae0adc78736a9e",
     "jasmine": "registry:dt/jasmine#2.2.0+20160505161446",
     "selenium-webdriver": "github:DefinitelyTyped/DefinitelyTyped/selenium-webdriver/selenium-webdriver.d.ts#24e12a7af994afa2226af70fbfae0adc78736a9e"
   }

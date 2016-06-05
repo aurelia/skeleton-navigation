@@ -3,18 +3,16 @@
  * https://github.com/AngularClass/angular2-webpack-starter
  */
 
-const webpack = require('webpack');
-const helpers = require('./helpers');
+import webpack from 'webpack';
+import * as helpers from './helpers';
 
 /*
  * Webpack Plugins
  */
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ForkCheckerPlugin = require('awesome-typescript-loader').ForkCheckerPlugin;
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ProvidePlugin = require('webpack/lib/ProvidePlugin');
 const AureliaWebpackPlugin = require('aurelia-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const OfflinePlugin = require('offline-plugin');
 
 const coreBundles = {
@@ -75,7 +73,7 @@ const METADATA = {
  *
  * See: http://webpack.github.io/docs/configuration.html#cli
  */
-module.exports = {
+const config = {
 
   /*
    * Static metadata for index.html
@@ -161,7 +159,7 @@ module.exports = {
        *
        * See: https://github.com/wbuchwalter/tslint-loader
        */
-       { test: /\.ts$/, loader: 'tslint-loader', exclude: [ helpers.root('node_modules'), helpers.root('config') ] },
+       { test: /\.ts$/, loader: 'tslint', exclude: [ helpers.root('node_modules'), helpers.root('config') ] },
 
       /*
        * Source map loader support for *.js files
@@ -171,7 +169,7 @@ module.exports = {
        */
       {
         test: /\.js$/,
-        loader: 'source-map-loader',
+        loader: 'source-map',
         exclude: [
           // add packages that have problems with their sourcemaps, e.g.:
           // helpers.root('node_modules/rxjs'),
@@ -213,7 +211,10 @@ module.exports = {
       {
         test: /\.ts$/,
         loader: 'awesome-typescript',
-        exclude: [/\.(spec|e2e|d)\.ts$/, /node_modules/, helpers.root('config')]
+        exclude: [/\.(spec|e2e|d)\.ts$/, /node_modules/, helpers.root('config')],
+        query: {
+          tsconfig: 'tsconfig.webpack.json'
+        }
       },
 
       /*
@@ -224,17 +225,6 @@ module.exports = {
       {
         test: /\.json$/,
         loader: 'json'
-      },
-
-      /*
-       * Raw loader support for *.css files
-       * Returns file content as string
-       *
-       * See: https://github.com/webpack/raw-loader
-       */
-      {
-        test: /\.css$/,
-        loaders: ExtractTextPlugin.extract('style', 'css')
       },
 
       /* HTML loader support for *.html
@@ -303,50 +293,6 @@ module.exports = {
      * See: https://github.com/webpack/docs/wiki/optimization#minimize
      */
     new webpack.optimize.OccurrenceOrderPlugin(true),
-
-    /*
-     * Plugin: CommonsChunkPlugin
-     * Description: Shares common code between the pages.
-     * It identifies common modules and put them into a commons chunk.
-     *
-     * See: https://webpack.github.io/docs/list-of-plugins.html#commonschunkplugin
-     * See: https://github.com/webpack/docs/wiki/optimization#multi-page-app
-     */
-    new webpack.optimize.CommonsChunkPlugin({
-      name: [
-        // bootstrap has to be defined first!
-        // otherwise polyfills and PAL will not get initialized at the right time
-        'aurelia-bootstrap',
-        'aurelia',
-        /* 'vendor', */
-        /* 'users', // see examples above // */
-      ].reverse()
-    }),
-
-    /*
-     * Plugin: HtmlWebpackPlugin
-     * Description: Simplifies creation of HTML files to serve your webpack bundles.
-     * This is especially useful for webpack bundles that include a hash in the filename
-     * which changes every compilation.
-     *
-     * See: https://github.com/ampedandwired/html-webpack-plugin
-     */
-    new HtmlWebpackPlugin({
-      template: 'index.html',
-      chunksSortMode: 'dependency',
-      minify: {
-        removeComments: true,
-        collapseWhitespace: true
-      }
-    }),
-    
-    /**
-     * Plugin: ExtractTextPlugin
-     * It moves every import "style.css" in entry chunks into a single concatenated css output file. 
-     * So your styles are no longer inlined into the javascript, but separate in a css bundle file (styles.css). 
-     * If your total stylesheet volume is big, it will be faster because the stylesheet bundle is loaded in parallel to the javascript bundle.
-     */
-    new ExtractTextPlugin('styles.css'),
     
     /**
      * Plugin: ProvidePlugin
@@ -358,17 +304,9 @@ module.exports = {
       '$': 'jquery',
       'jQuery': 'jquery',
       'window.jQuery': 'jquery' // this doesn't expose jQuery property for window, but exposes it to every module
-    }),
-    
-    /**
-     * Plugin: OfflinePlugin
-     * Description: This plugin is intended to provide offline experience for webpack projects. It uses ServiceWorker and AppCache as a fallback under the hood.
-     * It always better if OfflinePlugin is the last plugin added 
-     * 
-     * See: https://github.com/NekR/offline-plugin
-     */
-    // uncomment this if you want your website to work offline:
-    // new OfflinePlugin(),
+    })
   ],
 
 };
+
+export default config;

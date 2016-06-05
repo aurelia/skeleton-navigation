@@ -1,29 +1,10 @@
 {
   "compilerOptions": {
     "target": "es2015",
-    "module": "es2015",
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "sourceMap": true,
-    "noEmitHelpers": true
+    "module": "commonjs",
+    "experimentalDecorators": true
   },
-  "filesGlob": [
-    "./src/**/*.ts",
-    "./custom_typings/**/*.d.ts",
-    "./test/**/*.ts",
-    "./typings/index.d.ts"
-  ],
   "exclude": [
     "node_modules"
-  ],
-  "atom": {
-    "rewriteTsconfig": true
-  },
-  "awesomeTypescriptLoaderOptions": {
-    "doTypeCheck": true,
-    "forkChecker": true,
-    "useBabel": true,
-    "useCache": true,
-    "library": "es6"
-  }
+  ]
 }
