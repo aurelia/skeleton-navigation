@@ -169,6 +169,9 @@ BundleArtifacts/
 # but keep track of directories ending in .cache
 !*.[Cc]ache/
 
+# Visual Studio 2015 cache files
+*/.vs/**/**
+
 # Others
 ClientBin/
 [Ss]tyle[Cc]op.*
