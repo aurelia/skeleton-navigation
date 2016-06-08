@@ -4,29 +4,29 @@
 
 'use strict';
 
-var app = require('app');
-var BrowserWindow = require('browser-window');
-var mainWindow = null;
+const electron = require('electron');
+const {app} = electron;
+const {BrowserWindow} = electron;
+let mainWindow;
 
-require('crash-reporter').start();
-
-app.on('window-all-closed', function() {
+app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
     app.quit();
   }
 });
 
-app.on('ready', function() {
+app.on('ready', () => {
   mainWindow = new BrowserWindow({
     width: 800,
     height: 600
   });
 
-  mainWindow.loadUrl('file://' + __dirname + '/index.html');
-  mainWindow.webContents.on('did-finish-load', function() {
+  mainWindow.loadURL(`file://${__dirname}/index.html`);
+  mainWindow.webContents.on('did-finish-load', () => {
     mainWindow.setTitle(app.getName());
   });
-  mainWindow.on('closed', function() {
+  
+  mainWindow.on('closed', () => {
     mainWindow = null;
   });
 });
