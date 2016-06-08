@@ -34,8 +34,8 @@
     "server:dev": "npm run webpack-dev-server -- --config config/webpack.development.js --inline --progress --profile --watch",
     "server:dev:hmr": "npm run server:dev -- --hot",
     "server:prod": "http-server dist --cors",
-    "electron:setup": "npm install source-map-support --save && npm install concurrently electron-debug electron-packager electron-prebuilt express minimist ts-node webpack-dev-middleware webpack-hot-middleware installed-local-modules flat-npm-dependencies --save-dev && typings install dt~github-electron dt~node --save-dev -G",
-    "electron:start:hot": "cross-env HOT=1 NODE_ENV=development electron -r ts-node/register ./config/electron.entry.development",
+    "electron:setup": "npm install source-map-support --save && npm install concurrently electron-debug electron-packager electron-prebuilt express minimist webpack-dev-middleware webpack-hot-middleware installed-local-modules flat-npm-dependencies lodash --save-dev && typings install dt~github-electron dt~node --save-dev -G",
+    "electron:start:hot": "cross-env HOT=1 NODE_ENV=development electron -r babel-register ./config/electron.entry.development",
     "electron:start:hot-server": "npm run node-babel -- config/electron.hot-server.js",
     "electron:start": "concurrently --kill-others \"npm run electron:start:hot\" \"npm run electron:start:hot-server\"",
     "preelectron:build": "npm run clean:dist",
@@ -132,13 +132,12 @@
     "isomorphic-fetch": "^2.2.1",
     "jquery": "^2.2.4",
     "regenerator-runtime": "^0.9.5",
-    "ts-helpers": "^1.1.1",
-    "source-map-support": "^0.4.0"
+    "ts-helpers": "^1.1.1"
   },
   "devDependencies": {
     "aurelia-tools": "^0.2.1",
     "aurelia-webpack-plugin": "^1.0.0-beta.1.0.5",
-    "awesome-typescript-loader": "^0.17.0",
+    "awesome-typescript-loader": "^0.19.0",
     "babel-core": "^6.9.1",
     "babel-loader": "^6.2.4",
     "babel-plugin-transform-runtime": "^6.9.0",
@@ -168,7 +167,7 @@
     "karma-mocha-reporter": "^2.0.3",
     "karma-sourcemap-loader": "^0.3.7",
     "karma-webpack": "^1.7.0",
-    "offline-plugin": "^3.2.1",
+    "offline-plugin": "^3.3.0",
     "protractor": "^3.3.0",
     "raw-loader": "^0.5.1",
     "recursive-readdir-sync": "^1.0.6",
@@ -184,6 +183,6 @@
     "webpack": "^2.1.0-beta.8",
     "webpack-dev-server": "^2.1.0-beta.0",
     "webpack-md5-hash": "0.0.5",
-    "webpack-merge": "^0.13.0"
+    "webpack-merge": "^0.14.0"
   }
 }

@@ -28,20 +28,20 @@ let electronCfg;
 function filter(keep, allLocalModules) {
   let promises = [];
   for (let external of keep) {
-    promises.push(getDependencies(path.resolve('node_modules', external)));
+    promises.push(getDependencies(path.resolve('node_modules', external)).catch(()=>{}));
   }
   return Promise.all(promises)
     .then(depsOfDeps => 
       _.uniq(_.flatten(depsOfDeps)).concat(keep))
     .then(needToKeep => 
-      _.without(allLocalModules, ...needToKeep).map(name => `/node_modules/${name}($|/)`))
+      _.without(allLocalModules, ...(needToKeep.filter(keep => keep !== undefined))).map(name => `/node_modules/${name}($|/)`))
 }
 
 localModules().then(allLocalModules => {
   // NOTE: we have to require it later because it sets ENV which influences visible packages! 
   electronCfg = require('./webpack.electron').default;
   return filter(electronCfg.externals, allLocalModules);
-}).then(stuffToFilter => {
+}).catch(console.error.bind(console)).then(stuffToFilter => {
 const cfg = require('./webpack.electron-renderer.production').default;
 
 const DEFAULT_OPTS = {
@@ -62,7 +62,7 @@ const DEFAULT_OPTS = {
     '^/index\.html$',
     '^/wallaby\.js$',
     '^/typings\.json$',
-    '^/tsconfig\..*\.json$',
+    '^/tsconfig.*\.json$',
   ].concat(stuffToFilter)
 };
 
@@ -81,7 +81,7 @@ if (version) {
   // use the same version as the currently-installed electron-prebuilt
   exec('npm list electron-prebuilt --dev', (err, stdout) => {
     if (err) {
-      DEFAULT_OPTS.version = '1.2.0';
+      DEFAULT_OPTS.version = '1.2.1';
     } else {
       DEFAULT_OPTS.version = stdout.split('electron-prebuilt@')[1].replace(/\s/g, '');
     }
@@ -102,7 +102,8 @@ function build(cfg) {
 
 function startPack() {
   console.log('start pack...');
-  build(electronCfg)
+  del('dist')
+    .then(() => build(electronCfg))
     .then(() => build(cfg))
     .then(() => del('release'))
     .then(paths => {
