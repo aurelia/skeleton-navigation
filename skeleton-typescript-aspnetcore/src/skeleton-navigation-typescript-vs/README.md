@@ -1,4 +1,4 @@
-# Aurelia with NetCoreApp using ES2016
+# Aurelia with ASP.Net Core using TypeScript
 
 ## Running The App
 
@@ -34,15 +34,15 @@ To run the app, follow these steps.
   gulp build
   ```
 
->**Note:** This skeleton is wrapped in a NetCoreApp 1.0 RC2 project.  If you are using VSCode on any platform you can install
-NetCoreApp on Windows, OSX, or Linux but the instructions to do so are found
-[on the Microsoft](https://www.microsoft.com/net/core) page.
+>**Note:** This skeleton is wrapped in an ASP.Net Core 1.0 RC2 project.  If you are using VSCode on any platform you can install
+ASP.Net Core on Windows, OSX, or Linux. The instructions to do so are found
+[on this Microsoft page](https://www.microsoft.com/net/core).
 This assumes you are running from command line but Visual Studio users should be familiar with how to build and run the project
 in the IDE.
 
->**Note:** This project requires the installation of the .Net Core SDK 1.0 RC2 as well as the .Net Core VS2015 Tooling Preview 1. 
+>**Note:** This project requires the installation of the ASP.Net Core SDK 1.0 RC2 as well as the ASP.Net Core VS2015 Tooling Preview 1. 
 They both may be found
-[on the Microsoft](https://www.microsoft.com/net/core#windows) page.
+[on this Microsoft page](https://www.microsoft.com/net/core#windows).
 
 
 7. To run the app, execute the following command:
