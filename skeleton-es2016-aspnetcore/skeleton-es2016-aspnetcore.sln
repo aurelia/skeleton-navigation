@@ -7,7 +7,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{2020AC68-78E
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B7C5F4AE-7354-4122-89A5-2E1ADF8ADC10}"
 	ProjectSection(SolutionItems) = preProject
-		.gitignore = .gitignore
+		src\skeleton-navigation-es2016-vs\.gitignore = src\skeleton-navigation-es2016-vs\.gitignore
 		global.json = global.json
 	EndProjectSection
 EndProject
