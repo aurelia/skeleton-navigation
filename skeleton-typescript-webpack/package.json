@@ -73,42 +73,44 @@
   },
   "homepage": "https://github.com/aurelia/skeleton-navigation#readme",
   "aurelia": {
-    "resources": [
-      {
-        "path": "users",
-        "bundle": "users",
-        "lazy": true
-      },
-      "aurelia-templating-resources/compose",
-      "aurelia-templating-resources/if",
-      "aurelia-templating-resources/with",
-      "aurelia-templating-resources/repeat",
-      "aurelia-templating-resources/show",
-      "aurelia-templating-resources/hide",
-      "aurelia-templating-resources/replaceable",
-      "aurelia-templating-resources/sanitize-html",
-      "aurelia-templating-resources/focus",
-      "aurelia-templating-resources/compile-spy",
-      "aurelia-templating-resources/view-spy",
-      "aurelia-templating-resources/binding-mode-behaviors",
-      "aurelia-templating-resources/throttle-binding-behavior",
-      "aurelia-templating-resources/debounce-binding-behavior",
-      "aurelia-templating-resources/signal-binding-behavior",
-      "aurelia-templating-resources/update-trigger-binding-behavior",
-      "aurelia-templating-router/router-view",
-      "aurelia-templating-router/route-loader",
-      "aurelia-templating-router/route-href",
-      "aurelia-framework",
-      "aurelia-logging-console",
-      "aurelia-templating-binding",
-      "aurelia-templating-resources",
-      "aurelia-templating-router",
-      "aurelia-history-browser",
-      "aurelia-event-aggregator"
-    ],
-    "moduleRootOverride": {
-      "aurelia-templating-resources": "dist/es2015",
-      "aurelia-templating-router": "dist/es2015"
+    "build": {
+      "resources": [
+        {
+          "path": "users",
+          "bundle": "users",
+          "lazy": true
+        },
+        "aurelia-templating-resources/compose",
+        "aurelia-templating-resources/if",
+        "aurelia-templating-resources/with",
+        "aurelia-templating-resources/repeat",
+        "aurelia-templating-resources/show",
+        "aurelia-templating-resources/hide",
+        "aurelia-templating-resources/replaceable",
+        "aurelia-templating-resources/sanitize-html",
+        "aurelia-templating-resources/focus",
+        "aurelia-templating-resources/compile-spy",
+        "aurelia-templating-resources/view-spy",
+        "aurelia-templating-resources/binding-mode-behaviors",
+        "aurelia-templating-resources/throttle-binding-behavior",
+        "aurelia-templating-resources/debounce-binding-behavior",
+        "aurelia-templating-resources/signal-binding-behavior",
+        "aurelia-templating-resources/update-trigger-binding-behavior",
+        "aurelia-templating-router/router-view",
+        "aurelia-templating-router/route-loader",
+        "aurelia-templating-router/route-href",
+        "aurelia-framework",
+        "aurelia-logging-console",
+        "aurelia-templating-binding",
+        "aurelia-templating-resources",
+        "aurelia-templating-router",
+        "aurelia-history-browser",
+        "aurelia-event-aggregator"
+      ],
+      "moduleRootOverride": {
+        "aurelia-templating-resources": "dist/es2015",
+        "aurelia-templating-router": "dist/es2015"
+      }
     }
   },
   "dependencies": {
