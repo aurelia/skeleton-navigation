@@ -40,13 +40,13 @@
     "electron:start": "concurrently --kill-others \"npm run electron:start:hot\" \"npm run electron:start:hot-server\"",
     "preelectron:build": "npm run clean:dist",
     "electron:build": "npm run electron:build:main && npm run electron:build:renderer",
-    "electron:build:main": "cross-env NODE_ENV=production npm run node-babel -- ./node_modules/.bin/webpack --config config/webpack.electron.js --progress --profile",
-    "electron:build:renderer": "cross-env NODE_ENV=production npm run node-babel -- ./node_modules/.bin/webpack --config config/webpack.electron-renderer.production.js --progress --profile",
+    "electron:build:main": "cross-env NODE_ENV=production npm run node-babel -- ./node_modules/webpack/bin/webpack --config config/webpack.electron.js --progress --profile",
+    "electron:build:renderer": "cross-env NODE_ENV=production npm run node-babel -- ./node_modules/webpack/bin/webpack --config config/webpack.electron-renderer.production.js --progress --profile",
     "electron:package": "cross-env NODE_ENV=production npm run node-babel -- config/electron.package.js",
     "electron:package:all": "npm run package -- --all",
     "node-babel": "node -r babel-register",
-    "webpack": "npm run node-babel -- ./node_modules/.bin/webpack",
-    "webpack-dev-server": "npm run node-babel -- ./node_modules/.bin/webpack-dev-server"
+    "webpack": "npm run node-babel -- ./node_modules/webpack/bin/webpack",
+    "webpack-dev-server": "npm run node-babel -- ./node_modules/webpack-dev-server/bin/webpack-dev-server"
   },
   "repository": {
     "type": "git",
