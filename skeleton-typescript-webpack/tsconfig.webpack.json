@@ -4,6 +4,7 @@
     "module": "es2015",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "moduleResolution": "classic",
     "sourceMap": true,
     "noEmitHelpers": true
   },
