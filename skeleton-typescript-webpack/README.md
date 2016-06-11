@@ -1,4 +1,4 @@
-# aurelia-skeleton-typescript-webpack
+# aurelia-skeleton-webpack
 
 ## Getting started
 

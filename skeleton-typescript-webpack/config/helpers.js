@@ -3,14 +3,18 @@
  * https://github.com/AngularClass/angular2-webpack-starter
  */
 
-var path = require('path');
+const path = require('path');
+const fs = require('fs');
 
 // Helper functions
-var ROOT = path.resolve(__dirname, '..');
+const ROOT = path.resolve(__dirname, '..');
+const jsonfile = require('jsonfile');
+const del = require('del');
 
-var jsonfile = require('jsonfile');
-
-console.log('root directory:', root() + '\n');
+const pkg = JSON.parse(fs.readFileSync(root('package.json')));
+const language = (pkg.language || 'javascript').toLowerCase();
+const readdir = require('recursive-readdir-sync');
+const moduleType = 'es2015'; // in case of weird problems try 'commonjs'; uncompressed bundle will be ~35KB larger
 
 function hasProcessFlag(flag) {
   return process.argv.join('').indexOf(flag) > -1;
@@ -21,15 +25,28 @@ function root(args) {
   return path.join.apply(path, [ROOT].concat(args));
 }
 
-const fileSystem = require('fs');
-const readdir = require('recursive-readdir-sync');
-const moduleType = 'es2015'; // or in case of problems try 'commonjs'; bundle will be ~35KB larger
+function selectLanguage(target) {
+  if (!!pkg.language) {
+    throw new Error('You have previously selected a language. If you know what you\'re doing, do the change manually in package.json.');
+  }
+  target = target.toLowerCase();
+  if (target != 'typescript' && target != 'javascript') {
+    throw new Error('Available languages are: typescript or javascript');
+  }
+  
+  fs.renameSync(root(target + '-src'), root('src'));
+  fs.renameSync(root(target + '-test'), root('test'));
+  const other = target === 'typescript' ? 'javascript' : 'typescript';
+  del.sync([root(other + '-src/**'), root(other + '-test/**')]);
+  pkg.language = target;
+  jsonfile.writeFileSync(root('package.json'), pkg, {spaces: 2});
+  return true;
+}
 
 function generateMeta(input) {
   var aureliaPackages = input.aurelia;
   var bootstrapPackages = input.bootstrap;
   var excludeFromAureliaBundle = input.excludeFromAureliaBundle;
-  var pkg = JSON.parse(fileSystem.readFileSync(root('package.json')));
   var packages = Object.keys(pkg.dependencies || {});
   packages = packages.concat(aureliaPackages.filter(item => packages.indexOf(item) < 0));
   var aliases = {};
@@ -38,7 +55,7 @@ function generateMeta(input) {
   packages.forEach(function (moduleId) {
     var vendorPath = path.resolve(root('node_modules'), moduleId);
     var vendorPkgPath = path.resolve(vendorPath, 'package.json');
-    var vendorPkg = JSON.parse(fileSystem.readFileSync(vendorPkgPath, 'utf8'));
+    var vendorPkg = JSON.parse(fs.readFileSync(vendorPkgPath, 'utf8'));
     
     if (vendorPkg._npmUser && vendorPkg._npmUser.name === 'aureliaeffect' || aureliaPackages.indexOf(moduleId) >= 0) {
       // enable for es2015 builds:
@@ -66,6 +83,9 @@ function generateMeta(input) {
   return { aliases, vendorPackages, aureliaPackages, bootstrapPackages };
 }
 
-exports.hasProcessFlag = hasProcessFlag;
-exports.root = root;
-exports.generateMeta = generateMeta;
+module.exports.hasProcessFlag = hasProcessFlag;
+module.exports.root = root;
+module.exports.generateMeta = generateMeta;
+module.exports.language = language;
+module.exports.selectLanguage = selectLanguage;
+module.exports.package = pkg;

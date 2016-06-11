@@ -3,7 +3,7 @@
  * https://github.com/AngularClass/angular2-webpack-starter
  */
 
-const helpers = require('./helpers');
+import baseConfig from './webpack.base';
 
 /**
  * Webpack Plugins
@@ -21,39 +21,17 @@ const ENV = process.env.ENV = process.env.NODE_ENV = 'test';
  *
  * See: http://webpack.github.io/docs/configuration.html#cli
  */
-module.exports = {
+const config = {
+
+  ...baseConfig,
 
   /**
-   * Source map for Karma from the help of karma-sourcemap-loader &  karma-webpack
+   * Source map for Karma from the help of karma-sourcemap-loader & karma-webpack
    *
    * Do not change, leave as is or it wont work.
    * See: https://github.com/webpack/karma-webpack#source-maps
    */
   devtool: 'inline-source-map',
-
-  /**
-   * Options affecting the resolving of modules.
-   *
-   * See: http://webpack.github.io/docs/configuration.html#resolve
-   */
-  resolve: {
-
-    /**
-     * An array of extensions that should be used to resolve modules.
-     *
-     * See: http://webpack.github.io/docs/configuration.html#resolve-extensions
-     */
-    extensions: ['', '.ts', '.js'],
-
-    /**
-     * Make sure root is src
-     */
-    root: helpers.root('src'),
-
-    // webpack2 equivalent of the above:
-    modules: [helpers.root('src'), 'node_modules']
-
-  },
 
   /**
    * Options affecting the normal modules.
@@ -62,126 +40,33 @@ module.exports = {
    */
   module: {
 
+    ...baseConfig.module,
+
     /**
      * An array of applied pre and post loaders.
      *
      * See: http://webpack.github.io/docs/configuration.html#module-preloaders-module-postloaders
      */
-    preLoaders: [
+    postLoaders: [
 
       /**
-       * Tslint loader support for *.ts files
+       * Instruments JS files with Istanbul for subsequent code coverage reporting.
+       * Instrument only testing sources.
        *
-       * See: https://github.com/wbuchwalter/tslint-loader
+       * See: https://github.com/deepsweet/istanbul-instrumenter-loader
        */
+      // NOTE: Currently it breaks Webpack >=2
+      /*
       {
-        test: /\.ts$/,
-        loader: 'tslint-loader',
-        exclude: [helpers.root('node_modules')]
-      },
-
-      /**
-       * Source map loader support for *.js files
-       * Extracts SourceMaps for source files that as added as sourceMappingURL comment.
-       *
-       * See: https://github.com/webpack/source-map-loader
-       */
-      {
-        test: /\.js$/,
-        loader: 'source-map-loader',
+        test: /\.(js|ts)$/, loader: 'istanbul-instrumenter-loader',
+        include: helpers.root('src'),
         exclude: [
-        // these packages have problems with their sourcemaps
-        // helpers.root('node_modules/rxjs'),
-      ]}
-
-    ],
-
-    /**
-     * An array of automatically applied loaders.
-     *
-     * IMPORTANT: The loaders here are resolved relative to the resource which they are applied to.
-     * This means they are not resolved relative to the configuration file.
-     *
-     * See: http://webpack.github.io/docs/configuration.html#module-loaders
-     */
-    loaders: [
-
-      /**
-       * Typescript loader support for .ts and Angular 2 async routes via .async.ts
-       *
-       * See: https://github.com/s-panferov/awesome-typescript-loader
-       */
-      {
-        test: /\.ts$/,
-        loader: 'awesome-typescript-loader',
-        query: {
-          tsconfig: 'tsconfig.webpack.json'
-        },
-        exclude: [/\.e2e\.ts$/, /node_modules/]
-      },
-      
-      /**
-       * Compile Aurelia modules to ES5 while keeping modules in ES6 format
-       */
-      {
-        test: /\.js$/,
-        loader: 'babel',
-        include: /node_modules\/aurelia-[a-z\-]+\/dist\/es\d+/,
-        query: {
-          presets: ['es2015-loose-native-modules'],
-          cacheDirectory: true,
-        }
-      },
-
-      /**
-       * Json loader support for *.json files.
-       *
-       * See: https://github.com/webpack/json-loader
-       */
-      { test: /\.json$/, loader: 'json-loader', exclude: [helpers.root('src/index.html')] },
-
-      /**
-       * Raw loader support for *.css files
-       * Returns file content as string
-       *
-       * See: https://github.com/webpack/raw-loader
-       */
-      { test: /\.css$/, loader: 'raw-loader', exclude: [helpers.root('src/index.html')] },
-
-      /**
-       * Raw loader support for *.html
-       * Returns file content as string
-       *
-       * See: https://github.com/webpack/raw-loader
-       */
-      { test: /\.html$/, loader: 'raw-loader', exclude: [helpers.root('src/index.html')] }
-
-    ],
-
-    /**
-     * An array of applied pre and post loaders.
-     *
-     * See: http://webpack.github.io/docs/configuration.html#module-preloaders-module-postloaders
-     */
-    // NOTE: Currently it breaks Webpack >=2
-    // postLoaders: [
-
-    //   /**
-    //    * Instruments JS files with Istanbul for subsequent code coverage reporting.
-    //    * Instrument only testing sources.
-    //    *
-    //    * See: https://github.com/deepsweet/istanbul-instrumenter-loader
-    //    */
-    //   {
-    //     test: /\.(js|ts)$/, loader: 'istanbul-instrumenter-loader',
-    //     include: helpers.root('src'),
-    //     exclude: [
-    //       /\.(e2e|spec)\.ts$/,
-    //       /node_modules/
-    //     ]
-    //   }
-
-    // ]
+          /\.(e2e|spec)\.ts$/,
+          /node_modules/
+        ]
+      }
+      */
+    ]
   },
 
   /**
@@ -190,6 +75,8 @@ module.exports = {
    * See: http://webpack.github.io/docs/configuration.html#plugins
    */
   plugins: [
+
+    ...baseConfig.plugins,
 
     /**
      * Plugin: DefinePlugin
@@ -209,33 +96,9 @@ module.exports = {
         'NODE_ENV': JSON.stringify(ENV),
         'HMR': false,
       }
-    }),
-    
-    /**
-     * Plugin: ProvidePlugin
-     * Description: Provide Bluebird Promise implementation, regeneratorRuntime and optionally a global jQuery
-     */
-    new ProvidePlugin({
-      'Promise': 'bluebird',
-      'regeneratorRuntime': 'regenerator-runtime',
-      '$': 'jquery',
-      'jQuery': 'jquery',
-      'window.jQuery': 'jquery' // this doesn't expose jQuery property for window, but expose it to every module
-    }),
+    })
 
   ],
-
-  /**
-   * Static analysis linter for TypeScript advanced options configuration
-   * Description: An extensible linter for the TypeScript language.
-   *
-   * See: https://github.com/wbuchwalter/tslint-loader
-   */
-  tslint: {
-    emitErrors: false,
-    failOnHint: false,
-    resourcePath: 'src'
-  },
 
   /**
    * Include polyfills or mocks for various node stuff
@@ -253,3 +116,7 @@ module.exports = {
   }
 
 };
+
+// we don't want the entry to be used for tests
+delete config.entry;
+export default config;

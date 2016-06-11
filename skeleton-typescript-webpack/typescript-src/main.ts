@@ -9,9 +9,6 @@ bootstrap(async (aurelia: Aurelia) => {
   const rootElement = document.body;
   rootElement.setAttribute('aurelia-app', '');
 
-  // polyfill fetch client conditionally (used in /users)
-  await (!self.fetch ? System.import('isomorphic-fetch') : Promise.resolve());
-
   await aurelia.start();
   aurelia.setRoot('app', rootElement);
   

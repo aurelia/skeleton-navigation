@@ -6,10 +6,11 @@
 import webpack from 'webpack';
 import * as helpers from './helpers';
 
+const compilerSpecific = helpers.language === 'javascript' ? require('./webpack.base-javascript').default : require('./webpack.base-typescript').default;
+
 /*
  * Webpack Plugins
  */
-const ForkCheckerPlugin = require('awesome-typescript-loader').ForkCheckerPlugin;
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ProvidePlugin = require('webpack/lib/ProvidePlugin');
 const AureliaWebpackPlugin = require('aurelia-webpack-plugin');
@@ -20,7 +21,6 @@ const coreBundles = {
     'aurelia-polyfills',
     'aurelia-pal',
     'aurelia-pal-browser',
-    'ts-helpers',
     'regenerator-runtime',
     'bluebird'
   ],
@@ -58,6 +58,10 @@ const coreBundles = {
   ]
 }
 
+if (helpers.language === 'typescript') {
+  coreBundles.bootstrap.push('ts-helpers');
+}
+
 const meta = helpers.generateMeta(coreBundles);
 
 /*
@@ -65,7 +69,8 @@ const meta = helpers.generateMeta(coreBundles);
  */
 const METADATA = {
   title: 'Aurelia',
-  baseUrl: '/'
+  baseUrl: '/',
+  language: helpers.language
 };
 
 /*
@@ -154,12 +159,7 @@ const config = {
      */
     preLoaders: [
 
-      /*
-       * Tslint loader support for *.ts files
-       *
-       * See: https://github.com/wbuchwalter/tslint-loader
-       */
-       { test: /\.ts$/, loader: 'tslint', exclude: [ helpers.root('node_modules'), helpers.root('config') ] },
+      ...compilerSpecific.module.preLoaders,
 
       /*
        * Source map loader support for *.js files
@@ -203,19 +203,7 @@ const config = {
         }
       },
       
-      /*
-       * Typescript loader support for .ts and Angular 2 async routes via .async.ts
-       *
-       * See: https://github.com/s-panferov/awesome-typescript-loader
-       */
-      {
-        test: /\.ts$/,
-        loader: 'awesome-typescript',
-        exclude: [/\.(spec|e2e|d)\.ts$/, /node_modules/, helpers.root('config')],
-        query: {
-          tsconfig: 'tsconfig.webpack.json'
-        }
-      },
+      ...compilerSpecific.module.loaders,
 
       /*
        * Json loader support for *.json files.
@@ -275,14 +263,6 @@ const config = {
       to: 'styles'
     }]),
     */
-    
-    /*
-     * Plugin: ForkCheckerPlugin
-     * Description: Do type checking in a separate process, so webpack don't need to wait.
-     *
-     * See: https://github.com/s-panferov/awesome-typescript-loader#forkchecker-boolean-defaultfalse
-     */
-    new ForkCheckerPlugin(),
 
     /*
      * Plugin: OccurrenceOrderPlugin
@@ -305,8 +285,13 @@ const config = {
       'jQuery': 'jquery',
       'window.jQuery': 'jquery' // this doesn't expose jQuery property for window, but exposes it to every module
     })
+
   ],
 
 };
+
+if (helpers.language === 'typescript') {
+  config.entry['aurelia-bootstrap'].splice(0, 0, 'ts-helpers');
+}
 
 export default config;

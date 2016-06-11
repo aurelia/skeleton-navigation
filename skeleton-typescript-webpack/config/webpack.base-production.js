@@ -138,6 +138,11 @@ const config = {
     resourcePath: 'src'
   },
 
+  eslint: {
+    emitError: true,
+    configFile: helpers.root('.eslintrc')
+  },
+
   /**
    * Html loader advanced options
    *

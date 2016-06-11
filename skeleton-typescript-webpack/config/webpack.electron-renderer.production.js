@@ -34,12 +34,15 @@ const config = {
   plugins: [
     ...productionConfig.plugins,
     ...electronConfig.plugins,
-    // new webpack.optimize.UglifyJsPlugin({
-    //   compressor: {
-    //     screw_ie8: true,
-    //     warnings: false
-    //   }
-    // }),
+    /*
+    // might cause problems, so turned off by default:
+    new webpack.optimize.UglifyJsPlugin({
+      compressor: {
+        screw_ie8: true,
+        warnings: false
+      }
+    }),
+    */
     new ExtractTextPlugin('style.css', { allChunks: true })
   ],
 };

@@ -9,12 +9,12 @@ const config = {
     ...base.module,
     loaders: [
       ...base.module.loaders,
-      /*
-        * Raw loader support for *.css files
-        * Returns file content as string
-        *
-        * See: https://github.com/webpack/raw-loader
-        */
+     /**
+      * Raw loader support for *.css files
+      * Returns file content as string
+      *
+      * See: https://github.com/webpack/raw-loader
+      */
       {
         test: /\.css$/,
         loaders: ExtractTextPlugin.extract('style', 'css')
@@ -23,7 +23,7 @@ const config = {
   },
   plugins: [
     ...base.plugins,
-    /*
+    /**
      * Plugin: HtmlWebpackPlugin
      * Description: Simplifies creation of HTML files to serve your webpack bundles.
      * This is especially useful for webpack bundles that include a hash in the filename
@@ -40,7 +40,7 @@ const config = {
       }
     }),
 
-    /*
+    /**
      * Plugin: CommonsChunkPlugin
      * Description: Shares common code between the pages.
      * It identifies common modules and put them into a commons chunk.

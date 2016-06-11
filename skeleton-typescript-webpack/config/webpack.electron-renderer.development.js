@@ -37,7 +37,9 @@ const config = {
     ...devConfig.plugins,
     ...electronConfig.plugins,
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
+    // enable if you wish not to emit any code should any error appear:
+    // (including linting!)
+    // new webpack.NoErrorsPlugin()
   ]
 };
 

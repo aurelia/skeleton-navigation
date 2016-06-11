@@ -14,20 +14,22 @@ const METADATA = {
 
 const config = {
   metadata: METADATA,
+  
   /**
    * Switch loaders to debug mode.
    *
    * See: http://webpack.github.io/docs/configuration.html#debug
    */
   debug: true,
+
   /**
    * Developer tool to enhance debugging
    *
    * See: http://webpack.github.io/docs/configuration.html#devtool
    * See: https://github.com/webpack/docs/wiki/build-performance#sourcemaps
    */
-  devtool: 'eval',
-  // devtool: 'cheap-module-eval-source-map',
+  devtool: 'cheap-module-eval-source-map',
+  // devtool: 'eval',
   // devtool: 'cheap-module-source-map',
   // devtool: 'eval-source-map',
 
@@ -103,6 +105,11 @@ const config = {
     emitErrors: false,
     failOnHint: false,
     resourcePath: 'src'
+  },
+
+  eslint: {
+    emitError: false,
+    configFile: helpers.root('.eslintrc')
   },
 
   /**

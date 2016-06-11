@@ -3,7 +3,8 @@
     "target": "es2015",
     "module": "commonjs",
     "experimentalDecorators": true,
-    "moduleResolution": "classic"
+    "moduleResolution": "classic",
+    "allowJs": true
   },
   "exclude": [
     "node_modules"

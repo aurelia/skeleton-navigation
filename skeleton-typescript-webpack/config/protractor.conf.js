@@ -1,12 +1,11 @@
-require('ts-babel-node/register');
-var helpers = require('./helpers');
+const helpers = require('./helpers');
 
 exports.config = {
   baseUrl: 'http://localhost:3000/',
 
   // use `npm run e2e`
   specs: [
-    helpers.root('test/e2e/src/**/*.ts')
+    helpers.root(helpers.language === 'javascript' ? 'test/e2e/**/*.js' : 'test/e2e/**/*.ts')
   ],
   exclude: [],
 
@@ -27,6 +26,14 @@ exports.config = {
     'browserName': 'chrome',
     'chromeOptions': {
       'args': ['show-fps-counter=true']
+    }
+  },
+
+  onPrepare: function() {
+    if (helpers.language === 'javascript') {
+      require('babel-register');
+    } else {
+      require('ts-babel-node-extendable').register({ compilerOptions: { allowJs: false } });
     }
   },
 

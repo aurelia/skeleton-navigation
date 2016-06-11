@@ -21,12 +21,17 @@ class HttpStub extends HttpClient {
 
 describe('the Users module', () => {
   it('sets fetch response to users', (done) => {
-    var http = new HttpStub();
-    var sut = new Users(http);
     var itemStubs = [1];
     var itemFake = [2];
 
-    http.itemStub = itemStubs;
+    var getHttp = () => {
+      var http = new HttpStub();
+      http.itemStub = itemStubs;
+      return http;
+    };
+
+    var sut = new Users(getHttp);
+
     sut.activate().then(() => {
       expect(sut.users).toBe(itemStubs);
       expect(sut.users).not.toBe(itemFake);
