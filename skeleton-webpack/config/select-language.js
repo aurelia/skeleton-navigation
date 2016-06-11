@@ -1,6 +1,6 @@
 const helpers = require('./helpers');
 
-if (!!helpers.package.language) {
+if (!helpers.package.language) {
   const inquirer = require('inquirer');
   inquirer.prompt([
     {
