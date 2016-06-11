@@ -10,8 +10,13 @@ From the project folder, execute the following commands:
 npm install
 ```
 
-This will install all required dependencies, including a local version of webpack that is going to
-build and bundle the app. There is no need to install webpack globally.
+This will install all required dependencies, including a local version of Webpack that is going to
+build and bundle the app. There is no need to install Webpack globally. 
+
+After installation you will be asked to choose which language-version of the skeleton you would like to use. You may choose from:
+
+- TypeScript
+- JavaScript
 
 To run the app execute the following command:
 
