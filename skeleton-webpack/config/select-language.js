@@ -2,10 +2,12 @@ const helpers = require('./helpers');
 
 if (!helpers.package.language) {
   if (process.env.AURELIA_LANGUAGE) {
-    try {
-      helpers.selectLanguage(process.env.AURELIA_LANGUAGE);
-    } catch (e) {
-      console.error(e.message);
+    if (process.env.AURELIA_LANGUAGE.toLowerCase() !== 'unset') {
+      try {
+        helpers.selectLanguage(process.env.AURELIA_LANGUAGE);
+      } catch (e) {
+        console.error(e.message);
+      }
     }
     return;
   }

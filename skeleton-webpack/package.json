@@ -36,7 +36,7 @@
     "server:dev": "npm run webpack-dev-server -- --config config/webpack.development.js --inline --progress --profile --watch",
     "server:dev:hmr": "npm run server:dev -- --hot",
     "server:prod": "./node_modules/.bin/http-server dist --cors",
-    "electron:setup": "npm install source-map-support --save && npm install concurrently electron-debug electron-packager electron-prebuilt express minimist webpack-dev-middleware webpack-hot-middleware installed-local-modules flat-npm-dependencies lodash --save-dev && typings install dt~github-electron dt~node --save-dev -G",
+    "electron:setup": "npm install source-map-support --save && npm install concurrently electron-debug electron-packager electron-prebuilt express minimist webpack-dev-middleware webpack-hot-middleware installed-local-npm-modules flat-npm-dependencies lodash --save-dev && typings install dt~github-electron dt~node --save-dev -G",
     "electron:start:hot": "cross-env HOT=1 NODE_ENV=development electron -r babel-register ./config/electron.entry.development",
     "electron:start:hot-server": "npm run node-babel -- config/electron.hot-server.js",
     "electron:start": "concurrently --kill-others \"npm run electron:start:hot\" \"npm run electron:start:hot-server\"",
