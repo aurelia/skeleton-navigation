@@ -12,7 +12,8 @@ machine:
     version: 4.2.6
 
 dependencies:
-  post:
+  override:
+    - npm install
     - npm run electron:setup
 
 general:
