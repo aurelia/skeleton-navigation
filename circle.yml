@@ -1,0 +1,22 @@
+#####
+# Circle CI
+# 
+# For running docker images on circle ci, see: https://circleci.com/docs/docker
+# For circle.yml explanation, see: https://circleci.com/docs/manually
+#####
+
+general:
+  build_dir: skeleton-webpack
+
+dependencies:
+  override:
+    - AURELIA_LANGUAGE=javascript npm install
+    - AURELIA_LANGUAGE=typescript npm install
+
+test:
+  post:
+    - npm run build
+    - npm run build:prod
+    - npm run electron:setup
+    - npm run electron:build
+    - npm run electron:package
