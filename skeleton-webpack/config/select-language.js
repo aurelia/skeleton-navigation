@@ -1,6 +1,14 @@
 const helpers = require('./helpers');
 
 if (!helpers.package.language) {
+  if (process.env.AURELIA_LANGUAGE) {
+    try {
+      helpers.selectLanguage(process.env.AURELIA_LANGUAGE);
+    } catch (e) {
+      console.error(e.message);
+    }
+    return;
+  }
   const inquirer = require('inquirer');
   inquirer.prompt([
     {
