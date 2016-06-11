@@ -6,8 +6,7 @@
 import testWebpackConfig from './webpack.test';
 
 module.exports = function(config) {
-  // var testWebpackConfig = require('./webpack.test');
-
+  
   config.set({
 
     // base path that will be used to resolve all patterns (e.g. files, exclude)

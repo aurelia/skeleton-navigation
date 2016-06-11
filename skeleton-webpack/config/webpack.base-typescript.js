@@ -20,7 +20,7 @@ const config = {
       {
         test: /\.ts$/,
         loader: 'awesome-typescript',
-        exclude: [/\.(spec|e2e|d)\.ts$/, /node_modules/, helpers.root('config')],
+        exclude: [ helpers.root('node_modules'), helpers.root('config') ],
         query: {
           tsconfig: 'tsconfig.webpack.json'
         }

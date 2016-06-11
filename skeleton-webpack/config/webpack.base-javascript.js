@@ -19,7 +19,7 @@ const config = {
       {
         test: /\.js$/,
         loader: 'babel',
-        exclude: [/\.(spec|e2e)\.js$/, helpers.root('node_modules'), helpers.root('config')],
+        exclude: [ helpers.root('node_modules'), helpers.root('config')],
         query: {
           plugins: ['transform-decorators-legacy'],
           presets: ['es2015-loose-native-modules', 'stage-1'],

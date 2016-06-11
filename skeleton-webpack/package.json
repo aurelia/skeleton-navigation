@@ -6,10 +6,12 @@
   "productName": "Aurelia Electron",
   "scripts": {
     "postinstall": "node ./config/select-language && ./node_modules/.bin/typings install",
-    "pretest": "npm run lint",
     "test": "npm run node-babel -- ./node_modules/karma/bin/karma start config/karma.conf.js",
     "webdriver:update": "./node_modules/.bin/webdriver-manager update",
     "webdriver:start": "./node_modules/.bin/webdriver-manager start",
+    "link:typescript": "npm run link:clean && ln -s typescript-src src && ln -s typescript-test test",
+    "link:javascript": "npm run link:clean && ln -s javascript-src src && ln -s javascript-test test",
+    "link:clean": "rm -f ./src ./test",
     "lint": "./node_modules/.bin/tslint 'src/**/*.ts'",
     "pree2e": "npm run webdriver:update -- --standalone",
     "e2e": "./node_modules/.bin/protractor ./config/protractor.conf.js",
