@@ -1,4 +1,4 @@
-# Aurelia with ASP.Net Core using ES2016
+# Aurelia with ASP.Net Core using ESNEXT
 
 ## Running The App
 
@@ -40,7 +40,7 @@ ASP.Net Core on Windows, OSX, or Linux. The instructions to do so are found
 This assumes you are running from command line but Visual Studio users should be familiar with how to build and run the project
 in the IDE.
 
->**Note:** This project requires the installation of the ASP.Net Core SDK 1.0 RC2 as well as the ASP.Net Core VS2015 Tooling Preview 1. 
+>**Note:** This project requires the installation of the ASP.Net Core SDK 1.0 RC2 as well as the ASP.Net Core VS2015 Tooling Preview 1.
 They both may be found
 [on this Microsoft page](https://www.microsoft.com/net/core#windows).
 

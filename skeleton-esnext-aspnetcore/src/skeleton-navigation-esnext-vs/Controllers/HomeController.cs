@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace skeleton_navigation_es2016_vs.Controllers
+namespace skeleton_navigation_esnext_vs.Controllers
 {
     public class HomeController : Controller
     {
