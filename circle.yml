@@ -5,10 +5,16 @@
 # For circle.yml explanation, see: https://circleci.com/docs/manually
 #####
 
+machine:
+  node:
+    version: 4.2.6
+
 general:
   build_dir: skeleton-webpack
 
 dependencies:
+  pre:
+    - npm install -g npm
   override:
     - AURELIA_LANGUAGE=javascript npm install
     - AURELIA_LANGUAGE=typescript npm install
