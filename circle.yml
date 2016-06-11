@@ -12,8 +12,10 @@ machine:
     version: 4.2.6
 
 dependencies:
+  pre:
+    - npm install -g npm
   override:
-    - npm install || true # we expect that peerDependencies will generate an error
+    - npm install # we expect that peerDependencies will generate an error
     - npm run electron:setup
 
 general:
