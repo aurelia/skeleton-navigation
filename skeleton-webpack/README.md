@@ -2,7 +2,7 @@
 
 ## Getting started
 
-Before you start, make sure you have a working [NodeJS](http://nodejs.org/) environment, preferably with NPM 3.
+Before you start, make sure you have a recent version of [NodeJS](http://nodejs.org/) environment *>=4.0* with NPM 3.
 
 From the project folder, execute the following commands:
 
