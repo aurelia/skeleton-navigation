@@ -6,6 +6,7 @@ var sourcemaps = require('gulp-sourcemaps');
 var paths = require('../paths');
 var assign = Object.assign || require('object.assign');
 var notify = require('gulp-notify');
+var browserSync = require('browser-sync');
 var typescript = require('gulp-typescript');
 
 // transpiles changed es6 files to SystemJS format
@@ -20,7 +21,8 @@ gulp.task('build-system', function() {
     });
   }
   return gulp.src(paths.dtsSrc.concat(paths.source))
-    .pipe(plumber())
+    .pipe(plumber({errorHandler: notify.onError('Error: <%= error.message %>')}))
+    .pipe(changed(paths.output, {extension: '.ts'}))
     .pipe(sourcemaps.init({loadMaps: true}))
     .pipe(typescript(typescriptCompiler))
     .pipe(sourcemaps.write('.', {includeContent: false, sourceRoot: '/src'}))
@@ -38,7 +40,8 @@ gulp.task('build-html', function() {
 gulp.task('build-css', function() {
   return gulp.src(paths.css)
     .pipe(changed(paths.output, {extension: '.css'}))
-    .pipe(gulp.dest(paths.output));
+    .pipe(gulp.dest(paths.output))
+    .pipe(browserSync.stream());
 });
 
 // this task calls the clean task (located
