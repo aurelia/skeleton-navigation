@@ -13,7 +13,7 @@ machine:
 
 dependencies:
   override:
-    - npm install
+    - npm install || true # we expect that peerDependencies will generate an error
     - npm run electron:setup
 
 general:
