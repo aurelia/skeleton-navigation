@@ -196,7 +196,7 @@ const config = {
       {
         test: /\.js$/,
         loader: 'babel',
-        include: /node_modules\/aurelia-[a-z\-]+\/dist\/es\d+/,
+        include: /node_modules[\/\\]aurelia-[a-z\-]+[\/\\]dist[\/\\]es\d+/,
         query: {
           presets: ['es2015-loose-native-modules'],
           cacheDirectory: true,
