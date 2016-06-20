@@ -39,8 +39,6 @@ namespace skeleton_navigation_typescript_vs
 
             services.AddApplicationInsightsTelemetry(Configuration);
 
-            services.AddMvc();
-
             // Add application services.
         }
 
@@ -59,17 +57,12 @@ namespace skeleton_navigation_typescript_vs
             {
                 app.UseExceptionHandler("/Home/Error");
             }
-
+            app.UseDefaultFiles();
             app.UseStaticFiles();
 
             // Add external authentication middleware below. To configure them please see http://go.microsoft.com/fwlink/?LinkID=532715
 
-            app.UseMvc(routes =>
-            {
-                routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
-            });
+            
         }
     }
 }
