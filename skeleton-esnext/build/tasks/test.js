@@ -28,18 +28,7 @@ gulp.task('cover', function(done) {
     configFile: __dirname + '/../../karma.conf.js',
     singleRun: true,
     reporters: ['coverage'],
-    preprocessors: {
-      'test/**/*.js': ['babel'],
-      'src/**/*.js': ['babel', 'coverage']
-    },
     coverageReporter: {
-      includeAllSources: true,
-      instrumenters: {
-        isparta: require('isparta')
-      },
-      instrumenter: {
-        'src/**/*.js': 'isparta'
-      },
       reporters: [
         { type: 'html', dir: 'coverage' },
         { type: 'text' }

@@ -43,7 +43,8 @@ module.exports = function(config) {
         plugins: [
           'syntax-flow',
           'transform-decorators-legacy',
-          'transform-flow-strip-types'
+          'transform-flow-strip-types',
+          [ 'istanbul', { 'ignore': 'test/' } ]
         ]
       }
     },
