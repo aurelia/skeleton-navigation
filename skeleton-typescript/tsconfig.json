@@ -12,7 +12,7 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "moduleResolution": "node",
-    "lib": ["es6", "dom"]
+    "lib": ["es2015", "dom"]
   },
   "filesGlob": [
     "./src/**/*.ts",
@@ -23,8 +23,7 @@
   ],
   "exclude": [
     "node_modules",
-    "jspm_packages",
-    "test"
+    "jspm_packages"
   ],
   "atom": {
     "rewriteTsconfig": false
