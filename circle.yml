@@ -15,6 +15,9 @@ dependencies:
   override:
     - npm install
 
+general:
+  build_dir: skeleton-esnext-webpack
+
 test:
   post:
     - npm run build
