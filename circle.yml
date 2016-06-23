@@ -6,8 +6,6 @@
 #####
 
 machine:
-  environment:
-    AURELIA_LANGUAGE: unset
   node:
     version: 4.2.6
 
@@ -15,26 +13,9 @@ dependencies:
   pre:
     - npm install -g npm
   override:
-    - npm install # we expect that peerDependencies will generate an error
-    - npm run electron:setup
-
-general:
-  build_dir: skeleton-webpack
+    - npm install
 
 test:
-  override:
-    - npm run link:javascript
-    - AURELIA_LANGUAGE=javascript npm test
-    - npm run link:typescript
-    - AURELIA_LANGUAGE=typescript npm test
   post:
-    - npm run link:javascript
-    - AURELIA_LANGUAGE=javascript npm run build
-    - AURELIA_LANGUAGE=javascript npm run build:prod
-    - AURELIA_LANGUAGE=javascript npm run electron:build
-    - AURELIA_LANGUAGE=javascript npm run electron:package
-    - npm run link:typescript
-    - AURELIA_LANGUAGE=typescript npm run build
-    - AURELIA_LANGUAGE=typescript npm run build:prod
-    - AURELIA_LANGUAGE=typescript npm run electron:build
-    - AURELIA_LANGUAGE=typescript npm run electron:package
+    - npm run build
+    - npm run build:prod

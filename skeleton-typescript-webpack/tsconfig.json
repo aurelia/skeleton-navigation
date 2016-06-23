@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "target": "es2015",
+    "module": "es2015",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "allowJs": true
+  },
+  "awesomeTypescriptLoaderOptions": {
+    "doTypeCheck": true,
+    "forkChecker": false,
+    "useBabel": true,
+    "useCache": true,
+    "babelOptions": {
+      "presets": ["es2015-loose-native-modules"]
+    }
+  },
+  "exclude": [
+    "node_modules",
+    "dist",
+    "release",
+    "index.js",
+    "webpack.config.js",
+    "config"
+  ]
+}

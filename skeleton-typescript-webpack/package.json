@@ -1,0 +1,146 @@
+{
+  "name": "aurelia-skeleton-navigation-webpack",
+  "version": "1.0.0-beta.1.2.6",
+  "description": "A starter kit for building a standard navigation-style app with Aurelia and webpack.",
+  "main": "dist/electron.js",
+  "productName": "Aurelia Electron",
+  "scripts": {
+    "prepublish": "npm run typings:install",
+    "test": "cross-env NODE_ENV=test ./node_modules/karma/bin/karma start test/karma.conf.js",
+    "webdriver:update": "cross-env ./node_modules/.bin/webdriver-manager update",
+    "webdriver:start": "cross-env ./node_modules/.bin/webdriver-manager start",
+    "pree2e": "npm run webdriver:update -- --standalone",
+    "e2e": "concurrently --kill-others \"npm run e2e:start-when-ready\" \"cross-env WEBPACK_PORT=19876 npm start\"",
+    "e2e:start-when-ready": "wait-on --timeout 20000 http-get://localhost:19876/index.html && npm run e2e:start",
+    "e2e:start": "cross-env ./node_modules/.bin/protractor test/protractor.conf.js",
+    "e2e:live": "npm run e2e:start -- --elementExplorer",
+    "clean": "npm cache clean && rimraf node_modules typings test/coverage dist",
+    "clean:dist": "rimraf dist",
+    "preclean:install": "npm run clean",
+    "clean:install": "npm set progress=false && npm install",
+    "preclean:start": "npm run clean",
+    "clean:start": "npm start",
+    "watch": "npm run watch:dev",
+    "watch:dev": "npm run build:dev -- --watch",
+    "watch:dev:hmr": "npm run watch:dev -- --hot",
+    "watch:test": "npm run test -- --auto-watch --no-single-run",
+    "watch:prod": "npm run build:prod -- --watch",
+    "build": "cross-env NODE_ENV=development npm run build:dev",
+    "prebuild:dev": "npm run clean:dist",
+    "build:dev": "cross-env NODE_ENV=development npm run webpack -- --progress --profile",
+    "prebuild:prod": "npm run clean:dist",
+    "build:prod": "cross-env NODE_ENV=production npm run webpack -- --progress --profile",
+    "start": "npm run server:dev",
+    "server": "npm run server:dev",
+    "server:dev": "cross-env NODE_ENV=development node ./node_modules/webpack-dev-server/bin/webpack-dev-server --inline --progress --profile --watch",
+    "server:dev:hmr": "npm run server:dev -- --hot",
+    "server:prod": "http-server dist --cors",
+    "webpack": "cross-env ./node_modules/.bin/webpack",
+    "webpack-dev-server": "cross-env ./node_modules/.bin/webpack-dev-server",
+    "typings:install": "cross-env ./node_modules/.bin/typings install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/aurelia/skeleton-navigation.git"
+  },
+  "keywords": [
+    "aurelia",
+    "skeleton",
+    "navigation",
+    "webpack"
+  ],
+  "license": "CC0-1.0",
+  "author": "Rob Eisenberg <rob@bluespire.com> (http://robeisenberg.com/)",
+  "contributors": [
+    {
+      "name": "Arjen de Blok"
+    },
+    {
+      "name": "Bazyli Brzóska <bazyli.brzoska@gmail.com> (https://invent.life)"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/aurelia/skeleton-navigation/issues"
+  },
+  "homepage": "https://github.com/aurelia/skeleton-navigation#readme",
+  "aurelia": {
+    "build": {
+      "resources": []
+    }
+  },
+  "dependencies": {
+    "aurelia-bootstrapper-webpack": "^1.0.0-rc.1.0.0",
+    "aurelia-event-aggregator": "^1.0.0-rc.1.0.0",
+    "aurelia-fetch-client": "^1.0.0-rc.1.0.0",
+    "aurelia-framework": "^1.0.0-rc.1.0.0",
+    "aurelia-history-browser": "^1.0.0-rc.1.0.0",
+    "aurelia-loader-webpack": "^1.0.0-rc.1.0.0",
+    "aurelia-logging-console": "^1.0.0-rc.1.0.0",
+    "aurelia-pal-browser": "^1.0.0-rc.1.0.0",
+    "aurelia-polyfills": "^1.0.0-rc.1.0.0",
+    "aurelia-route-recognizer": "^1.0.0-rc.1.0.0",
+    "aurelia-router": "^1.0.0-rc.1.0.0",
+    "aurelia-templating-binding": "^1.0.0-rc.1.0.0",
+    "aurelia-templating-resources": "^1.0.0-rc.1.0.0",
+    "aurelia-templating-router": "^1.0.0-rc.1.0.0",
+    "bluebird": "^3.4.1",
+    "bootstrap": "^3.3.6",
+    "font-awesome": "^4.6.3",
+    "isomorphic-fetch": "^2.2.1",
+    "jquery": "^3.0.0"
+  },
+  "devDependencies": {
+    "@easy-webpack/config-aurelia": "^1.1.0",
+    "@easy-webpack/config-babel": "^1.1.0",
+    "@easy-webpack/config-common-chunks-simple": "^1.1.0",
+    "@easy-webpack/config-css": "^1.1.0",
+    "@easy-webpack/config-env-development": "^1.1.0",
+    "@easy-webpack/config-env-production": "^1.1.0",
+    "@easy-webpack/config-external-source-maps": "^1.1.0",
+    "@easy-webpack/config-fonts-and-images": "^1.1.0",
+    "@easy-webpack/config-generate-index-html": "^1.2.0",
+    "@easy-webpack/config-global-bluebird": "^1.1.0",
+    "@easy-webpack/config-global-jquery": "^1.1.0",
+    "@easy-webpack/config-global-regenerator": "^1.1.0",
+    "@easy-webpack/config-html": "^1.1.0",
+    "@easy-webpack/config-json": "^1.1.0",
+    "@easy-webpack/config-test-coverage-istanbul": "^1.2.0",
+    "@easy-webpack/config-typescript": "^1.1.0",
+    "@easy-webpack/config-uglify": "^1.1.0",
+    "@easy-webpack/core": "^1.1.0",
+    "aurelia-tools": "^0.2.3",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-es2015-loose": "^7.0.0",
+    "babel-preset-es2015-loose-native-modules": "^1.0.0",
+    "babel-preset-stage-1": "^6.5.0",
+    "babel-register": "^6.9.0",
+    "concurrently": "^2.1.0",
+    "cross-env": "^1.0.8",
+    "http-server": "^0.9.0",
+    "jasmine-core": "^2.4.1",
+    "karma": "^0.13.22",
+    "karma-chrome-launcher": "^1.0.1",
+    "karma-coverage": "^1.0.0",
+    "karma-jasmine": "^1.0.2",
+    "karma-mocha-reporter": "^2.0.4",
+    "karma-remap-istanbul": "^0.1.0",
+    "karma-sourcemap-loader": "^0.3.7",
+    "karma-webpack": "^1.7.0",
+    "protractor": "^3.3.0",
+    "rimraf": "^2.5.2",
+    "ts-babel-node-extendable": "^1.0.1",
+    "ts-node": "^0.9.3",
+    "typescript": ">=1.9.0-dev || ^2.0.0",
+    "typings": "^1.3.0",
+    "wait-on": "^1.5.2",
+    "webpack": ">=2.1.0-beta.13 || ^2.1.0",
+    "webpack-dev-server": ">=2.1.0-beta.0 || ^2.1.0"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "stage-1"
+    ]
+  }
+}
