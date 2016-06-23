@@ -38,8 +38,8 @@ namespace skeleton_navigation_typescript_vs
             // Add framework services.
 
             services.AddApplicationInsightsTelemetry(Configuration);
-
-            services.AddMvc();
+            // To enable Mvc, uncomment this line as well as the Mvc configuration in Configure below. 
+            //services.AddMvc();
 
             // Add application services.
         }
@@ -59,17 +59,19 @@ namespace skeleton_navigation_typescript_vs
             {
                 app.UseExceptionHandler("/Home/Error");
             }
-
+            // Comment this line to NOT use index.html as the startup file. For example, when using Mvc.
+            app.UseDefaultFiles();
+            
             app.UseStaticFiles();
 
             // Add external authentication middleware below. To configure them please see http://go.microsoft.com/fwlink/?LinkID=532715
-
-            app.UseMvc(routes =>
-            {
-                routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
-            });
+            // Uncomment this line to use Mvc as the startup route.
+            //app.UseMvc(routes =>
+            //{
+                //routes.MapRoute(
+                    //name: "default",
+                    //template: "{controller=Home}/{action=Index}/{id?}");
+            //});
         }
     }
 }
