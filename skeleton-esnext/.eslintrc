@@ -1,3 +1,3 @@
 {
-  "extends": "./node_modules/aurelia-tools/.eslintrc"
+  "extends": "./node_modules/aurelia-tools/.eslintrc.json"
 }
