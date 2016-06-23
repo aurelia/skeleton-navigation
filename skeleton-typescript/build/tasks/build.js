@@ -6,7 +6,8 @@ var sourcemaps = require('gulp-sourcemaps');
 var paths = require('../paths');
 var assign = Object.assign || require('object.assign');
 var notify = require('gulp-notify');
-var typescript = require('gulp-tsb');
+var browserSync = require('browser-sync');
+var typescript = require('gulp-typescript');
 
 // transpiles changed es6 files to SystemJS format
 // the plumber() call prevents 'pipe breaking' caused
@@ -15,13 +16,16 @@ var typescript = require('gulp-tsb');
 var typescriptCompiler = typescriptCompiler || null;
 gulp.task('build-system', function() {
   if(!typescriptCompiler) {
-    typescriptCompiler = typescript.create(require('../../tsconfig.json').compilerOptions);
+    typescriptCompiler = typescript.createProject('tsconfig.json', {
+      "typescript": require('typescript')
+    });
   }
   return gulp.src(paths.dtsSrc.concat(paths.source))
-    .pipe(plumber())
+    .pipe(plumber({errorHandler: notify.onError('Error: <%= error.message %>')}))
+    .pipe(changed(paths.output, {extension: '.ts'}))
     .pipe(sourcemaps.init({loadMaps: true}))
-    .pipe(typescriptCompiler())
-    .pipe(sourcemaps.write({includeContent: false, sourceRoot: '/src'}))
+    .pipe(typescript(typescriptCompiler))
+    .pipe(sourcemaps.write('.', {includeContent: false, sourceRoot: '/src'}))
     .pipe(gulp.dest(paths.output));
 });
 
@@ -36,7 +40,8 @@ gulp.task('build-html', function() {
 gulp.task('build-css', function() {
   return gulp.src(paths.css)
     .pipe(changed(paths.output, {extension: '.css'}))
-    .pipe(gulp.dest(paths.output));
+    .pipe(gulp.dest(paths.output))
+    .pipe(browserSync.stream());
 });
 
 // this task calls the clean task (located

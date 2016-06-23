@@ -2,6 +2,7 @@
 
 [![ZenHub](https://raw.githubusercontent.com/ZenHubIO/support/master/zenhub-badge.png)](https://zenhub.io)
 [![Join the chat at https://gitter.im/aurelia/discuss](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/aurelia/discuss?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![CircleCI](https://circleci.com/gh/aurelia/skeleton-navigation.svg?style=shield)](https://circleci.com/gh/aurelia/skeleton-navigation)
 
 This library is part of the [Aurelia](http://www.aurelia.io/) platform and provides production quality skeletons for people ready to build apps. There are various skeleton options available, depending on your platform and tooling choices.
 
@@ -11,9 +12,8 @@ This library is part of the [Aurelia](http://www.aurelia.io/) platform and provi
 
 Please see the individual readme file within each skeleton for an explanation of how to get setup.
 
-* **skeleton-es2016-webpack** - This project is configured to use the Babel transpiler so that you can write your application in ES 2016 code. It should work well with any standard text editor. This skeleton uses NPM for package management and Webpack for bundling.
-* **skeleton-es2016** - This project is configured to use the Babel transpiler so that you can write your application in ES 2016 code. It should work well with any standard text editor. This skeleton uses JSPM for package management and SystemJS for loading and bundling.
-* **skeleton-typescript-webpack** - This project is configured to use the TypeScript transpiler so that you can write your application using TypeScript. It should work well with any standard text editor. This skeleton uses NPM for package management and Webpack for bundling.
+* **skeleton-webpack** - This project is configured to use either the Babel (ESNext) or the TypeScript transpiler so that you can write your application using either language. It should work well with any standard text editor. This skeleton uses NPM for package management and Webpack for bundling.
+* **skeleton-esnext** - This project is configured to use the Babel transpiler so that you can write your application with ESNext code. It should work well with any standard text editor. This skeleton uses JSPM for package management and SystemJS for loading and bundling.
 * **skeleton-typescript** - This project is configured to use the TypeScript transpiler so that you can write your application using TypeScript. It should work well with any standard text editor, however it has been specially configured to work well with VSCode and Atom, including full TypeScript intellisense for app, unit test and e2e test code. This skeleton uses JSPM for package management and SystemJS for loading and bundling.
-* **skeleton-typescript-asp.net5** - This is an ASP.NET 5 web project configured for building a .NET backend and an Aurelia front-end. It is configured for full TypeScript support, similar to the standard skeleton-typescript option.  This skeleton uses JSPM for package management and SystemJS for loading and bundling.
-* **skeleton-es2016-asp.net5** - This is an ASP.NET 5 web project pre-configured for building a .NET backend and an Aurelia front-end. It is configured for full ES 2016 support with Babel, similar to the standard skeleton-es2016 option. This skeleton uses JSPM for package management and SystemJS for loading and bundling.
+* **skeleton-typescript-aspnetcore** - This is an ASP.NET Core web project configured for building a .NET backend and an Aurelia front-end. It is configured for full TypeScript support, similar to the standard skeleton-typescript option.  This skeleton uses JSPM for package management and SystemJS for loading and bundling.
+* **skeleton-esnext-aspnetcore** - This is an ASP.NET Core web project pre-configured for building a .NET backend and an Aurelia front-end. It is configured for full ES Next support with Babel, similar to the standard skeleton-esnext option. This skeleton uses JSPM for package management and SystemJS for loading and bundling.

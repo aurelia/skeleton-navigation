@@ -1,0 +1,90 @@
+{
+  "name": "aurelia-skeleton-navigation",
+  "version": "1.0.0-beta.1.3.1",
+  "description": "A starter kit for building a standard navigation-style app with Aurelia.",
+  "keywords": [
+    "aurelia",
+    "navigation",
+    "skeleton"
+  ],
+  "homepage": "http://aurelia.io",
+  "bugs": {
+    "url": "https://github.com/aurelia/skeleton-navigation/issues"
+  },
+  "license": "CC0-1.0",
+  "author": "Rob Eisenberg <rob@bluespire.com> (http://robeisenberg.com/)",
+  "main": "dist/main.js",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/aurelia/skeleton-navigation"
+  },
+  "scripts": {
+    "test": "gulp test",
+    "e2e": "gulp serve webdriver-standalone e2e"
+  },
+  "devDependencies": {
+    "aurelia-bundler": "^0.4.0",
+    "aurelia-tools": "^0.2.3",
+    "babel-core": "^6.10.4",
+    "babel-eslint": "^6.0.5",
+    "babel-plugin-syntax-flow": "^6.8.0",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-plugin-transform-es2015-modules-amd": "^6.8.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.10.3",
+    "babel-plugin-transform-es2015-modules-systemjs": "^6.9.0",
+    "babel-plugin-transform-flow-strip-types": "^6.8.0",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-es2015-loose": "^7.0.0",
+    "babel-preset-stage-1": "^6.5.0",
+    "browser-sync": "^2.13.0",
+    "conventional-changelog": "1.1.0",
+    "del": "^2.2.1",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-bump": "^2.1.0",
+    "gulp-changed": "^1.3.0",
+    "gulp-eslint": "^2.0.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-protractor": "2.4.0",
+    "gulp-sourcemaps": "^2.0.0-alpha",
+    "isparta": "^4.0.0",
+    "istanbul": "^1.0.0-alpha.2",
+    "jasmine-core": "^2.4.1",
+    "jspm": "^0.16.15",
+    "karma": "^0.13.22",
+    "karma-babel-preprocessor": "^6.0.1",
+    "karma-chrome-launcher": "^1.0.1",
+    "karma-coverage": "^1.0.0",
+    "karma-jasmine": "^1.0.2",
+    "karma-jspm": "2.1.1",
+    "object.assign": "^4.0.3",
+    "require-dir": "^0.3.0",
+    "run-sequence": "^1.2.1",
+    "vinyl-paths": "^2.1.0",
+    "yargs": "^4.7.1"
+  },
+  "jspm": {
+    "dependencies": {
+      "aurelia-animator-css": "npm:aurelia-animator-css@^1.0.0-beta.1.1.2",
+      "aurelia-bootstrapper": "npm:aurelia-bootstrapper@^1.0.0-beta.1.1.4",
+      "aurelia-fetch-client": "npm:aurelia-fetch-client@^1.0.0-beta.1.1.1",
+      "aurelia-framework": "npm:aurelia-framework@^1.0.0-beta.1.1.4",
+      "aurelia-history-browser": "npm:aurelia-history-browser@^1.0.0-beta.1.1.4",
+      "aurelia-loader-default": "npm:aurelia-loader-default@^1.0.0-beta.1.1.3",
+      "aurelia-logging-console": "npm:aurelia-logging-console@^1.0.0-beta.1.1.4",
+      "aurelia-pal-browser": "npm:aurelia-pal-browser@^1.0.0-beta.1.1.4",
+      "aurelia-polyfills": "npm:aurelia-polyfills@^1.0.0-beta.1.0.3",
+      "aurelia-router": "npm:aurelia-router@^1.0.0-beta.1.1.3",
+      "aurelia-templating-binding": "npm:aurelia-templating-binding@^1.0.0-beta.1.1.2",
+      "aurelia-templating-resources": "npm:aurelia-templating-resources@^1.0.0-beta.1.1.3",
+      "aurelia-templating-router": "npm:aurelia-templating-router@^1.0.0-beta.1.1.2",
+      "bootstrap": "github:twbs/bootstrap@^3.3.6",
+      "fetch": "github:github/fetch@^1.0.0",
+      "font-awesome": "npm:font-awesome@^4.6.3",
+      "jquery": "npm:jquery@^2.2.4",
+      "text": "github:systemjs/plugin-text@^0.0.3"
+    },
+    "devDependencies": {}
+  }
+}

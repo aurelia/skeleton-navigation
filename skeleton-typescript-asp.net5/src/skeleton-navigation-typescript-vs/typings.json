@@ -1,9 +1,0 @@
-{
-  "name": "aurelia-skeleton-navigation-typescript-aspnet5",
-  "ambientDependencies": {
-    "es6-promise": "github:DefinitelyTyped/DefinitelyTyped/es6-promise/es6-promise.d.ts#24e12a7af994afa2226af70fbfae0adc78736a9e",
-    "jasmine": "github:DefinitelyTyped/DefinitelyTyped/jasmine/jasmine.d.ts#16cfc9e52eec782859fc91b413e9866640651395",
-    "angular-protractor": "github:DefinitelyTyped/DefinitelyTyped/angular-protractor/angular-protractor.d.ts#24e12a7af994afa2226af70fbfae0adc78736a9e",
-    "selenium-webdriver": "github:DefinitelyTyped/DefinitelyTyped/selenium-webdriver/selenium-webdriver.d.ts#24e12a7af994afa2226af70fbfae0adc78736a9e"
-  }
-}
