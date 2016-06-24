@@ -30,11 +30,10 @@ System.config({
     "aurelia-templating-resources": "npm:aurelia-templating-resources@1.0.0-rc.1.0.0",
     "aurelia-templating-router": "npm:aurelia-templating-router@1.0.0-rc.1.0.0",
     "bootstrap": "github:twbs/bootstrap@3.3.6",
-    "css": "github:systemjs/plugin-css@0.1.23",
-    "fetch": "github:github/fetch@0.11.1",
+    "fetch": "github:github/fetch@1.0.0",
     "font-awesome": "npm:font-awesome@4.6.3",
     "jquery": "npm:jquery@3.0.0",
-    "text": "github:systemjs/plugin-text@0.0.3",
+    "text": "github:systemjs/plugin-text@0.0.8",
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.4.1"
     },
@@ -64,7 +63,7 @@ System.config({
       "aurelia-pal": "npm:aurelia-pal@1.0.0-rc.1.0.0",
       "aurelia-templating": "npm:aurelia-templating@1.0.0-rc.1.0.0"
     },
-    "npm:aurelia-binding@1.0.0-rc.1.0.0": {
+    "npm:aurelia-binding@1.0.0-rc.1.0.2": {
       "aurelia-logging": "npm:aurelia-logging@1.0.0-rc.1.0.0",
       "aurelia-metadata": "npm:aurelia-metadata@1.0.0-rc.1.0.0",
       "aurelia-pal": "npm:aurelia-pal@1.0.0-rc.1.0.0",
@@ -94,7 +93,7 @@ System.config({
       "aurelia-logging": "npm:aurelia-logging@1.0.0-rc.1.0.0"
     },
     "npm:aurelia-framework@1.0.0-rc.1.0.0": {
-      "aurelia-binding": "npm:aurelia-binding@1.0.0-rc.1.0.0",
+      "aurelia-binding": "npm:aurelia-binding@1.0.0-rc.1.0.2",
       "aurelia-dependency-injection": "npm:aurelia-dependency-injection@1.0.0-rc.1.0.0",
       "aurelia-loader": "npm:aurelia-loader@1.0.0-rc.1.0.0",
       "aurelia-logging": "npm:aurelia-logging@1.0.0-rc.1.0.0",
@@ -144,12 +143,12 @@ System.config({
       "aurelia-pal": "npm:aurelia-pal@1.0.0-rc.1.0.0"
     },
     "npm:aurelia-templating-binding@1.0.0-rc.1.0.0": {
-      "aurelia-binding": "npm:aurelia-binding@1.0.0-rc.1.0.0",
+      "aurelia-binding": "npm:aurelia-binding@1.0.0-rc.1.0.2",
       "aurelia-logging": "npm:aurelia-logging@1.0.0-rc.1.0.0",
       "aurelia-templating": "npm:aurelia-templating@1.0.0-rc.1.0.0"
     },
     "npm:aurelia-templating-resources@1.0.0-rc.1.0.0": {
-      "aurelia-binding": "npm:aurelia-binding@1.0.0-rc.1.0.0",
+      "aurelia-binding": "npm:aurelia-binding@1.0.0-rc.1.0.2",
       "aurelia-dependency-injection": "npm:aurelia-dependency-injection@1.0.0-rc.1.0.0",
       "aurelia-loader": "npm:aurelia-loader@1.0.0-rc.1.0.0",
       "aurelia-logging": "npm:aurelia-logging@1.0.0-rc.1.0.0",
@@ -169,7 +168,7 @@ System.config({
       "aurelia-templating": "npm:aurelia-templating@1.0.0-rc.1.0.0"
     },
     "npm:aurelia-templating@1.0.0-rc.1.0.0": {
-      "aurelia-binding": "npm:aurelia-binding@1.0.0-rc.1.0.0",
+      "aurelia-binding": "npm:aurelia-binding@1.0.0-rc.1.0.2",
       "aurelia-dependency-injection": "npm:aurelia-dependency-injection@1.0.0-rc.1.0.0",
       "aurelia-loader": "npm:aurelia-loader@1.0.0-rc.1.0.0",
       "aurelia-logging": "npm:aurelia-logging@1.0.0-rc.1.0.0",
