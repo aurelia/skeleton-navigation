@@ -70,7 +70,7 @@ switch (ENV) {
       baseConfig,
 
       require('@easy-webpack/config-env-production')
-        (true),
+        ({compress: true}),
         
       require('@easy-webpack/config-aurelia')
         ({root: rootDir, src: srcDir, title: title, baseUrl: baseUrl}),
@@ -98,7 +98,7 @@ switch (ENV) {
       baseConfig,
 
       require('@easy-webpack/config-env-development')
-        ('inline-source-map'),
+        ({devtool: 'inline-source-map'}),
 
       require('@easy-webpack/config-aurelia')
         ({root: rootDir, src: srcDir, title: title, baseUrl: baseUrl}),
