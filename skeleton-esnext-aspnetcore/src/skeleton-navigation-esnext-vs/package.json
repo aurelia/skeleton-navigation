@@ -1,6 +1,6 @@
 {
   "name": "aurelia-skeleton-navigation-netcoreapp",
-  "version": "1.0.0-beta.1.3.1",
+  "version": "1.0.0-beta.2.0.0",
   "private": true,
   "devDependencies": {
     "aurelia-bundler": "^0.4.0",
