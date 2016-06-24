@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 
-namespace skeleton_navigation_typescript_vs
+namespace skeleton_navigation_esnext_vs
 {
     public class Program
     {
