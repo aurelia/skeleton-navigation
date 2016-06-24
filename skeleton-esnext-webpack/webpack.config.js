@@ -73,23 +73,23 @@ switch (ENV) {
         (true),
         
       require('@easy-webpack/config-aurelia')
-        (rootDir, srcDir, title, baseUrl),
+        ({root: rootDir, src: srcDir, title: title, baseUrl: baseUrl}),
 
       require('@easy-webpack/config-babel')(),
       require('@easy-webpack/config-html')(),
 
       require('@easy-webpack/config-css')
-        (false, { filename: 'styles.css', allChunks: !!ELECTRON }),
+        ({ filename: 'styles.css', allChunks: !!ELECTRON, sourceMap: false }),
 
       require('@easy-webpack/config-fonts-and-images')(),
       require('@easy-webpack/config-global-bluebird')(),
       require('@easy-webpack/config-global-jquery')(),
       require('@easy-webpack/config-global-regenerator')(),
       require('@easy-webpack/config-generate-index-html')
-        (true),
+        ({minify: true}),
 
       require('@easy-webpack/config-uglify')
-        (false)
+        ({debug: false})
     );
     break;
   
@@ -101,13 +101,13 @@ switch (ENV) {
         ('inline-source-map'),
 
       require('@easy-webpack/config-aurelia')
-        (rootDir, srcDir, title, baseUrl),
+        ({root: rootDir, src: srcDir, title: title, baseUrl: baseUrl}),
 
       require('@easy-webpack/config-babel')(),
       require('@easy-webpack/config-html')(),
 
       require('@easy-webpack/config-css')
-        (false, { filename: 'styles.css', allChunks: !!ELECTRON }),
+        ({ filename: 'styles.css', allChunks: !!ELECTRON, sourceMap: false }),
 
       require('@easy-webpack/config-fonts-and-images')(),
       require('@easy-webpack/config-global-bluebird')(),
@@ -126,20 +126,20 @@ switch (ENV) {
       require('@easy-webpack/config-env-development')(),
 
       require('@easy-webpack/config-aurelia')
-        (rootDir, srcDir, title, baseUrl),
+        ({root: rootDir, src: srcDir, title: title, baseUrl: baseUrl}),
 
       require('@easy-webpack/config-babel')(),
       require('@easy-webpack/config-html')(),
 
       require('@easy-webpack/config-css')
-        (false, { filename: 'styles.css', allChunks: !!ELECTRON }),
+        ({ filename: 'styles.css', allChunks: !!ELECTRON, sourceMap: false }),
 
       require('@easy-webpack/config-fonts-and-images')(),
       require('@easy-webpack/config-global-bluebird')(),
       require('@easy-webpack/config-global-jquery')(),
       require('@easy-webpack/config-global-regenerator')(),
       require('@easy-webpack/config-generate-index-html')
-        (false)
+        ({minify: false})
     );
     break;
 }
@@ -158,7 +158,7 @@ if (ENV !== 'test' && !ELECTRON) {
   config = generateConfig(
     config,
     require('@easy-webpack/config-common-chunks-simple')
-      ('app', 'aurelia-bootstrap')
+      ({appChunkName: 'app', firstChunk: 'aurelia-bootstrap'})
   );
 }
 
