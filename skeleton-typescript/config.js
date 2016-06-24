@@ -32,7 +32,6 @@ System.config({
     "bootstrap": "github:twbs/bootstrap@3.3.6",
     "fetch": "github:github/fetch@1.0.0",
     "font-awesome": "npm:font-awesome@4.6.3",
-    "jquery": "npm:jquery@3.0.0",
     "text": "github:systemjs/plugin-text@0.0.8",
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.4.1"
