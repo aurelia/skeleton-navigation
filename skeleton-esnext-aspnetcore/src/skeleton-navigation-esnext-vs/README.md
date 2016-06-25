@@ -59,7 +59,7 @@ They both may be found
 
 9. If you want the changes you are making to be reflected in the browser you can run `gulp watch` in a second terminal window and refresh the page in your browser.
 
-10. Browse to [http://localhost:9000](http://localhost:9000) to see the app. You can make changes in the code found under `src` and the browser should auto-refresh itself as you save files.
+10. Browse to [http://localhost:9000](http://localhost:9000) to see the app. You can make changes in the code found under `src` and the browser should auto-refresh itself as you save files. (Note: It's possible that a port other than 9000 will be used if there's already something running there. Double check the port number to be sure.)
 
 ## Bundling
 
