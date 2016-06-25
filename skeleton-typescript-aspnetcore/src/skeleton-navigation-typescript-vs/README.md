@@ -40,21 +40,26 @@ ASP.Net Core on Windows, OSX, or Linux. The instructions to do so are found
 This assumes you are running from command line but Visual Studio users should be familiar with how to build and run the project
 in the IDE.
 
->**Note:** This project requires the installation of the ASP.Net Core SDK 1.0 RC2 as well as the ASP.Net Core VS2015 Tooling Preview 1. 
+>**Note:** This project requires the installation of the ASP.Net Core SDK 1.0 RC2 as well as the ASP.Net Core VS2015 Tooling Preview 1.
 They both may be found
 [on this Microsoft page](https://www.microsoft.com/net/core#windows).
 
+7. Before you can run the .NET app, you must execute the following command:
 
-7. To run the app, execute the following command:
+  ```shell
+  dotnet restore
+  ```
+
+8. To run the app, execute the following command:
 
   ```shell
   dotnet run
   ```
   Or in Visual Studio just click on the Debug in the Browser option.
 
-8. If you want the changes you are making to be reflected in the browser you can run `gulp watch` in a second terminal window and refresh the page in your browser.
+9. If you want the changes you are making to be reflected in the browser you can run `gulp watch` in a second terminal window and refresh the page in your browser.
 
-9. Browse to [http://localhost:9000](http://localhost:9000) to see the app. You can make changes in the code found under `src` and the browser should auto-refresh itself as you save files.
+10. Browse to [http://localhost:9000](http://localhost:9000) to see the app. You can make changes in the code found under `src` and the browser should auto-refresh itself as you save files.
 
 ## Bundling
 
