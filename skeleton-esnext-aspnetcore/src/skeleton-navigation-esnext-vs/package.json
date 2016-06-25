@@ -30,7 +30,7 @@
     "gulp-notify": "^2.2.0",
     "gulp-plumber": "^1.1.0",
     "gulp-protractor": "2.4.0",
-    "gulp-sourcemaps": "^2.0.0-alpha",
+    "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "1.5.3",
     "isparta": "^4.0.0",
     "istanbul": "^1.0.0-alpha.2",
