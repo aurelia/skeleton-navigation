@@ -34,7 +34,7 @@
     "run-sequence": "^1.2.1",
     "systemjs": "0.19.31",
     "tslint": "^3.11.0",
-    "typescript": "^1.9.0-dev.20160622-1.0",
+    "typescript": ">=1.9.0-dev || ^2.0.0",
     "vinyl-paths": "^2.1.0",
     "yargs": "^4.7.1"
   },
