@@ -22,7 +22,12 @@ module.exports = function(config) {
             defaultExtension: 'ts'
           }
         },
-        transpiler: 'typescript'
+        transpiler: 'typescript',
+        typescriptOptions : {
+          "module": "amd",
+          "emitDecoratorMetadata": true,
+          "experimentalDecorators": true
+        }
       },
       serveFiles: [
         'src/**/*.ts',
