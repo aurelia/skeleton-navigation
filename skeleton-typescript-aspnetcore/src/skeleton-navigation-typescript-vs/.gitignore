@@ -182,6 +182,7 @@ ClientBin/
 *.pfx
 *.publishsettings
 node_modules/
+typings/
 wwwroot/dist/
 wwwroot/lib/
 wwwroot/jspm_packages/

@@ -45,10 +45,11 @@
     "typescript",
     "vscode"
   ],
-  "scripts": {
-    "test": "gulp test",
-    "e2e": "gulp serve e2e"
-  },
+    "scripts": {
+        "postinstall": "./node_modules/.bin/typings install",
+        "test": "gulp test",
+        "e2e": "gulp serve e2e"
+    },
   "jspm": {
     "directories": {
       "baseURL": "wwwroot"

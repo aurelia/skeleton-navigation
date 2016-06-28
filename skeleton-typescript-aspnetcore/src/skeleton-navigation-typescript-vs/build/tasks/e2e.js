@@ -4,7 +4,7 @@ var plumber = require('gulp-plumber');
 var webdriverUpdate = require('gulp-protractor').webdriver_update;
 var webdriverStandalone = require('gulp-protractor').webdriver_standalone;
 var protractor = require('gulp-protractor').protractor;
-var typescript = require('gulp-tsb');
+var typescript = require('gulp-typescript');
 var assign = Object.assign || require('object.assign');
 var del = require('del');
 
