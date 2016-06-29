@@ -5,7 +5,11 @@
 To run the app, follow these steps.
 
 1. Ensure that [NodeJS](http://nodejs.org/) is installed. This provides the platform on which the build tooling runs.
-2. From the project folder, execute the following command:
+2. Ensure that the typings tool is installed globally.
+  ```shell
+  npm install -g typings
+  ```
+2. Install the npm devdependencies and the type .d.ts files. From the project folder, execute the following command:
   ```shell
   npm install
   ```
