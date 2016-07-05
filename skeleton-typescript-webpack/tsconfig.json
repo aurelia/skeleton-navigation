@@ -10,7 +10,7 @@
   },
   "awesomeTypescriptLoaderOptions": {
     "doTypeCheck": true,
-    "forkChecker": false,
+    "forkChecker": true,
     "useBabel": true,
     "useCache": true,
     "babelOptions": {
