@@ -14,7 +14,7 @@ Please see the individual readme files within each skeleton for an explanation o
 
 > **Note:** We recommend that you only use officially released versions of these skeletons, rather than working directly from the master branch. You can go to [the Github releases tab](https://github.com/aurelia/skeleton-navigation/releases) to find the related downloads.
 
-### ESNext skeletons
+### ESNext Skeletons
 
 * **skeleton-esnext-webpack** - This project is configured to use the Babel transpiler so that you can write your application using either language. It should work well with any standard text editor. This skeleton uses NPM for package management and Webpack for bundling.
 * **skeleton-esnext** - This project is configured to use the Babel transpiler so that you can write your application with ESNext code. It should work well with any standard text editor. This skeleton uses JSPM for package management and SystemJS for loading and bundling.
