@@ -1,51 +1,49 @@
 # Aurelia with ASP.Net Core using ESNEXT
 
-## Running The App
+This skeleton works both with and without Visual Studio; however, the steps for getting up and running are different for these two scenarios. Please follow the correct set of instructions based on whether or not you are using Visual Studio.
+
+First, there are a set of prerequisites you will need whether or not you are using Visual Studio. Make sure to install these prerequisites before proceeding.
+
+- [NodeJS](http://nodejs.org/) >=4.0.0 This provides the platform on which the build tooling runs. This may be downloaded and installed from the NodeJS website.
+- NPM >=3.0.0 This is installed with NodeJS, but if you install a 4.x version of NodeJS, you may have to update this.
+- jspm and gulp. These two tools may be installed by running `npm install -g jspm gulp` from a command line after installing NodeJS and NPM
+  > **Note:** Sometimes jspm queries GitHub to install packages, but GitHub has a rate limit on anonymous API requests. If you receive a rate limit error, you need to configure jspm with your GitHub credentials. You can do this by executing `jspm registry config github` and following the prompts. If you choose to authorize jspm by an access token instead of giving your password (see GitHub `Settings > Personal Access Tokens`), `public_repo` access for the token is required.
+
+## Running the App in Visual Studio 2015
+
+Additional Prerequisites:
+- Visual Studio 2015 with Update 3
+- [ASP.NET Core](https://www.microsoft.com/net/core#windows) must be downloaded and installed. The directions for doing this are [here](https://www.microsoft.com/net/core#windows).
+
+1. Open the solution file `skeleton-typescript-aspnetcore.sln`. This file is located up two directories from the file. Visual Studio will automatically run `npm install` and `jspm install` when you first open the solution. You may rerun these commands at any time by running `npm install` from the same directory this readme file is in.
+2. Open `Task Runner Explorer`. 
+3. The project is ready to be run when `Task Runner Explorer` shows that it is running the `gulp watch` command. 
+4. Press `F5` or click the `Run` button in Visual Studio. Visual Studio will launch your browser for you and navigate to the correct URL.
+
+
+## Running The App without Visual Studio
+
+Additional Prerequisites:
+- [ASP.NET Core](https://www.microsoft.com/net/core#windows) must be downloaded and installed. The directions for doing this are [here](https://www.microsoft.com/net/core#windows). You only need to download and install the `.NET Core SDK for Windows`.
 
 To run the app, follow these steps.
 
-1. Ensure that [NodeJS](http://nodejs.org/) is installed. This provides the platform on which the build tooling runs.
-2. From the project folder, execute the following command:
+1. Install the npm devdependencies and jspm dependencies. From the project folder, execute the following command:
   ```shell
   npm install
   ```
-3. Ensure that [Gulp](http://gulpjs.com/) is installed globally. If you need to install it, use the following command:
-  ```shell
-  npm install -g gulp
-  ```
-  > **Note:** Gulp must be installed globally, but a local version will also be installed to ensure a compatible version is used for the project.
-4. Ensure that [jspm](http://jspm.io/) is installed globally. If you need to install it, use the following command:
-  ```shell
-  npm install -g jspm
-  ```
-  > **Note:** jspm must be installed globally, but a local version will also be installed to ensure a compatible version is used for the project.
 
-  > **Note:** Sometimes jspm queries GitHub to install packages, but GitHub has a rate limit on anonymous API requests. If you receive a rate limit error, you need to configure jspm with your GitHub credentials. You can do this by executing `jspm registry config github` and following the prompts. If you choose to authorize jspm by an access token instead of giving your password (see GitHub `Settings > Personal Access Tokens`), `public_repo` access for the token is required.
-5. Install the client-side dependencies with jspm:
-
-  ```shell
-  jspm install -y
-  ```
+  This command will install the npm dependencies, and then run `jspm install -y` for you. If you do not desire for this behavior, you may edit or remove the `postinstall` script in the `package.json` file. 
   >**Note:** Windows users, if you experience an error of "unknown command unzip" you can solve this problem by doing `npm install -g unzip` and then re-running `jspm install`.
 
-6. Build the project:
+6.  Build the project:
 
   ```shell
   gulp build
   dotnet build
   ```
 
->**Note:** This skeleton is wrapped in an ASP.Net Core 1.0 RTM project.  If you are using VSCode on any platform you can install
-ASP.Net Core on Windows, OSX, or Linux. The instructions to do so are found
-[on this Microsoft page](https://www.microsoft.com/net/core).
-This assumes you are running from command line but Visual Studio users should be familiar with how to build and run the project
-in the IDE.
-
->**Note:** To use this project in Visual Studio requires the installation of Visual Studio 2015 Update 3 as well as the ASP.Net Core VS2015 Tooling Preview 2.
-They both may be found
-[on this Microsoft page](https://www.microsoft.com/net/core#windows).
-
-7. Before you can run the .NET app, you must execute the following command:
+7. Execute the following command:
 
   ```shell
   dotnet restore
@@ -56,7 +54,6 @@ They both may be found
   ```shell
   dotnet run
   ```
-  Or in Visual Studio just click on the Debug.Start Debugging (F5) or Debug.Start Without Debugging (Ctrl-F5) in the main menu..
 
 9. If you want the changes you are making to be reflected in the browser you can run `gulp watch` in a second terminal window and refresh the page in your browser.
 
