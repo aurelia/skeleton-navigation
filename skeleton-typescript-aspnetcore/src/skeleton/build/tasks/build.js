@@ -45,12 +45,6 @@ gulp.task('build-css', function() {
     .pipe(gulp.dest(paths.output));
 });
 
-// runs jspm install from within Gulp
-gulp.task('build-jspm', function () {
-    exec('jspm install', function (err, stout, stderr) {
-    });
-});
-
 // this task calls the clean task (located
 // in ./clean.js), then runs the build-system
 // and build-html tasks in parallel

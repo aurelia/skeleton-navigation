@@ -29,7 +29,7 @@ module.exports = {
         "aurelia-logging-console",
         "bootstrap",
         "bootstrap/css/bootstrap.css!text",
-        "jquery"
+        "fetch"
       ],
       "options": {
         "inject": true,

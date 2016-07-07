@@ -59,6 +59,7 @@
     "vscode"
   ],
   "scripts": {
+    "postinstall": "./node_modules/.bin/jspm install -y",
     "test": "gulp test",
     "e2e": "gulp serve e2e"
   },
