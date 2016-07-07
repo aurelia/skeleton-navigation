@@ -1,5 +1,10 @@
 "use strict";
 require('regenerator-runtime/runtime');
+
+/**
+ * To learn more about how to use Easy Webpack
+ * Take a look at the README here: https://github.com/easy-webpack/core
+ **/
 const easyWebpack = require('@easy-webpack/core');
 const generateConfig = easyWebpack.default;
 const get = easyWebpack.get;
