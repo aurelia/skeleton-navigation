@@ -9,6 +9,7 @@ var compilerOptions = require('../babel-options');
 var assign = Object.assign || require('object.assign');
 var notify = require('gulp-notify');
 var exec = require('child_process').exec;
+var htmlmin = require('gulp-htmlmin');
 
 // transpiles changed es6 files to SystemJS format
 // the plumber() call prevents 'pipe breaking' caused
@@ -28,6 +29,7 @@ gulp.task('build-system', function() {
 gulp.task('build-html', function() {
   return gulp.src(paths.html)
     .pipe(changed(paths.output, {extension: '.html'}))
+    .pipe(htmlmin({collapseWhitespace: true}))
     .pipe(gulp.dest(paths.output));
 });
 
