@@ -4,8 +4,14 @@
             <div class="fa fa-spinner fa-spin"></div>
     </div>
     
+    <!-- The bluebird version is locked at 4.6.3 in the package.json file to keep this from breaking -->
+    <!-- We include bluebird to bypass Edge's very slow Native Promise implementation. The Edge team -->
+    <!-- has fixed the issues with their implementation with these fixes being distributed with the  -->
+    <!-- Windows 10 Anniversary Update on 2 August 2016. Once that update has pushed out, you may    -->
+    <!-- consider removing bluebird from your project and simply using native promises if you do     -->
+    <!-- not need to support Internet Explorer.                                                      -->
+    <script src="jspm_packages/npm/bluebird@3.4.1/js/browser/bluebird.min.js"></script> 
     <script src="jspm_packages/system.js"></script>
-    
     <script src="config.js"></script>
     
     <script>
