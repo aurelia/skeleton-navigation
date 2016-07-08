@@ -1,4 +1,5 @@
 import {bootstrap} from 'aurelia-bootstrapper-webpack';
+import 'bootstrap';
 
 bootstrap(async (aurelia) => {
   aurelia.use
