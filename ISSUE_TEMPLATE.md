@@ -1,14 +1,19 @@
-## **BEFORE YOU SUBMIT** please read the following:
-If you have a support request or question please
-submit them to [StackOverflow](http://stackoverflow.com/questions/tagged/aurelia) using the tag `[aurelia]` or the [Aurelia Gitter](https://gitter.im/aurelia/discuss). Future support requests will be closed.
-(remove this from issue)
+<!--
+BUGS: Please use this template.
 
+SUPPORT REQUESTS/QUESTIONS: If you have a support request or question please
+submit them to StackOverflow using the tag `[aurelia]`
+http://stackoverflow.com/questions/tagged/aurelia
+or the Aurelia Gitter https://gitter.im/aurelia/discuss
 
+Durandal Inc. offers paid support agreements. Further information regarding paid support
+may be obtained by emailing support@durandal.io
+
+Future support requests submitted here will be closed.
+-->
 
 **I'm submitting a bug report**
 **I'm submitting a feature request**
-**I'm submitting a support request** => Please do not submit support request here, see note at the top of this template.
-(remove inappropriate sentences)
 
 **Aurelia Skeleton Version**
 skeleton-esnext
@@ -26,20 +31,19 @@ skeleton-typescript-webpack
 OSX 10.x / Linux / Windows 10
 
 **Node Version:**
-Minimum supported version is latest Node 4.x LTS
-run `node -v`
+<!-- Minimum supported version is latest Node 4.x LTS
+run `node -v` -->
 
 **NPM Version:**
-Minimum supported is 3.x
-run `npm -v`
+<!-- Minimum supported is 3.x
+run `npm -v` -->
 
 **JSPM OR Webpack AND Version**
-JSPM 0.16.32 | webpack 2.1.0-beta.17
-
-If using JSPM
+<!-- If using JSPM
 run `jspm -v`
 If using Webpack
-run `webpack --help | grep webpack`
+run `webpack --help | grep webpack` -->
+JSPM 0.16.32 | webpack 2.1.0-beta.17
 
 
 * **Browser:** [all | Chrome XX | Firefox XX | Edge XX | IE XX | Safari XX | Mobile Chrome XX | Android X.X Web Browser | iOS XX Safari | iOS XX UIWebView | iOS XX WKWebView ]
@@ -51,9 +55,8 @@ run `webpack --help | grep webpack`
 
 
 **Expected/desired behavior:**
-
-
-* **If the current behavior is a bug, please provide the steps to reproduce and if possible a minimal demo of the problem along with a gist.run example, if possible.**
+<!-- If the current behavior is a bug, please provide the steps to reproduce and if possible a minimal demo of the problem along
+with a [gist.run](https://gist.run/?id=7542e061bc940cde506b&sha=6821c521a6c7bae6f59a36fb8628ecd1032b2d10) example, if possible. -->
 
 
 * **What is the expected behavior?**
