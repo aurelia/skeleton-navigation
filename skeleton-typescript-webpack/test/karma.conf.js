@@ -9,7 +9,7 @@ module.exports = function(config) {
   config.set({
 
     // base path that will be used to resolve all patterns (e.g. files, exclude)
-    basePath: '',
+    basePath: __dirname,
 
     /*
      * Frameworks to use
@@ -27,7 +27,7 @@ module.exports = function(config) {
      * we are building the test environment in ./spec-bundle.js
      */
     files: [
-      { pattern: './spec-bundle.js', watched: false },
+      { pattern: 'spec-bundle.js', watched: false },
     ],
 
     /*
@@ -35,7 +35,7 @@ module.exports = function(config) {
      * available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
      */
     preprocessors: {
-      './spec-bundle.js': ['coverage', 'webpack', 'sourcemap']
+      'spec-bundle.js': ['coverage', 'webpack', 'sourcemap']
     },
     
     webpack: require('../webpack.config'),
@@ -89,7 +89,6 @@ module.exports = function(config) {
      */
     browsers: [
       'Chrome',
-      // 'PhantomJS'
       // TODO: https://www.npmjs.com/package/karma-electron
     ],
 
