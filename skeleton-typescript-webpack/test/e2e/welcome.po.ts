@@ -1,3 +1,5 @@
+import {browser, element, by, By, $, $$, ExpectedConditions} from 'protractor/globals';
+
 export class PageObject_Welcome {
   getGreeting() {
     return element(by.tagName('h2')).getText();
@@ -25,10 +27,12 @@ export class PageObject_Welcome {
     return browser.wait(() => {
       this.pressSubmitButton();
 
-      return browser.switchTo().alert().then(
-        // use alert.accept instead of alert.dismiss which results in a browser crash
-        function(alert) { alert.accept(); return true; },
-        function() { return false; }
+      return browser.wait(ExpectedConditions.alertIsPresent(), 5000).then(
+        browser.switchTo().alert().then(
+          // use alert.accept instead of alert.dismiss which results in a browser crash
+          function(alert) { alert.accept(); return true; },
+          function() { return false; }
+        )
       );
     });
   }

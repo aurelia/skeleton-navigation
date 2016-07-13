@@ -28,10 +28,12 @@ export class PageObjectWelcome {
     return browser.wait(() => {
       this.pressSubmitButton();
 
-      return browser.switchTo().alert().then(
-        // use alert.accept instead of alert.dismiss which results in a browser crash
-        function(alert) { alert.accept(); return true; },
-        function() { return false; }
+      return browser.wait(ExpectedConditions.alertIsPresent(), 5000).then(
+        browser.switchTo().alert().then(
+          // use alert.accept instead of alert.dismiss which results in a browser crash
+          function(alert) { alert.accept(); return true; },
+          function() { return false; }
+        )
       );
     });
   }

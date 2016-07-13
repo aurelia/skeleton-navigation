@@ -1,3 +1,5 @@
+import {browser, element, by, By, $, $$, ExpectedConditions} from 'protractor/globals';
+
 export class PageObject_Skeleton {
 
   constructor() {

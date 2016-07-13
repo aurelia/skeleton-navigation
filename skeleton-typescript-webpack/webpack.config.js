@@ -1,5 +1,4 @@
 "use strict";
-require('regenerator-runtime/runtime');
 
 /**
  * To learn more about how to use Easy Webpack
