@@ -31,18 +31,24 @@ skeleton-typescript-webpack
 OSX 10.x / Linux / Windows 10
 
 **Node Version:**
-<!-- Minimum supported version is latest Node 4.x LTS
-run `node -v` -->
+<!--
+Minimum supported version is latest Node 4.x LTS
+run `node -v`
+-->
 
 **NPM Version:**
-<!-- Minimum supported is 3.x
-run `npm -v` -->
+<!--
+Minimum supported is 3.x
+run `npm -v`
+-->
 
 **JSPM OR Webpack AND Version**
-<!-- If using JSPM
+<!--
+If using JSPM
 run `jspm -v`
 If using Webpack
-run `webpack --help | grep webpack` -->
+run `webpack --help | grep webpack`
+-->
 JSPM 0.16.32 | webpack 2.1.0-beta.17
 
 
@@ -55,8 +61,13 @@ JSPM 0.16.32 | webpack 2.1.0-beta.17
 
 
 **Expected/desired behavior:**
-<!-- If the current behavior is a bug, please provide the steps to reproduce and if possible a minimal demo of the problem along
-with a [gist.run](https://gist.run/?id=7542e061bc940cde506b&sha=6821c521a6c7bae6f59a36fb8628ecd1032b2d10) example, if possible. -->
+<!--
+If the current behavior is a bug, please provide the steps to reproduce and if possible a minimal demo of the problem along
+with a runnable gist, if possible.
+To create a runnable gist, go to https://gist.run/?id=7542e061bc940cde506b&sha=6821c521a6c7bae6f59a36fb8628ecd1032b2d10
+Then click "Fork to Public Gist".
+Create your gist, then finally click "Update Gist." Include a link to the gist.run below.
+-->
 
 
 * **What is the expected behavior?**
