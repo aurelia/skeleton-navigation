@@ -28,7 +28,7 @@ exports.config = {
   },
 
   onPrepare: function() {
-    require('ts-babel-node-extendable').register({ compilerOptions: { allowJs: false }});
+    require('ts-babel-node-extendable').register({ compilerOptions: { allowJs: false }, disableWarnings: true, fast: true });
   },
 
   plugins: [{
