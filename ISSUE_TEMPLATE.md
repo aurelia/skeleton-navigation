@@ -28,9 +28,8 @@ skeleton-typescript-aspnetcore
 skeleton-typescript-webpack
 <!-- Delete any skeleton versions this DOES NOT apply to -->
 
-* **aurelia-framework version:**
-1.0.0-rc.1.0.2
-
+* **Framework Version:**
+major.minor.patch-pre
 
 **Please tell us about your environment:**
 * **Operating System:**
