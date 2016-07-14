@@ -10,51 +10,60 @@ Durandal Inc. offers paid support agreements. Further information regarding paid
 may be obtained by emailing support@durandal.io
 
 Future support requests submitted here will be closed.
--->
 
+The HTML comments below are for your reference, and are not displayed
+when your issue is submitted, feel free to leave them.
+
+Choose one of the two headings, delete the other.
+-->
 **I'm submitting a bug report**
 **I'm submitting a feature request**
 
-**Aurelia Skeleton Version**
+* **Aurelia Skeleton Version**
 skeleton-esnext
 skeleton-esnext-aspnetcore
 skeleton-esnext-webpack
 skeleton-typescript
 skeleton-typescript-aspnetcore
 skeleton-typescript-webpack
+<!-- Delete any skeleton versions this DOES NOT apply to -->
 
-**aurelia-framework version:**
+* **aurelia-framework version:**
 1.0.0-rc.1.0.2
 
 
 **Please tell us about your environment:**
-OSX 10.x / Linux / Windows 10
+* **Operating System:**
+OSX 10.x|Linux (distro)|Windows [7|8|8.1|10]
 
-**Node Version:**
+* **Node Version:**
+6.2.0
 <!--
-Minimum supported version is latest Node 4.x LTS
+Minimum supported Node version is latest Node 4.x LTS
 run `node -v`
 -->
 
-**NPM Version:**
+* **NPM Version:**
+3.8.9
 <!--
-Minimum supported is 3.x
+Minimum supported NPM version is 3.x
 run `npm -v`
 -->
 
-**JSPM OR Webpack AND Version**
+* **JSPM OR Webpack AND Version**
+JSPM 0.16.32 | webpack 2.1.0-beta.17
 <!--
 If using JSPM
 run `jspm -v`
 If using Webpack
 run `webpack --help | grep webpack`
 -->
-JSPM 0.16.32 | webpack 2.1.0-beta.17
 
+* **Browser:**
+all | Chrome XX | Firefox XX | Edge XX | IE XX | Safari XX | Mobile Chrome XX | Android X.X Web Browser | iOS XX Safari | iOS XX UIWebView | iOS XX WKWebView
 
-* **Browser:** [all | Chrome XX | Firefox XX | Edge XX | IE XX | Safari XX | Mobile Chrome XX | Android X.X Web Browser | iOS XX Safari | iOS XX UIWebView | iOS XX WKWebView ]
-
-* **Language:** [all | TypeScript X.X | ESNext ...]
+* **Language:**
+all | TypeScript X.X | ESNext
 
 
 **Current behavior:**
@@ -62,8 +71,8 @@ JSPM 0.16.32 | webpack 2.1.0-beta.17
 
 **Expected/desired behavior:**
 <!--
-If the current behavior is a bug, please provide the steps to reproduce and if possible a minimal demo of the problem along
-with a runnable gist, if possible.
+If the current behavior is a bug, please provide the steps to reproduce and, if possible, a minimal demo of the
+problem along with a runnable gist, if possible.
 To create a runnable gist, go to https://gist.run/?id=7542e061bc940cde506b&sha=6821c521a6c7bae6f59a36fb8628ecd1032b2d10
 Then click "Fork to Public Gist".
 Create your gist, then finally click "Update Gist." Include a link to the gist.run below.
