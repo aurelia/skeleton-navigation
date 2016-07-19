@@ -6,7 +6,6 @@
 // @cmichaelgraham - removed explicit external reference
 
 // @cmichaelgraham - added BufferSource and URLSearchParams interfaces to help compilation
-interface BufferSource {}
 interface URLSearchParams {}
 
 declare class Request {
