@@ -21,6 +21,7 @@ const outDir = path.resolve('dist');
 
 const coreBundles = {
   bootstrap: [
+    'aurelia-bootstrapper-webpack',
     'aurelia-polyfills',
     'aurelia-pal',
     'aurelia-pal-browser',
@@ -57,8 +58,8 @@ const coreBundles = {
 
 const baseConfig = {
   entry: {
-    'app': ['./src/main'],
-    'aurelia-bootstrap': ['./index'].concat(coreBundles.bootstrap),
+    'app': coreBundles.app,
+    'aurelia-bootstrap': coreBundles.bootstrap,
     'aurelia': coreBundles.aurelia.filter(pkg => coreBundles.bootstrap.indexOf(pkg) === -1)
   },
   output: {
@@ -151,7 +152,7 @@ switch (ENV) {
 if (ELECTRON) {
   config = generateConfig(
     config,
-    { entry: ['./index', './src/main'] },
+    { entry: ['./src/main'] },
     require('@easy-webpack/config-electron')(),
     ELECTRON == 'main' ? 
       require('@easy-webpack/config-electron-main')() : require('@easy-webpack/config-electron-renderer')()
