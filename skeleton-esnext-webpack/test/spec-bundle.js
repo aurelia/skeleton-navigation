@@ -14,7 +14,7 @@
  */
 Error.stackTraceLimit = Infinity;
 
-require('../index');
+require('aurelia-bootstrapper-webpack');
 
 /*
  * Ok, this is kinda crazy. We can use the the context method on
