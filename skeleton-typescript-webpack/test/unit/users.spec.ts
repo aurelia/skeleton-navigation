@@ -6,7 +6,7 @@ class HttpStub extends HttpClient {
   url;
   itemStub;
   
-  fetch(url) {
+  fetch(url): any {
     var response = this.itemStub;
     this.url = url;
     return new Promise((resolve) => {

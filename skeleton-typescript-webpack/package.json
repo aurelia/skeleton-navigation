@@ -132,7 +132,6 @@
     "karma-webpack": "^1.7.0",
     "protractor": "^4.0.0",
     "rimraf": "^2.5.4",
-    "ts-babel-node-extendable": "^1.0.1",
     "ts-node": "^1.2.1",
     "typescript": "^2.0.0",
     "wait-on": "^1.5.2",
