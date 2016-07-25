@@ -112,7 +112,9 @@ switch (ENV) {
       require('@easy-webpack/config-aurelia')
         ({root: rootDir, src: srcDir, title: title, baseUrl: baseUrl}),
 
-      require('@easy-webpack/config-typescript')({ options: { doTypeCheck: false }}),
+      require('@easy-webpack/config-typescript')
+        ({ options: { doTypeCheck: false, compilerOptions: { sourceMap: false, inlineSourceMap: true } }}),
+
       require('@easy-webpack/config-html')(),
 
       require('@easy-webpack/config-css')
@@ -122,10 +124,9 @@ switch (ENV) {
       require('@easy-webpack/config-global-bluebird')(),
       require('@easy-webpack/config-global-jquery')(),
       require('@easy-webpack/config-global-regenerator')(),
-      require('@easy-webpack/config-generate-index-html')()
+      require('@easy-webpack/config-generate-index-html')(),
 
-      // NOTE: code coverage is temporarily broken due to changes in TypeScript
-      // require('@easy-webpack/config-test-coverage-istanbul')()
+      require('@easy-webpack/config-test-coverage-istanbul')()
     );
     break;
   
