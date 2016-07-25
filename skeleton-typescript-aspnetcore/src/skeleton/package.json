@@ -44,7 +44,7 @@
     "vscode"
   ],
   "scripts": {
-    "postinstall": "npm run jspm-install && npm run typings-install",
+    "prepublish": "npm run jspm-install && npm run typings-install",
     "jspm-install": "./node_modules/.bin/jspm install -y",
     "typings-install": "./node_modules/.bin/typings install",
     "test": "gulp test",
