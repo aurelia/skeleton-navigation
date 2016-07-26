@@ -28,7 +28,7 @@ Additional Prerequisites:
 
 To run the app, follow these steps.
 
-1. Install the npm devdependencies, jspm dependencies, and the typings .d.ts files. From the project folder, execute the following command:
+1. Install the npm devdependencies, jspm dependencies, and the typings .d.ts files. From the project folder (`{root}/src/skeleton/`), execute the following command:
   ```shell
   npm install
   ```
@@ -36,17 +36,17 @@ To run the app, follow these steps.
   This command will install the npm dependencies, and then run `jspm install -y` and `typings install` for you. If you do not desire for this behavior, you may edit or remove the `postinstall` script in the `package.json` file. 
   >**Note:** Windows users, if you experience an error of "unknown command unzip" you can solve this problem by doing `npm install -g unzip` and then re-running `jspm install`.
 
-6.  Build the project:
+6. Execute the following command:
+
+  ```shell
+  dotnet restore
+  ```
+
+7.  Build the project:
 
   ```shell
   gulp build
   dotnet build
-  ```
-
-7. Execute the following command:
-
-  ```shell
-  dotnet restore
   ```
 
 8. To run the app, execute the following command:
