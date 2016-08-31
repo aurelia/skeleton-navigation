@@ -43,9 +43,9 @@ run `node -v`
 -->
 
 * **NPM Version:**
-3.8.9
+3.10.3
 <!--
-Minimum supported NPM version is 3.x
+MINIMUM SUPPOERTED NPM VERSION IS 3.x. NPM 2.x WILL NOT WORK.
 run `npm -v`
 -->
 
