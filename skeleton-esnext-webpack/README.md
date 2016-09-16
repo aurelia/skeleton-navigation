@@ -129,7 +129,7 @@ Please see https://github.com/aurelia/webpack-plugin for more information.
 To run the unit tests:
 
 ```shell
-npm run test
+npm test
 ```
 
 ## Running The E2E Tests
