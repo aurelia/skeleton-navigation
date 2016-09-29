@@ -4,8 +4,8 @@ import 'fetch';
 
 @autoinject
 export class Users {
-  heading = 'Github Users';
-  users = [];
+  public heading = 'Github Users';
+  public users = [];
 
   constructor(private http: HttpClient) {
     http.configure(config => {
@@ -15,7 +15,7 @@ export class Users {
     });
   }
 
-  activate() {
+  public activate() {
     return this.http.fetch('users')
       .then(response => response.json())
       .then(users => this.users = users);

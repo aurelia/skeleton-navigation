@@ -6,7 +6,7 @@ export class BlurImageCustomAttribute {
     this.element = element;
   }
 
-  valueChanged(newImage: HTMLImageElement) {
+  public valueChanged(newImage: HTMLImageElement) {
     if (newImage.complete) {
       drawBlur(this.element, newImage);
     } else {
@@ -15,7 +15,7 @@ export class BlurImageCustomAttribute {
   }
 }
 
-/* eslint-disable */
+/* tslint:disable */
 
 /*
 This Snippet is using a modified Stack Blur js lib for blurring the header images.
