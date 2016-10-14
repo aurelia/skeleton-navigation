@@ -30,7 +30,7 @@ module.exports = function(config) {
         }
       },
       serveFiles: [
-        'src/**/*.ts',
+        'src/**/*',
         'wwwroot/jspm_packages/**/*.js'
       ]
     },
