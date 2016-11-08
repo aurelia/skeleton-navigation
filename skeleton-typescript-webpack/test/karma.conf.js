@@ -4,6 +4,7 @@
  */
 "use strict";
 const path = require('path');
+require('ts-node').register({ compilerOptions: { module: 'commonjs' }, disableWarnings: true, fast: true });
 
 module.exports = function(config) {
   config.set({
@@ -37,7 +38,7 @@ module.exports = function(config) {
     preprocessors: {
       'spec-bundle.js': ['coverage', 'webpack', 'sourcemap']
     },
-    
+
     webpack: require('../webpack.config'),
 
     coverageReporter: {

@@ -28,13 +28,11 @@ exports.config = {
   },
 
   onPrepare: function() {
-    require('babel-register')({
-      plugins: ['transform-decorators-legacy'],
-      presets: ['es2015-loose-native-modules', 'stage-1'],
-    });
+    process.env.BABEL_ENV = 'e2e';
+    require('babel-register')();
   },
 
   plugins: [{
-    package: 'aurelia-tools/plugins/protractor'
+    package: 'aurelia-protractor-plugin'
   }]
 };
