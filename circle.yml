@@ -11,14 +11,31 @@ machine:
 
 dependencies:
   pre:
-    - npm install -g npm
+    - npm install -g yarn jspm
   override:
-    - npm install
-
-general:
-  build_dir: skeleton-esnext-webpack
+    - cd skeleton-exnext && yarn
+    - cd skeleton-exnext && jspm install
+    - cd skeleton-exnext-webpack && yarn
+    - cd skeleton-typescript && yarn
+    - cd skeleton-typescript && jspm install
+    - cd skeleton-typescript-webpack && yarn
+  cache_directories:
+    - "skeleton-exnext/node_modules"
+    - "skeleton-exnext/jspm_packages"
+    - "skeleton-exnext-webpack/node_modules"
+    - "skeleton-typescript/node_modules"
+    - "skeleton-typescript/jspm_packages"
+    - "skeleton-typescript-webpack/node_modules"
 
 test:
-  post:
-    - npm run build
-    - npm run build:prod
+  override:
+    - cd skeleton-exnext && npm test
+    - cd skeleton-exnext-webpack && npm test
+    - cd skeleton-exnext-webpack && npm run e2e
+    - cd skeleton-exnext-webpack && npm run build
+    - cd skeleton-exnext-webpack && npm run build:prod
+    - cd skeleton-typescript && npm test
+    - cd skeleton-typescript-webpack && npm test
+    - cd skeleton-typescript-webpack && npm run e2e
+    - cd skeleton-typescript-webpack && npm run build
+    - cd skeleton-typescript-webpack && npm run build:prod
