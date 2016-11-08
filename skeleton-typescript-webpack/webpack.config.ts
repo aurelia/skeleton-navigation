@@ -110,25 +110,6 @@ let config = generateConfig(
     generateCoverage({ options: { esModules: true } })
   ]),
 
-  {
-    module: {
-      rules: [{
-        test: /\.(js|ts)$/,
-        loader: 'sourcemap-istanbul-instrumenter',
-        // loader: 'istanbul-instrumenter-loader',
-        query: {
-          // 'force-sourcemap': true
-          // preserveComments: true,
-          esModules: true,
-          // produceSourceMap: true,
-        },
-        enforce: 'post',
-        include: srcDir,
-        exclude: [path.join(rootDir, 'node_modules')]
-      }]
-    }
-  },
-
   ENV === 'production' ?
     uglify({debug: false, mangle: { except: ['cb', '__webpack_require__'] }}) : {}
 );
