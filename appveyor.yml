@@ -1,0 +1,46 @@
+# Test against this version of Node.js
+environment:
+  matrix:
+    - nodejs_version: "4"
+    - nodejs_version: "6"
+    - nodejs_version: "7"
+
+cache:
+  - skeleton-esnext/node_modules
+  - skeleton-esnext/jspm_packages
+  - skeleton-esnext-webpack/node_modules
+  - skeleton-typescript/node_modules
+  - skeleton-typescript/jspm_packages
+  - skeleton-typescript-webpack/node_modules
+  - "%LOCALAPPDATA%/Yarn"
+
+# Install scripts. (runs after repo cloning)
+install:
+  # Get the latest stable version of Node.js or io.js
+  - ps: Install-Product node $env:nodejs_version
+  - npm install -g jspm
+  # install modules
+  - cd skeleton-esnext-webpack && yarn
+  - cd skeleton-typescript-webpack && yarn
+  - cd skeleton-esnext && yarn
+  - cd skeleton-esnext && jspm install
+  - cd skeleton-typescript && yarn
+  - cd skeleton-typescript && jspm install
+
+# Post-install test scripts.
+test_script:
+  # Output useful info for debugging.
+  - node --version
+  - yarn --version
+  # run tests
+  - cd skeleton-typescript-webpack && yarn run test
+  - cd skeleton-typescript-webpack && yarn run e2e
+  - cd skeleton-typescript-webpack && yarn run build:prod
+  - cd skeleton-esnext-webpack && yarn run test
+  - cd skeleton-esnext-webpack && yarn run e2e
+  - cd skeleton-esnext-webpack && yarn run build:prod
+  - cd skeleton-esnext && yarn run test
+  - cd skeleton-typescript && yarn run test
+
+# Don't actually build.
+build: off

@@ -1,3 +1,4 @@
+/// <reference path="./node_modules/@types/node/index.d.ts" />
 /**
  * To learn more about how to use Easy Webpack
  * Take a look at the README here: https://github.com/easy-webpack/core

@@ -2,7 +2,8 @@
 
 [![ZenHub](https://raw.githubusercontent.com/ZenHubIO/support/master/zenhub-badge.png)](https://zenhub.io)
 [![Join the chat at https://gitter.im/aurelia/discuss](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/aurelia/discuss?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-[![CircleCI](https://circleci.com/gh/aurelia/skeleton-navigation.svg?style=shield)](https://circleci.com/gh/aurelia/skeleton-navigation)
+[![CI on Linux](https://circleci.com/gh/aurelia/skeleton-navigation.svg?style=shield)](https://circleci.com/gh/aurelia/skeleton-navigation)
+[![CI on Windows](https://ci.appveyor.com/api/projects/status/jeqgpvyyjh6wul9f?svg=true)](https://ci.appveyor.com/project/niieani/skeleton-navigation)
 
 ---
 

@@ -4,8 +4,8 @@
   "description": "A starter kit for building a standard navigation-style app with Aurelia and webpack.",
   "main": "dist/main.js",
   "scripts": {
-    "pretest": "del test/coverage",
-    "test": "cross-env NODE_ENV=test ./node_modules/karma/bin/karma start test/karma.conf.js",
+    "pretest": "del-cli \"test/coverage\"",
+    "test": "cross-env NODE_ENV=test TS_NODE_PROJECT=tsconfig.tsnode.json TS_NODE_FAST=true ts-node ./node_modules/karma/bin/karma start test/karma.conf.js",
     "test:debug": "npm test -- --single-run=false --debug",
     "webdriver:update": "cross-env ./node_modules/.bin/webdriver-manager update",
     "webdriver:start": "cross-env ./node_modules/.bin/webdriver-manager start",
@@ -14,8 +14,8 @@
     "e2e:start-when-ready": "wait-on --timeout 120000 http-get://localhost:19876/index.html && npm run e2e:start",
     "e2e:start": "cross-env ./node_modules/.bin/protractor test/protractor.conf.js",
     "e2e:live": "npm run e2e:start -- --elementExplorer",
-    "clean": "npm cache clean && del node_modules test/coverage dist",
-    "clean:dist": "del dist",
+    "clean": "npm cache clean && del-cli node_modules \"test/coverage\" dist",
+    "clean:dist": "del-cli dist",
     "preclean:install": "npm run clean",
     "clean:install": "npm install",
     "preclean:start": "npm run clean",
@@ -35,8 +35,8 @@
     "server:dev": "cross-env NODE_ENV=development npm run webpack-dev-server -- --inline --progress --profile --watch",
     "server:dev:hmr": "npm run server:dev -- --hot",
     "server:prod": "http-server dist --cors",
-    "webpack": "cross-env TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\"}' ./node_modules/.bin/webpack",
-    "webpack-dev-server": "cross-env TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\"}' ./node_modules/.bin/webpack-dev-server"
+    "webpack": "cross-env TS_NODE_PROJECT=tsconfig.tsnode.json TS_NODE_FAST=true ./node_modules/.bin/webpack",
+    "webpack-dev-server": "cross-env TS_NODE_PROJECT=tsconfig.tsnode.json TS_NODE_FAST=true ./node_modules/.bin/webpack-dev-server"
   },
   "repository": {
     "type": "git",
@@ -109,6 +109,7 @@
     "@easy-webpack/core": "^1.4.5",
     "@types/bluebird": "^3.0.35",
     "@types/jasmine": "^2.5.37",
+    "@types/node": "^6.0.46",
     "@types/webpack": "^1.12.35",
     "@types/whatwg-fetch": "^0.0.32",
     "aurelia-protractor-plugin": "^1.0.0",

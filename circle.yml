@@ -15,10 +15,10 @@ dependencies:
   override:
     - cd skeleton-esnext-webpack && yarn
     - cd skeleton-typescript-webpack && yarn
-    # - cd skeleton-esnext && yarn
-    # - cd skeleton-esnext && jspm install
-    # - cd skeleton-typescript && yarn
-    # - cd skeleton-typescript && jspm install
+    - cd skeleton-esnext && yarn
+    - cd skeleton-esnext && jspm install
+    - cd skeleton-typescript && yarn
+    - cd skeleton-typescript && jspm install
   cache_directories:
     - "skeleton-esnext/node_modules"
     - "skeleton-esnext/jspm_packages"
@@ -26,16 +26,15 @@ dependencies:
     - "skeleton-typescript/node_modules"
     - "skeleton-typescript/jspm_packages"
     - "skeleton-typescript-webpack/node_modules"
+    - "~/.yarn-cache"
 
 test:
   override:
-    - cd skeleton-esnext-webpack && npm test
-    - cd skeleton-esnext-webpack && npm run e2e
-    - cd skeleton-esnext-webpack && npm run build
-    - cd skeleton-esnext-webpack && npm run build:prod
-    - cd skeleton-typescript-webpack && npm test
-    - cd skeleton-typescript-webpack && npm run e2e
-    - cd skeleton-typescript-webpack && npm run build
-    - cd skeleton-typescript-webpack && npm run build:prod
-    # - cd skeleton-esnext && npm test
-    # - cd skeleton-typescript && npm test
+    - cd skeleton-typescript-webpack && yarn run test
+    - cd skeleton-typescript-webpack && yarn run e2e
+    - cd skeleton-typescript-webpack && yarn run build:prod
+    - cd skeleton-esnext-webpack && yarn run test
+    - cd skeleton-esnext-webpack && yarn run e2e
+    - cd skeleton-esnext-webpack && yarn run build:prod
+    - cd skeleton-esnext && yarn run test
+    - cd skeleton-typescript && yarn run test

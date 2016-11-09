@@ -21,7 +21,7 @@
     "url": "http://github.com/aurelia/skeleton-navigation-typescript"
   },
   "scripts": {
-    "prepublish": "./node_modules/.bin/typings install",
+    "prepublish": "typings install",
     "test": "gulp test",
     "e2e": "gulp serve e2e"
   },

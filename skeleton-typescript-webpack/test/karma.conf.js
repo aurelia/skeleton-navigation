@@ -4,7 +4,6 @@
  */
 "use strict";
 const path = require('path');
-require('ts-node').register({ compilerOptions: { module: 'commonjs' }, disableWarnings: true, fast: true });
 
 module.exports = function(config) {
   config.set({
