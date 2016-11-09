@@ -32,6 +32,6 @@ exports.config = {
   },
 
   plugins: [{
-    package: 'aurelia-tools/plugins/protractor'
+    package: 'aurelia-protractor-plugin'
   }]
 };

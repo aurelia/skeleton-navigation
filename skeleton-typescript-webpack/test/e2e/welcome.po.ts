@@ -1,4 +1,4 @@
-import {browser, element, by, By, $, $$, ExpectedConditions} from 'protractor/globals';
+import {browser, element, by, By, $, $$, ExpectedConditions} from 'aurelia-protractor-plugin/protractor';
 
 export class PageObject_Welcome {
   getGreeting() {
@@ -24,15 +24,15 @@ export class PageObject_Welcome {
   }
 
   openAlertDialog() {
-    return browser.wait(() => {
-      this.pressSubmitButton();
+    return browser.wait(async () => {
+      await this.pressSubmitButton();
 
-      return browser.wait(ExpectedConditions.alertIsPresent(), 5000).then(
-        browser.switchTo().alert().then(
-          // use alert.accept instead of alert.dismiss which results in a browser crash
-          function(alert) { alert.accept(); return true; },
-          function() { return false; }
-        )
+      await browser.wait(ExpectedConditions.alertIsPresent(), 5000);
+
+      return browser.switchTo().alert().then(
+        // use alert.accept instead of alert.dismiss which results in a browser crash
+        function(alert) { alert.accept(); return true; },
+        function() { return false; }
       );
     });
   }

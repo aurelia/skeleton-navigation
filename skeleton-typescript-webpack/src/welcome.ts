@@ -20,7 +20,7 @@ export class Welcome {
     alert(`Welcome, ${this.fullName}!`);
   }
 
-  canDeactivate(): boolean {
+  canDeactivate(): boolean | undefined {
     if (this.fullName !== this.previousValue) {
       return confirm('Are you sure you want to leave?');
     }

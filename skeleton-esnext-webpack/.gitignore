@@ -8,3 +8,4 @@ npm-debug.log*
 /electron.js*
 /release
 /test/coverage
+yarn.lock

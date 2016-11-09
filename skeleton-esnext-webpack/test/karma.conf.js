@@ -2,10 +2,11 @@
  * Inspired by @AngularClass
  * https://github.com/AngularClass/angular2-webpack-starter
  */
-"use strict";
-const path = require('path');
+'use strict'
+const path = require('path')
+require('babel-register')({ only: "*.babel.js" });
 
-module.exports = function(config) {
+module.exports = function (config) {
   config.set({
 
     // base path that will be used to resolve all patterns (e.g. files, exclude)
@@ -19,7 +20,7 @@ module.exports = function(config) {
     frameworks: ['jasmine'],
 
     // list of files to exclude
-    exclude: [ ],
+    exclude: [],
 
     /*
      * list of files / patterns to load in the browser
@@ -27,7 +28,7 @@ module.exports = function(config) {
      * we are building the test environment in ./spec-bundle.js
      */
     files: [
-      { pattern: 'spec-bundle.js', watched: false },
+      { pattern: 'spec-bundle.js', watched: false }
     ],
 
     /*
@@ -37,13 +38,13 @@ module.exports = function(config) {
     preprocessors: {
       'spec-bundle.js': ['coverage', 'webpack', 'sourcemap']
     },
-    
-    webpack: require('../webpack.config'),
+
+    webpack: require('../webpack.config.babel'),
 
     coverageReporter: {
       reporters: [{
         type: 'json',
-        subdir: '.', 
+        subdir: '.',
         file: 'coverage-final.json'
       }]
     },
@@ -89,7 +90,7 @@ module.exports = function(config) {
      */
     browsers: [
       'Chrome',
-      // TODO: https://www.npmjs.com/package/karma-electron
+    // TODO: https://www.npmjs.com/package/karma-electron
     ],
 
     /*
@@ -97,6 +98,5 @@ module.exports = function(config) {
      * if true, Karma captures browsers, runs the tests and exits
      */
     singleRun: true
-  });
-
-};
+  })
+}
