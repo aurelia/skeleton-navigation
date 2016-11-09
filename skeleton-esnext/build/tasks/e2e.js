@@ -24,7 +24,7 @@ gulp.task('clean-e2e', function() {
 gulp.task('build-e2e', ['clean-e2e'], function() {
   return gulp.src(paths.e2eSpecsSrc)
       .pipe(plumber())
-      .pipe(to5(assign({}, compilerOptions.commonjs())))
+      .pipe(to5(assign({}, compilerOptions('commonjs'))))
       .pipe(gulp.dest(paths.e2eSpecsDist));
 });
 

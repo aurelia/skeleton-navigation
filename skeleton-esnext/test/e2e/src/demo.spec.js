@@ -29,12 +29,11 @@ describe('aurelia skeleton app', function() {
     browser.sleep(200);
     expect(poWelcome.getFullname()).toBe('ROB EISENBERG');
   });
-/*
-  // Turned off due to a Chrome Bug
+
   it('should show alert message when clicking submit button', () => {
     expect(poWelcome.openAlertDialog()).toBe(true);
   });
-*/
+
   it('should navigate to users page', () => {
     poSkeleton.navigateTo('#/users');
     expect(poSkeleton.getCurrentPageTitle()).toBe('Github Users | Aurelia');

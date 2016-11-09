@@ -7,13 +7,12 @@ exports.config = {
     'browserName': 'chrome'
   },
 
-  //seleniumAddress: 'http://0.0.0.0:4444',
-  // add proper version number
-  seleniumServerJar: './node_modules/gulp-protractor/node_modules/protractor/selenium/selenium-server-standalone-2.44.0.jar',
+  // optional: add seleniumServerJar with proper version number
+  // seleniumServerJar: './node_modules/gulp-protractor/node_modules/protractor/selenium/selenium-server-standalone-2.53.1.jar',
   specs: ['test/e2e/dist/**/*.js'],
 
   plugins: [{
-    package: 'aurelia-tools/plugins/protractor'
+    package: 'aurelia-protractor-plugin'
   }],
 
 

@@ -1,7 +1,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "rootDir": "src",
+    "rootDir": "test/e2e/src",
     "outDir": "dist",
     "sourceMap": true,
     "target": "es5",
