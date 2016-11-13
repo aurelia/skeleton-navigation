@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "es2017",
+    "module": "commonjs",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "lib": [
+      "es2017", "dom"
+    ],
+    "types": [
+      "node", "selenium-webdriver", "webpack"
+    ]
+  },
+  "exclude": [
+    "node_modules",
+    "dist",
+    "static",
+    "webpack.config.ts"
+  ]
+}

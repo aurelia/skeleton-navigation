@@ -1,0 +1,84 @@
+{
+  // Use IntelliSense to find out which attributes exist for node debugging
+  // Use hover for the description of the existing attributes
+  // For further information visit https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Launch Jest Debug",
+      "type": "node2",
+      "request": "launch",
+      "program": "${workspaceRoot}/node_modules/.bin/jest",
+      "args": ["-i"],
+      "cwd": "${workspaceRoot}",
+      "runtimeArgs": [],
+      "outFiles": [],
+      "sourceMaps": true
+    },
+    {
+      "name": "Launch Test Debug",
+      "type": "node2",
+      "request": "launch",
+      "program": "${workspaceRoot}/test/run-test.js",
+      "args": [],
+      "cwd": "${workspaceRoot}",
+      "runtimeArgs": [],
+      "outFiles": [],
+      "sourceMaps": true
+    },
+    {
+      "name": "Launch Webpack Debug",
+      "type": "node2",
+      "request": "launch",
+      "program": "${workspaceRoot}/node_modules/.bin/webpack",
+      "args": [
+        "--progress",
+        "--display-modules",
+        "--watch"
+      ],
+      "cwd": "${workspaceRoot}",
+      "runtimeArgs": [
+        "--harmony_async_await"
+      ],
+      "outFiles": [],
+      "sourceMaps": true
+    },
+    {
+      "name": "Attach to Webpack Process",
+      "type": "node2",
+      "request": "attach",
+      "port": 9229,
+      "outFiles": [],
+      "sourceMaps": true
+    },
+    {
+      "name": "Launch Webpack Traditional Debugger",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceRoot}/node_modules/.bin/webpack-dev-server --hot --inline",
+      "args": [
+        "--progress",
+        "--display-modules",
+        "--watch"
+      ],
+      "cwd": "${workspaceRoot}",
+      "runtimeArgs": [
+        "--harmony_async_await"
+      ]
+    },
+    {
+      "name": "Launch Webpack Server Traditional Debugger",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceRoot}/node_modules/.bin/webpack-dev-server",
+      "args": [
+        "--hot",
+        "--inline"
+      ],
+      "cwd": "${workspaceRoot}",
+      "runtimeArgs": [
+        "--harmony_async_await"
+      ]
+    }
+  ]
+}

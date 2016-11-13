@@ -1,0 +1,138 @@
+{
+  "name": "skeleton-typescript-webpack-experimental",
+  "version": "1.0.0",
+  "description": "A starter kit for building a standard navigation-style app with Aurelia and Webpack.",
+  "main": "dist/app.bundle.js",
+  "repository": {
+    "url": "git+ssh://git@github.com/aurelia/skeleton-navigation.git",
+    "type": "git"
+  },
+  "author": "Bazyli Brzóska <bazyli.brzoska@gmail.com> (https://invent.life/)",
+  "license": "CC0-1.0",
+  "scripts": {
+    "prebuild": "del-cli dist",
+    "build": "bnr webpack:build:production",
+    "start": "bnr webpack:dashboard",
+    "webpack": "bnr webpack",
+    "pretest": "del-cli coverage",
+    "test": "bnr test",
+    "posttest": "mv __coverage__/remapped coverage && del-cli __coverage__",
+    "serve": "http-server dist --cors",
+    "pree2e": "bnr webdriver:update",
+    "e2e": "concurrently --success first --kill-others \"bnr e2e:start-when-ready\" \"bnr webpack:e2e\"",
+    "e2e:start": "bnr e2e:start",
+    "e2e:debug": "bnr e2e:debug"
+  },
+  "betterScripts": {
+    "test": "$NODE $LOCAL/jest --no-cache",
+    "webdriver:update": "$LOCAL/webdriver-manager update --standalone",
+    "e2e:start-when-ready": "wait-on --timeout 120000 http-get://localhost:19876/index.html && bnr run e2e:start",
+    "e2e:start": "$LOCAL/protractor test/protractor.conf.js",
+    "e2e:debug": "$LOCAL/protractor test/protractor.conf.js --elementExplorer",
+    "webpack": "$LOCAL/webpack-dev-server --hot --inline",
+    "webpack:dashboard": "$LOCAL/webpack-dashboard -- $LOCAL/webpack-dev-server --hot --inline --open",
+    "webpack:e2e": {
+      "command": "bnr webpack",
+      "env": {
+        "WEBPACK_PORT": 19876
+      }
+    },
+    "webpack:build:development": {
+      "command": "$LOCAL/webpack --progress",
+      "env": {
+        "NODE_ENV": "development"
+      }
+    },
+    "webpack:build:production": {
+      "command": "$LOCAL/webpack --progress",
+      "env": {
+        "NODE_ENV": "production"
+      }
+    },
+    "webpack:debug": "$NODE_DEBUG $LOCAL/webpack --watch"
+  },
+  "jest": {
+    "moduleDirectories": [
+      "src",
+      "node_modules"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts",
+      "tsx"
+    ],
+    "moduleNameMapper": {
+      "^aurelia-pal-browser(.*)$": "aurelia-pal-nodejs$1"
+    },
+    "transform": {
+      "^.+\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testResultsProcessor": "<rootDir>/node_modules/ts-jest/coverageprocessor.js",
+    "testRegex": "\\.spec\\.(ts|tsx)$",
+    "setupFiles": [
+      "<rootDir>/test/jest-pretest.ts"
+    ],
+    "testEnvironment": "node",
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "src/**/*.{js,ts}"
+    ],
+    "coverageDirectory": "<rootDir>/__coverage__",
+    "globals": {
+      "__TS_CONFIG__": "tsconfig.test.json"
+    }
+  },
+  "devDependencies": {
+    "@easy-webpack/core": "^2.0.0",
+    "@types/node": "^6.0.46",
+    "@types/webpack": "^1.12.35",
+    "@types/whatwg-fetch": "^0.0.32",
+    "aurelia-loader-nodejs": "^1.0.0",
+    "aurelia-pal-nodejs": "^1.0.0",
+    "aurelia-protractor-plugin": "^1.0.0",
+    "aurelia-template-lint-webpack-loader": "^1.0.1",
+    "aurelia-testing": "^1.0.0-beta.2.0.0",
+    "better-npm-run": "0.0.13",
+    "bundle-loader": "^0.5.4",
+    "copy-webpack-plugin": "^4.0.0",
+    "css-loader": "^0.25.0",
+    "del-cli": "^0.2.0",
+    "expose-loader": "^0.7.1",
+    "file-loader": "^0.9.0",
+    "html-webpack-plugin": "^2.24.1",
+    "http-server": "^0.9.0",
+    "jest": "^17.0.0",
+    "protractor": "^4.0.11",
+    "style-loader": "^0.13.1",
+    "ts-jest": "^17.0.0",
+    "ts-loader": "^1.2.0",
+    "ts-node": "^1.7.0",
+    "typescript": "next",
+    "url-loader": "^0.5.7",
+    "wait-on": "^2.0.0",
+    "webpack": "2.1.0-beta.25",
+    "webpack-dashboard": "^0.2.0",
+    "webpack-dependency-suite": "^1.0.5",
+    "webpack-dev-server": ">=2.1.0-beta.0 || ^2.1.0",
+    "webpack-md5-hash": "^0.0.5"
+  },
+  "dependencies": {
+    "@easy-webpack/core": "^2",
+    "aurelia-bootstrapper": "^1.0.1",
+    "aurelia-fetch-client": "^1.0.1",
+    "aurelia-framework": "^1.0.7",
+    "aurelia-history-browser": "^1.0.0",
+    "aurelia-logging-console": "^1.0.0",
+    "aurelia-pal-browser": "^1.0.0",
+    "aurelia-polyfills": "^1.1.1",
+    "aurelia-router": "^1.0.7",
+    "aurelia-templating-binding": "^1.0.0",
+    "aurelia-templating-resources": "^1.1.1",
+    "aurelia-templating-router": "^1.0.0",
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.7.0",
+    "isomorphic-fetch": "^2.2.1",
+    "jquery": "^3.1.1"
+  }
+}
