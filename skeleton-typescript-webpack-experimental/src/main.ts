@@ -5,7 +5,6 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap';
 import 'aurelia-loader-webpack';
 import 'aurelia-bootstrapper';
-// import 'aurelia-bootstrapper-webpack';
 import {Aurelia} from 'aurelia-framework';
 
 export async function configure(aurelia: Aurelia) {

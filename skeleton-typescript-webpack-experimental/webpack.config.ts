@@ -75,17 +75,13 @@ const production: CFG = {
   plugins: [
     new WebpackMd5Hash(),
     new (webpack as any).LoaderOptionsPlugin({
-      options: {
-        htmlLoader: {
-          minimize: true,
-          removeAttributeQuotes: false,
-          caseSensitive: true,
-        }
-      }
+      test: /\.html$/i,
+      minimize: true,
+      removeAttributeQuotes: false,
+      caseSensitive: true
     }),
-    new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin({
-      mangle: { screw_ie8: true, except: ['__webpack_require__'], /* keep_fnames: true */ },
+      mangle: { screw_ie8: true, /*except: [], keep_fnames: true*/ },
       compress: { screw_ie8: true, warnings: false },
     })
   ]
@@ -406,7 +402,9 @@ const config = merge(
   base,
   ENV === 'production' ? production : development,
   css,
-  aureliaTemplateLint,
+  ...(
+    ENV === 'development' ? [aureliaTemplateLint] : []
+  ),
   aureliaApplication,
   typescript,
   variables,
@@ -423,7 +421,5 @@ const config = merge(
     isLive ? [dashboard] : []
   )
 )
-
-// console.dir(config, {depth: 3})
 
 module.exports = config
