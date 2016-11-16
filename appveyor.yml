@@ -20,9 +20,9 @@ install:
   # install modules
   - cd skeleton-esnext-webpack && yarn
   - cd skeleton-typescript-webpack && yarn
-  - cd skeleton-esnext && npm install # yarn breaks with something there
+  - cd skeleton-esnext && npm install --no-optional || true
   - cd skeleton-esnext && jspm install
-  - cd skeleton-typescript && npm install # yarn breaks with something there
+  - cd skeleton-typescript && npm install --no-optional || true
   - cd skeleton-typescript && jspm install
 
 # Post-install test scripts.
