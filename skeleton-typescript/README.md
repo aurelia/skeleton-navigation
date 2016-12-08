@@ -54,7 +54,7 @@ To run the app under [Electron](http://electron.atom.io), follow these steps.
 1. Install [Electron](http://electron.atom.io)
 
   ```shell
-  npm install electron-prebuilt -g
+  npm install electron --save-dev
 ```
 
 2. From the project folder, execute the following command:
