@@ -7,6 +7,7 @@
     "aurelia-tools": "^0.2.4",
     "browser-sync": "^2.13.0",
     "conventional-changelog": "1.1.0",
+    "cross-env": "^3.1.3",
     "del": "^2.2.1",
     "es6-module-loader": "^0.17.11",
     "gulp": "^3.9.1",
@@ -45,8 +46,8 @@
   ],
   "scripts": {
     "prepublish": "npm run jspm-install && npm run typings-install",
-    "jspm-install": "./node_modules/.bin/jspm install -y",
-    "typings-install": "./node_modules/.bin/typings install",
+    "jspm-install": "cross-env ./node_modules/.bin/jspm install -y",
+    "typings-install": "cross-env ./node_modules/.bin/typings install",
     "test": "gulp test",
     "e2e": "gulp serve e2e"
   },
