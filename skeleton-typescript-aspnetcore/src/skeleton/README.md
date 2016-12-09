@@ -16,8 +16,8 @@ Additional Prerequisites:
 - [ASP.NET Core](https://www.microsoft.com/net/core#windows) must be downloaded and installed. The directions for doing this are [here](https://www.microsoft.com/net/core#windows).
 
 1. Open the solution file `skeleton-typescript-aspnetcore.sln`. This file is located up two directories from the file. Visual Studio will automatically run `npm install`, `jspm install`, and `typings install` when you first open the solution. You may rerun these commands at any time by running `npm install` from the same directory this readme file is in.
-2. Open `Task Runner Explorer`. 
-3. The project is ready to be run when `Task Runner Explorer` shows that it is running the `gulp watch` command. 
+2. Open `Task Runner Explorer`.
+3. The project is ready to be run when `Task Runner Explorer` shows that it is running the `gulp watch` command.
 4. Press `F5` or click the `Run` button in Visual Studio. Visual Studio will launch your browser for you and navigate to the correct URL.
 
 
@@ -33,7 +33,7 @@ To run the app, follow these steps.
   npm install
   ```
 
-  This command will install the npm dependencies, and then run `jspm install -y` and `typings install` for you. If you do not desire for this behavior, you may edit or remove the `postinstall` script in the `package.json` file. 
+  This command will install the npm dependencies, and then run `jspm install -y` and `typings install` for you. If you do not desire for this behavior, you may edit or remove the `postinstall` script in the `package.json` file.
   >**Note:** Windows users, if you experience an error of "unknown command unzip" you can solve this problem by doing `npm install -g unzip` and then re-running `jspm install`.
 
 6. Execute the following command:
@@ -119,10 +119,11 @@ Integration tests are performed with [Protractor](http://angular.github.io/protr
 
 3. Configure the path to the webdriver by opening the file ```protractor.conf.js``` and adjusting the ```seleniumServerJar``` property. Typically its only needed to adjust the version number.
 
-4. Make sure your app runs and is accessible
+4. Make sure your app is built, runs, and is accessible
 
   ```shell
-  gulp watch
+  gulp build
+  dotnet run
   ```
 
 5. In another console run the E2E-Tests
