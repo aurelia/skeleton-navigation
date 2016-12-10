@@ -16,7 +16,12 @@
               ]
             },
             "loose": true,
-            "modules": false
+            "modules": false,
+            "whitelist": [
+              "transform-es2015-literals",
+              "transform-es2015-template-literals"
+            ],
+            "useBuiltIns": true
           }
         ]
       ]
@@ -37,7 +42,12 @@
               ]
             },
             "loose": true,
-            "modules": "commonjs"
+            "modules": "commonjs",
+            "whitelist": [
+              "transform-es2015-literals",
+              "transform-es2015-template-literals"
+            ],
+            "useBuiltIns": true
           }
         ]
       ]
