@@ -130,6 +130,6 @@
     "protractor": "^4.0.11",
     "wait-on": "^2.0.1",
     "webpack": "2.1.0-beta.27",
-    "webpack-dev-server": "2.1.0-beta.11"
+    "webpack-dev-server": "2.1.0-beta.12"
   }
 }
