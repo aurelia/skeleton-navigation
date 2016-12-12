@@ -5,3 +5,4 @@ npm-debug.log*
 /build
 /coverage
 yarn.lock
+yarn-error.log

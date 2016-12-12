@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "es2017",
-    "module": "commonjs",
+    "module": "es2015",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "moduleResolution": "node",
@@ -9,13 +9,14 @@
       "es2017", "dom"
     ],
     "types": [
-      "node", "selenium-webdriver", "webpack", "jest"
+      "node", "webpack", "jest"
     ]
   },
   "exclude": [
     "node_modules",
     "dist",
     "static",
-    "webpack.config.ts"
+    "webpack.config.ts",
+    "node_modules/@types/jasmine"
   ]
 }

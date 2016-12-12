@@ -3,7 +3,6 @@ import '../static/styles.css';
 import 'font-awesome/css/font-awesome.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap';
-import 'aurelia-loader-webpack';
 import 'aurelia-bootstrapper';
 import {Aurelia} from 'aurelia-framework';
 
@@ -20,5 +19,5 @@ export async function configure(aurelia: Aurelia) {
   // aurelia.use.plugin(/* @import */ 'aurelia-html-import-template-loader')
 
   await aurelia.start();
-  aurelia.setRoot(/* @import */ 'app');
+  await aurelia.setRoot(/* @import */ 'app');
 }

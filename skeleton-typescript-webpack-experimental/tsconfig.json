@@ -9,7 +9,7 @@
       "es2017", "dom"
     ],
     "types": [
-      "node", "selenium-webdriver", "webpack"
+      "node", "webpack", "jest"
     ]
   },
   "exclude": [

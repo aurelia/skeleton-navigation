@@ -30,7 +30,7 @@
     "e2e:start-when-ready": "wait-on --timeout 120000 http-get://localhost:19876/index.html && bnr e2e:start",
     "e2e:start": "$LOCAL/protractor test/protractor.conf.js",
     "e2e:debug": "$LOCAL/protractor test/protractor.conf.js --elementExplorer",
-    "webpack": "$LOCAL/webpack-dev-server --hot --inline",
+    "webpack": "$LOCAL/webpack-dev-server --hot --inline --open",
     "webpack:dashboard": "$LOCAL/webpack-dashboard -- $LOCAL/webpack-dev-server --hot --inline --open",
     "webpack:e2e": {
       "command": "bnr webpack",
@@ -53,9 +53,9 @@
     "webpack:debug": "$NODE_DEBUG $LOCAL/webpack --watch"
   },
   "jest": {
-    "moduleDirectories": [
-      "src",
-      "node_modules"
+    "modulePaths": [
+      "<rootDir>/src",
+      "<rootDir>/node_modules"
     ],
     "moduleFileExtensions": [
       "js",
@@ -63,14 +63,12 @@
       "ts",
       "tsx"
     ],
-    "moduleNameMapper": {
-      "^aurelia-pal-browser(.*)$": "aurelia-pal-nodejs$1"
-    },
+    "resetModules": false,
     "transform": {
       "^.+\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
     "testResultsProcessor": "<rootDir>/node_modules/ts-jest/coverageprocessor.js",
-    "testRegex": "\\.spec\\.(ts|tsx)$",
+    "testRegex": "\\.spec\\.(ts|js)x?$",
     "setupFiles": [
       "<rootDir>/test/jest-pretest.ts"
     ],
@@ -79,58 +77,64 @@
     "collectCoverageFrom": [
       "src/**/*.{js,ts}"
     ],
+    "moduleNameMapper": {
+      "aurelia-(.*)": "<rootDir>/node_modules/$1"
+    },
     "coverageDirectory": "<rootDir>/__coverage__",
     "globals": {
       "__TS_CONFIG__": "tsconfig.test.json"
     }
   },
   "devDependencies": {
-    "@easy-webpack/core": "^2.0.0",
-    "@types/node": "^6.0.46",
-    "@types/webpack": "^1.12.35",
+    "@easy-webpack/core": "^2.0.1",
+    "@types/jest": "^16.0.1",
+    "@types/jsdom": "^2.0.29",
+    "@types/node": "^6.0.51",
+    "@types/webpack": "^2.0.0",
     "@types/whatwg-fetch": "^0.0.32",
     "aurelia-loader-nodejs": "^1.0.0",
     "aurelia-pal-nodejs": "^1.0.0",
-    "aurelia-protractor-plugin": "^1.0.0",
-    "aurelia-template-lint-webpack-loader": "^1.0.1",
-    "aurelia-testing": "^1.0.0-beta.2.0.0",
+    "aurelia-protractor-plugin": "^1.0.1",
+    "aurelia-template-lint-webpack-loader": "^1.0.2",
+    "aurelia-testing": "^1.0.0-beta.2.0.1",
+    "awesome-typescript-loader": "^3.0.0-beta.13",
     "better-npm-run": "0.0.13",
     "bundle-loader": "^0.5.4",
-    "copy-webpack-plugin": "^4.0.0",
-    "css-loader": "^0.25.0",
-    "del-cli": "^0.2.0",
+    "copy-webpack-plugin": "^4.0.1",
+    "css-loader": "^0.26.1",
+    "del-cli": "^0.2.1",
+    "enhanced-resolve": "^3.0.0",
     "expose-loader": "^0.7.1",
     "file-loader": "^0.9.0",
     "html-webpack-plugin": "^2.24.1",
     "http-server": "^0.9.0",
-    "jest": "^17.0.0",
-    "protractor": "^4.0.11",
+    "jest": "^17.0.3",
+    "protractor": "^4.0.13",
     "style-loader": "^0.13.1",
-    "ts-jest": "^17.0.0",
-    "ts-loader": "^1.2.0",
-    "ts-node": "^1.7.0",
+    "ts-jest": "^17.0.3",
+    "ts-node": "^1.7.2",
     "typescript": "next",
     "url-loader": "^0.5.7",
-    "wait-on": "^2.0.0",
-    "webpack": "2.1.0-beta.25",
+    "wait-on": "^2.0.1",
+    "webpack": "2.1.0-beta.27",
     "webpack-dashboard": "^0.2.0",
-    "webpack-dependency-suite": "^1.0.5",
-    "webpack-dev-server": ">=2.1.0-beta.0 || ^2.1.0",
+    "webpack-dependency-suite": "^1.5.0",
+    "webpack-dev-server": "2.1.0-beta.12",
     "webpack-md5-hash": "^0.0.5"
   },
   "dependencies": {
-    "@easy-webpack/core": "^2",
-    "aurelia-bootstrapper": "^1.0.1",
-    "aurelia-fetch-client": "^1.0.1",
-    "aurelia-framework": "^1.0.7",
+    "aurelia-bootstrapper": "^2.0.0",
+    "aurelia-fetch-client": "^1.1.0",
+    "aurelia-framework": "^1.0.8",
     "aurelia-history-browser": "^1.0.0",
+    "aurelia-loader-webpack": "^2.0.0",
     "aurelia-logging-console": "^1.0.0",
-    "aurelia-pal-browser": "^1.0.0",
+    "aurelia-pal-browser": "^1.1.0",
     "aurelia-polyfills": "^1.1.1",
-    "aurelia-router": "^1.0.7",
-    "aurelia-templating-binding": "^1.0.0",
-    "aurelia-templating-resources": "^1.1.1",
-    "aurelia-templating-router": "^1.0.0",
+    "aurelia-router": "^1.1.0",
+    "aurelia-templating-binding": "^1.1.0",
+    "aurelia-templating-resources": "^1.2.0",
+    "aurelia-templating-router": "^1.0.1",
     "bootstrap": "^3.3.7",
     "font-awesome": "^4.7.0",
     "isomorphic-fetch": "^2.2.1",

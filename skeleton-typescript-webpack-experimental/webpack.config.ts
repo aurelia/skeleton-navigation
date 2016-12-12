@@ -7,25 +7,28 @@ import { RewriteModuleSubdirectoryPlugin, RootMostResolvePlugin, MappedModuleIds
 import { addLoadersMethod as aureliaAddLoadersCallback } from 'webpack-dependency-suite/example/aurelia';
 import { AureliaTemplateLintLoaderOptions } from 'aurelia-template-lint-webpack-loader/typings';
 import { Config as TemplateLintConfig } from 'aurelia-template-lint';
+import { TsConfigPathsPlugin } from 'awesome-typescript-loader'
 
 const ENV: 'development' | 'production' | 'test' = process.env.NODE_ENV && process.env.NODE_ENV.toLowerCase() || (process.env.NODE_ENV = 'development');
 const title = 'Aurelia Navigation Skeleton';
 const baseUrl = '/';
-const rootDir = path.resolve();
-const srcDir = path.resolve('src');
-const outDir = path.resolve('dist');
-const nodeModules = path.resolve('node_modules');
+const rootDir = __dirname;
+const appDir = path.resolve(__dirname, 'src');
+const outDir = path.resolve(__dirname, 'dist');
+const nodeModules = path.resolve(__dirname, 'node_modules');
 const webpackPort = parseInt(process.env.WEBPACK_PORT) || 9000;
 const webpackHost = process.env.WEBPACK_HOST || 'localhost';
 const isHMR = process.argv.join('').indexOf('hot') > -1 || !!process.env.WEBPACK_HMR
 const isLive = process.argv.join('').indexOf('webpack-dev-server') > -1 || !!process.env.WEBPACK_LIVE
-const aureliaModules = /node_modules\/aurelia-/;
+// const aureliaModules = /node_modules\/aurelia-/;
+// TODO: changeme when not using linked modules:
+const aureliaModules = /\/dist\/(?:native-modules|es2017|es2015|commonjs)\//;
 
 const base: WebpackConfig = {
   resolve: {
     extensions: ['.js'],
     modules: [
-      srcDir,
+      appDir,
       'node_modules'
     ],
   },
@@ -36,6 +39,10 @@ const base: WebpackConfig = {
     path: outDir,
     publicPath: baseUrl
   },
+  node: {
+    process: false,
+    setImmediate: false
+  } as any
 };
 
 const DefinePlugin = require('webpack/lib/DefinePlugin');
@@ -55,7 +62,6 @@ const development: CFG = {
     host: webpackHost,
     historyApiFallback: true,
     contentBase: baseUrl,
-    outputPath: outDir,
     watchOptions: {
       aggregateTimeout: 300,
       poll: 1000
@@ -65,7 +71,7 @@ const development: CFG = {
 
 const WebpackMd5Hash = require('webpack-md5-hash');
 const production: CFG = {
-  // '📄': { enabled: ENV === 'production' },
+  '📄': { enabled: ENV === 'production' },
   devtool: '#source-map',
   output: {
     filename: '[name].[chunkhash].bundle.js',
@@ -94,11 +100,14 @@ const typescript: CFG = {
   module: {
     rules: [{
       test: /\.ts$/i,
-      loader: 'ts-loader',
+      loader: 'awesome-typescript-loader',
       exclude: [nodeModules],
-      options: { transpileOnly: false }
+      options: { configFileName: 'tsconfig.build.json' }
     }]
-  }
+  },
+  plugins: [
+    new TsConfigPathsPlugin({tsconfig: 'tsconfig.build.json'})
+  ]
 }
 
 const variables: CFG = {
@@ -124,7 +133,7 @@ const variables: CFG = {
  * If your total stylesheet volume is big, it will be faster because the stylesheet bundle is loaded in parallel to the javascript bundle.
  */
 /*
-// TEMPORAIRLY OFF BECAUSE THE CURRENT VERSION IS BROKEN //
+// TODO: TEMPORAIRLY OFF //
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const ExtractTextInstance = new ExtractTextPlugin({
   name: ENV === 'production' ? '[name].[chunkhash].css' : '[name].css',
@@ -174,7 +183,7 @@ const globals: CFG = {
   module: {
     rules: [
       // expose jQuery as a global
-      { test: require.resolve('jquery'), loader: 'expose-loader?$!expose?jQuery' }
+      { test: require.resolve('jquery'), loader: 'expose-loader?$!expose-loader?jQuery' }
     ]
   },
   plugins: [
@@ -252,7 +261,7 @@ const aureliaTemplateLint: CFG = {
   module: {
     rules: [{
       test: /\.html$/i,
-      include: [srcDir],
+      include: [appDir],
       enforce: 'pre',
       use: [{
         loader: 'aurelia-template-lint-webpack-loader',
@@ -303,7 +312,7 @@ const aureliaApplication: CFG = {
     rules: [
       {
         test: /\.html$/i,
-        include: [srcDir, aureliaModules],
+        include: [appDir, aureliaModules],
         exclude: [path.join(rootDir, 'index.html')],
         use: [{
           loader: 'webpack-dependency-suite/loaders/html-require-loader',
@@ -314,7 +323,7 @@ const aureliaApplication: CFG = {
       },
       {
         test: /\.[tj]s$/i,
-        include: [srcDir, aureliaModules],
+        include: [appDir, aureliaModules],
         use: [
           {
             loader: 'webpack-dependency-suite/loaders/convention-loader',
@@ -327,7 +336,7 @@ const aureliaApplication: CFG = {
       },
       {
         test: /\.[tj]s$/i,
-        include: [srcDir],
+        include: [appDir],
         use: [{
           loader: 'webpack-dependency-suite/loaders/comment-loader',
           options: {
@@ -344,14 +353,22 @@ const aureliaApplication: CFG = {
             addLoadersCallback,
             packagePropertyPath: 'aurelia.build.resources',
             enableGlobbing: true,
-            rootDir
+            rootDir,
+            fallbackToMainContext: true
           } as ListBasedRequireOptions
         }]
       }
     ]
   },
   resolve: {
+    alias: {
+      // 'aurelia-loader-webpack': path.join(srcDir, 'aurelia-loader-webpack.ts')
+    },
     plugins: [
+      new RewriteModuleSubdirectoryPlugin((moduleName, remainingRequest, request) => {
+        if (moduleName.startsWith('aurelia-'))
+          return `${moduleName}/dist/es2017/${remainingRequest || moduleName}`
+      }),
       new RewriteModuleSubdirectoryPlugin((moduleName, remainingRequest, request) => {
         if (moduleName.startsWith('aurelia-'))
           return `${moduleName}/dist/native-modules/${remainingRequest || moduleName}`
@@ -369,7 +386,7 @@ const aureliaApplication: CFG = {
 
   plugins: [
     new MappedModuleIdsPlugin({
-      appDir: srcDir,
+      appDir,
       prefixLoaders: [
         {loader: 'bundle-loader', prefix: 'async'}, 
         {loader: 'expose-loader', prefix: 'expose'},
@@ -377,15 +394,21 @@ const aureliaApplication: CFG = {
         {loader: 'style-loader', prefix: 'style'},
         {loader: 'html-webpack-plugin/lib/loader', prefix: 'html-webpack'},
       ],
-      logWhenRawRequestDiffers: true,
+      logWhenRawRequestDiffers: false,
       dotSlashWhenRelativeToAppDir: false,
       beforeLoadersTransform: (moduleId) => {
-        if (!moduleId.startsWith('aurelia-')) return moduleId
+        if (!moduleId.startsWith('aurelia-') && !moduleId.startsWith('../../')) return moduleId
         return moduleId
+          .replace('/dist/es2017', '')
           .replace('/dist/native-modules', '')
           .replace('/dist/commonjs', '')
       },
       afterExtensionTrimmingTransform: (moduleId) => {
+        // the following useful only in case of aurelia development environment | start:
+        if (moduleId.startsWith('../../')) {
+          moduleId = `aurelia-${moduleId.slice(6)}`
+        }
+        // :end
         if (!moduleId.startsWith('aurelia-')) return moduleId
         const split = moduleId.split('/')
         if (split.length === 2 && split[0] === split[1]) {
@@ -402,9 +425,9 @@ const config = merge(
   base,
   ENV === 'production' ? production : development,
   css,
-  ...(
-    ENV === 'development' ? [aureliaTemplateLint] : []
-  ),
+  // ...(
+  //   ENV === 'development' ? [aureliaTemplateLint] : []
+  // ),
   aureliaApplication,
   typescript,
   variables,

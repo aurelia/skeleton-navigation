@@ -1,23 +1,21 @@
 import {bootstrap} from 'aurelia-bootstrapper';
 import {StageComponent} from 'aurelia-testing';
-import {PLATFORM} from 'aurelia-pal';
 
 describe('WelcomeComponent', () => {
   let component;
 
-  beforeEach(() => {
+  beforeEach(async () => {
     component = StageComponent
-      .withResources('../src/welcome')
+      .withResources('../../src/welcome')
       .inView('<welcome></welcome>');
+    await component.create(bootstrap);
   });
 
-  it('should render correctly', async () => {
-    await component.create(bootstrap);
-    expect(document.body.outerHTML).toMatchSnapshot();
-  })
+  // it('should render correctly', () => {
+  //   expect(document.body.outerHTML).toMatchSnapshot();
+  // })
 
-  it('should render first name', async () => {
-    await component.create(bootstrap);
+  it('should render first name', () => {
     const nameElement = document.querySelector('#fn') as HTMLInputElement;
     expect(nameElement.value).toBe('John');
   });
