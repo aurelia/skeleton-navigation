@@ -7,7 +7,7 @@ import { RewriteModuleSubdirectoryPlugin, RootMostResolvePlugin, MappedModuleIds
 import { addLoadersMethod as aureliaAddLoadersCallback } from 'webpack-dependency-suite/example/aurelia';
 import { AureliaTemplateLintLoaderOptions } from 'aurelia-template-lint-webpack-loader/typings';
 import { Config as TemplateLintConfig } from 'aurelia-template-lint';
-import { TsConfigPathsPlugin } from 'awesome-typescript-loader'
+import { TsConfigPathsPluginm, CheckerPlugin } from 'awesome-typescript-loader'
 
 const ENV: 'development' | 'production' | 'test' = process.env.NODE_ENV && process.env.NODE_ENV.toLowerCase() || (process.env.NODE_ENV = 'development');
 const title = 'Aurelia Navigation Skeleton';
@@ -106,7 +106,8 @@ const typescript: CFG = {
     }]
   },
   plugins: [
-    new TsConfigPathsPlugin({tsconfig: 'tsconfig.build.json'})
+    new TsConfigPathsPlugin({tsconfig: 'tsconfig.build.json'}),
+    new CheckerPlugin()
   ]
 }
 
