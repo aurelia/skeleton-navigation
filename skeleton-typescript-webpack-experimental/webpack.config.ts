@@ -368,10 +368,6 @@ const aureliaApplication: CFG = {
     plugins: [
       new RewriteModuleSubdirectoryPlugin((moduleName, remainingRequest, request) => {
         if (moduleName.startsWith('aurelia-'))
-          return `${moduleName}/dist/es2017/${remainingRequest || moduleName}`
-      }),
-      new RewriteModuleSubdirectoryPlugin((moduleName, remainingRequest, request) => {
-        if (moduleName.startsWith('aurelia-'))
           return `${moduleName}/dist/native-modules/${remainingRequest || moduleName}`
       }),
       new RewriteModuleSubdirectoryPlugin((moduleName, remainingRequest, request) => {
@@ -400,7 +396,6 @@ const aureliaApplication: CFG = {
       beforeLoadersTransform: (moduleId) => {
         if (!moduleId.startsWith('aurelia-') && !moduleId.startsWith('../../')) return moduleId
         return moduleId
-          .replace('/dist/es2017', '')
           .replace('/dist/native-modules', '')
           .replace('/dist/commonjs', '')
       },
