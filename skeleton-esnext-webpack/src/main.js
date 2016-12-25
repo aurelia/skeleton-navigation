@@ -4,7 +4,7 @@ import 'font-awesome/css/font-awesome.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap';
 
-// comment out if you don't want a Promise polyfill (remove also from webpack.common.js)
+// comment out if you don't want a Promise polyfill (remove also from webpack.config.babel.js)
 import * as Bluebird from 'bluebird';
 Bluebird.config({ warnings: false });
 
@@ -23,8 +23,8 @@ export async function configure(aurelia) {
   await aurelia.start();
   aurelia.setRoot('app');
 
-  // if you would like your website to work offline (Service Worker), 
-  // install and enable the @easy-webpack/config-offline package in webpack.config.js and uncomment the following code:
+  // if you would like your website to work offline (Service Worker),
+  // install and enable the @easy-webpack/config-offline package in webpack.config.babel.js and uncomment the following code:
   /*
   const offline = await System.import('offline-plugin/runtime');
   offline.install();
