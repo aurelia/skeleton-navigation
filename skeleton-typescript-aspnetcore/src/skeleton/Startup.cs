@@ -65,6 +65,14 @@ namespace skeleton
             {
                 app.UseDeveloperExceptionPage();
                 app.UseBrowserLink();
+                
+                //This allows you to debug your ts files in browser using the mappings provided by gulp-typescript
+                app.UseStaticFiles(new StaticFileOptions()
+                {
+                    FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), @"src")),
+                    RequestPath = new PathString("/src")
+                });
+                
             }
             else
             {
