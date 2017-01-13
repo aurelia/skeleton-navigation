@@ -11,9 +11,9 @@ describe('WelcomeComponent', () => {
     await component.create(bootstrap);
   });
 
-  // it('should render correctly', () => {
-  //   expect(document.body.outerHTML).toMatchSnapshot();
-  // })
+  it('should render correctly', () => {
+    expect(document.body.outerHTML).toMatchSnapshot();
+  })
 
   it('should render first name', () => {
     const nameElement = document.querySelector('#fn') as HTMLInputElement;
