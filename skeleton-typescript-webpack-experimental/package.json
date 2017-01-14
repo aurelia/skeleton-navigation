@@ -120,7 +120,7 @@
     "typescript": "^2.1.5",
     "url-loader": "^0.5.7",
     "wait-on": "^2.0.1",
-    "webpack": "2.2.0-rc.4",
+    "webpack": "2.2.0-rc.3",
     "webpack-dashboard": "^0.2.1",
     "webpack-dependency-suite": "^1.5.0",
     "webpack-dev-server": "2.2.0-rc.0",
