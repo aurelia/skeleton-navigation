@@ -100,3 +100,4 @@ const server = http.createServer((request, response) => {
 })
 
 server.listen(8765)
+console.log(`Listening server-side-rendered at http://localhost:8765/`)

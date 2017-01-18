@@ -26,6 +26,7 @@
   },
   "betterScripts": {
     "test": "$NODE $LOCAL/jest --no-cache",
+    "ssr": "$LOCAL/ts-node server/index",
     "webdriver:update": "$LOCAL/webdriver-manager update --standalone",
     "e2e:start-when-ready": "wait-on --timeout 120000 http-get://localhost:19876/index.html && bnr e2e:start",
     "e2e:start": "$LOCAL/protractor test/protractor.conf.js",
