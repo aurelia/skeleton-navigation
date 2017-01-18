@@ -133,6 +133,30 @@ const variables: CFG = {
  * So your styles are no longer inlined into the javascript, but separate in a css bundle file (styles.css). 
  * If your total stylesheet volume is big, it will be faster because the stylesheet bundle is loaded in parallel to the javascript bundle.
  */
+
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const ExtractTextInstance = new ExtractTextPlugin({
+  filename: ENV === 'production' ? '[contenthash].css' : '[id].css',
+  allChunks: true
+})
+
+const css: CFG = {
+  module: {
+    rules: [
+      {
+        // CSS required in JS/TS files should use the style-loader that auto-injects it into the website
+        test: /\.css$/i,
+        loader: ExtractTextPlugin.extract({
+          fallbackLoader: 'style-loader',
+          loader: ['css-loader']
+        }),
+      }
+    ]
+  },
+  plugins: [ExtractTextInstance]
+}
+
+
 /*
 // TODO: TEMPORAIRLY OFF //
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -141,31 +165,31 @@ const ExtractTextInstance = new ExtractTextPlugin({
   allChunks: false
 });
 */
-const css: CFG = {
-  module: {
-    rules: [
-      {
-        // CSS required in JS/TS files should use the style-loader that auto-injects it into the website
-        test: /\.css$/i,
-        use: ['style-loader'],
-        issuer: {
-          // only when the issuer is a .js/.ts file, so the loaders are not applied inside templates
-          test: /\.[tj]s$/i,
-        },
-        // loader: ExtractTextInstance.extract({ fallbackLoader: 'style-loader', loader: ['css-loader'] }),
-        // parser: {
-        //   requireInclude: false, // disable require.include
-        // }
-      },
-      {
-        // CSS anywhere should use the css-loader
-        test: /\.css$/i,
-        use: ['css-loader'],
-      },
-    ]
-  },
-  // plugins: [ExtractTextInstance]
-}
+// const css: CFG = {
+//   module: {
+//     rules: [
+//       {
+//         // CSS required in JS/TS files should use the style-loader that auto-injects it into the website
+//         test: /\.css$/i,
+//         use: ['style-loader'],
+//         issuer: {
+//           // only when the issuer is a .js/.ts file, so the loaders are not applied inside templates
+//           test: /\.[tj]s$/i,
+//         },
+//         // loader: ExtractTextInstance.extract({ fallbackLoader: 'style-loader', loader: ['css-loader'] }),
+//         // parser: {
+//         //   requireInclude: false, // disable require.include
+//         // }
+//       },
+//       {
+//         // CSS anywhere should use the css-loader
+//         test: /\.css$/i,
+//         use: ['css-loader'],
+//       },
+//     ]
+//   },
+//   // plugins: [ExtractTextInstance]
+// }
 
 const fontsAndImages: CFG = {
   module: {
