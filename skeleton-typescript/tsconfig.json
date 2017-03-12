@@ -9,6 +9,7 @@
     "declaration": false,
     "noImplicitAny": false,
     "removeComments": true,
+    "compileOnSave": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "moduleResolution": "node",

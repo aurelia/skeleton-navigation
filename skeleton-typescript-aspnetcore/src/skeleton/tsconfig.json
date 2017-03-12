@@ -11,6 +11,7 @@
     "removeComments": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "compileOnSave": false,
     "moduleResolution": "node",
     "lib": ["es2015", "dom"]
   },
