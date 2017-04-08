@@ -12,7 +12,8 @@ module.exports = {
           "browsers": [
             "last 2 versions",
             "not ie <= 11"
-          ]
+          ],
+          "uglify": process.env.production,
         },
         "loose": true,
         "modules": process.env.babelTarget === 'node' ? 'commonjs' : false,

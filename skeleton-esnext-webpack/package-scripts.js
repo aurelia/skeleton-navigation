@@ -68,11 +68,11 @@ module.exports = {
         production: {
           inlineCss: series(
             'nps webpack.build.before',
-            'webpack --progress -p --env.production'
+            crossEnv('production=true webpack --progress -p --env.production')
           ),
           default: series(
             'nps webpack.build.before',
-            'webpack --progress -p --env.production --env.extractCss'
+            crossEnv('production=true webpack --progress -p --env.production --env.extractCss')
           ),
           serve: series.nps(
             'webpack.build.production',
