@@ -59,13 +59,11 @@ section {
 
 /* animate page transitions */
 section.au-enter-active {
-  -webkit-animation: fadeInRight 1s;
   animation: fadeInRight 1s;
 }
 
 div.au-stagger {
   /* 50ms will be applied between each successive enter operation */
-  -webkit-animation-delay: 50ms;
   animation-delay: 50ms;
 }
 
@@ -74,7 +72,6 @@ div.au-stagger {
 }
 
 .card-container.au-enter-active {
-  -webkit-animation: fadeIn 2s;
   animation: fadeIn 2s;
 }
 
@@ -121,8 +118,6 @@ div.au-stagger {
 .card .avatar img {
   width: 100px;
   height: 100px;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
   border-radius: 50%;
   border: 2px #FFF solid;
 }
@@ -131,12 +126,10 @@ div.au-stagger {
 @-webkit-keyframes fadeInRight {
   0% {
     opacity: 0;
-    -webkit-transform: translate3d(100%, 0, 0);
     transform: translate3d(100%, 0, 0)
   }
   100% {
     opacity: 1;
-    -webkit-transform: none;
     transform: none
   }
 }
@@ -144,14 +137,10 @@ div.au-stagger {
 @keyframes fadeInRight {
   0% {
     opacity: 0;
-    -webkit-transform: translate3d(100%, 0, 0);
-    -ms-transform: translate3d(100%, 0, 0);
     transform: translate3d(100%, 0, 0)
   }
   100% {
     opacity: 1;
-    -webkit-transform: none;
-    -ms-transform: none;
     transform: none
   }
 }

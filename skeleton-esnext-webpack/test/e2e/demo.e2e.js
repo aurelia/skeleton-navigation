@@ -1,5 +1,6 @@
 import {PageObjectWelcome} from './welcome.po.js';
 import {PageObjectSkeleton} from './skeleton.po.js';
+import {config} from '../protractor.conf'
 
 describe('aurelia skeleton app', function() {
   let poWelcome;
@@ -9,7 +10,7 @@ describe('aurelia skeleton app', function() {
     poSkeleton = new PageObjectSkeleton();
     poWelcome = new PageObjectWelcome();
 
-    browser.loadAndWaitForAureliaPage('http://localhost:19876');
+    browser.loadAndWaitForAureliaPage(`http://localhost:${config.port}`);
   });
 
   it('should load the page and display the initial page title', () => {
