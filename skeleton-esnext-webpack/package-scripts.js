@@ -28,7 +28,7 @@ module.exports = {
       default: concurrent({
         webpack: `webpack-dev-server --inline --port=${E2E_PORT}`,
         protractor: 'nps e2e.whenReady',
-      }) + ' --kill-others',
+      }) + ' --kill-others --success first',
       protractor: {
         install: 'webdriver-manager update --standalone --chrome',
         default: series(
