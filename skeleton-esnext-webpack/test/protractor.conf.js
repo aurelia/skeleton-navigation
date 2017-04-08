@@ -1,10 +1,16 @@
-exports.config = {
-  baseUrl: 'http://localhost:19876/',
+const port = 19876;
 
-  // use `npm run e2e`
+exports.config = {
+  port: port,
+
+  baseUrl: `http://localhost:${port}/`,
+
+  // use `npm start -- e2e`
+
   specs: [
-    'e2e/**/*.js'
+    '**/*.e2e.js'
   ],
+
   exclude: [],
 
   framework: 'jasmine',
@@ -18,6 +24,7 @@ exports.config = {
     includeStackTrace: false,
     defaultTimeoutInterval: 400000
   },
+
   directConnect: true,
 
   capabilities: {
@@ -28,11 +35,11 @@ exports.config = {
   },
 
   onPrepare: function() {
-    process.env.BABEL_ENV = 'e2e';
-    require('babel-register')();
+    process.env.babelTarget = 'node';
+    require('babel-register');
   },
 
   plugins: [{
     package: 'aurelia-protractor-plugin'
-  }]
+  }],
 };

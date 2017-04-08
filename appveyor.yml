@@ -1,7 +1,7 @@
 # Test against this version of Node.js
 environment:
   matrix:
-    - nodejs_version: "4"
+    - nodejs_version: "7"
 
 cache:
   - skeleton-esnext/node_modules
@@ -18,8 +18,8 @@ install:
   - ps: Install-Product node $env:nodejs_version
   - npm install -g jspm
   # install modules
-  - cd skeleton-esnext-webpack && yarn
-  - cd skeleton-typescript-webpack && yarn
+  - cd skeleton-esnext-webpack && yarn --ignore-engines
+  - cd skeleton-typescript-webpack && yarn --ignore-engines
   - cd skeleton-esnext && npm install --no-optional || true
   - cd skeleton-esnext && jspm install
   - cd skeleton-typescript && npm install --no-optional || true
@@ -31,12 +31,12 @@ test_script:
   - node --version
   - yarn --version
   # run tests
-  - cd skeleton-typescript-webpack && yarn run test
-  - cd skeleton-typescript-webpack && yarn run e2e
-  - cd skeleton-typescript-webpack && yarn run build:prod
-  - cd skeleton-esnext-webpack && yarn run test
-  - cd skeleton-esnext-webpack && yarn run e2e
-  - cd skeleton-esnext-webpack && yarn run build:prod
+  - cd skeleton-typescript-webpack && yarn start -- test.all
+  - cd skeleton-typescript-webpack && yarn start -- webpack.build
+  - cd skeleton-typescript-webpack && yarn start -- webpack.build.development
+  - cd skeleton-esnext-webpack && yarn start -- test.all
+  - cd skeleton-esnext-webpack && yarn start -- webpack.build
+  - cd skeleton-esnext-webpack && yarn start -- webpack.build.development
   - cd skeleton-esnext && npm run test
   - cd skeleton-typescript && npm run test
 

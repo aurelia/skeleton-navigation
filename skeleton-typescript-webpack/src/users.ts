@@ -2,7 +2,7 @@ import {lazy} from 'aurelia-framework';
 import {HttpClient} from 'aurelia-fetch-client';
 
 // polyfill fetch client conditionally
-const fetch = !self.fetch ? System.import('isomorphic-fetch') : Promise.resolve(self.fetch);
+const fetchPolyfill = !self.fetch ? System.import('isomorphic-fetch') : Promise.resolve(self.fetch);
 
 interface IUser {
   avatar_url: string;
@@ -14,12 +14,16 @@ export class Users {
   heading: string = 'Github Users';
   users: Array<IUser> = [];
   http: HttpClient;
+  /**
+   * ref element on the binding-context
+   */
+  image: HTMLImageElement;
 
   constructor(@lazy(HttpClient) private getHttpClient: () => HttpClient) {}
 
   async activate(): Promise<void> {
     // ensure fetch is polyfilled before we create the http client
-    await fetch;
+    await fetchPolyfill;
     const http = this.http = this.getHttpClient();
 
     http.configure(config => {

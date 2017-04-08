@@ -1,34 +1,26 @@
-/**
- * Inspired by @AngularClass
- * https://github.com/AngularClass/angular2-webpack-starter
- */
-'use strict'
-const path = require('path')
-require('babel-register')({ only: "*.babel.js" });
+'use strict';
+const path = require('path');
 
 module.exports = function (config) {
   config.set({
+    /**
+     * base path that will be used to resolve all patterns (e.g. files, exclude)
+     */
+    basePath: path.dirname(__dirname),
 
-    // base path that will be used to resolve all patterns (e.g. files, exclude)
-    basePath: __dirname,
-
-    /*
+    /**
      * Frameworks to use
      *
      * available frameworks: https://npmjs.org/browse/keyword/karma-adapter
      */
-    frameworks: ['jasmine'],
+    frameworks: [ 'jasmine' ],
 
-    // list of files to exclude
-    exclude: [],
-
-    /*
+    /**
      * list of files / patterns to load in the browser
-     *
      * we are building the test environment in ./spec-bundle.js
      */
     files: [
-      { pattern: 'spec-bundle.js', watched: false }
+      { pattern: 'test/karma-bundle.js', watched: false }
     ],
 
     /*
@@ -36,30 +28,10 @@ module.exports = function (config) {
      * available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
      */
     preprocessors: {
-      'spec-bundle.js': ['coverage', 'webpack', 'sourcemap']
+      'test/karma-bundle.js': [ 'webpack' ]
     },
 
-    webpack: require('../webpack.config.babel'),
-
-    coverageReporter: {
-      reporters: [{
-        type: 'json',
-        subdir: '.',
-        file: 'coverage-final.json'
-      }]
-    },
-
-    remapIstanbulReporter: {
-      src: path.join(__dirname, 'coverage/coverage-final.json'),
-      reports: {
-        html: path.join(__dirname, 'coverage/')
-      },
-      timeoutNotCreated: 1000,
-      timeoutNoMoreFiles: 1000
-    },
-
-    // Webpack please don't spam the console when running in karma!
-    webpackServer: { noInfo: true },
+    webpack: require('../webpack.config')({ coverage: true }),
 
     /*
      * test results reporter to use
@@ -67,7 +39,16 @@ module.exports = function (config) {
      * possible values: 'dots', 'progress'
      * available reporters: https://npmjs.org/browse/keyword/karma-reporter
      */
-    reporters: [ 'mocha', 'coverage', 'karma-remap-istanbul' ],
+    reporters: [ 'mocha', 'progress', 'coverage-istanbul' ],
+
+    coverageIstanbulReporter: {
+      reports: [ 'html', 'lcovonly', 'text-summary' ],
+      dir: path.resolve(__dirname, 'karma-coverage'),
+      fixWebpackSourcePaths: true,
+    },
+
+    // Webpack please don't spam the console when running in karma!
+    webpackServer: { noInfo: true },
 
     // web server port
     port: 9876,
@@ -90,7 +71,6 @@ module.exports = function (config) {
      */
     browsers: [
       'Chrome',
-    // TODO: https://www.npmjs.com/package/karma-electron
     ],
 
     /*

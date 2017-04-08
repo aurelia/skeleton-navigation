@@ -1,11 +1,7 @@
 node_modules
 .DS_STORE
 npm-debug.log*
+yarn-error.log
 /dist
-/build
-/typings
-/.awcache
-/electron.js*
-/release
-/test/coverage
-yarn.lock
+/test/*coverage
+/.chrome

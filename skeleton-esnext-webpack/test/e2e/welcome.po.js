@@ -1,10 +1,6 @@
-import regeneratorRuntime from 'regenerator-runtime';
+// import regeneratorRuntime from 'regenerator-runtime';
 
 export class PageObjectWelcome {
-
-  constructor() {
-
-  }
 
   getGreeting() {
     return element(by.tagName('h2')).getText();
