@@ -30,9 +30,9 @@ dependencies:
 
 test:
   override:
-    - cd skeleton-typescript-webpack && yarn run test
-    - cd skeleton-typescript-webpack && yarn run e2e
-    - cd skeleton-typescript-webpack && yarn run build:prod
+    - cd skeleton-typescript-webpack && yarn start -- test.all
+    - cd skeleton-typescript-webpack && yarn start -- webpack.build
+    - cd skeleton-typescript-webpack && yarn start -- webpack.build.development
     - cd skeleton-esnext-webpack && yarn run test
     - cd skeleton-esnext-webpack && yarn run e2e
     - cd skeleton-esnext-webpack && yarn run build:prod

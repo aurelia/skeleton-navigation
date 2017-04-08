@@ -42,6 +42,7 @@ module.exports = {
         'nps e2e.protractor'
       ),
     },
+    build: 'nps webpack.build',
     webpack: {
       default: 'nps webpack.server',
       build: {
