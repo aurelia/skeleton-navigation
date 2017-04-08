@@ -4,5 +4,4 @@ npm-debug.log*
 /dist
 /build
 /coverage
-yarn.lock
 yarn-error.log

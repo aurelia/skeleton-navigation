@@ -1,22 +1,18 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "module": "commonjs",
+    "module": "es2015",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "moduleResolution": "node",
+    "allowJs": true,
     "lib": [
       "es2017", "dom"
-    ],
-    "types": [
-      "node", "webpack", "jest"
     ]
   },
   "exclude": [
     "node_modules",
     "dist",
-    "static",
-    "webpack.config.ts",
-    "node_modules/@types/jasmine"
+    "static"
   ]
 }

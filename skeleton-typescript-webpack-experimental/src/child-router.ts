@@ -1,4 +1,5 @@
-import {Router, RouterConfiguration} from 'aurelia-router';
+import { Router, RouterConfiguration } from 'aurelia-router';
+import { PLATFORM } from 'aurelia-pal';
 
 export class ChildRouter {
   router: Router;
@@ -7,9 +8,9 @@ export class ChildRouter {
 
   configureRouter(config: RouterConfiguration, router: Router) {
     config.map([
-      { route: ['', 'welcome'], name: 'welcome',       moduleId: /* @import */ './welcome',       nav: true, title: 'Welcome' },
-      { route: 'users',         name: 'users',         moduleId: /* @import */ './users',         nav: true, title: 'Github Users' },
-      { route: 'child-router',  name: 'child-router',  moduleId: /* @import */ './child-router',  nav: true, title: 'Child Router' }
+      { route: ['', 'welcome'], name: 'welcome',      moduleId: PLATFORM.moduleName('./welcome'),      nav: true, title: 'Welcome' },
+      { route: 'users',         name: 'users',        moduleId: PLATFORM.moduleName('./users'),        nav: true, title: 'Github Users' },
+      { route: 'child-router',  name: 'child-router', moduleId: PLATFORM.moduleName('./child-router'), nav: true, title: 'Child Router' }
     ]);
 
     this.router = router;
