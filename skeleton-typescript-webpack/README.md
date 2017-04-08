@@ -25,7 +25,7 @@ will automatically build and reload the app.
 
 ## Feature configuration
 
-Most of the configuration will happen in the `webpack.config.ts` file.
+Most of the configuration will happen in the `webpack.config.js` file.
 There, you may configure advanced loader features or add direct SASS or LESS loading support.
 
 ## Bundling

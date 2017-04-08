@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const { AureliaPlugin } = require('aurelia-webpack-plugin');
-const { optimize: { CommonsChunkPlugin } } = require('webpack')
+const { optimize: { CommonsChunkPlugin }, ProvidePlugin } = require('webpack')
 const { TsConfigPathsPlugin, CheckerPlugin } = require('awesome-typescript-loader');
 
 // config helpers:
@@ -19,20 +19,14 @@ const nodeModulesDir = path.resolve(__dirname, 'node_modules');
 const baseUrl = '/';
 
 const cssRules = [
-  {
-    loader: 'css-loader',
-  },
+  { loader: 'css-loader' },
   {
     loader: 'postcss-loader',
-    options: {
-      plugins: () => [
-        require('autoprefixer')({ browsers: ['last 2 versions'] }),
-      ]
-    }
+    options: { plugins: () => [require('autoprefixer')({ browsers: ['last 2 versions'] })]}
   }
 ]
 
-module.exports = ({production, server, extractCss} = {}) => ({
+module.exports = ({production, server, extractCss, coverage} = {}) => ({
   resolve: {
     extensions: ['.ts', '.js'],
     modules: [srcDir, 'node_modules'],
@@ -70,8 +64,8 @@ module.exports = ({production, server, extractCss} = {}) => ({
           use: cssRules,
         }) : cssRules,
       },
-      { test: /\.html$/i, use: ['html-loader'] },
-      { test: /\.ts$/i, use: [/*'babel-loader?presets[]=es2015',*/ 'awesome-typescript-loader'], exclude: nodeModulesDir },
+      { test: /\.html$/i, loader: 'html-loader' },
+      { test: /\.ts$/i, loader: 'awesome-typescript-loader', exclude: nodeModulesDir },
       { test: /\.json$/i, loader: 'json-loader' },
       // use Bluebird as the global Promise implementation:
       { test: /[\/\\]node_modules[\/\\]bluebird[\/\\].+\.js$/, loader: 'expose-loader?Promise' },
@@ -83,10 +77,21 @@ module.exports = ({production, server, extractCss} = {}) => ({
       { test: /\.woff(\?v=[0-9]\.[0-9]\.[0-9])?$/i, loader: 'url-loader', options: { limit: 10000, mimetype: 'application/font-woff' } },
       // load these fonts normally, as files:
       { test: /\.(ttf|eot|svg|otf)(\?v=[0-9]\.[0-9]\.[0-9])?$/i, loader: 'file-loader' },
+      ...when(coverage, {
+        test: /\.[jt]s$/i, loader: 'istanbul-instrumenter-loader',
+        include: srcDir, exclude: [/\.{spec,test}\.[jt]s$/i],
+        enforce: 'post', options: { esModules: true },
+      })
     ]
   },
   plugins: [
     new AureliaPlugin(),
+    new ProvidePlugin({
+      'Promise': 'bluebird',
+      '$': 'jquery',
+      'jQuery': 'jquery',
+      'window.jQuery': 'jquery',
+    }),
     new TsConfigPathsPlugin(),
     new CheckerPlugin(),
     new HtmlWebpackPlugin({

@@ -11,7 +11,10 @@ module.exports = {
         watch: 'jest --watch',
       },
       karma: {
-        default: 'karma start test/karma.conf.js',
+        default: series(
+          rimraf('test/karma-coverage'),
+          'karma start test/karma.conf.js'
+        ),
         watch: 'karma start test/karma.conf.js --single-run=false',
         debug: 'karma start test/karma.conf.js --single-run=false --debug'
       },
