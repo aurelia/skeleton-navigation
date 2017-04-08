@@ -3,9 +3,10 @@ import '../static/styles.css';
 import 'font-awesome/css/font-awesome.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'aurelia-bootstrapper';
+import * as Bluebird from 'bluebird';
 
 // remove out if you don't want a Promise polyfill (remove also from webpack.config.js)
-Promise.config({ warnings: { wForgottenReturn: false } });
+Bluebird.config({ warnings: { wForgottenReturn: false } });
 
 export async function configure(aurelia) {
   aurelia.use
