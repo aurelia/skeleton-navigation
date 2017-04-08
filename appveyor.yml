@@ -21,9 +21,9 @@ install:
   - cd skeleton-esnext-webpack && yarn --ignore-engines
   - cd skeleton-typescript-webpack && yarn --ignore-engines
   - cd skeleton-esnext && npm install --no-optional || true
-  - cd skeleton-esnext && jspm install
+  # - cd skeleton-esnext && jspm install
   - cd skeleton-typescript && npm install --no-optional || true
-  - cd skeleton-typescript && jspm install
+  # - cd skeleton-typescript && jspm install
 
 # Post-install test scripts.
 test_script:
@@ -37,8 +37,8 @@ test_script:
   - cd skeleton-esnext-webpack && yarn start -- test.all
   - cd skeleton-esnext-webpack && yarn start -- webpack.build
   - cd skeleton-esnext-webpack && yarn start -- webpack.build.development
-  - cd skeleton-esnext && npm run test
-  - cd skeleton-typescript && npm run test
+  # - cd skeleton-esnext && npm run test
+  # - cd skeleton-typescript && npm run test
 
 # Don't actually build.
 build: off
