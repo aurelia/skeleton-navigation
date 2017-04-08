@@ -7,7 +7,7 @@
 
 machine:
   node:
-    version: 4.2.6
+    version: 7
 
 dependencies:
   pre:
