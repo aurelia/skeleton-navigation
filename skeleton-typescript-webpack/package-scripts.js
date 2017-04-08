@@ -19,9 +19,8 @@ module.exports = {
         debug: 'karma start test/karma.conf.js --single-run=false --debug'
       },
       all: concurrent({
-        e2e: 'nps e2e',
+        browser: series.nps('test.karma', 'test.e2e'),
         jest: 'nps test.jest',
-        karma: 'nps test.karma'
       })
     },
     e2e: {
