@@ -13,11 +13,11 @@ dependencies:
   pre:
     - npm install -g yarn jspm
   override:
-    - cd skeleton-esnext-webpack && yarn
-    - cd skeleton-typescript-webpack && yarn
-    - cd skeleton-esnext && yarn
+    - cd skeleton-esnext-webpack && yarn --ignore-engines
+    - cd skeleton-typescript-webpack && yarn --ignore-engines
+    - cd skeleton-esnext && yarn --ignore-engines
     - cd skeleton-esnext && jspm install
-    - cd skeleton-typescript && yarn
+    - cd skeleton-typescript && yarn --ignore-engines
     - cd skeleton-typescript && jspm install
   cache_directories:
     - "skeleton-esnext/node_modules"

@@ -18,8 +18,8 @@ install:
   - ps: Install-Product node $env:nodejs_version
   - npm install -g jspm
   # install modules
-  - cd skeleton-esnext-webpack && yarn
-  - cd skeleton-typescript-webpack && yarn
+  - cd skeleton-esnext-webpack && yarn --ignore-engines
+  - cd skeleton-typescript-webpack && yarn --ignore-engines
   - cd skeleton-esnext && npm install --no-optional || true
   - cd skeleton-esnext && jspm install
   - cd skeleton-typescript && npm install --no-optional || true
