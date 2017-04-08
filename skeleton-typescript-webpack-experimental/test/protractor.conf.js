@@ -8,7 +8,7 @@ exports.config = {
   // use `npm start -- e2e`
 
   specs: [
-    'e2e/**/*.ts'
+    '**/*.e2e.ts'
   ],
 
   exclude: [],

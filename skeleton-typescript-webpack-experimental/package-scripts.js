@@ -5,8 +5,21 @@ module.exports = {
   scripts: {
     default: 'nps webpack',
     test: {
-      default: 'jest',
-      watch: 'jest --watch',
+      default: 'nps test.jest',
+      jest: {
+        default: 'jest',
+        watch: 'jest --watch',
+      },
+      karma: {
+        default: 'karma start test/karma.conf.js',
+        watch: 'karma start test/karma.conf.js --single-run=false',
+        debug: 'karma start test/karma.conf.js --single-run=false --debug'
+      },
+      all: concurrent({
+        e2e: 'nps e2e',
+        jest: 'nps test.jest',
+        karma: 'nps test.karma'
+      })
     },
     e2e: {
       default: concurrent({
@@ -64,9 +77,9 @@ module.exports = {
         }
       },
       server: {
-        default: 'webpack-dev-server -d --inline --open --env.server',
-        extractCss: 'webpack-dev-server -d --inline --open --env.server --env.extractCss',
-        hmr: 'webpack-dev-server --hot -d --inline --open --env.server'
+        default: `webpack-dev-server -d --devtool '#source-map' --inline --env.server`,
+        extractCss: `webpack-dev-server -d --devtool '#source-map' --inline --env.server --env.extractCss`,
+        hmr: `webpack-dev-server -d --devtool '#source-map' --inline --hot --env.server`
       },
     },
     serve: 'http-server dist --cors',

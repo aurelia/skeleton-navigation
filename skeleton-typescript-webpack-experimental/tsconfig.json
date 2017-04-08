@@ -6,6 +6,7 @@
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "allowJs": true,
+    "sourceRoot": "src",
     "lib": [
       "es2017", "dom"
     ]

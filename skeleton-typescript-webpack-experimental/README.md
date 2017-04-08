@@ -20,12 +20,12 @@ npm start # or: yarn start
 ```
 
 This command starts the webpack development server that serves the build bundles.
-You can now browse the skeleton app at http://localhost:8081. Changes in the code
+You can now browse the skeleton app at http://localhost:8080. Changes in the code
 will automatically build and reload the app.
 
 ## Feature configuration
 
-Most of the configuration will happen in the `webpack.config.js` file.
+Most of the configuration will happen in the `webpack.config.ts` file.
 There, you may configure advanced loader features or add direct SASS or LESS loading support.
 
 ## Bundling
@@ -46,22 +46,66 @@ npm start -- serve
 
 The production bundle includes all files that are required for deployment.
 
-## Running The Unit Tests
+## Running The Tests
 
-To run the unit tests:
+This skeleton provides three frameworks for running tests.
+
+You can choose one or two and remove the other, or even use all of them for different types of tests.
+
+### Jest
+
+Jest is a powerful unit testing runner and framework.
+It runs really fast, however the tests are run under NodeJS, not the browser.
+This means there might be some cases where something you'd expect works in reality, but fails in a test. One of those things will be SVG, which isn't supported under NodeJS. However, the framework is perfect for doing unit tests of pure functions, and works pretty well in combination with `aurelia-testing`.
+
+To create new Jest tests, create files with the extension `.test.ts`, either in the `src` directory or in the `test/jest-unit` directory.
+
+To run the Jest unit tests, run:
 
 ```shell
-npm test # or: yarn test
+npm test
 ```
 
-## Running The E2E Tests
+To run the Jest watcher (re-runs tests on changes), run:
 
-Integration tests are performed with [Protractor](http://angular.github.io/protractor/#/).
+```shell
+npm start -- test.jest.watch
+```
 
-1. Place your E2E-Tests into the folder ```test/e2e/src```
+### Karma + Jasmine
+
+Karma is also a powerful test runner, and combined with Jasmine it can be a pleasure to work with. Karma always runs in the browser. This means that whatever works in real browsers, should also work the same way in the unit tests. But it also means the framework is heavier to execute and not as lean to work with.
+
+To create new Karma tests, create files with the extension `.spec.ts`, either in the `src` directory or in the `test/karma-unit` directory.
+
+To run the Karma unit tests, run:
+
+```shell
+npm start -- test.karma
+```
+
+To run the Karma watcher (re-runs tests on changes), run:
+
+```shell
+npm start -- test.karma.watch
+```
+
+### Protractor (E2E / integration tests)
+
+Integration tests can be performed with [Protractor](http://angular.github.io/protractor/#/).
+
+1. Place your E2E-Tests into the folder ```test/e2e``` and name them with the extension `.e2e.ts`.
 
 2. Run the tests by invoking
 
 ```shell
 npm start -- e2e
+```
+
+## Running all test suites
+
+To run all the unit test suites and the E2E tests, you may simply run:
+
+```shell
+npm start -- test.all
 ```
