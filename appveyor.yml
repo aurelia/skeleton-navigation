@@ -31,12 +31,12 @@ test_script:
   - node --version
   - yarn --version
   # run tests
-  - cd skeleton-typescript-webpack && yarn run test
-  - cd skeleton-typescript-webpack && yarn run e2e
-  - cd skeleton-typescript-webpack && yarn run build:prod
-  - cd skeleton-esnext-webpack && yarn run test
-  - cd skeleton-esnext-webpack && yarn run e2e
-  - cd skeleton-esnext-webpack && yarn run build:prod
+  - cd skeleton-typescript-webpack && yarn start -- test.all
+  - cd skeleton-typescript-webpack && yarn start -- webpack.build
+  - cd skeleton-typescript-webpack && yarn start -- webpack.build.development
+  - cd skeleton-esnext-webpack && yarn start -- test.all
+  - cd skeleton-esnext-webpack && yarn start -- webpack.build
+  - cd skeleton-esnext-webpack && yarn start -- webpack.build.development
   - cd skeleton-esnext && npm run test
   - cd skeleton-typescript && npm run test
 
