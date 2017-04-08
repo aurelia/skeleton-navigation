@@ -1,4 +1,0 @@
-- [ ] different compilation settings for dev and for prod (better debugging experience in Chrome)
-- [ ] fix disappearing HTML coverage
-- [ ] simpler and more performant webpack plugins/loaders
-- [ ] simpler async
