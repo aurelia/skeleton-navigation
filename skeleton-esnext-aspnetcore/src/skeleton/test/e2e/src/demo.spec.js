@@ -21,13 +21,13 @@ describe('aurelia skeleton app', function() {
   });
 
   it('should automatically write down the fullname', () => {
-    poWelcome.setFirstname('Rob');
-    poWelcome.setLastname('Eisenberg');
+    poWelcome.setFirstname('John');
+    poWelcome.setLastname('Doe');
 
     // For now there is a timing issue with the binding.
     // Until resolved we will use a short sleep to overcome the issue.
     browser.sleep(200);
-    expect(poWelcome.getFullname()).toBe('ROB EISENBERG');
+    expect(poWelcome.getFullname()).toBe('JOHN DOE');
   });
 
 /*

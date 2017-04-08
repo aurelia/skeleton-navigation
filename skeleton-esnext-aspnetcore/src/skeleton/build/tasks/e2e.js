@@ -8,6 +8,7 @@ var protractor = require('gulp-protractor').protractor;
 var del = require('del');
 var compilerOptions = require('../babel-options');
 var assign = Object.assign || require('object.assign');
+var sourcemaps = require('gulp-sourcemaps');
 
 // for full documentation of gulp-protractor,
 // please check https://github.com/mllrsohn/gulp-protractor
@@ -24,7 +25,9 @@ gulp.task('clean-e2e', function() {
 gulp.task('build-e2e', ['clean-e2e'], function() {
   return gulp.src(paths.e2eSpecsSrc)
       .pipe(plumber())
+      .pipe(sourcemaps.init({loadMaps: true}))
       .pipe(to5(assign({}, compilerOptions.commonjs())))
+      .pipe(sourcemaps.write('.', {includeContent: false, sourceRoot: '/src'}))
       .pipe(gulp.dest(paths.e2eSpecsDist));
 });
 

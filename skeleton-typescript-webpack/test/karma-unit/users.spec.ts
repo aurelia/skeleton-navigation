@@ -20,8 +20,8 @@ class HttpStub extends HttpClient {
 
 describe('the Users module', () => {
   it('sets fetch response to users', (done) => {
-    var itemStubs = [1];
-    var itemFake = [2];
+    var itemStubs = [{avatar_url: 'u1_avatar', login: 'u1_login', html_url: 'u1_url'}];
+    var itemFake = [{avatar_url: 'u2_avatar', login: 'u2_login', html_url: 'u2_url'}];
 
     var getHttp = () => {
       var http = new HttpStub();
