@@ -59,9 +59,9 @@ module.exports = ({production, server, extractCss, coverage} = {}) => ({
       {
         test: /\.css$/i,
         issuer: [{ test: /\.html$/i }],
-        use: extractCss ? ExtractTextPlugin.extract({
-          use: cssRules,
-        }) : cssRules,
+        // CSS required in templates cannot be extracted safely
+        // because Aurelia would try to require it again in runtime
+        use: cssRules,
       },
       { test: /\.html$/i, loader: 'html-loader' },
       { test: /\.js$/i, loader: 'babel-loader', exclude: nodeModulesDir },
