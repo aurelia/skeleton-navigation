@@ -20,8 +20,16 @@ npm start # or: yarn start
 ```
 
 This command starts the webpack development server that serves the build bundles.
-You can now browse the skeleton app at http://localhost:8080. Changes in the code
+You can now browse the skeleton app at http://localhost:8080 (or the next available port, notice the output of the command). Changes in the code
 will automatically build and reload the app.
+
+### Running with Hot Module Reload
+
+If you wish to try out the experimental Hot Module Reload, you may run your application with the following command:
+
+```shell
+npm start -- webpack.server.hmr
+```
 
 ## Feature configuration
 
