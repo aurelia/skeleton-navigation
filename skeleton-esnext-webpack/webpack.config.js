@@ -107,7 +107,7 @@ module.exports = ({production, server, extractCss, coverage} = {}) => ({
       allChunks: true,
     })),
     ...when(production, new CommonsChunkPlugin({
-      name: ['vendor']
+      name: ['common']
     })),
     ...when(production, new CopyWebpackPlugin([
       { from: 'static/favicon.ico', to: 'favicon.ico' }
