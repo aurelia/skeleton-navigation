@@ -1,4 +1,4 @@
-# aurelia-skeleton-webpack-experimental
+# aurelia-skeleton-webpack
 
 ## Getting started
 
