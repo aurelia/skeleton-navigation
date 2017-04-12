@@ -16,13 +16,13 @@ cache:
 install:
   # Get the latest stable version of Node.js or io.js
   - ps: Install-Product node $env:nodejs_version
-  - npm install -g jspm
+  # - npm install -g jspm
   # install modules
   - cd skeleton-esnext-webpack && yarn --ignore-engines
   - cd skeleton-typescript-webpack && yarn --ignore-engines
-  - cd skeleton-esnext && npm install --no-optional || true
+  # - cd skeleton-esnext && yarn install --no-optional
   # - cd skeleton-esnext && jspm install
-  - cd skeleton-typescript && npm install --no-optional || true
+  # - cd skeleton-typescript && yarn install --no-optional
   # - cd skeleton-typescript && jspm install
 
 # Post-install test scripts.
@@ -31,12 +31,12 @@ test_script:
   - node --version
   - yarn --version
   # run tests
-  - cd skeleton-typescript-webpack && yarn start -- test.all
   - cd skeleton-typescript-webpack && yarn start -- webpack.build
-  - cd skeleton-typescript-webpack && yarn start -- webpack.build.development
-  - cd skeleton-esnext-webpack && yarn start -- test.all
   - cd skeleton-esnext-webpack && yarn start -- webpack.build
+  - cd skeleton-typescript-webpack && yarn start -- webpack.build.development
   - cd skeleton-esnext-webpack && yarn start -- webpack.build.development
+  - cd skeleton-typescript-webpack && yarn start -- test.all
+  - cd skeleton-esnext-webpack && yarn start -- test.all
   # - cd skeleton-esnext && npm run test
   # - cd skeleton-typescript && npm run test
 
