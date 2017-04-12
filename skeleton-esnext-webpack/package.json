@@ -55,7 +55,6 @@
     "copy-webpack-plugin": "^4.0.1",
     "cross-env": "^4.0.0",
     "css-loader": "^0.28.0",
-    "del-cli": "^0.2.1",
     "expose-loader": "^0.7.3",
     "extract-text-webpack-plugin": "^2.1.0",
     "file-loader": "^0.11.1",
