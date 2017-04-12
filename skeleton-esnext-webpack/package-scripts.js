@@ -7,8 +7,8 @@ module.exports = {
     test: {
       default: 'nps test.jest',
       jest: {
-        default: crossEnv('babelTarget=node jest'),
-        watch: crossEnv('babelTarget=node jest --watch'),
+        default: crossEnv('BABEL_TARGET=node jest'),
+        watch: crossEnv('BABEL_TARGET=node jest --watch'),
       },
       karma: {
         default: series(
@@ -67,11 +67,11 @@ module.exports = {
         production: {
           inlineCss: series(
             'nps webpack.build.before',
-            crossEnv('production=true webpack --progress -p --env.production')
+            crossEnv('NODE_ENV=production webpack --progress -p --env.production')
           ),
           default: series(
             'nps webpack.build.before',
-            crossEnv('production=true webpack --progress -p --env.production --env.extractCss')
+            crossEnv('NODE_ENV=production webpack --progress -p --env.production --env.extractCss')
           ),
           serve: series.nps(
             'webpack.build.production',
