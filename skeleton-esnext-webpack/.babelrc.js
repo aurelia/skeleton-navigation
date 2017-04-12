@@ -17,10 +17,6 @@ module.exports = {
         },
         "loose": true,
         "modules": process.env.babelTarget === 'node' ? 'commonjs' : false,
-        "whitelist": [
-          "transform-es2015-literals",
-          "transform-es2015-template-literals"
-        ],
         "useBuiltIns": true
       }
     ]
