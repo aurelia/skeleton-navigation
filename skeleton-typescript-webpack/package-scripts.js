@@ -29,7 +29,7 @@ module.exports = {
         protractor: 'nps e2e.whenReady',
       }) + ' --kill-others --success first',
       protractor: {
-        install: 'webdriver-manager update --standalone --chrome',
+        install: 'webdriver-manager update',
         default: series(
           'nps e2e.protractor.install',
           'protractor test/protractor.conf.js'
