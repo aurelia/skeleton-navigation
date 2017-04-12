@@ -35,7 +35,7 @@ exports.config = {
   },
 
   onPrepare: function() {
-    process.env.babelTarget = 'node';
+    process.env.BABEL_TARGET = 'node';
     require('babel-register');
   },
 
