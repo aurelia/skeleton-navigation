@@ -44,6 +44,8 @@ module.exports = ({production, server, extractCss, coverage} = {}) => ({
   },
   devServer: {
     contentBase: baseUrl,
+    // serve index.html for all 404 (required for push-state)
+    historyApiFallback: true,
   },
   module: {
     rules: [
