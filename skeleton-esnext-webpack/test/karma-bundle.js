@@ -8,8 +8,8 @@ const srcContext = require.context(
   '../src',
   // recursive:
   true,
-  // test file regex:
-  /\.spec\.[tj]s$/igm
+  // src file regex:
+  /\\.[tj]s$/igm
 );
 
 const testContext = require.context(
