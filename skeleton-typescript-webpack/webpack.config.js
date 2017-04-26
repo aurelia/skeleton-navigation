@@ -43,7 +43,7 @@ module.exports = ({production, server, extractCss, coverage} = {}) => ({
     chunkFilename: production ? '[name].[chunkhash].chunk.js' : '[name].[hash].chunk.js',
   },
   devServer: {
-    contentBase: baseUrl,
+    contentBase: outDir,
     // serve index.html for all 404 (required for push-state)
     historyApiFallback: true,
   },
