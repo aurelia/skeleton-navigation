@@ -25,6 +25,8 @@ exports.config = {
     defaultTimeoutInterval: 400000
   },
 
+  SELENIUM_PROMISE_MANAGER: false,
+
   directConnect: true,
 
   capabilities: {
@@ -36,6 +38,7 @@ exports.config = {
 
   onPrepare: function() {
     process.env.BABEL_TARGET = 'node';
+    process.env.IN_PROTRACTOR = 'true';
     require('babel-register');
   },
 

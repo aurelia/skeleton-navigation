@@ -425,9 +425,9 @@ aurelia-polyfills@^1.0.0, aurelia-polyfills@^1.2.1:
   dependencies:
     aurelia-pal "^1.0.0"
 
-aurelia-protractor-plugin@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/aurelia-protractor-plugin/-/aurelia-protractor-plugin-1.0.2.tgz#a1e20307078fa338ef138b000f5d52a3645f5d43"
+aurelia-protractor-plugin@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/aurelia-protractor-plugin/-/aurelia-protractor-plugin-1.0.3.tgz#af4e5c3096dfffb43c01d2bc4230a9c064f0c29e"
   dependencies:
     "@types/selenium-webdriver" "^2.53.33"
 
@@ -3311,9 +3311,9 @@ items@2.x.x:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/items/-/items-2.1.1.tgz#8bd16d9c83b19529de5aea321acaada78364a198"
 
-jasmine-core@^2.6.0:
-  version "2.6.0"
-  resolved "https://registry.yarnpkg.com/jasmine-core/-/jasmine-core-2.6.0.tgz#95e80740cc4d2c16741750e8b79e53c7ee15056a"
+jasmine-core@^2.6.1:
+  version "2.6.1"
+  resolved "https://registry.yarnpkg.com/jasmine-core/-/jasmine-core-2.6.1.tgz#66a61cddb699958e3613edef346c996f6311fc3b"
 
 jasmine-core@~2.5.2:
   version "2.5.2"
