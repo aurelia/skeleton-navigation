@@ -23,8 +23,8 @@ dependencies:
     - cd skeleton-typescript-webpack && yarn --ignore-engines
     - cd skeleton-esnext && yarn --ignore-engines
     - cd skeleton-esnext && jspm install
-    - cd skeleton-typescript && yarn --ignore-engines
-    - cd skeleton-typescript && jspm install
+    #- cd skeleton-typescript && yarn --ignore-engines
+    #- cd skeleton-typescript && jspm install
   cache_directories:
     - "skeleton-esnext/node_modules"
     - "skeleton-esnext/jspm_packages"
@@ -43,4 +43,4 @@ test:
     - cd skeleton-esnext-webpack && yarn start -- webpack.build
     - cd skeleton-esnext-webpack && yarn start -- webpack.build.development
     - cd skeleton-esnext && yarn run test
-    - cd skeleton-typescript && yarn run test
+    #- cd skeleton-typescript && yarn run test
