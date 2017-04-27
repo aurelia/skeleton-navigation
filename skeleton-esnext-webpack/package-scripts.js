@@ -19,9 +19,14 @@ module.exports = {
         watch: 'karma start test/karma.conf.js --single-run=false',
         debug: 'karma start test/karma.conf.js --single-run=false --debug'
       },
+      lint: {
+        default: 'eslint src',
+        fix: 'eslint --fix'
+      },
       all: concurrent({
         browser: series.nps('test.karma', 'e2e'),
         jest: 'nps test.jest',
+        lint: 'nps test.lint'
       })
     },
     e2e: {
