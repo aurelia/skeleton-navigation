@@ -66,7 +66,9 @@ module.exports = ({production, server, extractCss, coverage} = {}) => ({
         use: cssRules,
       },
       { test: /\.html$/i, loader: 'html-loader' },
-      { test: /\.js$/i, loader: 'babel-loader', exclude: nodeModulesDir },
+      { test: /\.js$/i, loader: 'babel-loader', exclude: nodeModulesDir,
+        options: coverage ? { sourceMap: 'inline', plugins: [ 'istanbul' ] } : {},
+      },
       { test: /\.json$/i, loader: 'json-loader' },
       // use Bluebird as the global Promise implementation:
       { test: /[\/\\]node_modules[\/\\]bluebird[\/\\].+\.js$/, loader: 'expose-loader?Promise' },
@@ -77,7 +79,7 @@ module.exports = ({production, server, extractCss, coverage} = {}) => ({
       { test: /\.woff2(\?v=[0-9]\.[0-9]\.[0-9])?$/i, loader: 'url-loader', options: { limit: 10000, mimetype: 'application/font-woff2' } },
       { test: /\.woff(\?v=[0-9]\.[0-9]\.[0-9])?$/i, loader: 'url-loader', options: { limit: 10000, mimetype: 'application/font-woff' } },
       // load these fonts normally, as files:
-      { test: /\.(ttf|eot|svg|otf)(\?v=[0-9]\.[0-9]\.[0-9])?$/i, loader: 'file-loader' }
+      { test: /\.(ttf|eot|svg|otf)(\?v=[0-9]\.[0-9]\.[0-9])?$/i, loader: 'file-loader' },
     ]
   },
   plugins: [

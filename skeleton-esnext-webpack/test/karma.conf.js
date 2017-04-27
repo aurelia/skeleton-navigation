@@ -28,10 +28,10 @@ module.exports = function (config) {
      * available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
      */
     preprocessors: {
-      'test/karma-bundle.js': [ 'webpack', 'sourcemap' ]
+      'test/karma-bundle.js': [ 'webpack' ]
     },
 
-    webpack: require('../webpack.config')(),
+    webpack: require('../webpack.config')({ coverage: true }),
 
     /*
      * test results reporter to use
@@ -39,12 +39,12 @@ module.exports = function (config) {
      * possible values: 'dots', 'progress'
      * available reporters: https://npmjs.org/browse/keyword/karma-reporter
      */
-    reporters: [ 'mocha', 'progress', 'coverage-istanbul' ],
+    reporters: [ 'mocha', 'progress', 'coverage' ],
 
-    coverageIstanbulReporter: {
-      reports: [ 'html', 'lcovonly', 'text-summary' ],
+    coverageReporter: {
+      reporters: [ { type: 'html' }, { type: 'lcovonly' }, { type: 'text-summary' } ],
       dir: path.resolve(__dirname, 'karma-coverage'),
-      fixWebpackSourcePaths: true,
+      subdir: '.',
     },
 
     // Webpack please don't spam the console when running in karma!

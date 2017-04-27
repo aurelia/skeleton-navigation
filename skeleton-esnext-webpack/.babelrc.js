@@ -1,10 +1,4 @@
 module.exports = {
-  "env": {
-    "test": {
-      "sourceMap": "inline",
-      "plugins": [ "istanbul" ],
-    }
-  },
   "plugins": [
     "transform-decorators",
     "transform-class-properties"
