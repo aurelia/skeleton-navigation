@@ -8,7 +8,7 @@ const srcContext = require.context(
   '../src',
   // recursive:
   true,
-  // test file regex:
+  // tests in /src folder regex:
   /\.spec\.[tj]s$/igm
 );
 
@@ -17,7 +17,7 @@ const testContext = require.context(
   './karma-unit',
   // recursive:
   true,
-  // test file regex:
+  // tests in ./karma-unit folder regex:
   /\.spec\.[tj]s$/igm
 );
 
