@@ -6,8 +6,9 @@ module.exports = {
   "presets": [
     [
       "env", {
-        "targets": 
-        {
+        "targets": process.env.BABEL_TARGET === 'node' ? {
+          "node": process.env.IN_PROTRACTOR ? '6' : 'current'
+        } : {
           "browsers": [
             "last 2 versions",
             "not ie <= 11"
@@ -16,7 +17,7 @@ module.exports = {
         },
         "loose": true,
         "modules": process.env.BABEL_TARGET === 'node' ? 'commonjs' : false,
-        "useBuiltIns": 'usage'
+        "useBuiltIns": 'entry'
       }
     ]
   ]
