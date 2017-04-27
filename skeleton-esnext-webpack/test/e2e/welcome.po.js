@@ -1,38 +1,48 @@
-// import regeneratorRuntime from 'regenerator-runtime';
-
 export class PageObjectWelcome {
-
   getGreeting() {
     return element(by.tagName('h2')).getText();
   }
 
+  getFirstnameElement() {
+    return element(by.valueBind('firstName'));
+  }
+
   setFirstname(value) {
-    return element(by.valueBind('firstName')).clear().sendKeys(value);
+    const firstName = this.getFirstnameElement();
+    return firstName.clear().then(() => firstName.sendKeys(value));
+  }
+
+  getLastnameElement() {
+    return element(by.valueBind('lastName'));
   }
 
   setLastname(value) {
-    return element(by.valueBind('lastName')).clear().sendKeys(value);
+    const lastName = this.getLastnameElement();
+    return lastName.clear().then(() => lastName.sendKeys(value));
+  }
+
+  getFullnameElement() {
+    return element(by.css('.help-block'));
   }
 
   getFullname() {
-    return element(by.css('.help-block')).getText();
+    return this.getFullnameElement().getText();
   }
 
   pressSubmitButton() {
     return element(by.css('button[type="submit"]')).click();
   }
 
-  openAlertDialog() {
-    return browser.wait(async () => {
-      await this.pressSubmitButton();
+  async openAlertDialog() {
+    await this.pressSubmitButton();
 
-      await browser.wait(ExpectedConditions.alertIsPresent(), 5000);
+    await browser.wait(ExpectedConditions.alertIsPresent(), 5000);
 
-      return browser.switchTo().alert().then(
-        // use alert.accept instead of alert.dismiss which results in a browser crash
-        function(alert) { alert.accept(); return true; },
-        function() { return false; }
-      );
-    });
+    try {
+      await browser.switchTo().alert().accept();
+      return true;
+    } catch (e) {
+      return false;
+    }
   }
 }

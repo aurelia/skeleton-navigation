@@ -8,6 +8,7 @@ module.exports = {
       default: 'nps test.jest',
       jest: {
         default: 'jest',
+        accept: 'jest -u',
         watch: 'jest --watch',
       },
       karma: {

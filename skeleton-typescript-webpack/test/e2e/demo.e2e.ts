@@ -4,41 +4,43 @@ import {browser, element, by, By, $, $$, ExpectedConditions} from 'aurelia-protr
 import {config} from '../protractor.conf'
 
 describe('aurelia skeleton app', function() {
-  let po_welcome: PageObject_Welcome;
-  let po_skeleton: PageObject_Skeleton;
+  let poWelcome: PageObject_Welcome;
+  let poSkeleton: PageObject_Skeleton;
 
-  beforeEach( () => {
-    po_skeleton = new PageObject_Skeleton();
-    po_welcome = new PageObject_Welcome();
+  beforeEach(async () => {
+    poSkeleton = new PageObject_Skeleton();
+    poWelcome = new PageObject_Welcome();
 
-    browser.loadAndWaitForAureliaPage(`http://localhost:${config.port}`);
+    await browser.loadAndWaitForAureliaPage(`http://localhost:${config.port}`);
   });
 
-  it('should load the page and display the initial page title', () => {
-    expect(po_skeleton.getCurrentPageTitle()).toBe('Welcome | Aurelia');
+  it('should load the page and display the initial page title', async () => {
+    await expect(poSkeleton.getCurrentPageTitle()).toBe('Welcome | Aurelia');
   });
 
-  it('should display greeting', () => {
-    expect(po_welcome.getGreeting()).toBe('Welcome to the Aurelia Navigation App');
+  it('should display greeting', async () => {
+    await expect(poWelcome.getGreeting()).toBe('Welcome to the Aurelia Navigation App');
   });
 
-  it('should automatically write down the fullname', () => {
-    po_welcome.setFirstname('John');
-    po_welcome.setLastname('Doe');
+  it('should automatically write down the fullname', async () => {
+    await poWelcome.setFirstname('John');
+    await poWelcome.setLastname('Doe');
 
-    // For now there is a timing issue with the binding.
-    // Until resolved we will use a short sleep to overcome the issue.
-    browser.sleep(200);
-    expect(po_welcome.getFullname()).toBe('JOHN DOE');
+    // binding is not synchronous,
+    // therefore we should wait some time until the binding is updated
+    await browser.wait(
+      ExpectedConditions.textToBePresentInElement(
+        poWelcome.getFullnameElement(), 'JOHN DOE'
+      ), 200
+    )
   });
 
-  it('should show alert message when clicking submit button', () => {
-    expect(po_welcome.openAlertDialog()).toBe(true);
+  it('should show alert message when clicking submit button', async () => {
+    await expect(poWelcome.openAlertDialog()).toBe(true);
   });
 
-  it('should navigate to users page', () => {
-    po_skeleton.navigateTo('#/users');
-    browser.sleep(200);
-    expect(po_skeleton.getCurrentPageTitle()).toBe('Github Users | Aurelia');
+  it('should navigate to users page', async () => {
+    await poSkeleton.navigateTo('#/users');
+    await expect(poSkeleton.getCurrentPageTitle()).toBe('Github Users | Aurelia');
   });
 });

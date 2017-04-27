@@ -25,6 +25,8 @@ exports.config = {
     defaultTimeoutInterval: 400000
   },
 
+  SELENIUM_PROMISE_MANAGER: false,
+
   directConnect: true,
 
   capabilities: {

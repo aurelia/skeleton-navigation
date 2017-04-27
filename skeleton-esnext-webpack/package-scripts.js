@@ -8,6 +8,7 @@ module.exports = {
       default: 'nps test.jest',
       jest: {
         default: crossEnv('BABEL_TARGET=node jest'),
+        accept: crossEnv('BABEL_TARGET=node jest -u'),
         watch: crossEnv('BABEL_TARGET=node jest --watch'),
       },
       karma: {

@@ -6,14 +6,14 @@ module.exports = {
     }
   },
   "plugins": [
-    "transform-decorators-legacy",
+    "transform-decorators",
     "transform-class-properties"
   ],
   "presets": [
     [
       "env", {
         "targets": process.env.BABEL_TARGET === 'node' ? {
-          "node": "current"
+          "node": process.env.IN_PROTRACTOR ? '6' : 'current'
         } : {
           "browsers": [
             "last 2 versions",
@@ -23,7 +23,7 @@ module.exports = {
         },
         "loose": true,
         "modules": process.env.BABEL_TARGET === 'node' ? 'commonjs' : false,
-        "useBuiltIns": true
+        "useBuiltIns": 'entry'
       }
     ]
   ]

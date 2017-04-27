@@ -3,7 +3,7 @@
 exports[`WelcomeComponent should render correctly 1`] = `
 "<body><div><welcome class=\\"au-target\\" au-target-id=\\"6\\">
   <section class=\\"au-animate\\">
-    <h2>Welcome to the Aurelia Navigation App!</h2>
+    <h2>Welcome to the Aurelia Navigation App</h2>
     <form role=\\"form\\" submit.delegate=\\"submit()\\" class=\\"au-target\\" au-target-id=\\"2\\">
       <div class=\\"form-group\\">
         <label for=\\"fn\\">First Name</label>
