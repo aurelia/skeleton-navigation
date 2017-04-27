@@ -48,7 +48,7 @@
     "babel-core": "next",
     "babel-eslint": "7.2.3",
     "babel-loader": "7.0.0",
-    "babel-plugin-istanbul": "next",
+    "babel-plugin-istanbul": "4.1.2-candidate.0",
     "babel-plugin-transform-class-properties": "next",
     "babel-plugin-transform-decorators": "next",
     "babel-polyfill": "next",
