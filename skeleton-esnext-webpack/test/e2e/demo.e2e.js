@@ -1,6 +1,6 @@
 import {PageObjectWelcome} from './welcome.po';
 import {PageObjectSkeleton} from './skeleton.po';
-import {config} from '../protractor.conf'
+import {config} from '../protractor.conf';
 
 describe('aurelia skeleton app', function() {
   let poWelcome;
