@@ -6,17 +6,20 @@ describe('WelcomeComponent', () => {
 
   beforeEach(async () => {
     component = StageComponent
-      .withResources('../../src/welcome')
+      .withResources('welcome')
       .inView('<welcome></welcome>');
     await component.create(bootstrap);
   });
 
-  it('should render correctly', () => {
-    expect(document.body.outerHTML).toMatchSnapshot();
-  })
+  // only jest supports creating snapshot:
+  if (jest) {
+    it('should render correctly', () => {
+      expect(document.body.outerHTML).toMatchSnapshot();
+    });
+  }
 
   it('should render first name', () => {
-    const nameElement = document.querySelector('#fn') as HTMLInputElement;
+    const nameElement = document.querySelector('#fn');
     expect(nameElement.value).toBe('John');
   });
 

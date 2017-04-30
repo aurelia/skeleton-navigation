@@ -60,13 +60,26 @@ This skeleton provides three frameworks for running tests.
 
 You can choose one or two and remove the other, or even use all of them for different types of tests.
 
-### Jest
+By default, both Jest and Karma are configured to run the same tests with Jest's matchers (see Jest documentation for more information).
+
+If you wish to only run certain tests under one of the runners, wrap them in an `if`, like this:
+
+```js
+if (jest) {
+  // since only jest supports creating snapshot:
+  it('should render correctly', () => {
+    expect(document.body.outerHTML).toMatchSnapshot();
+  });
+}
+```
+
+### Jest + Jasmine 2
 
 Jest is a powerful unit testing runner and framework.
 It runs really fast, however the tests are run under NodeJS, not the browser.
 This means there might be some cases where something you'd expect works in reality, but fails in a test. One of those things will be SVG, which isn't supported under NodeJS. However, the framework is perfect for doing unit tests of pure functions, and works pretty well in combination with `aurelia-testing`.
 
-To create new Jest tests, create files with the extension `.test.js`, either in the `src` directory or in the `test/jest-unit` directory.
+To create new Jest tests, create files with the extension `.spec.ts`, either in the `src` directory or in the `test/unit` directory.
 
 To run the Jest unit tests, run:
 
@@ -80,11 +93,13 @@ To run the Jest watcher (re-runs tests on changes), run:
 npm start -- test.jest.watch
 ```
 
-### Karma + Jasmine
+### Karma + Jasmine 2
 
-Karma is also a powerful test runner, and combined with Jasmine it can be a pleasure to work with. Karma always runs in the browser. This means that whatever works in real browsers, should also work the same way in the unit tests. But it also means the framework is heavier to execute and not as lean to work with.
+Karma is also a powerful test runner, which by default runs in the browser. This means that whatever works in real browsers, should also work the same way in the unit tests. But it also means the framework is heavier to execute and not as lean to work with.
 
-To create new Karma tests, create files with the extension `.spec.js`, either in the `src` directory or in the `test/karma-unit` directory.
+To ease transitioning between Jest and Karma, Jasmine 2 is configured with Jest's matchers.
+
+To create new Karma tests, create files with the extension `.spec.ts`, either in the `src` directory or in the `test/unit` directory.
 
 To run the Karma unit tests, run:
 
