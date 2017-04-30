@@ -79,7 +79,7 @@ Jest is a powerful unit testing runner and framework.
 It runs really fast, however the tests are run under NodeJS, not the browser.
 This means there might be some cases where something you'd expect works in reality, but fails in a test. One of those things will be SVG, which isn't supported under NodeJS. However, the framework is perfect for doing unit tests of pure functions, and works pretty well in combination with `aurelia-testing`.
 
-To create new Jest tests, create files with the extension `.spec.ts`, either in the `src` directory or in the `test/unit` directory.
+To create new Jest tests, create files with the extension `.spec.js`, either in the `src` directory or in the `test/unit` directory.
 
 To run the Jest unit tests, run:
 
@@ -99,7 +99,7 @@ Karma is also a powerful test runner, which by default runs in the browser. This
 
 To ease transitioning between Jest and Karma, Jasmine 2 is configured with Jest's matchers.
 
-To create new Karma tests, create files with the extension `.spec.ts`, either in the `src` directory or in the `test/unit` directory.
+To create new Karma tests, create files with the extension `.spec.js`, either in the `src` directory or in the `test/unit` directory.
 
 To run the Karma unit tests, run:
 
