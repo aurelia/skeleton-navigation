@@ -31,7 +31,7 @@ describe('aurelia skeleton app', function() {
       ExpectedConditions.textToBePresentInElement(
         poWelcome.getFullnameElement(), 'JOHN DOE'
       ), 200
-    )
+    );
   });
 
   it('should show alert message when clicking submit button', async () => {
