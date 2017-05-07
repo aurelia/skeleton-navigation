@@ -43,7 +43,7 @@ module.exports = function (config) {
 
     coverageIstanbulReporter: {
       reports: [ 'html', 'lcovonly', 'text-summary' ],
-      dir: path.resolve(__dirname, 'karma-coverage'),
+      dir: path.resolve(__dirname, 'coverage-karma'),
       fixWebpackSourcePaths: true,
     },
 

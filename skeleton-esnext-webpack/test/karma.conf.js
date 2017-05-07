@@ -43,7 +43,7 @@ module.exports = function (config) {
 
     coverageReporter: {
       reporters: [ { type: 'html' }, { type: 'lcovonly' }, { type: 'text-summary' } ],
-      dir: path.resolve(__dirname, 'karma-coverage'),
+      dir: path.resolve(__dirname, 'coverage-karma'),
       subdir: '.',
     },
 
