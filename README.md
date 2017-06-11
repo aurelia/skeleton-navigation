@@ -9,7 +9,7 @@
 
 ## Quickstart: [Download link for the latest Skeletons](https://github.com/aurelia/skeleton-navigation/releases/latest)
 
-> These skeletons are only supported when running on the latest Node LTS (4.x) release or the latest Node Current (6.x) release. You must be running NPM >=3 with the skeletons. Running `npm install` using NPM 2.x will not work.
+> These skeletons are only supported when running on the latest Node LTS (6.x) release or the latest Node Current (8.x) release. You must be running NPM >=3 with the skeletons. Running `npm install` using NPM 2.x will not work.
 
 ---
 
