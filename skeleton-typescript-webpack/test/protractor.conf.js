@@ -32,7 +32,21 @@ exports.config = {
   capabilities: {
     'browserName': 'chrome',
     'chromeOptions': {
-      'args': ['show-fps-counter=true']
+      'args': [
+        '--show-fps-counter',
+        '--no-default-browser-check',
+        '--no-first-run',
+        '--disable-default-apps',
+        '--disable-popup-blocking',
+        '--disable-translate',
+        '--disable-background-timer-throttling',
+        '--disable-renderer-backgrounding',
+        '--disable-device-discovery-notifications',
+        /* enable these if you'd like to test using Chrome Headless
+          '--no-gpu',
+          '--headless'
+        */
+      ]
     }
   },
 
