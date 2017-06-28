@@ -27,10 +27,7 @@ Please see the individual readme files within each skeleton for an explanation o
 
 * **skeleton-esnext-webpack** - This project is configured to use the Babel transpiler so that you can write your application using either language. It should work well with any standard text editor. This skeleton uses NPM for package management and Webpack for bundling.
 * **skeleton-esnext** - This project is configured to use the Babel transpiler so that you can write your application with ESNext code. It should work well with any standard text editor. This skeleton uses JSPM for package management and SystemJS for loading and bundling.
-* **skeleton-esnext-aspnetcore** - This is an ASP.NET Core web project pre-configured for building a .NET backend and an Aurelia front-end. It is configured for full ES Next support with Babel, similar to the standard skeleton-esnext option. This skeleton uses JSPM for package management and SystemJS for loading and bundling.
 
 ### TypeScript Skeletons
 
 * **skeleton-typescript-webpack** - This project is configured to use the TypeScript transpiler so that you can write your application using either language. It should work well with any standard text editor. This skeleton uses NPM for package management and Webpack for bundling.
-* **skeleton-typescript** - This project is configured to use the TypeScript transpiler so that you can write your application using TypeScript. It should work well with any standard text editor, however it has been specially configured to work well with VSCode and Atom, including full TypeScript intellisense for app, unit test and e2e test code. This skeleton uses JSPM for package management and SystemJS for loading and bundling.
-* **skeleton-typescript-aspnetcore** - This is an ASP.NET Core web project configured for building a .NET backend and an Aurelia front-end. It is configured for full TypeScript support, similar to the standard skeleton-typescript option.  This skeleton uses JSPM for package management and SystemJS for loading and bundling.
