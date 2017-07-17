@@ -1,5 +1,5 @@
 const {series, crossEnv, concurrent, rimraf} = require('nps-utils')
-const {config: {port : E2E_PORT}} = require('./test/protractor.conf')
+const {config: {port: E2E_PORT}} = require('./test/protractor.conf')
 
 module.exports = {
   scripts: {
@@ -89,9 +89,9 @@ module.exports = {
         }
       },
       server: {
-        default: `webpack-dev-server -d --devtool '#source-map' --inline --env.server`,
-        extractCss: `webpack-dev-server -d --devtool '#source-map' --inline --env.server --env.extractCss`,
-        hmr: `webpack-dev-server -d --devtool '#source-map' --inline --hot --env.server`
+        default: `webpack-dev-server -d --inline --env.server`,
+        extractCss: `webpack-dev-server -d --inline --env.server --env.extractCss`,
+        hmr: `webpack-dev-server -d --inline --hot --env.server`
       },
     },
     serve: 'http-server dist --cors',

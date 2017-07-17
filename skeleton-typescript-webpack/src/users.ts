@@ -2,7 +2,9 @@ import {lazy} from 'aurelia-framework';
 import {HttpClient} from 'aurelia-fetch-client';
 
 // polyfill fetch client conditionally
-const fetchPolyfill = !self.fetch ? System.import('isomorphic-fetch') : Promise.resolve(self.fetch);
+const fetchPolyfill = !self.fetch
+  ? import('isomorphic-fetch' /* webpackChunkName: 'fetch' */)
+  : Promise.resolve(self.fetch);
 
 interface IUser {
   avatar_url: string;

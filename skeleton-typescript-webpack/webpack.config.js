@@ -1,9 +1,9 @@
-const path = require('path')
+const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const { AureliaPlugin } = require('aurelia-webpack-plugin');
-const { optimize: { CommonsChunkPlugin }, ProvidePlugin } = require('webpack')
+const { optimize: { CommonsChunkPlugin }, ProvidePlugin } = require('webpack');
 const { TsConfigPathsPlugin, CheckerPlugin } = require('awesome-typescript-loader');
 
 // config helpers:
@@ -26,11 +26,16 @@ const cssRules = [
   }
 ]
 
+/**
+ * @return {webpack.Configuration}
+ */
 module.exports = ({production, server, extractCss, coverage} = {}) => ({
   resolve: {
     extensions: ['.ts', '.js'],
     modules: [srcDir, 'node_modules'],
   },
+
+  devtool: production ? 'source-map' : 'cheap-module-eval-source-map',
   entry: {
     app: ['aurelia-bootstrapper'],
     vendor: ['bluebird', 'jquery', 'bootstrap'],

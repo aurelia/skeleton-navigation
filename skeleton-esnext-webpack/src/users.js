@@ -2,7 +2,9 @@ import {inject, Lazy} from 'aurelia-framework';
 import {HttpClient} from 'aurelia-fetch-client';
 
 // polyfill fetch client conditionally
-const fetch = !self.fetch ? System.import('isomorphic-fetch') : Promise.resolve(self.fetch);
+const fetchPolyfill = !self.fetch
+  ? import('isomorphic-fetch' /* webpackChunkName: 'fetch' */)
+  : Promise.resolve(self.fetch);
 
 @inject(Lazy.of(HttpClient))
 export class Users {
