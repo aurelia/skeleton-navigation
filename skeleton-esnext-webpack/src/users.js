@@ -3,7 +3,7 @@ import {HttpClient} from 'aurelia-fetch-client';
 
 // polyfill fetch client conditionally
 const fetchPolyfill = !self.fetch
-  ? import('isomorphic-fetch' /* webpackChunkName: 'fetch' */)
+  ? System.import('isomorphic-fetch' /* webpackChunkName: 'fetch' */)
   : Promise.resolve(self.fetch);
 
 @inject(Lazy.of(HttpClient))
@@ -17,7 +17,7 @@ export class Users {
 
   async activate() {
     // ensure fetch is polyfilled before we create the http client
-    await fetch;
+    await fetchPolyfill;
     const http = this.http = this.getHttpClient();
 
     http.configure(config => {
