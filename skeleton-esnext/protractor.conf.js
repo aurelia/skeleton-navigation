@@ -9,7 +9,8 @@ exports.config = {
 
   // optional: add seleniumServerJar with proper version number
   // seleniumServerJar: './node_modules/gulp-protractor/node_modules/protractor/selenium/selenium-server-standalone-2.53.1.jar',
-  specs: ['test/e2e/dist/**/*.js'],
+  
+  // specs: ['test/e2e/dist/**/*.js'], NOTE - see the e2e gulp task for specifying specs location
 
   plugins: [{
     package: 'aurelia-protractor-plugin'
