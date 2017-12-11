@@ -32,7 +32,7 @@
     "run-sequence": "^1.2.2",
     "systemjs": "0.19.35",
     "tslint": "^3.13.0",
-    "typescript": "^2.2.1",
+    "typescript": "^2.3.1",
     "typings": "^1.3.2",
     "vinyl-paths": "^2.1.0",
     "yargs": "^4.8.1"

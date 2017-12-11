@@ -5,6 +5,12 @@ module.exports = function(config) {
     systemjs: {
       configFile: 'wwwroot/config.js',
       config: {
+        meta: {
+          typescript: {
+            format: "global",
+            exports: "ts"
+          }
+        },
         paths: {
           "*": "*",
           "src/*": "src/*",
