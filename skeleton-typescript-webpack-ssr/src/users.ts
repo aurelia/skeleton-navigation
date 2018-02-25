@@ -1,9 +1,6 @@
 import {inject, Lazy} from 'aurelia-framework';
 import {HttpClient} from 'aurelia-fetch-client';
 
-// polyfill fetch client conditionally
-const fetch = !self.fetch ? System.import('isomorphic-fetch') : Promise.resolve(self.fetch);
-
 interface IUser {
   avatar_url: string;
   login: string;
@@ -24,10 +21,8 @@ export class Users {
 
   async activate(): Promise<void> {
     return new Promise<void>(resolve => {
-      setTimeout(() => {
-        this.users = github_users;
-        resolve();
-      }, 3000);
+      this.users = github_users;
+      resolve();
     });
   }
 }
