@@ -1,7 +1,3 @@
-body {
-  margin: 0;
-}
-
 .splash {
   text-align: center;
   margin: 10% 0 0 0;
@@ -27,7 +23,7 @@ body {
   position: absolute;
   left: 0;
   right: 0;
-  top: 50px;
+  top: 56px;
   bottom: 0;
   overflow-x: hidden;
   overflow-y: auto;
@@ -38,7 +34,7 @@ body {
     position: absolute;
     left: 10px;
     right: 0;
-    top: 50px;
+    top: 56px;
     bottom: 0;
     overflow-y: inherit;
     overflow-x: inherit;
@@ -50,7 +46,7 @@ section {
 }
 
 .navbar-nav li.loader {
-  margin: 12px 24px 0 6px;
+  margin: 0 0 0 12px;
 }
 
 .pictureDetail {
@@ -82,17 +78,16 @@ div.au-stagger {
   border-radius: 8px;
   text-align: center;
   padding: 0;
-  background-color: #337ab7;
   color: rgb(136, 172, 217);
   margin-bottom: 32px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+  /* box-shadow: 0 0 5px rgba(0, 0, 0, .5); */
 }
 
-.card .content {
-  margin-top: 10px;
+.card .card-body {
+  background-color: #337ab7;
 }
 
-.card .content .name {
+.card-body .name {
   color: white;
   text-shadow: 0 0 6px rgba(0, 0, 0, .5);
   font-size: 18px;
