@@ -93,6 +93,7 @@ module.exports = ({production, server, extractCss, coverage, ssr} = {}) => ({
       '$': 'jquery',
       'jQuery': 'jquery',
       'window.jQuery': 'jquery',
+      Popper: ['popper.js', 'default'] // Bootstrap 4 Dependency.
     }),
     new TsConfigPathsPlugin(),
     new CheckerPlugin(),

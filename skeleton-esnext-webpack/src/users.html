@@ -8,11 +8,13 @@
         <div class="card">
           <canvas class="header-bg" width="250" height="70" blur-image.bind="image"></canvas>
           <div class="avatar">
-            <img src.bind="user.avatar_url" crossorigin ref="image"/>
+            <img src.bind="user.avatar_url" crossorigin ref="image" />
           </div>
           <div class="content">
             <p class="name">${user.login}</p>
-            <p><a target="_blank" class="btn btn-default" href.bind="user.html_url">Contact</a></p>
+            <p>
+              <a target="_blank" class="btn btn-light" href.bind="user.html_url">Contact</a>
+            </p>
           </div>
         </div>
       </div>

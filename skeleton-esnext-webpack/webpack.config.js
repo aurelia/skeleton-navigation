@@ -90,6 +90,7 @@ module.exports = ({production, server, extractCss, coverage} = {}) => ({
       '$': 'jquery',
       'jQuery': 'jquery',
       'window.jQuery': 'jquery',
+      Popper: ['popper.js', 'default'] // Bootstrap 4 Dependency.
     }),
     new HtmlWebpackPlugin({
       template: 'index.ejs',

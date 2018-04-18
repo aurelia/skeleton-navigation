@@ -107,22 +107,23 @@
     "aurelia-loader-webpack": "^2.1.0",
     "aurelia-logging-console": "1.0.0",
     "aurelia-middleware-koa": "^0.1.0",
-    "aurelia-ssr-bootstrapper-webpack": "^0.1.0",
     "aurelia-pal": "^1.4.0",
     "aurelia-pal-browser": "^1.3.0",
     "aurelia-pal-nodejs": "^1.0.0-beta.2.0.0",
     "aurelia-polyfills": "^1.2.2",
     "aurelia-router": "^1.4.0",
+    "aurelia-ssr-bootstrapper-webpack": "^0.1.0",
     "aurelia-templating": "^1.6.0",
     "aurelia-templating-resources": "^1.5.4",
     "aurelia-templating-router": "^1.2.0",
     "aurelia-webpack-plugin": "^2.0.0-rc.5",
     "autoprefixer": "^7.1.6",
-    "bootstrap": "^3.3.7",
+    "bootstrap": "^4.1.0",
     "font-awesome": "^4.7.0",
     "isomorphic-fetch": "^2.2.1",
     "jquery": "^3.2.1",
     "koa": "^2.4.1",
-    "koa-static": "^4.0.1"
+    "koa-static": "^4.0.1",
+    "popper.js": "^1.14.3"
   }
 }
